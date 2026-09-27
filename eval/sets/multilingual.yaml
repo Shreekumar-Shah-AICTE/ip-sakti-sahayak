@@ -1,0 +1,33 @@
+# The Proving Ground — MULTILINGUAL DEV set (hi/gu), agent-authored, NOT sealed, NOT validated.
+# Added run 08 (D-013b / M8 groundwork). Purpose: measure whether a dense-similarity admission
+# (MIN_COSINE, hybrid mode only) can answer Hindi/Gujarati questions WITHOUT answering any
+# must-abstain item. L = answerable (expected doc), D = must abstain. Translations are the
+# agent's own and need a native-speaker check (OPERATOR_TASKS) before any figure is quoted.
+# Near-domain D items (GST, SIPP, bitcoin penalty, trademark fee) are deliberate: they share
+# Ayurveda/IP vocabulary with the corpus and are what a loose cosine threshold would admit.
+- {id: HL01, set: L, lang: hi, question: "संहिताबद्ध पारंपरिक ज्ञान क्या है?", jurisdiction: IN, as_of: '2026-09-01', expect: {doc: in-bd-amendment-act-2023}}
+- {id: HL02, set: L, lang: hi, question: "वार्षिक टर्नओवर पर लाभ साझा करने की कितनी राशि देनी होगी?", jurisdiction: IN, as_of: '2026-09-01', expect: {doc: in-bd-abs-regulations-2025}}
+- {id: HL03, set: L, lang: hi, question: "किन पेटेंट कार्यालयों को टीकेडीएल तक पहुंच है?", jurisdiction: IN, as_of: '2026-09-01', expect: {doc: in-csir-tkdl-about}}
+- {id: HL04, set: L, lang: hi, question: "औषधि और चमत्कारिक उपचार अधिनियम की अनुसूची में कौन से रोग सूचीबद्ध हैं?", jurisdiction: IN, as_of: '2026-09-01', expect: {doc: in-dmr-act-1954}}
+- {id: HL05, set: L, lang: hi, question: "क्या भारत में आयुर्वेदिक दवा का पेटेंट कराया जा सकता है?", jurisdiction: IN, as_of: '2026-09-01', expect: {doc: in-patents-act-1970}}
+- {id: HL06, set: L, lang: hi, question: "क्या आयुर्वेद आहार के लेबल पर किसी रोग को ठीक करने का दावा किया जा सकता है?", jurisdiction: IN, as_of: '2026-09-01', expect: {doc: in-fssai-ayurveda-aahara-regulations-2022}}
+- {id: HL07, set: L, lang: hi, question: "आयुर्वेदिक उत्पादों में भारी धातुओं पर एफडीए की चेतावनी", jurisdiction: US, as_of: '2026-09-01', expect: {doc: us-fda-ayurvedic-heavy-metals-warning}}
+- {id: HL08, set: L, lang: hi, question: "पारंपरिक हर्बल औषधीय उत्पादों के लिए सरलीकृत पंजीकरण प्रक्रिया", jurisdiction: EU, as_of: '2026-09-01', expect: {doc: eu-directive-2004-24-ec}}
+- {id: GL01, set: L, lang: gu, question: "સંહિતાબદ્ધ પરંપરાગત જ્ઞાન શું છે?", jurisdiction: IN, as_of: '2026-09-01', expect: {doc: in-bd-amendment-act-2023}}
+- {id: GL02, set: L, lang: gu, question: "વાર્ષિક ટર્નઓવર પર લાભ વહેંચણીની કેટલી રકમ ચૂકવવાની થાય?", jurisdiction: IN, as_of: '2026-09-01', expect: {doc: in-bd-abs-regulations-2025}}
+- {id: GL03, set: L, lang: gu, question: "કઈ પેટન્ટ કચેરીઓને ટીકેડીએલની ઍક્સેસ છે?", jurisdiction: IN, as_of: '2026-09-01', expect: {doc: in-csir-tkdl-about}}
+- {id: GL04, set: L, lang: gu, question: "ડ્રગ્સ એન્ડ મેજિક રેમેડીઝ અધિનિયમની અનુસૂચિમાં કયા રોગો સૂચિબદ્ધ છે?", jurisdiction: IN, as_of: '2026-09-01', expect: {doc: in-dmr-act-1954}}
+- {id: GL05, set: L, lang: gu, question: "શું ભારતમાં આયુર્વેદિક દવાની પેટન્ટ થઈ શકે?", jurisdiction: IN, as_of: '2026-09-01', expect: {doc: in-patents-act-1970}}
+- {id: GL06, set: L, lang: gu, question: "આયુર્વેદિક ઉત્પાદનોમાં ભારે ધાતુઓ અંગે એફડીએની ચેતવણી", jurisdiction: US, as_of: '2026-09-01', expect: {doc: us-fda-ayurvedic-heavy-metals-warning}}
+- {id: HD01, set: D, lang: hi, question: "फीफा विश्व कप फुटबॉल फाइनल किसने जीता?", jurisdiction: IN, as_of: '2026-09-01', expect: {abstain: true}}
+- {id: HD02, set: D, lang: hi, question: "आयुर्वेदिक सौंदर्य प्रसाधनों पर जीएसटी की दर क्या है?", jurisdiction: IN, as_of: '2026-09-01', expect: {abstain: true}}
+- {id: HD03, set: D, lang: hi, question: "चॉकलेट केक बनाने की विधि", jurisdiction: IN, as_of: '2026-09-01', expect: {abstain: true}}
+- {id: HD04, set: D, lang: hi, question: "बिटकॉइन माइनिंग पर क्या जुर्माना है?", jurisdiction: IN, as_of: '2026-09-01', expect: {abstain: true}}
+- {id: HD05, set: D, lang: hi, question: "क्या स्टार्टअप के लिए एसआईपीपी योजना अभी भी उपलब्ध है?", jurisdiction: IN, as_of: '2026-09-01', expect: {abstain: true}}
+- {id: HD06, set: D, lang: hi, question: "आयुर्वेदिक ब्रांड के ट्रेडमार्क पंजीकरण का शुल्क कितना है?", jurisdiction: IN, as_of: '2026-09-01', expect: {abstain: true}}
+- {id: HD07, set: D, lang: hi, question: "जापान के प्रधानमंत्री कौन हैं?", jurisdiction: IN, as_of: '2026-09-01', expect: {abstain: true}}
+- {id: GD01, set: D, lang: gu, question: "ફિફા વર્લ્ડ કપ ફૂટબોલ ફાઇનલ કોણે જીતી?", jurisdiction: IN, as_of: '2026-09-01', expect: {abstain: true}}
+- {id: GD02, set: D, lang: gu, question: "આયુર્વેદિક સૌંદર્ય પ્રસાધનો પર જીએસટીનો દર કેટલો છે?", jurisdiction: IN, as_of: '2026-09-01', expect: {abstain: true}}
+- {id: GD03, set: D, lang: gu, question: "ચોકલેટ કેક બનાવવાની રીત", jurisdiction: IN, as_of: '2026-09-01', expect: {abstain: true}}
+- {id: GD04, set: D, lang: gu, question: "શું સ્ટાર્ટઅપ માટે એસઆઈપીપી યોજના હજી ઉપલબ્ધ છે?", jurisdiction: IN, as_of: '2026-09-01', expect: {abstain: true}}
+- {id: GD05, set: D, lang: gu, question: "આયુર્વેદિક બ્રાન્ડના ટ્રેડમાર્ક નોંધણીની ફી કેટલી છે?", jurisdiction: IN, as_of: '2026-09-01', expect: {abstain: true}}
