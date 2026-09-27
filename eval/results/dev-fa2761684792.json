@@ -1,7 +1,7 @@
 {
  "set": "dev",
  "corpus_version": "sha256:fa2761684792d7a1af3b01ffb66fe8bf7870b988bfee766022e7fae9c999aa52",
- "commit": "cb3a21f",
+ "commit": "4b8491a",
  "date": "2026-09-27",
  "machine": "Linux x86_64 py3.13.14",
  "mode": "keyless",
@@ -9,14 +9,14 @@
   "n": 47,
   "temporal_accuracy": 1.0,
   "temporal_accuracy_baseline": 0.125,
-  "library_answer_rate": 0.8,
-  "library_answer_rate_baseline": 0.9,
+  "library_answer_rate": 0.8889,
+  "library_answer_rate_baseline": 0.8889,
   "citation_exactness": 1.0,
   "abstention_accuracy": 1.0,
-  "false_abstentions_on_answerable": 1,
+  "false_abstentions_on_answerable": 0,
   "jurisdiction_leakage": 0,
-  "latency_ms_p50": 0.93,
-  "latency_ms_p95": 1.49
+  "latency_ms_p50": 0.87,
+  "latency_ms_p95": 1.48
  },
  "failures": [
   {
@@ -34,18 +34,6 @@
    "leak": 0,
    "ok": false,
    "baseline_ok": false
-  },
-  {
-   "id": "L09",
-   "set": "L",
-   "abstain": true,
-   "status": null,
-   "cited": [],
-   "baseline_top": "us-fda-import-alert-66-41#0004",
-   "quotes_exact": true,
-   "leak": 0,
-   "ok": false,
-   "baseline_ok": true
   }
  ],
  "rows": [
@@ -449,18 +437,6 @@
    "baseline_ok": true
   },
   {
-   "id": "L09",
-   "set": "L",
-   "abstain": true,
-   "status": null,
-   "cited": [],
-   "baseline_top": "us-fda-import-alert-66-41#0004",
-   "quotes_exact": true,
-   "leak": 0,
-   "ok": false,
-   "baseline_ok": true
-  },
-  {
    "id": "L10",
    "set": "L",
    "abstain": false,
@@ -713,6 +689,17 @@
    "status": null,
    "cited": [],
    "baseline_top": "in-bd-abs-regulations-2025#0004",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "D10",
+   "set": "D",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": "us-fda-import-alert-66-41#0004",
    "quotes_exact": true,
    "leak": 0,
    "ok": true

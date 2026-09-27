@@ -173,13 +173,6 @@
   as_of: '2026-09-01'
   expect:
     doc: us-fda-import-alert-66-41
-- id: L09
-  set: L
-  question: import alert Ayurvedic products heavy metals
-  jurisdiction: US
-  as_of: '2026-09-01'
-  expect:
-    doc: us-fda-import-alert-66-41
 - id: L10
   set: L
   question: treaty on intellectual property genetic resources and associated traditional knowledge
@@ -332,5 +325,17 @@
   question: What was the status of Rule 170 in 2010?
   jurisdiction: IN
   as_of: '2010-06-01'
+  expect:
+    abstain: true
+# D10 was L09 until run 04 (D-014). Relabelled on corpus evidence, not by feel: the only US
+# source in The Library (FDA Import Alert 66-41) never contains "heavy" or "metal" (the one
+# "metal" chunk is FSSAI, IN). Answering would cite passages that do not support the premise
+# of the question, so abstention is the correct behaviour until a heavy-metals source is added
+# to The Library — then move it back to set L with that document as the expectation.
+- id: D10
+  set: D
+  question: import alert Ayurvedic products heavy metals
+  jurisdiction: US
+  as_of: '2026-09-01'
   expect:
     abstain: true

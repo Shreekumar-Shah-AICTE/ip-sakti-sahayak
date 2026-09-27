@@ -14,7 +14,10 @@ from dataclasses import asdict, dataclass, field
 from api import ledger
 from api.retriever import Index, default_index, normalize_jurisdiction, tokenize
 
-MIN_COVERAGE = 0.6  # share of query terms the best chunk must contain
+# Share of query terms a chunk must contain. Measured, not guessed (run 04 sweep on
+# eval/sets/dev.yaml, DECISIONS D-013): 0.55-0.60 is the only band that holds abstention
+# accuracy at 1.0; at <=0.50 "GST rate on Ayurvedic cosmetics" (D02) gets answered.
+MIN_COVERAGE = 0.6
 DISCLAIMER = "Guidance with sources, not legal advice. Confirm with a qualified professional."
 
 
