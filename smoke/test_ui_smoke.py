@@ -348,3 +348,60 @@ def test_synthesis_card_and_escalation_meet_wcag_aa_contrast(replay_url, base_ur
         for el in answer.get_by_test_id("abstain").locator("p").all():
             assert _contrast(el) >= 4.5, el.inner_text()[:60]
         browser.close()
+
+
+# The demo, as a test (M12): the chips ask the scripted questions, the timeline strip marks the
+# segment the as-of date falls in, and the static-RAG card shows what is missing without it.
+def test_demo_chips_walk_rule_170_through_every_ledger_segment(base_url):
+    expected = [
+        ("2024-06-30", "In force"),
+        ("2024-07-02", "Omitted"),
+        ("2024-08-28", "In force (stayed)"),
+        ("2025-08-12", "Omitted (stay vacated)"),
+    ]
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = browser.new_page()
+        page.goto(base_url)
+        page.get_by_test_id("demo-question").first.click()  # the diabetes advertisement
+        answer = page.get_by_test_id("answer")
+        expect(answer.get_by_test_id("status-line")).to_be_visible()
+        for date, short in expected:
+            page.get_by_test_id("demo-date").filter(has_text=date).click()
+            expect(answer.get_by_test_id("timeline-active")).to_contain_text(short)
+            expect(answer.get_by_test_id("timeline-active")).to_contain_text(date[:4])
+            # The DMR Act overlay applies whatever the rule's status is, so it is on every date.
+            expect(answer).to_contain_text("applies whatever the rule’s status")
+            expect(answer).to_contain_text("Diabetes")
+        browser.close()
+
+
+def test_compare_toggle_shows_a_static_rag_card_with_no_date(base_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = browser.new_page()
+        page.goto(base_url)
+        page.get_by_test_id("demo-date").filter(has_text="2024-06-30").click()
+        page.get_by_test_id("demo-question").filter(has_text="Rule 170 status").click()
+        status = page.get_by_test_id("answer").get_by_test_id("status-line")
+        expect(status).to_contain_text("In force")
+        expect(page.get_by_test_id("baseline")).to_have_count(0)
+        page.get_by_test_id("compare").check()
+        baseline = page.get_by_test_id("baseline")
+        expect(baseline).to_contain_text("no as-of date, no Status Ledger")
+        expect(baseline).not_to_contain_text("Status as of")
+        browser.close()
+
+
+def test_hindi_advertisement_question_reaches_the_ledger(base_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = browser.new_page()
+        page.goto(base_url)
+        page.get_by_test_id("language").select_option("hi")
+        page.get_by_test_id("demo-date").filter(has_text="2024-08-28").click()
+        page.get_by_test_id("demo-question").filter(has_text="हिन्दी").click()
+        answer = page.get_by_test_id("answer")
+        expect(answer.get_by_test_id("status-line")).to_contain_text("न्यायालय में विचाराधीन")
+        expect(answer.get_by_test_id("timeline-active")).to_be_visible()
+        browser.close()

@@ -1,7 +1,7 @@
 import { type FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { AbsPanel } from "./AbsPanel";
 import { PassportPanel } from "./PassportPanel";
-import { type Lang, STATUS_LABELS, STRINGS } from "./i18n";
+import { DEMO_DATES, DEMO_QUESTIONS, type Lang, STATUS_LABELS, STATUS_SHORT, STRINGS } from "./i18n";
 
 // The Two Switches live above the fold (S6 rule 1) and are sent with every question.
 const JURISDICTIONS = ["IN", "US", "EU", "WIPO-track"] as const;
@@ -13,8 +13,10 @@ type Quote = {
   section: string;
   source_url: string;
   retrieved_on: string;
-  role: "status_evidence" | "retrieved";
+  role: "status_evidence" | "retrieved" | "overlay";
 };
+
+type Segment = { from: string; to: string | null; status: string; sub_judice: boolean };
 
 type Status = {
   instrument: string;
@@ -25,7 +27,20 @@ type Status = {
   last_verified?: string | null;
   abstain: boolean;
   reason: string;
+  segment_from?: string | null;
+  segment_to?: string | null;
+  timeline?: Segment[];
 };
+
+type BaselineQuote = {
+  text: string;
+  chunk_id: string;
+  doc_title: string;
+  section: string;
+  source_url: string;
+};
+
+type Baseline = { kind: string; uses_as_of: boolean; quotes: BaselineQuote[] };
 
 type Synthesis = {
   provider: string;
@@ -88,6 +103,72 @@ function SynthesisCard({ s, t, testId }: { s: Synthesis; t: Record<string, strin
   );
 }
 
+const ROLE_KEY: Record<Quote["role"], string> = {
+  status_evidence: "statusEvidence",
+  overlay: "overlay",
+  retrieved: "retrieved",
+};
+
+// The Status Ledger, drawn (S6 rule 2): every segment the instrument has had, with the
+// segment covering the as-of date highlighted. It makes "as of a date" visible at a glance.
+function TimelineStrip({ st, t }: { st: Status; t: Record<string, string> }) {
+  const segs = st.timeline ?? [];
+  if (segs.length < 2) return null;
+  return (
+    <div data-testid="timeline" className="mt-2">
+      <p className="text-xs font-semibold text-stone-500">{t.timeline}</p>
+      <ol className="mt-1 flex flex-wrap gap-1">
+        {segs.map((sg) => {
+          const active = sg.from === st.segment_from;
+          return (
+            <li
+              key={sg.from}
+              data-testid={active ? "timeline-active" : "timeline-segment"}
+              aria-current={active ? "true" : undefined}
+              className={`rounded border px-2 py-1 text-xs ${
+                active
+                  ? "border-amber-500 bg-amber-100 font-semibold text-amber-900"
+                  : "border-stone-200 bg-white text-stone-600"
+              }`}
+            >
+              <span className="block">
+                {sg.from} → {sg.to ?? "…"}
+              </span>
+              <span>{STATUS_SHORT[sg.status] ?? sg.status}</span>
+              {active && <span className="sr-only"> ({t.timelineNow})</span>}
+            </li>
+          );
+        })}
+      </ol>
+    </div>
+  );
+}
+
+// The static-RAG card (BENCH_SPEC §3): the same corpus without the as-of machinery, shown
+// next to the real answer so the difference is the demo's argument, not a claim.
+function BaselineCard({ b, t }: { b: Baseline; t: Record<string, string> }) {
+  return (
+    <article data-testid="baseline" className="rounded border border-dashed border-stone-300 bg-stone-100 p-4">
+      <h2 className="text-sm font-semibold">{t.baselineTitle}</h2>
+      <p className="mt-1 text-xs text-stone-600">{t.baselineNote}</p>
+      {b.quotes.length === 0 ? (
+        <p className="mt-2 text-sm">{t.baselineEmpty}</p>
+      ) : (
+        <ol className="mt-2 space-y-3">
+          {b.quotes.map((q) => (
+            <li key={q.chunk_id} className="text-sm">
+              <blockquote className="border-l-4 border-stone-300 pl-3 italic">“{q.text}”</blockquote>
+              <p className="mt-1 text-xs text-stone-600">
+                {q.doc_title} — {q.section} · <code>{q.chunk_id}</code>
+              </p>
+            </li>
+          ))}
+        </ol>
+      )}
+    </article>
+  );
+}
+
 function AnswerCard({ a, t, testId }: { a: Answer; t: Record<string, string>; testId: string }) {
   return (
     <article data-testid={testId} className="rounded border border-stone-200 bg-white p-4">
@@ -103,6 +184,7 @@ function AnswerCard({ a, t, testId }: { a: Answer; t: Record<string, string>; te
           {a.status.sub_judice && <span> ({t.subJudice})</span>}
           <span className="sr-only"> [{a.status.status}]</span>
           <p className="mt-1 font-normal">{a.status.summary}</p>
+          <TimelineStrip st={a.status} t={t} />
           {a.status.stale && (
             <p data-testid="stale" className="mt-1 font-normal text-red-800">
               {t.stale.replace("{date}", a.status.last_verified ?? "")}
@@ -127,7 +209,7 @@ function AnswerCard({ a, t, testId }: { a: Answer; t: Record<string, string>; te
                 <blockquote className="border-l-4 border-stone-300 pl-3 italic">“{q.text}”</blockquote>
                 <p className="mt-1 text-xs text-stone-600">
                   {q.doc_title} — {q.section} ·{" "}
-                  {q.role === "status_evidence" ? t.statusEvidence : t.retrieved} ·{" "}
+                  {t[ROLE_KEY[q.role]] ?? q.role} ·{" "}
                   <a className="underline" href={q.source_url} target="_blank" rel="noreferrer">
                     {t.openSource}
                   </a>{" "}
@@ -219,6 +301,8 @@ export default function App() {
   const [busy, setBusy] = useState(false);
   const [warming, setWarming] = useState(false);
   const [health, setHealth] = useState<string>("checking…");
+  const [compare, setCompare] = useState(false);
+  const [baseline, setBaseline] = useState<Baseline | null>(null);
   const currentRef = useRef<Answer | null>(null);
   const t = STRINGS[lang];
 
@@ -258,6 +342,26 @@ export default function App() {
       setBusy(false);
     }
   }, []);
+
+  // The baseline is fetched only while the comparison is on, and only for the asked question.
+  useEffect(() => {
+    if (!compare || !asked) {
+      setBaseline(null);
+      return;
+    }
+    let live = true;
+    void fetch("/baseline", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ question: asked, jurisdiction }),
+    })
+      .then((r) => r.json())
+      .then((b: Baseline) => live && setBaseline(b))
+      .catch(() => live && setBaseline(null));
+    return () => {
+      live = false;
+    };
+  }, [compare, asked, jurisdiction]);
 
   // Changing a switch re-answers the last question.
   useEffect(() => {
@@ -338,10 +442,56 @@ export default function App() {
             {warming ? t.warming : busy ? t.asking : t.ask}
           </button>
         </form>
+        <div className="mt-3 flex flex-wrap items-center gap-2 text-xs" data-testid="demo-bar">
+          <span className="font-semibold uppercase text-stone-500">{t.demo}</span>
+          {DEMO_QUESTIONS.map((d) => (
+            <button
+              key={d.q}
+              type="button"
+              data-testid="demo-question"
+              onClick={() => {
+                setQuestion(d.q);
+                setAsked(d.q);
+              }}
+              className="rounded-full border border-stone-300 bg-white px-3 py-1 hover:bg-stone-100"
+            >
+              {d.label}
+            </button>
+          ))}
+          <span className="ml-2 font-semibold uppercase text-stone-500">{t.demoDates}</span>
+          {DEMO_DATES.map((d) => (
+            <button
+              key={d}
+              type="button"
+              data-testid="demo-date"
+              aria-pressed={asOf === d}
+              onClick={() => setAsOf(d)}
+              className={`rounded-full border px-3 py-1 ${
+                asOf === d ? "border-amber-500 bg-amber-100 font-semibold" : "border-stone-300 bg-white hover:bg-stone-100"
+              }`}
+            >
+              {d}
+            </button>
+          ))}
+          <label className="ml-2 flex items-center gap-1">
+            <input
+              type="checkbox"
+              data-testid="compare"
+              checked={compare}
+              onChange={(e) => setCompare(e.target.checked)}
+            />
+            {t.compare}
+          </label>
+        </div>
         <div className="mt-6 grid gap-4 md:grid-cols-2" aria-live="polite" aria-busy={busy}>
           {current && (
             <div>
               <AnswerCard a={current} t={t} testId="answer" />
+            </div>
+          )}
+          {compare && baseline && (
+            <div>
+              <BaselineCard b={baseline} t={t} />
             </div>
           )}
           {previous && (

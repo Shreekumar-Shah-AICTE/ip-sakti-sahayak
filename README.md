@@ -38,6 +38,11 @@ curl localhost:8000/health
 No API keys are needed. Optional adapters read keys from a git-ignored `.env`
 (see `.env.example`).
 
+For the guided walkthrough — one advertising question stepped across the four dates on which
+Rule 170's status changed, next to a static-RAG baseline on the same corpus — see
+[`docs/demo-script.md`](docs/demo-script.md). It runs keyless and offline, and
+`tests/test_demo_script.py` asserts every outcome it claims.
+
 ## 4. Develop
 
 ```sh

@@ -16,10 +16,11 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from api import ledger
-from api.answer import answer
+from api.answer import answer, best_span
+from api.baseline import retrieve as static_retrieve
 from api.passport import abs as abs_calc
 from api.passport import categories as passport_cat
-from api.retriever import JURISDICTIONS, default_index
+from api.retriever import JURISDICTIONS, default_index, tokenize
 from api.synth import synthesize
 
 VERSION = "0.0.1"
@@ -96,6 +97,23 @@ def ask(req: AskRequest):
     # Optional LLM layer (M7): organises the cited quotes; never replaces them.
     out["synthesis"] = synthesize(out, req.question)
     return out
+
+
+class BaselineRequest(BaseModel):
+    question: str = Field(min_length=3, max_length=1000)
+    jurisdiction: str = "IN"
+
+
+@app.post("/baseline")
+def baseline(req: BaselineRequest) -> dict:
+    """The static-RAG baseline for the side-by-side demo: no as-of date, no ledger."""
+    if req.jurisdiction not in JURISDICTIONS:
+        raise HTTPException(422, f"jurisdiction must be one of {sorted(JURISDICTIONS)}")
+    terms = list(dict.fromkeys(tokenize(req.question)))
+    return {"kind": "static_rag", "uses_as_of": False, "quotes": [
+        {"text": best_span(c["text"], terms), "chunk_id": c["chunk_id"],
+         "doc_title": c["doc_title"], "section": c["section"], "source_url": c["source_url"]}
+        for c in static_retrieve(req.question, req.jurisdiction)]}
 
 
 @app.get("/ledger/{instrument}")

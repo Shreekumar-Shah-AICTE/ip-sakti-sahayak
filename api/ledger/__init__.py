@@ -60,6 +60,9 @@ class Entry:
     last_verified: dt.date
     steward: str
     timeline: tuple[Segment, ...]
+    # Topic routing (run 12): every group must be matched by at least one question token
+    # that starts with one of the group's stems, e.g. "advertise" + "classical formulation".
+    topics: tuple[tuple[str, ...], ...] = ()
 
 
 @dataclass(frozen=True)
@@ -164,6 +167,7 @@ def parse_entry(data: dict, chunks: dict[str, dict], where: str = "entry") -> En
         last_verified=_date(data["last_verified"], where),
         steward=str(data.get("steward", "")),
         timeline=tuple(segments),
+        topics=tuple(tuple(str(w).lower() for w in g) for g in data.get("topics", [])),
     )
 
 

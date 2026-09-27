@@ -14,6 +14,12 @@ instrument: "Drugs Rules, 1945 — Rule 170"
 instrument_id: in-drugs-rules-1945-rule-170
 jurisdiction: IN
 aliases: ["Rule 170", "rule 170", "ASU advertisement rule", "Drugs and Cosmetics Rules Rule 170"]
+# A question about advertising an ASU drug is a Rule 170 question even when it does not name
+# the rule (the PITCH demo question). Stems are prefix-matched on question tokens (en/hi/gu).
+topics:
+  - [advertis, advert, promot, विज्ञापन, प्रचार, જાહેરાત, પ્રચાર]
+  - [ayurved, siddha, unani, asu, ayush, classical, formulation, medicine, drug, herbal, remed,
+     आयुर्वेद, औषध, दवा, सिद्ध, यूनानी, આયુર્વેદ, ઔષધ, દવા, સિદ્ધ, યુનાની]
 last_verified: "2026-09-27"
 steward: "TBD"
 timeline:

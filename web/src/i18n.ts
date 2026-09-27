@@ -49,6 +49,15 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     passportAsOf: "as of",
     passportCovered: "text held from",
     passportGaps: "Not covered by The Library",
+    overlay: "applies whatever the rule’s status",
+    timeline: "Status timeline",
+    timelineNow: "selected date",
+    demo: "Demo",
+    demoDates: "Key dates",
+    compare: "Compare with static RAG",
+    baselineTitle: "Static RAG (no as-of date, no Status Ledger)",
+    baselineNote: "Same corpus, same search. It cannot tell you which date you are asking about, and it never abstains.",
+    baselineEmpty: "No passage matched.",
   },
   hi: {
     synthLabel: "नीचे दिए उद्धरणों से AI द्वारा व्यवस्थित — उनसे मिलान करें",
@@ -96,6 +105,15 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     passportAsOf: "तिथि",
     passportCovered: "पाठ उपलब्ध",
     passportGaps: "लाइब्रेरी में शामिल नहीं",
+    overlay: "नियम की स्थिति जो भी हो, यह लागू होता है",
+    timeline: "स्थिति की समय-रेखा",
+    timelineNow: "चुनी गई तिथि",
+    demo: "डेमो",
+    demoDates: "मुख्य तिथियाँ",
+    compare: "साधारण RAG से तुलना",
+    baselineTitle: "साधारण RAG (न तिथि, न स्टेटस लेजर)",
+    baselineNote: "वही संग्रह, वही खोज। यह नहीं बता सकता कि आप किस तिथि के बारे में पूंछ रहे हैं, और यह कभी उत्तर से नहीं बचता।",
+    baselineEmpty: "कोई अंश नहीं मिला।",
   },
   gu: {
     synthLabel: "નીચેનાં અવતરણોમાંથી AI દ્વારા ગોઠવેલું — તેમની સાથે ચકાસો",
@@ -143,6 +161,15 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     passportAsOf: "તારીખ",
     passportCovered: "લખાણ ઉપલબ્ધ",
     passportGaps: "લાઇબ્રેરીમાં સમાવેલ નથી",
+    overlay: "નિયમની સ્થિતિ જે હોય તે, આ લાગુ પડે છે",
+    timeline: "સ્થિતિની સમયેખા",
+    timelineNow: "પસંદ કરેલ તારીખ",
+    demo: "ડેમો",
+    demoDates: "મુખ્ય તારીખો",
+    compare: "સાદા RAG સાથે સરખામણી",
+    baselineTitle: "સાદા RAG (તારીખ નહિં, સ્ટેટસ લેજર નહિં)",
+    baselineNote: "એજ સંગ્રહ, એજ શોધ. તે કહી શકતું નથી કે તમે ક્યા તારીખ વિષે પૂછો છો, અને તે કદી જવાબ ટાળતું નથી.",
+    baselineEmpty: "કોઈ અંશ મળ્યો નહિં.",
   },
 };
 
@@ -153,3 +180,28 @@ export const STATUS_LABELS: Record<string, string> = {
   in_force_stayed_omission: "In force — omission stayed by the Supreme Court",
   omitted_stay_vacated: "Omitted — Supreme Court stay vacated",
 };
+
+// Short labels for the timeline strip, where the full sentence does not fit.
+export const STATUS_SHORT: Record<string, string> = {
+  in_force: "In force",
+  omitted: "Omitted",
+  in_force_stayed_omission: "In force (stayed)",
+  omitted_stay_vacated: "Omitted (stay vacated)",
+};
+
+// The demo script's key dates for Rule 170 (PITCH_DEFENCE §3), one per ledger segment.
+export const DEMO_DATES = ["2024-06-30", "2024-07-02", "2024-08-28", "2025-08-12"] as const;
+
+// Demo questions: the headline advertising question, a deliberate abstention, and Hindi.
+export const DEMO_QUESTIONS: { label: string; q: string }[] = [
+  {
+    label: "Diabetes advertisement",
+    q: "Can I advertise this classical formulation as a treatment for diabetes?",
+  },
+  { label: "Rule 170 status", q: "Is Rule 170 in force?" },
+  { label: "Out of scope (abstains)", q: "What is the GST rate on ayurvedic churna?" },
+  {
+    label: "हिन्दी",
+    q: "क्या मैं इस आयुर्वेदिक दवा का मधुमेह के इलाज के रूप में विज्ञापन कर सकता हूँ?",
+  },
+];

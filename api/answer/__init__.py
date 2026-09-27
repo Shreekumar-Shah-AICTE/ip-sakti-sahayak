@@ -33,7 +33,7 @@ class Quote:
     section: str
     source_url: str
     retrieved_on: str
-    role: str  # "status_evidence" | "retrieved"
+    role: str  # "status_evidence" | "overlay" | "retrieved"
 
 
 @dataclass
@@ -70,13 +70,53 @@ def best_span(text: str, terms: list[str], max_words: int = 60) -> str:
     return " ".join(words[:max_words]) if len(words) > max_words else best
 
 
-def _find_instrument(question: str) -> ledger.Entry | None:
+def _find_instrument(question: str, extra: str = "") -> ledger.Entry | None:
+    """The ledger entry a question is about: by name first, then by topic (run 12)."""
     q = question.lower()
-    for entry in ledger.load_all():
+    entries = ledger.load_all()
+    for entry in entries:
         for name in (entry.instrument, *entry.aliases):
             if re.search(r"(?<![a-z0-9])" + re.escape(name.lower()) + r"(?![a-z0-9])", q):
                 return entry
+    words = re.findall(r"[\w\u0900-\u0aff]+", f"{q} {extra.lower()}")
+    for entry in entries:
+        if entry.topics and all(any(w.startswith(stem) for w in words for stem in group)
+                                for group in entry.topics):
+            return entry
     return None
+
+
+# The DMR Act overlay (run 12; PITCH_DEFENCE §3 closing beat). An advertisement question that
+# names a Schedule disease also gets the DMR Act s.3(d) prohibition and the Schedule entry --
+# whatever Rule 170's status. Quotes are verbatim and verified against the chunk at use; a
+# quote not found in its chunk is dropped, never paraphrased (KERNEL 7.3).
+DMR_SECTION = ("in-dmr-act-1954#0008", "the diagnosis, cure, mitigation, treatment or prevention "
+               "of any disease, disorder or condition specified in the Schedule")
+DMR_SCHEDULE = "in-dmr-act-1954#0026"
+DMR_DISEASES = {  # question stem (en/hi/gu) -> verbatim Schedule entry
+    "diabet": "9. Diabetes.", "मधुमेह": "9. Diabetes.", "डायबिटीज": "9. Diabetes.",
+    "ડાયાબિટીસ": "9. Diabetes.", "મધુમેહ": "9. Diabetes.",
+    "cancer": "6. Cancer", "कैंसर": "6. Cancer", "કેન્સર": "6. Cancer",
+    "cataract": "7. Cataract.", "blind": "3. Blindness", "deaf": "8. Deafness.",
+    "appendic": "1. Appendicitis.", "arterioscler": "2. Arteriosclerosis.",
+    "dropsy": "16. Dropsy.",
+}
+
+
+def dmr_overlay(question: str, extra: str = "") -> list[Quote]:
+    words = re.findall(r"[\w\u0900-\u0aff]+", f"{question} {extra}".lower())
+    entries = list(dict.fromkeys(v for stem, v in DMR_DISEASES.items()
+                                 if any(w.startswith(stem) for w in words)))
+    if not entries:
+        return []
+    chunks = ledger.load_chunks()
+    out = []
+    for cid, text in [DMR_SECTION] + [(DMR_SCHEDULE, e) for e in entries]:
+        c = chunks.get(cid)
+        if c and text in c["text"]:
+            out.append(Quote(text, cid, c["doc_title"], c["section"], c["source_url"],
+                             c["retrieved_on"], "overlay"))
+    return out if len(out) > 1 else []  # the prohibition and its Schedule entry, or nothing
 
 
 def _passes(hit) -> bool:
@@ -105,7 +145,7 @@ def answer(
         out.translation = {"lang": tr.lang, "english": tr.english, "unknown": tr.unknown,
                            "machine": tr.machine}
 
-    entry = _find_instrument(question)
+    entry = _find_instrument(question, tr.english if tr else "")
     superseded: set[str] = set()
     if entry is not None and entry.jurisdiction == code:
         res = ledger.resolve_entry(entry, day)
@@ -121,6 +161,10 @@ def answer(
             "last_verified": res.last_verified and res.last_verified.isoformat(),
             "abstain": res.abstain,
             "reason": res.reason,
+            # the whole dated timeline, so the UI can show *which* segment this date falls in
+            "timeline": [{"from": seg.start.isoformat(), "to": seg.end and seg.end.isoformat(),
+                          "status": seg.status, "sub_judice": seg.sub_judice}
+                         for seg in entry.timeline],
         }
         chunks = ledger.load_chunks()
         for ev in res.evidence:
@@ -137,6 +181,8 @@ def answer(
             out.reason = res.reason
             return out  # never answer a status question the ledger cannot date
 
+    if entry is not None and entry.jurisdiction == code:
+        out.quotes += dmr_overlay(question, tr.english if tr else "")
     out.retrieval = idx.mode
     hits = [h for h in idx.retrieve(query, code, day, k=k, terms=terms) if _passes(h)]
     seen = {q.chunk_id for q in out.quotes}

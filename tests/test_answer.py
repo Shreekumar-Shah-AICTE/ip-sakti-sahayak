@@ -97,3 +97,44 @@ def test_ledger_endpoint(as_of, status):
 def test_superseded_status_evidence_is_not_resurfaced():
     a = answer("Is Rule 170 in force?", "IN", "2025-08-12")
     assert f"{SC}#0019" not in {q.chunk_id for q in a.quotes}  # the 2024 stay quote
+
+
+# ---- run 12: topic routing to The Status Ledger + the DMR Act overlay (PITCH_DEFENCE §3) ----
+
+DEMO_Q = "Can I advertise this classical formulation as a treatment for diabetes?"
+
+
+@pytest.mark.parametrize("day,status,evidence", [
+    ("2024-06-30", "in_force", "G.S.R. 1230(E)"),
+    ("2024-07-02", "omitted", "G.S.R 360(E)"),
+    ("2024-08-28", "in_force_stayed_omission", "shall remain on the statute book"),
+    ("2025-08-12", "omitted_stay_vacated", "stands vacated"),
+])
+def test_advertising_question_routes_to_rule_170_without_naming_it(day, status, evidence):
+    from api.answer import answer as ans
+
+    a = ans(DEMO_Q, "IN", day).to_dict()
+    assert not a["abstain"] and a["status"]["status"] == status
+    assert a["quotes"][0]["role"] == "status_evidence"
+    assert any(evidence in q["text"] for q in a["quotes"] if q["role"] == "status_evidence")
+    overlay = [q for q in a["quotes"] if q["role"] == "overlay"]
+    assert [q["text"] for q in overlay][-1] == "9. Diabetes."  # same overlay at every date
+    assert all(q["chunk_id"].startswith("in-dmr-act-1954#") for q in overlay)
+
+
+def test_dmr_overlay_needs_a_schedule_disease_and_verbatim_text():
+    from api.answer import dmr_overlay
+    from api.ledger import load_chunks
+
+    assert dmr_overlay("Can I advertise a classical formulation for joint pain?") == []
+    chunks = load_chunks()
+    for q in dmr_overlay("advertise for cancer and diabetes"):
+        assert q.text in chunks[q.chunk_id]["text"]
+
+
+def test_topic_routing_does_not_capture_unrelated_questions():
+    from api.answer import _find_instrument
+
+    assert _find_instrument("Can I patent a classical formulation?") is None
+    assert _find_instrument("What is the GST rate on Ayurvedic medicines?") is None
+    assert _find_instrument("क्या मैं मधुमेह के लिए आयुर्वेदिक दवा का विज्ञापन कर सकता हूँ?")
