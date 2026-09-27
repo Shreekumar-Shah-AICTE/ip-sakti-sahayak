@@ -124,6 +124,8 @@ def run_set(path: Path) -> dict:
         "date": dt.date.today().isoformat(),
         "machine": f"{platform.system()} {platform.machine()} py{platform.python_version()}",
         "mode": "keyless",
+        "retrieval": default_index().mode,
+        "dense": default_index().dense.reason,
         "metrics": metrics,
         "failures": [r for r in rows if not r["ok"]],
         "rows": rows,
@@ -151,17 +153,20 @@ def main() -> int:
     ap.add_argument("--write", action="store_true", help="write eval/results/<set>-<hash>.json")
     args = ap.parse_args()
     failed = []
+    default_index().dense.load()  # synchronous here: the eval must know its mode up front
     for path in sorted(SETS.glob("*.yaml")):
         res = run_set(path)
         m = res["metrics"]
-        print(f"The Proving Ground [{res['set']}] n={m['n']} corpus={res['corpus_version'][:19]}")
+        print(f"The Proving Ground [{res['set']}] n={m['n']} corpus={res['corpus_version'][:19]} "
+              f"retrieval={res['retrieval']} ({res['dense']})")
         for k, v in m.items():
             if k != "n":
                 print(f"  {k}: {v}")
         print(f"  failures: {[r['id'] for r in res['failures']]}")
         if args.write:
             RESULTS.mkdir(exist_ok=True)
-            out = RESULTS / f"{res['set']}-{res['corpus_version'].split(':')[-1][:12]}.json"
+            tag = "" if res["retrieval"] == "bm25" else f"-{res['retrieval']}"
+            out = RESULTS / f"{res['set']}-{res['corpus_version'].split(':')[-1][:12]}{tag}.json"
             out.write_text(json.dumps(res, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
         failed += [f"{res['set']}: {g}" for g in check_gates(m)]
     for f in failed:

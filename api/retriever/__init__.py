@@ -31,6 +31,7 @@ STOPWORDS = set(
     over she than too up very may must per""".split()
 )
 K1, B = 1.5, 0.75
+RRF_K = 60  # reciprocal-rank-fusion constant (Cormack et al. 2009); not tuned
 
 
 def tokenize(text: str) -> list[str]:
@@ -57,6 +58,7 @@ class Hit:
     chunk: dict
     score: float
     coverage: float  # share of distinct query terms present in the chunk
+    cosine: float | None = None  # dense similarity, when the dense half contributed
 
 
 class Index:
@@ -71,6 +73,7 @@ class Index:
         n = len(chunks)
         self.idf = {t: math.log(1 + (n - d + 0.5) / (d + 0.5)) for t, d in df.items()}
         self.corpus_version = chunks[0]["corpus_version"] if chunks else ""
+        self._dense = None  # created on first use of .dense; stays None in pure-BM25 runs
 
     def allowed(self, jurisdiction: str, as_of: dt.date) -> list[int]:
         """Chunk ids that pass the Two Switches. Unstated dates are not excluded."""
@@ -87,12 +90,9 @@ class Index:
             ids.append(i)
         return ids
 
-    def search(self, query: str, jurisdiction: str, as_of: dt.date, k: int = 5) -> list[Hit]:
-        terms = list(dict.fromkeys(tokenize(query)))
-        if not terms:
-            return []
+    def _bm25(self, terms: list[str], ids: list[int]) -> list[Hit]:
         hits = []
-        for i in self.allowed(jurisdiction, as_of):  # filter BEFORE rank
+        for i in ids:
             tf, dl = self.tfs[i], self.lens[i]
             score, present = 0.0, 0
             for t in terms:
@@ -104,7 +104,54 @@ class Index:
             if score > 0:
                 hits.append(Hit(self.chunks[i], score, present / len(terms)))
         hits.sort(key=lambda h: h.score, reverse=True)
-        return hits[:k]
+        return hits
+
+    def _coverage(self, terms: list[str], i: int) -> float:
+        return sum(1 for t in terms if self.tfs[i].get(t)) / len(terms) if terms else 0.0
+
+    def search(self, query: str, jurisdiction: str, as_of: dt.date, k: int = 5) -> list[Hit]:
+        """BM25 only (the keyless path, and what the vanilla baseline mirrors)."""
+        terms = list(dict.fromkeys(tokenize(query)))
+        if not terms:
+            return []
+        return self._bm25(terms, self.allowed(jurisdiction, as_of))[:k]  # filter BEFORE rank
+
+    @property
+    def dense(self):
+        if self._dense is None:
+            from api.retriever.dense import Dense
+
+            self._dense = Dense(self.chunks)
+        return self._dense
+
+    @property
+    def mode(self) -> str:
+        return "hybrid" if self._dense is not None and self._dense.ready else "bm25"
+
+    def retrieve(self, query: str, jurisdiction: str, as_of: dt.date, k: int = 5) -> list[Hit]:
+        """Hybrid BM25 + dense fused by RRF when the dense index is ready, else BM25.
+
+        Both rankers see the same filtered id set, so fusion cannot reintroduce a chunk the
+        Two Switches excluded. Each fused hit keeps its lexical coverage and its cosine, so
+        The Answer Contract can gate on evidence rather than on an opaque fused score.
+        """
+        if self.mode != "hybrid":
+            return self.search(query, jurisdiction, as_of, k)
+        ids = self.allowed(jurisdiction, as_of)  # filter BEFORE rank
+        terms = list(dict.fromkeys(tokenize(query)))
+        lexical = self._bm25(terms, ids) if terms else []
+        dense = self._dense.rank(query, ids)
+        fused: dict[int, float] = {}
+        pos = {id(c): i for i, c in enumerate(self.chunks)}
+        for r, h in enumerate(lexical):
+            j = pos[id(h.chunk)]
+            fused[j] = fused.get(j, 0.0) + 1.0 / (RRF_K + r + 1)
+        cos = {}
+        for r, (j, s) in enumerate(dense):
+            cos[j] = s
+            fused[j] = fused.get(j, 0.0) + 1.0 / (RRF_K + r + 1)
+        order = sorted(fused, key=lambda j: fused[j], reverse=True)[:k]
+        return [Hit(self.chunks[j], fused[j], self._coverage(terms, j), cos.get(j)) for j in order]
 
 
 @lru_cache(maxsize=1)

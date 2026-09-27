@@ -5,8 +5,8 @@
  "date": "2026-09-27",
  "machine": "Linux x86_64 py3.13.14",
  "mode": "keyless",
- "retrieval": "bm25",
- "dense": "disabled by SAHAYAK_DENSE=0",
+ "retrieval": "hybrid",
+ "dense": "ready",
  "metrics": {
   "n": 47,
   "temporal_accuracy": 1.0,
@@ -17,8 +17,8 @@
   "abstention_accuracy": 1.0,
   "false_abstentions_on_answerable": 0,
   "jurisdiction_leakage": 0,
-  "latency_ms_p50": 0.92,
-  "latency_ms_p95": 1.54
+  "latency_ms_p50": 11.78,
+  "latency_ms_p95": 15.52
  },
  "failures": [
   {
@@ -28,7 +28,6 @@
    "status": null,
    "cited": [
     "in-drugs-rules-1945-compiled-2022#0084",
-    "in-drugs-rules-1945-compiled-2022#0083",
     "in-drugs-rules-1945-compiled-2022#0036"
    ],
    "baseline_top": "in-drugs-rules-1945-compiled-2022#0084",
@@ -45,10 +44,7 @@
    "abstain": false,
    "status": "in_force",
    "cited": [
-    "in-drugs-rules-1945-compiled-2022#0126",
-    "in-drugs-rules-1945-compiled-2022#0118",
-    "in-sansad-lsq-au1724#0001",
-    "in-drugs-rules-1945-compiled-2022#0041"
+    "in-drugs-rules-1945-compiled-2022#0126"
    ],
    "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0019",
    "quotes_exact": true,
@@ -62,10 +58,7 @@
    "abstain": false,
    "status": "in_force",
    "cited": [
-    "in-drugs-rules-1945-compiled-2022#0126",
-    "in-drugs-rules-1945-compiled-2022#0118",
-    "in-sansad-lsq-au1724#0001",
-    "in-sansad-lsq-au1724#0002"
+    "in-drugs-rules-1945-compiled-2022#0126"
    ],
    "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0012",
    "quotes_exact": true,
@@ -79,10 +72,7 @@
    "abstain": false,
    "status": "in_force",
    "cited": [
-    "in-drugs-rules-1945-compiled-2022#0126",
-    "in-drugs-rules-1945-compiled-2022#0118",
-    "in-sansad-lsq-au1724#0001",
-    "in-drugs-rules-1945-compiled-2022#0041"
+    "in-drugs-rules-1945-compiled-2022#0126"
    ],
    "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0019",
    "quotes_exact": true,
@@ -96,10 +86,7 @@
    "abstain": false,
    "status": "in_force",
    "cited": [
-    "in-drugs-rules-1945-compiled-2022#0126",
-    "in-drugs-rules-1945-compiled-2022#0118",
-    "in-sansad-lsq-au1724#0001",
-    "in-sansad-lsq-au1724#0002"
+    "in-drugs-rules-1945-compiled-2022#0126"
    ],
    "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0012",
    "quotes_exact": true,
@@ -114,10 +101,7 @@
    "status": "omitted",
    "cited": [
     "in-drugs-rules-1945-compiled-2024-09#0016",
-    "in-drugs-rules-1945-compiled-2024-09#0006",
-    "in-drugs-rules-1945-compiled-2022#0118",
-    "in-sansad-lsq-au1724#0001",
-    "in-drugs-rules-1945-compiled-2022#0041"
+    "in-drugs-rules-1945-compiled-2024-09#0006"
    ],
    "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0019",
    "quotes_exact": true,
@@ -132,10 +116,7 @@
    "status": "omitted",
    "cited": [
     "in-drugs-rules-1945-compiled-2024-09#0016",
-    "in-drugs-rules-1945-compiled-2024-09#0006",
-    "in-drugs-rules-1945-compiled-2022#0118",
-    "in-sansad-lsq-au1724#0001",
-    "in-sansad-lsq-au1724#0002"
+    "in-drugs-rules-1945-compiled-2024-09#0006"
    ],
    "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0012",
    "quotes_exact": true,
@@ -150,10 +131,7 @@
    "status": "omitted",
    "cited": [
     "in-drugs-rules-1945-compiled-2024-09#0016",
-    "in-drugs-rules-1945-compiled-2024-09#0006",
-    "in-drugs-rules-1945-compiled-2022#0118",
-    "in-sansad-lsq-au1724#0001",
-    "in-drugs-rules-1945-compiled-2022#0041"
+    "in-drugs-rules-1945-compiled-2024-09#0006"
    ],
    "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0019",
    "quotes_exact": true,
@@ -168,10 +146,7 @@
    "status": "omitted",
    "cited": [
     "in-drugs-rules-1945-compiled-2024-09#0016",
-    "in-drugs-rules-1945-compiled-2024-09#0006",
-    "in-drugs-rules-1945-compiled-2022#0118",
-    "in-sansad-lsq-au1724#0001",
-    "in-sansad-lsq-au1724#0002"
+    "in-drugs-rules-1945-compiled-2024-09#0006"
    ],
    "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0012",
    "quotes_exact": true,
@@ -185,10 +160,7 @@
    "abstain": false,
    "status": "in_force_stayed_omission",
    "cited": [
-    "in-sc-wpc-645-2022-order-2025-08-11#0019",
-    "in-drugs-rules-1945-compiled-2022#0118",
-    "in-sansad-lsq-au1724#0001",
-    "in-drugs-rules-1945-compiled-2022#0041"
+    "in-sc-wpc-645-2022-order-2025-08-11#0019"
    ],
    "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0019",
    "quotes_exact": true,
@@ -202,10 +174,7 @@
    "abstain": false,
    "status": "in_force_stayed_omission",
    "cited": [
-    "in-sc-wpc-645-2022-order-2025-08-11#0019",
-    "in-drugs-rules-1945-compiled-2022#0118",
-    "in-sansad-lsq-au1724#0001",
-    "in-sansad-lsq-au1724#0002"
+    "in-sc-wpc-645-2022-order-2025-08-11#0019"
    ],
    "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0012",
    "quotes_exact": true,
@@ -219,10 +188,7 @@
    "abstain": false,
    "status": "in_force_stayed_omission",
    "cited": [
-    "in-sc-wpc-645-2022-order-2025-08-11#0019",
-    "in-drugs-rules-1945-compiled-2022#0118",
-    "in-sansad-lsq-au1724#0001",
-    "in-drugs-rules-1945-compiled-2022#0041"
+    "in-sc-wpc-645-2022-order-2025-08-11#0019"
    ],
    "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0019",
    "quotes_exact": true,
@@ -236,10 +202,7 @@
    "abstain": false,
    "status": "in_force_stayed_omission",
    "cited": [
-    "in-sc-wpc-645-2022-order-2025-08-11#0019",
-    "in-drugs-rules-1945-compiled-2022#0118",
-    "in-sansad-lsq-au1724#0001",
-    "in-sansad-lsq-au1724#0002"
+    "in-sc-wpc-645-2022-order-2025-08-11#0019"
    ],
    "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0012",
    "quotes_exact": true,
@@ -254,8 +217,7 @@
    "status": "omitted_stay_vacated",
    "cited": [
     "in-sc-wpc-645-2022-order-2025-08-11#0036",
-    "in-sc-wpc-645-2022-order-2025-08-11#0012",
-    "in-sc-wpc-645-2022-order-2025-08-11#0038"
+    "in-sc-wpc-645-2022-order-2025-08-11#0035"
    ],
    "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0019",
    "quotes_exact": true,
@@ -270,9 +232,7 @@
    "status": "omitted_stay_vacated",
    "cited": [
     "in-sc-wpc-645-2022-order-2025-08-11#0036",
-    "in-sc-wpc-645-2022-order-2025-08-11#0012",
-    "in-sc-wpc-645-2022-order-2025-08-11#0038",
-    "in-pib-2148433#0000"
+    "in-sc-wpc-645-2022-order-2025-08-11#0012"
    ],
    "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0012",
    "quotes_exact": true,
@@ -287,8 +247,7 @@
    "status": "omitted_stay_vacated",
    "cited": [
     "in-sc-wpc-645-2022-order-2025-08-11#0036",
-    "in-sc-wpc-645-2022-order-2025-08-11#0012",
-    "in-sc-wpc-645-2022-order-2025-08-11#0038"
+    "in-sc-wpc-645-2022-order-2025-08-11#0035"
    ],
    "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0019",
    "quotes_exact": true,
@@ -303,9 +262,7 @@
    "status": "omitted_stay_vacated",
    "cited": [
     "in-sc-wpc-645-2022-order-2025-08-11#0036",
-    "in-sc-wpc-645-2022-order-2025-08-11#0012",
-    "in-sc-wpc-645-2022-order-2025-08-11#0038",
-    "in-pib-2148433#0000"
+    "in-sc-wpc-645-2022-order-2025-08-11#0012"
    ],
    "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0012",
    "quotes_exact": true,
@@ -319,9 +276,9 @@
    "abstain": false,
    "status": null,
    "cited": [
-    "in-ipindia-ayush-guidelines-2025#0003",
     "in-bd-amendment-act-2023#0004",
-    "in-bd-amendment-act-2023#0003"
+    "in-ipindia-ayush-guidelines-2025#0003",
+    "in-bd-abs-regulations-2025#0044"
    ],
    "baseline_top": "in-ipindia-ayush-guidelines-2025#0003",
    "quotes_exact": true,
@@ -335,9 +292,9 @@
    "abstain": false,
    "status": null,
    "cited": [
-    "in-bd-abs-regulations-2025#0007",
-    "in-bd-abs-regulations-2025#0013",
-    "in-bd-abs-regulations-2025#0040"
+    "in-bd-abs-regulations-2025#0008",
+    "in-bd-abs-regulations-2025#0040",
+    "in-bd-abs-regulations-2025#0007"
    ],
    "baseline_top": "in-bd-abs-regulations-2025#0007",
    "quotes_exact": true,
@@ -397,7 +354,6 @@
    "status": null,
    "cited": [
     "in-drugs-rules-1945-compiled-2022#0084",
-    "in-drugs-rules-1945-compiled-2022#0083",
     "in-drugs-rules-1945-compiled-2022#0036"
    ],
    "baseline_top": "in-drugs-rules-1945-compiled-2022#0084",
@@ -412,8 +368,8 @@
    "abstain": false,
    "status": null,
    "cited": [
-    "eu-directive-2004-24-ec#0005",
     "eu-directive-2004-24-ec#0010",
+    "eu-directive-2004-24-ec#0005",
     "eu-directive-2004-24-ec#0017"
    ],
    "baseline_top": "eu-directive-2004-24-ec#0005",
@@ -429,8 +385,7 @@
    "status": null,
    "cited": [
     "us-fda-import-alert-66-41#0000",
-    "us-fda-import-alert-66-41#0006",
-    "us-fda-import-alert-66-41#0005"
+    "us-fda-import-alert-66-41#0002"
    ],
    "baseline_top": "us-fda-import-alert-66-41#0000",
    "quotes_exact": true,
@@ -445,8 +400,8 @@
    "status": null,
    "cited": [
     "wipo-gratk-treaty-page#0004",
-    "wipo-gratk-treaty-page#0005",
-    "wipo-gratk-treaty-page#0000"
+    "wipo-gratk-treaty-page#0000",
+    "wipo-gratk-treaty-page#0005"
    ],
    "baseline_top": "wipo-gratk-treaty-page#0004",
    "quotes_exact": true,
@@ -471,8 +426,8 @@
    "abstain": false,
    "status": null,
    "cited": [
-    "eu-directive-2004-24-ec#0011",
     "eu-directive-2004-24-ec#0005",
+    "eu-directive-2004-24-ec#0010",
     "eu-directive-2004-24-ec#0007"
    ],
    "baseline_top": "eu-directive-2004-24-ec#0011",

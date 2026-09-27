@@ -17,7 +17,7 @@ from pydantic import BaseModel, Field
 from api import ledger
 from api.answer import answer
 from api.passport import abs as abs_calc
-from api.retriever import JURISDICTIONS
+from api.retriever import JURISDICTIONS, default_index
 
 VERSION = "0.0.1"
 ROOT = Path(__file__).resolve().parent.parent
@@ -35,6 +35,13 @@ OPTIONAL_ADAPTERS = {
 app = FastAPI(title="IP-SAKTI Sahayak", version=VERSION)
 
 
+@app.on_event("startup")
+def _warm_dense() -> None:
+    # Background thread: the server answers (BM25) immediately while the optional dense
+    # encoder loads; answers switch to hybrid once it is ready. Keyless either way.
+    default_index().dense.warm_up()
+
+
 def adapter_status() -> dict[str, bool]:
     """Which optional adapters are configured (True/False only, never the value)."""
     return {name: bool(os.environ.get(var)) for name, var in OPTIONAL_ADAPTERS.items()}
@@ -48,6 +55,7 @@ def health() -> dict:
         "version": VERSION,
         "mode": "keyless" if not any(adapters.values()) else "adapters",
         "adapters": adapters,
+        "retrieval": {"mode": default_index().mode, "dense": default_index().dense.reason},
     }
 
 

@@ -23,7 +23,7 @@ answers on both.
 | The Two Switches | Jurisdiction + as-of date, applied as hard filters | planned |
 | The Status Ledger | Dated legal-status timeline; every entry cites a gazette notification or court order | planned |
 | The Library | Full-text primary instruments with provenance and a corpus-version hash | planned |
-| The Retriever | Hybrid BM25 + dense retrieval, filters applied before ranking | planned |
+| The Retriever | BM25 + optional multilingual dense (MiniLM-L12, precomputed in `corpus/index/`), fused by RRF k=60; filters applied before ranking; falls back to BM25 when the dense index or model is absent | working |
 | The Answer Contract | Verbatim quotes, citations, status-as-of, abstention | planned |
 | The Passport Compiler | Per-product compliance passport + ABS benefit-share calculator | planned |
 | The Proving Ground | Benchmark vs a vanilla-RAG baseline | planned |

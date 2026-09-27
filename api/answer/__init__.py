@@ -18,6 +18,9 @@ from api.retriever import Index, default_index, normalize_jurisdiction, tokenize
 # eval/sets/dev.yaml, DECISIONS D-013): 0.55-0.60 is the only band that holds abstention
 # accuracy at 1.0; at <=0.50 "GST rate on Ayurvedic cosmetics" (D02) gets answered.
 MIN_COVERAGE = 0.6
+# Dense similarity that admits a hit *without* lexical coverage (hybrid mode only).
+# None = dense only re-ranks; it never lets a chunk past the gate on its own.
+MIN_COSINE: float | None = None
 DISCLAIMER = "Guidance with sources, not legal advice. Confirm with a qualified professional."
 
 
@@ -45,6 +48,7 @@ class Answer:
     status: dict | None = None
     quotes: list[Quote] = field(default_factory=list)
     disclaimer: str = DISCLAIMER
+    retrieval: str = "bm25"  # "bm25" (keyless core) | "hybrid" (BM25 + dense, RRF)
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -70,6 +74,12 @@ def _find_instrument(question: str) -> ledger.Entry | None:
             if re.search(r"(?<![a-z0-9])" + re.escape(name.lower()) + r"(?![a-z0-9])", q):
                 return entry
     return None
+
+
+def _passes(hit) -> bool:
+    if hit.coverage >= MIN_COVERAGE:
+        return True
+    return MIN_COSINE is not None and hit.cosine is not None and hit.cosine >= MIN_COSINE
 
 
 def answer(
@@ -117,7 +127,8 @@ def answer(
             out.reason = res.reason
             return out  # never answer a status question the ledger cannot date
 
-    hits = [h for h in idx.search(question, code, day, k=k) if h.coverage >= MIN_COVERAGE]
+    out.retrieval = idx.mode
+    hits = [h for h in idx.retrieve(question, code, day, k=k) if _passes(h)]
     seen = {q.chunk_id for q in out.quotes}
     for h in hits:
         c = h.chunk
