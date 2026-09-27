@@ -92,3 +92,8 @@ def test_ask_rejects_unknown_jurisdiction():
 def test_ledger_endpoint(as_of, status):
     body = client.get("/ledger/Rule 170", params={"as_of": as_of}).json()
     assert body["status"] == status and body["evidence"]
+
+
+def test_superseded_status_evidence_is_not_resurfaced():
+    a = answer("Is Rule 170 in force?", "IN", "2025-08-12")
+    assert f"{SC}#0019" not in {q.chunk_id for q in a.quotes}  # the 2024 stay quote

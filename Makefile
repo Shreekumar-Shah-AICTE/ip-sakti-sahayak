@@ -1,11 +1,13 @@
 PY ?= python3
-.PHONY: install check lint test eval web run corpus corpus-offline
+.PHONY: install check lint test eval web smoke run corpus corpus-offline
 
 install:
 	$(PY) -m pip install -q -r requirements-dev.txt
 	cd web && npm ci --silent
+	# Browser for the smoke test; skipped if a system Chromium is set via CHROMIUM_PATH.
+	[ -n "$$CHROMIUM_PATH" ] || $(PY) -m playwright install --with-deps chromium
 
-check: lint test eval web
+check: lint test eval web smoke
 
 lint:
 	$(PY) -m ruff check .
@@ -16,9 +18,13 @@ test:
 eval:
 	$(PY) eval/run_eval.py --gate
 
-# Type-check and build the web bundle (Playwright smoke test joins at M4).
+# Type-check and build the web bundle.
 web:
 	cd web && npm run --silent build
+
+# Playwright smoke test: real browser, real API, keyless (needs the web build).
+smoke:
+	$(PY) -m pytest -q smoke
 
 run:
 	./run.sh

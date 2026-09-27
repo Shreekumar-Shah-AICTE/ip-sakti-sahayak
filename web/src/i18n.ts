@@ -1,0 +1,83 @@
+// UI strings ship in the bundle (S6 rule 5): no network call is needed to render the UI.
+// Only interface labels are translated; legal quotes are always shown verbatim.
+export type Lang = "en" | "hi" | "gu";
+
+export const STRINGS: Record<Lang, Record<string, string>> = {
+  en: {
+    tagline: "Ayurveda IP and regulatory guidance, as of a date.",
+    jurisdiction: "Jurisdiction",
+    asOf: "As-of date",
+    language: "Language",
+    question: "Your question",
+    placeholder: "e.g. Is Rule 170 in force?",
+    ask: "Ask",
+    asking: "Checking the sources…",
+    statusAsOf: "Status as of",
+    subJudice: "sub judice",
+    stale: "The ledger was last verified on {date}; this may be out of date.",
+    sources: "Sources (verbatim)",
+    openSource: "Open source",
+    abstainTitle: "No sourced answer for this question",
+    abstainNext:
+      "Try another date or jurisdiction, rephrase with the instrument's name, or ask a registered patent agent or regulatory professional.",
+    previous: "Previous answer",
+    confidence: "Confidence",
+    disclaimer: "Guidance with sources, not legal advice.",
+    statusEvidence: "status evidence",
+    retrieved: "retrieved passage",
+  },
+  hi: {
+    tagline: "आयुर्वेद बौद्धिक संपदा और नियामक मार्गदर्शन — किसी तिथि के अनुसार।",
+    jurisdiction: "क्षेत्राधिकार",
+    asOf: "तिथि (के अनुसार)",
+    language: "भाषा",
+    question: "आपका प्रश्न",
+    placeholder: "जैसे: क्या Rule 170 लागू है?",
+    ask: "पूछें",
+    asking: "स्रोत जाँचे जा रहे हैं…",
+    statusAsOf: "स्थिति, दिनांक",
+    subJudice: "न्यायालय में विचाराधीन",
+    stale: "लेजर का अंतिम सत्यापन {date} को हुआ था; यह पुराना हो सकता है।",
+    sources: "स्रोत (मूल पाठ)",
+    openSource: "स्रोत खोलें",
+    abstainTitle: "इस प्रश्न का स्रोत-आधारित उत्तर उपलब्ध नहीं है",
+    abstainNext:
+      "दूसरी तिथि या क्षेत्राधिकार चुनें, नियम/अधिनियम के नाम के साथ पूछें, या किसी पंजीकृत पेटेंट एजेंट अथवा नियामक विशेषज्ञ से संपर्क करें।",
+    previous: "पिछला उत्तर",
+    confidence: "विश्वसनीयता",
+    disclaimer: "स्रोत सहित मार्गदर्शन; यह कानूनी सलाह नहीं है।",
+    statusEvidence: "स्थिति का प्रमाण",
+    retrieved: "प्राप्त अंश",
+  },
+  gu: {
+    tagline: "આયુર્વેદ બૌદ્ધિક સંપદા અને નિયમનકારી માર્ગદર્શન — કોઈ તારીખ મુજબ.",
+    jurisdiction: "અધિકારક્ષેત્ર",
+    asOf: "તારીખ (મુજબ)",
+    language: "ભાષા",
+    question: "તમારો પ્રશ્ન",
+    placeholder: "દા.ત. શું Rule 170 અમલમાં છે?",
+    ask: "પૂછો",
+    asking: "સ્રોતો તપાસી રહ્યા છીએ…",
+    statusAsOf: "સ્થિતિ, તારીખ",
+    subJudice: "અદાલતમાં વિચારાધીન",
+    stale: "લેજરની છેલ્લી ચકાસણી {date} એ થઈ હતી; આ જૂનું હોઈ શકે છે.",
+    sources: "સ્રોતો (મૂળ લખાણ)",
+    openSource: "સ્રોત ખોલો",
+    abstainTitle: "આ પ્રશ્નનો સ્રોત-આધારિત જવાબ ઉપલબ્ધ નથી",
+    abstainNext:
+      "બીજી તારીખ કે અધિકારક્ષેત્ર પસંદ કરો, નિયમ/કાયદાના નામ સાથે પૂછો, અથવા નોંધાયેલા પેટન્ટ એજન્ટ કે નિયમનકારી નિષ્ણાતનો સંપર્ક કરો.",
+    previous: "અગાઉનો જવાબ",
+    confidence: "વિશ્વસનીયતા",
+    disclaimer: "સ્રોતો સાથેનું માર્ગદર્શન; આ કાનૂની સલાહ નથી.",
+    statusEvidence: "સ્થિતિનો પુરાવો",
+    retrieved: "મળેલો અંશ",
+  },
+};
+
+// Status codes stay in English in the API; the UI shows a readable label.
+export const STATUS_LABELS: Record<string, string> = {
+  in_force: "In force",
+  omitted: "Omitted",
+  in_force_stayed_omission: "In force — omission stayed by the Supreme Court",
+  omitted_stay_vacated: "Omitted — Supreme Court stay vacated",
+};

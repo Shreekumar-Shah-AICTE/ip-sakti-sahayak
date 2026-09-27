@@ -12,4 +12,4 @@ extend-exclude = ["web", "node_modules"]
 select = ["E", "F", "I", "B"]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = ["tests"]  # smoke/ runs via `make smoke`

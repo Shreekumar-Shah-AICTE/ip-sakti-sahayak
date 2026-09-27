@@ -83,6 +83,7 @@ def answer(
     out = Answer(terms, code, day.isoformat(), idx.corpus_version, abstain=True)
 
     entry = _find_instrument(question)
+    superseded: set[str] = set()
     if entry is not None and entry.jurisdiction == code:
         res = ledger.resolve_entry(entry, day)
         out.status_line = res.status_line()
@@ -94,6 +95,7 @@ def answer(
             "segment_from": res.segment_from and res.segment_from.isoformat(),
             "segment_to": res.segment_to and res.segment_to.isoformat(),
             "stale": res.stale,
+            "last_verified": res.last_verified and res.last_verified.isoformat(),
             "abstain": res.abstain,
             "reason": res.reason,
         }
@@ -102,6 +104,12 @@ def answer(
             c = chunks[ev.chunk_id]
             out.quotes.append(Quote(ev.quote, ev.chunk_id, c["doc_title"], c["section"],
                                     ev.source_url, c["retrieved_on"], "status_evidence"))
+        # Evidence for a segment that does NOT apply on this date must not reappear as a
+        # "retrieved passage" — e.g. the 2024 stay quote shown under a 2025 answer.
+        current = {e.chunk_id for e in res.evidence}
+        superseded = {
+            e.chunk_id for seg in entry.timeline for e in seg.evidence
+        } - current
         if res.abstain:
             out.reason = res.reason
             return out  # never answer a status question the ledger cannot date
@@ -110,7 +118,7 @@ def answer(
     seen = {q.chunk_id for q in out.quotes}
     for h in hits:
         c = h.chunk
-        if c["chunk_id"] in seen:
+        if c["chunk_id"] in seen or c["chunk_id"] in superseded:
             continue
         out.quotes.append(Quote(best_span(c["text"], terms), c["chunk_id"], c["doc_title"],
                                 c["section"], c["source_url"], c["retrieved_on"], "retrieved"))

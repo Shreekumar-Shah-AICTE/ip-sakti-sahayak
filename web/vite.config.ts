@@ -4,5 +4,5 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  server: { proxy: { "/health": "http://localhost:8000", "/ask": "http://localhost:8000" } },
+  server: { proxy: { "/health": "http://localhost:8000", "/ask": "http://localhost:8000", "/ledger": "http://localhost:8000" } },
 });
