@@ -15,9 +15,10 @@ from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from api import audit, ledger
+from api import audit, chat, ledger
 from api.answer import answer, best_span
 from api.baseline import retrieve as static_retrieve
+from api.chat import llm as chat_llm
 from api.passport import abs as abs_calc
 from api.passport import categories as passport_cat
 from api.retriever import JURISDICTIONS, default_index, tokenize
@@ -74,6 +75,7 @@ def health() -> dict:
         "adapters": adapters,
         "llm": {"provider": os.environ.get("SAHAYAK_LLM", "none"),
                 "replay": os.environ.get("SAHAYAK_LLM_REPLAY", "replay")},
+        "chat_llm": chat_llm.provider() or "none",
         "ready": retriever_ready(),
         "retrieval": {"mode": default_index().mode, "dense": default_index().dense.reason},
     }
@@ -116,6 +118,37 @@ def baseline(req: BaselineRequest) -> dict:
         {"text": best_span(c["text"], terms), "chunk_id": c["chunk_id"],
          "doc_title": c["doc_title"], "section": c["section"], "source_url": c["source_url"]}
         for c in static_retrieve(req.question, req.jurisdiction)]}
+
+
+class ChatTurn(BaseModel):
+    role: str = Field(pattern="^(user|assistant)$")
+    text: str = Field(max_length=4000)
+
+
+class ChatRequest(BaseModel):
+    message: str = Field(min_length=1, max_length=1000)
+    jurisdiction: str = "IN"
+    as_of: dt.date | None = None
+    lang: str = "en"
+    context: dict = Field(default_factory=dict)
+    history: list[ChatTurn] = Field(default_factory=list, max_length=20)
+
+
+@app.post("/chat")
+def chat_turn(req: ChatRequest):
+    """The Conversation: one chat message routed to the right module. Text is not logged."""
+    if req.jurisdiction not in JURISDICTIONS:
+        raise HTTPException(422, f"jurisdiction must be one of {sorted(JURISDICTIONS)}")
+    if not retriever_ready(WARM_TIMEOUT_S):
+        return JSONResponse({"detail": "warming up", "warming_up": True}, status_code=503,
+                            headers={"Retry-After": "2"})
+    ctx = {k: v for k, v in req.context.items() if isinstance(v, (str, type(None)))}
+    out = chat.reply(req.message, req.jurisdiction, req.as_of, req.lang, ctx,
+                     [t.model_dump() for t in req.history])
+    contract = out.pop("audit", None)
+    if contract is not None:  # decisions and chunk ids only, never the text (KERNEL 7.6)
+        audit.record(req.message, contract)
+    return out
 
 
 @app.get("/audit/verify")

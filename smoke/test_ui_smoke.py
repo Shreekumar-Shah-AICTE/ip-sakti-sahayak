@@ -84,7 +84,7 @@ def test_as_of_switch_reanswers_rule_170(base_url):
     with sync_playwright() as p:
         browser = _browser(p)
         page = browser.new_page()
-        page.goto(base_url)
+        page.goto(f"{base_url}?view=classic")
         page.get_by_test_id("as-of").fill("2024-08-28")
         page.get_by_test_id("question").fill("Is Rule 170 in force?")
         page.get_by_test_id("ask").click()
@@ -105,7 +105,7 @@ def test_abstention_has_a_designed_state(base_url):
     with sync_playwright() as p:
         browser = _browser(p)
         page = browser.new_page()
-        page.goto(base_url)
+        page.goto(f"{base_url}?view=classic")
         page.get_by_test_id("question").fill("Who won the FIFA World Cup football final?")
         page.get_by_test_id("ask").click()
         expect(page.get_by_test_id("abstain")).to_contain_text("No sourced answer")
@@ -116,7 +116,7 @@ def test_abs_panel_shows_slab_and_abstains_before_commencement(base_url):
     with sync_playwright() as p:
         browser = _browser(p)
         page = browser.new_page()
-        page.goto(base_url)
+        page.goto(f"{base_url}?view=classic")
         page.get_by_test_id("as-of").fill("2026-09-27")
         page.get_by_test_id("abs-turnover").fill("60")
         page.get_by_test_id("abs-sales").fill("100")
@@ -136,7 +136,7 @@ def test_passport_compiles_and_follows_the_date(base_url):
     with sync_playwright() as p:
         browser = _browser(p)
         page = browser.new_page()
-        page.goto(base_url)
+        page.goto(f"{base_url}?view=classic")
         page.get_by_test_id("as-of").fill("2024-08-28")
         page.get_by_test_id("passport-category").select_option("classical")
         page.get_by_test_id("passport-compile").click()
@@ -155,7 +155,7 @@ def test_passport_compiles_and_follows_the_date(base_url):
 
 
 def _ask(page, base, question, as_of="2026-09-01"):
-    page.goto(base)
+    page.goto(f"{base}?view=classic")
     page.get_by_test_id("jurisdiction").select_option("IN")
     page.get_by_test_id("as-of").fill(as_of)
     page.get_by_test_id("question").fill(question)
@@ -255,7 +255,7 @@ def test_mic_is_disabled_without_speech_recognition_and_typing_still_works(base_
         browser = _browser(p)
         page = browser.new_page()
         page.add_init_script(NO_SPEECH)
-        page.goto(base_url)
+        page.goto(f"{base_url}?view=classic")
         mic = page.get_by_test_id("mic")
         expect(mic).to_be_disabled()
         expect(mic).to_have_attribute("aria-label", re.compile("not available"))
@@ -268,7 +268,7 @@ def test_mic_fills_the_question_in_the_selected_language(base_url):
         browser = _browser(p)
         page = browser.new_page()
         page.add_init_script(FAKE_SPEECH)
-        page.goto(base_url)
+        page.goto(f"{base_url}?view=classic")
         page.get_by_test_id("language").select_option("hi")
         page.get_by_test_id("mic").click()
         expect(page.get_by_test_id("question")).to_have_value("Is Rule 170 in force?")
@@ -362,7 +362,7 @@ def test_demo_chips_walk_rule_170_through_every_ledger_segment(base_url):
     with sync_playwright() as p:
         browser = _browser(p)
         page = browser.new_page()
-        page.goto(base_url)
+        page.goto(f"{base_url}?view=classic")
         page.get_by_test_id("demo-question").first.click()  # the diabetes advertisement
         answer = page.get_by_test_id("answer")
         expect(answer.get_by_test_id("status-line")).to_be_visible()
@@ -380,7 +380,7 @@ def test_compare_toggle_shows_a_static_rag_card_with_no_date(base_url):
     with sync_playwright() as p:
         browser = _browser(p)
         page = browser.new_page()
-        page.goto(base_url)
+        page.goto(f"{base_url}?view=classic")
         page.get_by_test_id("demo-date").filter(has_text="2024-06-30").click()
         page.get_by_test_id("demo-question").filter(has_text="Rule 170 status").click()
         status = page.get_by_test_id("answer").get_by_test_id("status-line")
@@ -397,7 +397,7 @@ def test_hindi_advertisement_question_reaches_the_ledger(base_url):
     with sync_playwright() as p:
         browser = _browser(p)
         page = browser.new_page()
-        page.goto(base_url)
+        page.goto(f"{base_url}?view=classic")
         page.get_by_test_id("language").select_option("hi")
         page.get_by_test_id("demo-date").filter(has_text="2024-08-28").click()
         page.get_by_test_id("demo-question").filter(has_text="हिन्दी").click()
@@ -412,7 +412,7 @@ def test_guided_demo_walks_a_newcomer_through_the_script(base_url):
     with sync_playwright() as p:
         browser = _browser(p)
         page = browser.new_page()
-        page.goto(base_url)
+        page.goto(f"{base_url}?view=classic")
         page.get_by_test_id("tour-open").click()
         tour = page.get_by_test_id("tour")
         expect(tour).to_contain_text("step 1 of 10")
@@ -441,7 +441,7 @@ def test_glossary_explains_terms_in_plain_words(base_url):
     with sync_playwright() as p:
         browser = _browser(p)
         page = browser.new_page()
-        page.goto(base_url)
+        page.goto(f"{base_url}?view=classic")
         page.get_by_test_id("term-asOf").click()
         expect(page.get_by_role("note")).to_contain_text("The date your question is about")
         page.keyboard.press("Escape")
@@ -451,4 +451,116 @@ def test_glossary_explains_terms_in_plain_words(base_url):
         expect(g).to_contain_text("Sub judice")
         page.get_by_label("Search the glossary").fill("abstain")
         expect(g.locator("dt")).to_have_count(1)
+        browser.close()
+
+
+# --------------------------------------------------------------------------------------
+# The Conversation (run 14): the chat is now the default view. These hold the demo path
+# end to end in a real browser, keyless.
+# --------------------------------------------------------------------------------------
+def _chat(page, base):
+    page.goto(base)
+    expect(page.get_by_test_id("chat-input")).to_be_visible()
+    return page
+
+
+def _say(page, message):
+    page.get_by_test_id("chat-input").fill(message)
+    page.get_by_test_id("chat-send").click()
+
+
+def test_chat_is_the_default_view(base_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = _chat(browser.new_page(), base_url)
+        expect(page.get_by_test_id("chat-log")).to_contain_text("Sahayak")
+        expect(page.get_by_test_id("chat-starter").first).to_be_visible()
+        # the law clock is on screen before anything is asked
+        expect(page.get_by_test_id("law-clock")).to_contain_text("Rule 170")
+        browser.close()
+
+
+def test_chat_answers_rule_170_and_a_date_follow_up_shows_the_change(base_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = _chat(browser.new_page(), base_url)
+        page.get_by_test_id("chat-as-of").fill("2024-06-30")
+        _say(page, "Is Rule 170 in force?")
+        answer = page.get_by_test_id("chat-msg-assistant").last
+        expect(answer.get_by_test_id("status-line")).to_contain_text("in force", ignore_case=True)
+        # a bare date is understood as a follow-up to the same question
+        _say(page, "what about 2 Jul 2024?")
+        follow = page.get_by_test_id("chat-msg-assistant").last
+        expect(follow).to_contain_text("The law changed")
+        expect(page.get_by_test_id("chat-as-of")).to_have_value("2024-07-02")
+        browser.close()
+
+
+def test_chat_abstains_out_loud_when_the_sources_do_not_say(base_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = _chat(browser.new_page(), base_url)
+        _say(page, "What is the GST rate on churna?")
+        answer = page.get_by_test_id("chat-msg-assistant").last
+        expect(answer.get_by_test_id("abstain")).to_be_visible()
+        browser.close()
+
+
+def test_chat_asks_for_turnover_then_computes_the_abs_share(base_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = _chat(browser.new_page(), base_url)
+        _say(page, "Calculate my ABS benefit share")
+        last = page.get_by_test_id("chat-msg-assistant").last
+        expect(last).to_contain_text("turnover", ignore_case=True)
+        _say(page, "40 crore")
+        result = page.get_by_test_id("chat-abs-result")
+        expect(result).to_contain_text("0.2%")
+        browser.close()
+
+
+def test_chat_highlights_risky_words_inside_the_advertisers_own_copy(base_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = _chat(browser.new_page(), base_url)
+        _say(page, 'check this claim: "Cures diabetes 100% guaranteed, no side effects"')
+        flags = page.get_by_test_id("claim-flags")
+        expect(flags).to_be_visible()
+        expect(page.get_by_test_id("chat-msg-assistant").last.locator("mark").first).to_be_visible()
+        browser.close()
+
+
+def test_chat_reaches_the_same_ledger_in_hindi(base_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = _chat(browser.new_page(), base_url)
+        page.get_by_test_id("chat-lang").select_option("hi")
+        page.get_by_test_id("chat-as-of").fill("2024-06-30")
+        _say(page, "क्या नियम 170 लागू है?")
+        answer = page.get_by_test_id("chat-msg-assistant").last
+        expect(answer.get_by_test_id("status-line")).to_be_visible()
+        browser.close()
+
+
+def test_chat_general_ayurveda_answer_is_labelled_as_background(base_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = _chat(browser.new_page(), base_url)
+        _say(page, "What are the three doshas?")
+        answer = page.get_by_test_id("chat-msg-assistant").last
+        expect(answer.get_by_test_id("chat-knowledge")).to_contain_text("not from The Library")
+        browser.close()
+
+
+def test_autopilot_walks_the_presenter_through_the_demo(base_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = _chat(browser.new_page(), base_url)
+        page.get_by_test_id("chat-autopilot").click()
+        bar = page.get_by_test_id("autopilot-bar")
+        expect(bar).to_contain_text("1/")
+        expect(page.get_by_test_id("chat-msg-assistant").last.get_by_test_id("status-line")).to_be_visible()
+        page.get_by_test_id("autopilot-next").click()
+        expect(bar).to_contain_text("2/")
+        expect(page.get_by_test_id("chat-msg-assistant").last).to_contain_text("The law changed")
         browser.close()

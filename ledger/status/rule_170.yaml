@@ -13,7 +13,7 @@
 instrument: "Drugs Rules, 1945 — Rule 170"
 instrument_id: in-drugs-rules-1945-rule-170
 jurisdiction: IN
-aliases: ["Rule 170", "rule 170", "ASU advertisement rule", "Drugs and Cosmetics Rules Rule 170"]
+aliases: ["Rule 170", "rule 170", "नियम 170", "નિયમ 170", "रूल 170", "ASU advertisement rule", "Drugs and Cosmetics Rules Rule 170"]
 # A question about advertising an ASU drug is a Rule 170 question even when it does not name
 # the rule (the PITCH demo question). Stems are prefix-matched on question tokens (en/hi/gu).
 topics:

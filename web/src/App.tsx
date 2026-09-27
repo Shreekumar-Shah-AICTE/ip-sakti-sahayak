@@ -8,7 +8,7 @@ import { GlossaryDrawer, Term, TourCard } from "./Help";
 // The Two Switches live above the fold (S6 rule 1) and are sent with every question.
 const JURISDICTIONS = ["IN", "US", "EU", "WIPO-track"] as const;
 
-type Quote = {
+export type Quote = {
   text: string;
   chunk_id: string;
   doc_title: string;
@@ -18,9 +18,9 @@ type Quote = {
   role: "status_evidence" | "retrieved" | "overlay";
 };
 
-type Segment = { from: string; to: string | null; status: string; sub_judice: boolean };
+export type Segment = { from: string; to: string | null; status: string; sub_judice: boolean };
 
-type Status = {
+export type Status = {
   instrument: string;
   status: string | null;
   sub_judice: boolean;
@@ -34,7 +34,7 @@ type Status = {
   timeline?: Segment[];
 };
 
-type BaselineQuote = {
+export type BaselineQuote = {
   text: string;
   chunk_id: string;
   doc_title: string;
@@ -42,9 +42,9 @@ type BaselineQuote = {
   source_url: string;
 };
 
-type Baseline = { kind: string; uses_as_of: boolean; quotes: BaselineQuote[] };
+export type Baseline = { kind: string; uses_as_of: boolean; quotes: BaselineQuote[] };
 
-type Synthesis = {
+export type Synthesis = {
   provider: string;
   model: string;
   accepted: boolean;
@@ -53,7 +53,7 @@ type Synthesis = {
   source: string;
 };
 
-type Answer = {
+export type Answer = {
   jurisdiction: string;
   as_of: string;
   corpus_version: string;
@@ -69,7 +69,7 @@ type Answer = {
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 // "2024-08-28" -> "28 Aug 2024": readable for a lay audience, still unambiguous.
-function human(d: string | null | undefined): string {
+export function human(d: string | null | undefined): string {
   if (!d) return "today";
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d);
   return m ? `${Number(m[3])} ${MONTHS[Number(m[2]) - 1]} ${m[1]}` : d;
@@ -88,7 +88,7 @@ const TONE = {
   amber: { box: "border-amber-300 bg-amber-50 text-amber-950", dot: "bg-amber-500", chip: "border-amber-500 bg-amber-100 text-amber-950" },
 } as const;
 
-function tone(status: string | null | undefined) {
+export function tone(status: string | null | undefined) {
   return TONE[STATUS_TONE[status ?? ""] ?? "amber"];
 }
 
@@ -139,7 +139,7 @@ const ROLE_STYLE: Record<Quote["role"], string> = {
 
 // The Status Ledger, drawn (S6 rule 2): every segment the instrument has had, with the
 // segment covering the as-of date highlighted. It makes "as of a date" visible at a glance.
-function TimelineStrip({ st, t }: { st: Status; t: Record<string, string> }) {
+export function TimelineStrip({ st, t }: { st: Status; t: Record<string, string> }) {
   const segs = st.timeline ?? [];
   if (segs.length < 2) return null;
   return (
@@ -179,7 +179,7 @@ function TimelineStrip({ st, t }: { st: Status; t: Record<string, string> }) {
 
 // The static-RAG card (BENCH_SPEC §3): the same corpus without the as-of machinery, shown
 // next to the real answer so the difference is the demo's argument, not a claim.
-function BaselineCard({ b, t }: { b: Baseline; t: Record<string, string> }) {
+export function BaselineCard({ b, t }: { b: Baseline; t: Record<string, string> }) {
   return (
     <article data-testid="baseline" className="fade-in rounded-2xl border-2 border-dashed border-slate-300 bg-slate-100 p-4">
       <p className="text-[11px] font-bold uppercase tracking-wider text-slate-500">🤖 What an ordinary assistant says</p>
@@ -240,7 +240,7 @@ function PlainWords({ a }: { a: Answer }) {
   );
 }
 
-function AnswerCard({ a, t, testId, compact }: { a: Answer; t: Record<string, string>; testId: string; compact?: boolean }) {
+export function AnswerCard({ a, t, testId, compact }: { a: Answer; t: Record<string, string>; testId: string; compact?: boolean }) {
   const tn = tone(a.status?.status);
   const sources = (
     <ol className="mt-2 space-y-3">
@@ -356,7 +356,7 @@ function speechCtor(): (new () => Recognizer) | null {
   return ((w.SpeechRecognition ?? w.webkitSpeechRecognition) as new () => Recognizer) ?? null;
 }
 
-function VoiceButton({ lang, t, onText }: { lang: Lang; t: Record<string, string>; onText: (s: string) => void }) {
+export function VoiceButton({ lang, t, onText }: { lang: Lang; t: Record<string, string>; onText: (s: string) => void }) {
   const [listening, setListening] = useState(false);
   const rec = useRef<Recognizer | null>(null);
   const Ctor = speechCtor();

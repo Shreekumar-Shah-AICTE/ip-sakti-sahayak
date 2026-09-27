@@ -26,6 +26,8 @@ answers on both.
 | The Retriever | BM25 + optional multilingual dense (MiniLM-L12, precomputed in `corpus/index/`), fused by RRF k=60; filters applied before ranking; falls back to BM25 when the dense index or model is absent | working |
 | The Answer Contract | Verbatim quotes, citations, status-as-of, abstention | working |
 | The Passport Compiler | Per-product compliance passport (classical / proprietary / phytopharmaceutical, printable, compiled as of the date; judgment calls shown as risk indicators) + ABS benefit-share calculator. Rules in `rules/*.yaml`; every rule's quote is checked verbatim against The Library at load | working (v0) |
+| The Conversation | Chat front door over every module: the Two Switches move from plain words ("what about 2 Jul 2024?"), tools run inside the thread, and general Ayurveda questions are answered from a curated offline note-set labelled as background. A legal question the sources cannot support is abstained on, never answered from general knowledge | working |
+| The Claim Sentry | Flags risk indicators in ad copy against the DMR Act 1954 and its Schedule, quoting the section behind each flag. Flags only — it never rewrites the advertiser's words | working (lite) |
 | The Proving Ground | Benchmark vs a vanilla-RAG baseline (also served at `POST /baseline` for the side-by-side demo) | working — internal dev set only, not externally validated |
 | The Audit Trail | Hash-chained JSONL of every answer's decision — query hashes, never query text (§5) | working |
 
@@ -44,10 +46,22 @@ Rule 170's status changed, next to a static-RAG baseline on the same corpus — 
 [`docs/demo-script.md`](docs/demo-script.md). It runs keyless and offline, and
 `tests/test_demo_script.py` asserts every outcome it claims.
 
-**New to the domain?** Open http://localhost:8000 and click **🧭 Guided demo**: a ten-step
-coach that performs each beat with one click, says what should appear, and why it matters.
-Every legal, Ayurveda and AI term carries a **?** with a plain-English explanation, each answer
-has an *In plain words* box, and **📖 Glossary** lists every term.
+**The chat is the front door.** Open http://localhost:8000 and just ask. Every ability is
+reachable in the thread — status of a rule on a date, the ABS calculator, a licence passport,
+the claim checker, the timeline, the static-RAG comparison, and ordinary Ayurveda questions.
+Type `/` for commands. A bare date ("what about 2 Jul 2024?") re-asks your last question and
+shows what changed. **▶ Autopilot demo** walks a presenter through thirteen beats with
+narration and a Next button. Answers keep the verbatim quotes, the status-as-of line and the
+abstention card, and **🔧 How I answered** lists the tools each turn used.
+
+The single-question view is still at http://localhost:8000/?view=classic, with the **🧭 Guided
+demo** coach. Every legal, Ayurveda and AI term carries a **?** with a plain-English
+explanation, each answer has an *In plain words* box, and **📖 Glossary** lists every term.
+
+General Ayurveda chat works offline from a curated note-set. With `GROQ_API_KEY` or
+`GEMINI_API_KEY` in `.env` it also phrases free-form answers through an LLM
+(`SAHAYAK_CHAT_LLM=auto|groq|gemini|none`); that path is barred from making legal statements
+and is never used for a legal answer.
 
 ## 4. Develop
 

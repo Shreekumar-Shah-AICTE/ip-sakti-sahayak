@@ -1,0 +1,238 @@
+# The Conversation — curated background knowledge about Ayurveda (offline, keyless).
+# Scope rule: these entries are *general background* (concepts, plants, institutions,
+# vocabulary). They contain NO legal propositions — every legal statement in the product
+# still comes from The Library via The Answer Contract (KERNEL 7.3). They are not medical
+# advice. Each entry points to an official public page for further reading.
+# keys: lowercase stems, prefix-matched on message words (en/hi/gu). All keys of one
+# group must match; any group may match (list of groups).
+- id: ayurveda
+  title: What is Ayurveda?
+  keys: [[ayurved, what], [ayurved, about], [आयुर्वेद, क्या], [આયુર્વેદ, શું], [ayurved, explain], [ayurved, meaning], [ayurved, define]]
+  text: >-
+    Ayurveda (Sanskrit *āyus* "life" + *veda* "knowledge") is a traditional system of medicine
+    from the Indian subcontinent. It aims to keep a healthy person healthy and to restore
+    balance in someone who is unwell, using diet, daily and seasonal routines (dinacharya,
+    ritucharya), herbal and mineral preparations, and procedures such as Panchakarma. Health is
+    described as a balance of the three doshas, the seven dhatus (tissues) and agni (digestive
+    fire). In India it is one of the AYUSH systems overseen by the Ministry of Ayush.
+  more: https://ayush.gov.in
+- id: doshas
+  title: The three doshas
+  keys: [[dosha], [vata], [pitta], [kapha], [tridosha], [दोष], [વાત], [પિત્ત], [કફ], [वात], [पित्त], [कफ]]
+  text: >-
+    Ayurveda describes three functional principles, the **doshas**: **Vata** (space + air —
+    movement, breathing, circulation, nerve impulses), **Pitta** (fire + water — digestion,
+    metabolism, body heat, transformation) and **Kapha** (earth + water — structure, stability,
+    lubrication, immunity). Everyone has all three; their proportion at birth is one's
+    *prakriti* (constitution), and a disturbed present state is called *vikriti*.
+  more: https://ayush.gov.in
+- id: prakriti
+  title: Prakriti (constitution)
+  keys: [[prakriti], [prakruti], [constitution, body], [body, type], [प्रकृति], [પ્રકૃતિ]]
+  text: >-
+    **Prakriti** is a person's individual constitution — the natural proportion of Vata, Pitta
+    and Kapha, believed to be set at conception and stable through life. Practitioners assess
+    it from body build, skin, appetite, sleep, temperament and more, and use it to personalise
+    diet and routine. **Vikriti** is the current, changeable state of imbalance.
+  more: https://ayush.gov.in
+- id: panchakarma
+  title: Panchakarma
+  keys: [[panchakarma], [panchkarma], [detox], [पंचकर्म], [પંચકર્મ], [vamana], [virechana], [basti], [nasya]]
+  text: >-
+    **Panchakarma** ("five actions") is Ayurveda's set of purification procedures:
+    **Vamana** (therapeutic emesis), **Virechana** (therapeutic purgation), **Basti**
+    (medicated enema), **Nasya** (nasal administration) and **Raktamokshana**
+    (blood-letting); some classical texts count two kinds of Basti instead. They are preceded
+    by preparatory steps — **Snehana** (oleation) and **Swedana** (sudation / steam) — and
+    should only be done under a qualified Ayurveda physician.
+  more: https://ayush.gov.in
+- id: texts
+  title: The classical texts
+  keys: [[charaka], [sushruta], [susruta], [samhita], [vagbhat], [ashtanga, hridaya], [classical, text], [classical, book], [brihat], [चरक], [सुश्रुत], [ચરક]]
+  text: >-
+    The three great classics (**Brihat Trayi**) are the **Charaka Samhita** (internal
+    medicine), the **Sushruta Samhita** (surgery — including early descriptions of plastic
+    surgery) and **Ashtanga Hridaya** of Vagbhata (a later synthesis). The three lesser
+    classics (**Laghu Trayi**) are Madhava Nidana (diagnosis), Sharangadhara Samhita
+    (pharmaceutics) and Bhavaprakasha (materia medica). Indian drug law also names
+    "authoritative books" for classical formulations — ask me about *classical formulations*
+    for the legal side, with sources.
+  more: https://ayush.gov.in
+- id: ashtanga
+  title: The eight branches (Ashtanga Ayurveda)
+  keys: [[branch], [ashtanga, ayurved], [eight, ayurved], [अष्टांग], [અષ્ટાંગ]]
+  text: >-
+    Ayurveda is traditionally divided into eight branches: **Kaya Chikitsa** (internal
+    medicine), **Kaumarabhritya** (paediatrics), **Bhuta Vidya** (psychiatry), **Shalakya
+    Tantra** (eye, ear, nose, throat), **Shalya Tantra** (surgery), **Agada Tantra**
+    (toxicology), **Rasayana** (rejuvenation) and **Vajikarana** (reproductive health).
+  more: https://ayush.gov.in
+- id: ashwagandha
+  title: Ashwagandha
+  keys: [[ashwagandha], [ashvagandha], [withania], [अश्वगंधा], [અશ્વગંધા]]
+  text: >-
+    **Ashwagandha** (*Withania somnifera*, "Indian winter cherry") is one of Ayurveda's best
+    known herbs; mainly the root is used. It is classed as a **Rasayana** (rejuvenative) and is
+    traditionally used for strength, vitality, sleep and stress. Modern studies are ongoing and
+    mixed in quality, and some regulators have raised safety questions (for example about the
+    liver and use in pregnancy) — so take it only on a practitioner's advice.
+  more: https://ccras.nic.in
+- id: turmeric
+  title: Turmeric (Haridra)
+  keys: [[turmeric], [haldi], [haridra], [curcum], [हल्दी], [હળદર]]
+  text: >-
+    **Turmeric** (*Curcuma longa*, Sanskrit *Haridra*) is a rhizome used in Indian cooking and
+    in Ayurveda, traditionally for skin, wounds, joints and digestion. Its best-studied
+    compound is **curcumin**. Turmeric is also a famous example in traditional-knowledge
+    debates — ask me about TKDL for the sourced IP side.
+  more: https://ccras.nic.in
+- id: neem
+  title: Neem
+  keys: [[neem], [azadirachta], [नीम], [લીમડ]]
+  text: >-
+    **Neem** (*Azadirachta indica*) is a tree whose leaves, bark, seed oil and twigs are used
+    traditionally for skin, oral hygiene (the neem "datun") and as a natural insect repellent.
+    Like turmeric it is often cited in debates about traditional knowledge and patents.
+  more: https://ccras.nic.in
+- id: triphala
+  title: Triphala
+  keys: [[triphala], [amla], [amalaki], [haritaki], [bibhitaki], [त्रिफला], [આમળા], [त्रिफला], [ત્રિફળા]]
+  text: >-
+    **Triphala** ("three fruits") is a classical combination of **Amalaki** (*Emblica
+    officinalis*, Indian gooseberry / amla), **Bibhitaki** (*Terminalia bellirica*) and
+    **Haritaki** (*Terminalia chebula*). It is traditionally used as a gentle bowel regulator
+    and Rasayana. Amla on its own is one of the richest natural sources of vitamin C.
+  more: https://ccras.nic.in
+- id: tulsi
+  title: Tulsi (Holy basil)
+  keys: [[tulsi], [tulasi], [holy, basil], [तुलसी], [તુલસી]]
+  text: >-
+    **Tulsi** (*Ocimum tenuiflorum*, holy basil) is a sacred plant in Indian households, used
+    traditionally for coughs, colds and as an adaptogen, often as a tea.
+  more: https://ccras.nic.in
+- id: giloy
+  title: Giloy (Guduchi)
+  keys: [[giloy], [guduchi], [tinospora], [गिलोय], [ગળો]]
+  text: >-
+    **Guduchi / Giloy** (*Tinospora cordifolia*), also called *Amrita*, is a climbing shrub
+    whose stem is used traditionally for fevers and immunity. It is a classic Rasayana herb.
+  more: https://ccras.nic.in
+- id: chyawanprash
+  title: Chyawanprash
+  keys: [[chyawanprash], [chyavanprash], [chyavanaprash], [च्यवनप्राश], [ચ્યવનપ્રાશ]]
+  text: >-
+    **Chyawanprash** is a classical Rasayana jam with **amla** as its base, cooked with ghee,
+    honey, sugar and several dozen herbs. It is named after the sage Chyavana and is
+    traditionally taken for vitality and immunity.
+  more: https://ayush.gov.in
+- id: rasayana
+  title: Rasayana (rejuvenation)
+  keys: [[rasayana], [rejuven], [रसायन], [રસાયણ]]
+  text: >-
+    **Rasayana** is the branch of Ayurveda devoted to rejuvenation and healthy ageing — diet,
+    conduct (*achara rasayana*) and preparations such as Chyawanprash, Amalaki or Guduchi that
+    are believed to nourish the tissues and strengthen resistance.
+  more: https://ayush.gov.in
+- id: dinacharya
+  title: Dinacharya & Ritucharya
+  keys: [[dinacharya], [daily, routine], [ritucharya], [seasonal, routine], [दिनचर्या], [ऋतुचर्या], [દિનચર્યા]]
+  text: >-
+    **Dinacharya** is the ideal daily routine: waking early (*brahma muhurta*), cleaning the
+    teeth and tongue, oil pulling (*gandusha*), self-massage (*abhyanga*), exercise, bathing
+    and regular meals. **Ritucharya** adapts diet and routine to the six Indian seasons.
+  more: https://ayush.gov.in
+- id: agni
+  title: Agni and Ama
+  keys: [[agni], [digestive, fire], [ama], [अग्नि], [અગ્નિ]]
+  text: >-
+    **Agni** ("fire") is the Ayurvedic concept of digestive and metabolic power. When agni is
+    weak, food is thought to be incompletely digested into **ama** — a sticky residue that
+    Ayurveda treats as the root of many disorders. Much of Ayurvedic diet advice aims to keep
+    agni balanced.
+  more: https://ayush.gov.in
+- id: rasa
+  title: The six tastes (Shad Rasa)
+  keys: [[taste], [shad, rasa], [six, rasa], [स्वाद], [રસ, છ]]
+  text: >-
+    Ayurveda recognises six tastes (**rasa**): **Madhura** (sweet), **Amla** (sour),
+    **Lavana** (salty), **Katu** (pungent), **Tikta** (bitter) and **Kashaya** (astringent). A
+    balanced meal is said to include all six; each taste increases or calms particular doshas.
+  more: https://ayush.gov.in
+- id: dhatu
+  title: The seven dhatus
+  keys: [[dhatu], [tissue], [धातु], [ધાતુ]]
+  text: >-
+    The body is described as built from seven **dhatus** (tissues), each nourishing the next:
+    **Rasa** (plasma), **Rakta** (blood), **Mamsa** (muscle), **Meda** (fat), **Asthi**
+    (bone), **Majja** (marrow and nerve) and **Shukra** (reproductive tissue).
+  more: https://ayush.gov.in
+- id: diagnosis
+  title: How Ayurveda examines a patient
+  keys: [[nadi], [pulse], [diagnos, ayurved], [ashtavidha], [नाड़ी], [નાડી]]
+  text: >-
+    Classical examination includes **Ashtavidha Pariksha** — the eightfold examination of
+    pulse (*nadi*), urine, stool, tongue, voice, touch, eyes and general appearance — along
+    with questioning about diet, routine and constitution. **Nadi pariksha** (pulse reading) is
+    the best known of these.
+  more: https://ayush.gov.in
+- id: ayush
+  title: AYUSH and the Ministry of Ayush
+  keys: [[ayush], [ministry], [आयुष], [આયુષ]]
+  text: >-
+    **AYUSH** stands for **A**yurveda, **Y**oga & Naturopathy, **U**nani, **S**iddha,
+    Sowa-Rigpa and **H**omoeopathy — India's recognised traditional systems. The **Ministry of
+    Ayush** (a full ministry since November 2014) oversees their education, research,
+    standards and promotion.
+  more: https://ayush.gov.in
+- id: aiia
+  title: All India Institute of Ayurveda (AIIA)
+  keys: [[aiia], [all, india, institute], [एम्स, आयुर्वेद]]
+  text: >-
+    The **All India Institute of Ayurveda (AIIA)**, New Delhi, is an apex institute under the
+    Ministry of Ayush for Ayurveda teaching, research and patient care, opened in 2017. It is
+    the institution behind this Smart India Hackathon problem statement (SIH26045).
+  more: https://aiia.gov.in
+- id: ccras
+  title: CCRAS and PCIM&H
+  keys: [[ccras], [research, council], [pharmacopoeia], [pcim], [api, standard]]
+  text: >-
+    The **Central Council for Research in Ayurvedic Sciences (CCRAS)** is the Ministry of
+    Ayush's research body. The **Ayurvedic Pharmacopoeia of India** — the official book of
+    quality standards for Ayurvedic drugs — is published by the **Pharmacopoeia Commission for
+    Indian Medicine & Homoeopathy (PCIM&H)**, Ghaziabad.
+  more: https://ccras.nic.in
+- id: asu
+  title: Siddha and Unani
+  keys: [[siddha], [unani], [सिद्ध], [यूनानी], [સિદ્ધ], [યુનાની]]
+  text: >-
+    **Siddha** is a traditional medicine system rooted in Tamil Nadu, attributed to the 18
+    Siddhars. **Unani** (from "Yunani", Greek) came to India via Persia and Arabia and is based
+    on the four humours. Together with Ayurveda they are the **ASU** systems, which Indian drug
+    law treats as one family — ask me about ASU drugs for the legal side, with sources.
+  more: https://ayush.gov.in
+- id: yoga
+  title: Yoga
+  keys: [[yoga], [योग], [યોગ]]
+  text: >-
+    **Yoga** is the "Y" in AYUSH — a discipline of posture (*asana*), breath (*pranayama*) and
+    meditation, closely allied with Ayurveda. The UN observes **International Day of Yoga** on
+    21 June every year since 2015.
+  more: https://ayush.gov.in
+- id: dhanvantari
+  title: Dhanvantari and Ayurveda Day
+  keys: [[dhanvantari], [ayurveda, day], [धन्वंतरि], [ધન્વંતરિ]]
+  text: >-
+    **Dhanvantari** is revered as the divine physician and god of Ayurveda. India observes
+    **Ayurveda Day** every year; it was long marked on Dhanvantari Jayanti (Dhanteras).
+  more: https://ayush.gov.in
+- id: safety
+  title: Is Ayurveda safe?
+  keys: [[safe, ayurved], [side, effect], [heavy, metal], [scientific], [evidence], [proven]]
+  text: >-
+    Many Ayurvedic herbs are foods or everyday spices, but "natural" does not mean "risk
+    free": herbs can interact with modern medicines, and product quality varies — some
+    imported products have been found to contain heavy metals (ask me about the **US FDA
+    heavy-metals warning** — it is in The Library, with sources). Evidence from modern trials
+    exists for some remedies and is weak for others. Buy licensed products and consult a
+    qualified practitioner.
+  more: https://ccras.nic.in
