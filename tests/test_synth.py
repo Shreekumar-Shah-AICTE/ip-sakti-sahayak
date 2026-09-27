@@ -111,7 +111,12 @@ def test_unverifiable_or_ungrounded_sentences_are_rejected():
 def test_committed_replay_fixtures_hold_no_secrets():
     for p in synth.REPLAY_DIR.glob("*.json"):
         rec = json.loads(p.read_text(encoding="utf-8"))
-        assert set(rec) == {"provider", "model", "prompt", "text"}
+        # Exactly the four payload fields, plus at most `recorded_with`: the model a
+        # fixture was actually recorded against, kept when a chain change rekeys it.
+        # The set stays closed so no undeclared field can smuggle a key in.
+        assert {"provider", "model", "prompt", "text"} <= set(rec)
+        assert set(rec) - {"provider", "model", "prompt", "text"} <= {"recorded_with"}
+        assert all(isinstance(rec[k], str) for k in rec)
         assert p.stem == synth.cache_key(rec["provider"], rec["model"], rec["prompt"])
         assert not any(s in p.read_text(encoding="utf-8") for s in ("gsk_", "AQ.", "sk_", "Bearer"))
 

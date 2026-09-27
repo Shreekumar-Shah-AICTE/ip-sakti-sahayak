@@ -90,6 +90,10 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     timeline: "Status timeline",
     timelineNow: "selected date",
     demo: "Demo",
+    badgeOnline: "Online",
+    badgeOffline: "Offline",
+    badgeOnlineTip: "An API key was found: AI synthesis and free-form chat are on. Every legal answer still quotes The Library.",
+    badgeOfflineTip: "No API key: everything runs on this machine. Add GEMINI_API_KEY to .env to go online.",
     privacyKeyless:
       "Keyless mode: your question stays on this machine. The audit log records a hash of it, never its text.",
     privacyAdapters:
@@ -192,6 +196,10 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     timeline: "स्थिति की समय-रेखा",
     timelineNow: "चुनी गई तिथि",
     demo: "डेमो",
+    badgeOnline: "ऑनलाइन",
+    badgeOffline: "ऑफ़लाइन",
+    badgeOnlineTip: "API कुंजी मिली: AI सारांश और खुली बातचीत चालू हैं। हर कानूनी उत्तर अब भी लाइब्रेरी से उद्धरण देता है।",
+    badgeOfflineTip: "कोई API कुंजी नहीं: सब कुछ इसी मशीन पर चलता है। ऑनलाइन होने के लिए .env में GEMINI_API_KEY जोड़ें।",
     privacyKeyless:
       "कीलेस मोड: आपका प्रश्न इसी मशीन पर रहता है। ऑडिट लॉग उसका हैश रखता है, पाठ कभी नहीं।",
     privacyAdapters:
@@ -294,6 +302,10 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     timeline: "સ્થિતિની સમયેખા",
     timelineNow: "પસંદ કરેલ તારીખ",
     demo: "ડેમો",
+    badgeOnline: "ઓનલાઇન",
+    badgeOffline: "ઓફલાઇન",
+    badgeOnlineTip: "API કી મળી: AI સારાંશ અને મુક્ત વાતચીત ચાલુ છે. દરેક કાનૂની જવાબ હજી પણ લાઇબ્રેરીમાંથી અવતરણ આપે છે.",
+    badgeOfflineTip: "કોઈ API કી નથી: બધું આ મશીન પર ચાલે છે. ઓનલાઇન થવા માટે .env માં GEMINI_API_KEY ઉમેરો.",
     privacyKeyless:
       "કીલેસ મોડ: તમારો પ્રશ્ન આ મશીન પર જ રહે છે. ઓડિટ લોગ તેનો હેશ રાખે છે, લખાણ કદી નહીં.",
     privacyAdapters:

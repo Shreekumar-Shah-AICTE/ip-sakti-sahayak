@@ -3,8 +3,8 @@
 set -e
 cd "$(dirname "$0")"
 PORT="${PORT:-8000}"
-# Optional adapters live in a git-ignored .env. Absent, everything runs keyless.
-if [ -f .env ]; then set -a; . ./.env; set +a; fi
+# Optional keys live in a git-ignored .env, loaded by the api package itself (api/config.py).
+
 python3 -c "import fastapi, uvicorn, yaml" 2>/dev/null || python3 -m pip install -q -r requirements.txt
 if [ ! -d web/dist ] && command -v npm >/dev/null 2>&1; then
   (cd web && npm ci --silent && npm run --silent build) || echo "web build skipped; API only"

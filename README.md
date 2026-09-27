@@ -34,12 +34,47 @@ answers on both.
 ## 3. Run it
 
 ```sh
-./run.sh          # macOS / Linux  (run.bat on Windows)
-curl localhost:8000/health
+python run.py     # installs what it needs, builds the UI, serves http://localhost:8000
 ```
 
-No API keys are needed. Optional adapters read keys from a git-ignored `.env`
-(see `.env.example`).
+That is the whole command, with or without a key. `./run.sh` (`run.bat` on Windows) does the
+same thing.
+
+**Keyless is the default and is fully functional.** Retrieval, the Two Switches, the Status
+Ledger, verbatim quotes, the passport and ABS calculators, the Claim Sentry and the offline
+Ayurveda note-set need no network and no account. The header shows **○ Offline**.
+
+**To turn the online path on, add one key:**
+
+```sh
+cp .env.example .env      # then paste a Gemini key after GEMINI_API_KEY=
+python run.py
+```
+
+Get a free key at <https://aistudio.google.com/apikey>. Nothing else changes — same command,
+same port. The header switches to **● Online · Gemini** and the console banner says `ONLINE`.
+`.env` is git-ignored, so the key is never committed. `GROQ_API_KEY` or `SARVAM_API_KEY` work
+instead; Gemini is tried first.
+
+What the key buys: LLM phrasing of answers that are already retrieved and cited, free-form
+Ayurveda chat, and machine translation for Hindi and Gujarati. It never buys a legal claim —
+synthesis may only rephrase quotes the retriever already found, and a synthesis that
+contradicts The Status Ledger is discarded in favour of the extractive answer.
+
+Two things worth knowing about the online path:
+
+- **Cache first.** An answer is served from `var/cache/` if it is already there, so a repeated
+  question costs nothing and returns instantly. `var/` is git-ignored and separate from the
+  committed fixtures in `api/*/replay/` that keep `make check` deterministic and offline.
+- **Model chain.** Gemini models are tried in order, starting with `gemini-3.1-flash-lite`
+  (measured ~0.9 s per answer, against 12–45 s for the thinking-flash models, which exceeded
+  our 25 s timeout). A model that answers 404 or 429 is dropped for the rest of the process,
+  so a spent free-tier quota degrades to the next model and finally to keyless mode instead of
+  failing. Pin one with `SAHAYAK_GEMINI_MODEL=`.
+
+```sh
+curl localhost:8000/health   # mode, online true/false, provider, replay mode — never keys
+```
 
 For the guided walkthrough — one advertising question stepped across the four dates on which
 Rule 170's status changed, next to a static-RAG baseline on the same corpus — see

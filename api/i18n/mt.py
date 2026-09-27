@@ -17,10 +17,12 @@ import os
 import re
 from pathlib import Path
 
+from api import config, gemini
 from api.synth import _post
 
 REPLAY_DIR = Path(__file__).resolve().parent / "replay"
 PROVIDERS = {
+    "gemini": ("GEMINI_API_KEY", gemini.PRIMARY),
     "groq": ("GROQ_API_KEY", "openai/gpt-oss-120b"),
     "sarvam": ("SARVAM_API_KEY", "sarvam-translate:v1"),
 }
@@ -47,6 +49,8 @@ def _call_live(provider: str, model: str, key: str, lang: str, words: list[str])
                           "target_language_code": "en-IN", "model": model})
             out.append(str(data.get("translated_text", "?")))
         return out
+    if provider == "gemini":  # walks the probed model chain (api/gemini.py)
+        return gemini.generate(key, SYSTEM, "\n".join(words))[0].strip().split("\n")
     data = _post("https://api.groq.com/openai/v1/chat/completions",
                  {"Authorization": f"Bearer {key}"},
                  {"model": model, "temperature": 0, "messages": [
@@ -67,12 +71,14 @@ def _clean(reply: str) -> str | None:
 def lookup(lang: str, words: list[str], provider: str | None = None,
            mode: str | None = None) -> dict[str, str]:
     """{word: english} for the words the provider could translate; {} when off or failing."""
-    provider = (provider or os.environ.get("SAHAYAK_MT", "none")).lower()
+    provider = (provider or config.mt_provider() or "none").lower()
     if provider not in PROVIDERS or not words:
         return {}
     key_var, model = PROVIDERS[provider]
-    mode = mode or os.environ.get("SAHAYAK_MT_REPLAY", "replay")
-    path = REPLAY_DIR / f"{cache_key(provider, model, lang, words)}.json"
+    mode = mode or config.replay_mode("SAHAYAK_MT_REPLAY")
+    name = f"{cache_key(provider, model, lang, words)}.json"
+    dirs = config.cache_dirs("SAHAYAK_MT_REPLAY", REPLAY_DIR, "mt")
+    path = next((d / name for d in dirs if (d / name).exists()), REPLAY_DIR / name)
     if mode != "live" and path.exists():
         replies = json.loads(path.read_text(encoding="utf-8"))["replies"]
     elif mode == "replay" or not (key := os.environ.get(key_var)):
@@ -83,8 +89,9 @@ def lookup(lang: str, words: list[str], provider: str | None = None,
         except Exception:  # network, quota, schema: the Glossary result stands
             return {}
         if mode == "record":
-            REPLAY_DIR.mkdir(parents=True, exist_ok=True)
-            path.write_text(json.dumps({"provider": provider, "model": model, "lang": lang,
+            out = config.cache_write_dir("SAHAYAK_MT_REPLAY", REPLAY_DIR, "mt")
+            out.mkdir(parents=True, exist_ok=True)
+            (out / name).write_text(json.dumps({"provider": provider, "model": model, "lang": lang,
                                         "words": words, "replies": replies},
                                        ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     if len(replies) != len(words):  # misaligned reply: trust none of it

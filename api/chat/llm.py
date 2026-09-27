@@ -20,12 +20,13 @@ import os
 import re
 from pathlib import Path
 
+from api import config, gemini
 from api.synth import _post
 
 REPLAY_DIR = Path(__file__).resolve().parent / "replay"
-MODELS = {
+MODELS = {  # Gemini first, matching api/config.LLM_ORDER: it is the key the README asks for
+    "gemini": ("GEMINI_API_KEY", gemini.PRIMARY),
     "groq": ("GROQ_API_KEY", "openai/gpt-oss-120b"),
-    "gemini": ("GEMINI_API_KEY", "gemini-flash-latest"),
 }
 
 SYSTEM = (
@@ -49,12 +50,14 @@ _LEGAL = re.compile(
 
 
 def provider() -> str | None:
+    """The provider for general Ayurveda chat, or "replay" to answer from the cache only."""
     p = os.environ.get("SAHAYAK_CHAT_LLM", "auto").lower()
     if p == "none":
         return None
-    if p == "auto":
-        return next((n for n, (k, _) in MODELS.items() if os.environ.get(k)), None) or "replay"
-    return p if p in MODELS else None
+    if not config.online():  # offline is a hard floor, whatever keys happen to be around
+        return "replay"
+    p = config.chat_provider() or "replay"
+    return p if p in MODELS and os.environ.get(MODELS[p][0]) else "replay"
 
 
 def build_prompt(question: str, history: list[dict], background: str | None) -> str:
@@ -81,17 +84,8 @@ def _key(prov: str, model: str, prompt: str) -> str:
 
 
 def _live(prov: str, model: str, key: str, prompt: str) -> str:
-    if prov == "gemini":
-        data = _post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
-            {"x-goog-api-key": key},
-            {
-                "systemInstruction": {"parts": [{"text": SYSTEM}]},
-                "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-                "generationConfig": {"temperature": 0.3},
-            },
-        )
-        return "".join(p.get("text", "") for p in data["candidates"][0]["content"]["parts"])
+    if prov == "gemini":  # walks the probed model chain (api/gemini.py)
+        return gemini.generate(key, SYSTEM, prompt, temperature=0.3)[0]
     data = _post(
         "https://api.groq.com/openai/v1/chat/completions",
         {"Authorization": f"Bearer {key}"},
@@ -116,8 +110,10 @@ def ask(question: str, history: list[dict], background: str | None = None) -> di
     prompt = build_prompt(question, history, background)
     for p in candidates:  # a recording from any provider is fine offline
         model = MODELS[p][1]
-        path = REPLAY_DIR / f"{_key(p, model, prompt)}.json"
-        if path.exists():
+        name = f"{_key(p, model, prompt)}.json"
+        path = next((d / name for d in config.cache_dirs("SAHAYAK_CHAT_REPLAY", REPLAY_DIR, "chat")
+                     if (d / name).exists()), None)
+        if path:
             text = scrub(json.loads(path.read_text(encoding="utf-8"))["text"])
             return (
                 {"text": text, "provider": p, "model": model, "source": "replay"} if text else None
@@ -132,9 +128,11 @@ def ask(question: str, history: list[dict], background: str | None = None) -> di
         raw = _live(prov, model, key, prompt).strip()
     except Exception:  # network, quota, schema: the curated/offline answer stands
         return None
-    if os.environ.get("SAHAYAK_CHAT_RECORD") == "1" and raw:
-        REPLAY_DIR.mkdir(parents=True, exist_ok=True)
-        path = REPLAY_DIR / f"{_key(prov, model, prompt)}.json"
+    if raw and config.replay_mode("SAHAYAK_CHAT_REPLAY") == "record":
+        # Cache-first online (free-tier quota); SAHAYAK_CHAT_REPLAY=record authors fixtures.
+        out = config.cache_write_dir("SAHAYAK_CHAT_REPLAY", REPLAY_DIR, "chat")
+        out.mkdir(parents=True, exist_ok=True)
+        path = out / f"{_key(prov, model, prompt)}.json"
         path.write_text(
             json.dumps(
                 {"provider": prov, "model": model, "prompt": prompt, "text": raw},
