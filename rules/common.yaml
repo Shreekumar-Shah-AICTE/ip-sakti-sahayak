@@ -1,0 +1,58 @@
+# The Passport Compiler — rules shared by more than one category passport.
+# Every citation is a chunk_id + a quote that must be verbatim in that chunk (loader-checked).
+# `ledger:` rules take their status and evidence from The Status Ledger as of the passport date.
+covered_from: "2022-11-17"
+rules:
+  - id: ADV-RULE-170
+    categories: [classical, proprietary]
+    title: "ASU advertisement rule (Drugs Rules, Rule 170)"
+    ledger: "Rule 170"
+    obligation: "Status of Rule 170 on the passport date, from The Status Ledger. Where it is in force, advertising an ASU drug is subject to it."
+    jurisdiction: IN
+    confidence: high
+    human_judgment_required: false
+  - id: ADV-DMR-S3
+    categories: [classical, proprietary, phytopharma]
+    title: "Drugs and Magic Remedies Act, s.3 + Schedule"
+    obligation: "Do not advertise the product in terms suggesting its use for any disease, disorder or condition in the DMR Act Schedule (e.g. diabetes, cancer). This applies whatever the status of Rule 170."
+    citations:
+      - regulation: "DMR Act 1954, s.3(d)"
+        chunk_id: "in-dmr-act-1954#0008"
+        quote: "the diagnosis, cure, mitigation, treatment or prevention of any disease, disorder or condition specified in the Schedule"
+      - regulation: "DMR Act 1954, Schedule"
+        chunk_id: "in-dmr-act-1954#0026"
+        quote: "9. Diabetes."
+    jurisdiction: IN
+    confidence: high
+    human_judgment_required: true
+    risk_indicator: "Whether a given label or ad line is a Schedule disease claim is a judgment call."
+    guiding_principle: "DMR Act s.3: the test is whether the terms suggest or are calculated to lead to use of the drug for a Schedule condition."
+  - id: IP-PATENTS-3P
+    categories: [classical, proprietary, phytopharma]
+    title: "Patentability risk — Patents Act s.3(p)"
+    obligation: "Before filing a patent, assess the risk that the invention is, in effect, traditional knowledge or an aggregation/duplication of known properties of traditionally known components (not an invention under s.3(p))."
+    citations:
+      - regulation: "Patents Act 1970, s.3(p)"
+        chunk_id: "in-patents-act-1970#0026"
+        quote: "an invention which, in effect, is traditional knowledge or which is an aggregation or duplication of known properties of traditionally known component or components"
+      - regulation: "IP India Ayush examination guidelines, s.3(p)"
+        chunk_id: "in-ipindia-ayush-guidelines-2025#0009"
+        quote: "Section 3(p): an invention which in effect, is traditional knowledge"
+    jurisdiction: IN
+    confidence: high
+    human_judgment_required: true
+    risk_indicator: "Risk indicator only — patentability is decided by the Controller, not by this tool."
+    guiding_principle: "IP India Guidelines for Examination of Ayush Related Inventions, Section 3(p)."
+  - id: ABS-CODIFIED-TK
+    categories: [classical, proprietary]
+    title: "Benefit sharing — codified traditional knowledge (BD Amendment Act 2023)"
+    obligation: "Codified traditional knowledge is excluded, for Indians, from the knowledge of 'benefit claimers'. Whether your product rests only on codified TK decides how much of the ABS framework applies; use the ABS calculator for the rate."
+    citations:
+      - regulation: "BD (Amendment) Act 2023, s.2 (benefit claimers)"
+        chunk_id: "in-bd-amendment-act-2023#0003"
+        quote: "(excluding codified traditional knowledge only for Indians)"
+    jurisdiction: IN
+    confidence: medium
+    human_judgment_required: true
+    risk_indicator: "Whether the knowledge used is 'codified' is a legal judgment."
+    guiding_principle: "BD Act as amended 2023: codified TK is defined by reference to the Drugs and Cosmetics Act First Schedule books."

@@ -20,13 +20,13 @@ answers on both.
 
 | Module | Job | State |
 |---|---|---|
-| The Two Switches | Jurisdiction + as-of date, applied as hard filters | planned |
-| The Status Ledger | Dated legal-status timeline; every entry cites a gazette notification or court order | planned |
-| The Library | Full-text primary instruments with provenance and a corpus-version hash | planned |
+| The Two Switches | Jurisdiction + as-of date, applied as hard filters | working |
+| The Status Ledger | Dated legal-status timeline; every entry cites a gazette notification or court order | working (Rule 170 only) |
+| The Library | Full-text primary instruments with provenance and a corpus-version hash | working (19 documents) |
 | The Retriever | BM25 + optional multilingual dense (MiniLM-L12, precomputed in `corpus/index/`), fused by RRF k=60; filters applied before ranking; falls back to BM25 when the dense index or model is absent | working |
-| The Answer Contract | Verbatim quotes, citations, status-as-of, abstention | planned |
-| The Passport Compiler | Per-product compliance passport + ABS benefit-share calculator | planned |
-| The Proving Ground | Benchmark vs a vanilla-RAG baseline | planned |
+| The Answer Contract | Verbatim quotes, citations, status-as-of, abstention | working |
+| The Passport Compiler | Per-product compliance passport (classical / proprietary / phytopharmaceutical, printable, compiled as of the date; judgment calls shown as risk indicators) + ABS benefit-share calculator. Rules in `rules/*.yaml`; every rule's quote is checked verbatim against The Library at load | working (v0) |
+| The Proving Ground | Benchmark vs a vanilla-RAG baseline | working — internal dev set only, not externally validated |
 
 ## 3. Run it
 

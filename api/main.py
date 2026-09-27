@@ -17,6 +17,7 @@ from pydantic import BaseModel, Field
 from api import ledger
 from api.answer import answer
 from api.passport import abs as abs_calc
+from api.passport import categories as passport_cat
 from api.retriever import JURISDICTIONS, default_index
 
 VERSION = "0.0.1"
@@ -106,6 +107,15 @@ def passport_abs(
         raise HTTPException(422, "amounts must be non-negative")
     return abs_calc.compute(turnover_inr, as_of, ex_factory_sales_inr, high_value)
 
+
+
+@app.get("/passport/{category}")
+def passport_category(category: str, as_of: dt.date | None = None) -> dict:
+    """The Passport Compiler: a category passport (classical/proprietary/phytopharma), as of."""
+    if category not in passport_cat.CATEGORIES:
+        known = ", ".join(passport_cat.CATEGORIES)
+        raise HTTPException(404, f"unknown category; use one of {known}")
+    return passport_cat.compile_passport(category, as_of)
 
 if WEB_DIST.is_dir():
     app.mount("/", StaticFiles(directory=WEB_DIST, html=True), name="web")

@@ -101,3 +101,25 @@ def test_abs_panel_shows_slab_and_abstains_before_commencement(base_url):
         page.get_by_test_id("abs-compute").click()
         expect(page.get_by_test_id("abs-abstain")).to_contain_text("2025-04-30")
         browser.close()
+
+
+def test_passport_compiles_and_follows_the_date(base_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = browser.new_page()
+        page.goto(base_url)
+        page.get_by_test_id("as-of").fill("2024-08-28")
+        page.get_by_test_id("passport-category").select_option("classical")
+        page.get_by_test_id("passport-compile").click()
+        expect(page.get_by_test_id("passport")).to_contain_text("First Schedule")
+        expect(page.get_by_test_id("passport-rule-ADV-RULE-170")).to_contain_text("sub judice")
+        expect(page.get_by_test_id("passport-print")).to_be_visible()
+
+        page.get_by_test_id("passport-category").select_option("phytopharma")
+        page.get_by_test_id("passport-compile").click()
+        expect(page.get_by_test_id("passport-gaps")).to_be_visible()
+
+        page.get_by_test_id("as-of").fill("2022-01-01")
+        page.get_by_test_id("passport-compile").click()
+        expect(page.get_by_test_id("passport-abstain")).to_contain_text("2022-11-17")
+        browser.close()

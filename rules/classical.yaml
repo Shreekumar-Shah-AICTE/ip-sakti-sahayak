@@ -1,0 +1,35 @@
+# The Passport Compiler — Classical ASU drug (Drugs and Cosmetics Act s.3(a)).
+# Text source: Drugs Rules 1945 as compiled by CDSCO to G.S.R. 823(E) 17-11-2022 (E20).
+# covered_from = the earliest date The Library can vouch for this wording; earlier dates abstain.
+category: classical
+title: "Classical Ayurveda, Siddha or Unani drug — section 3(a)"
+jurisdiction: IN
+covered_from: "2022-11-17"
+definition:
+  regulation: "Drugs Rules 1945, Rule 158B I(A)"
+  chunk_id: "in-drugs-rules-1945-compiled-2022#0043"
+  quote: "manufactured exclusively in accordance with the formulae described in the authoritative books of Ayurvedic, Siddha and Unani Tibb system of medicine, as specified in the First Schedule"
+classification:
+  human_judgment_required: true
+  risk_indicator: "Classical status holds only if the formulation is made exclusively per a First Schedule book formula; any deviation points to the proprietary category."
+  guiding_principle: "Rule 158B I(A) read with the First Schedule to the Drugs and Cosmetics Act."
+rules:
+  - id: CL-NAMING
+    title: "Name as in the authoritative book"
+    obligation: "Use the name of the drug as described in the First Schedule authoritative books (an unnamed book formulation may be named by its ingredients)."
+    citations:
+      - regulation: "Drugs Rules 1945, Rule 157(1B)"
+        chunk_id: "in-drugs-rules-1945-compiled-2022#0034"
+        quote: "except as described in the authoritative books specified in the First Schedule to the Act"
+    confidence: high
+    human_judgment_required: false
+  - id: CL-LICENCE-EVIDENCE
+    title: "Licence: safety and effectiveness conditions"
+    obligation: "Safety-study and evidence-of-effectiveness conditions for the licence follow the Rule 158B II(A) table for your sub-category (as per text / change in dosage form / new indication). The extracted table in The Library is flattened — read the source pages 177–178 before relying on a cell."
+    citations:
+      - regulation: "Drugs Rules 1945, Rule 158B II(A)"
+        chunk_id: "in-drugs-rules-1945-compiled-2022#0044"
+        quote: "the conditions relating to safety study and the experience or evidence of effectiveness shall be such as specified"
+    confidence: medium
+    human_judgment_required: false
+gaps: []

@@ -1,0 +1,45 @@
+# The Passport Compiler — Patent or proprietary ASU medicine (Drugs and Cosmetics Act s.3(h)).
+category: proprietary
+title: "Patent or proprietary Ayurveda, Siddha or Unani medicine — section 3(h)"
+jurisdiction: IN
+covered_from: "2022-11-17"
+definition:
+  regulation: "Drugs Rules 1945, Rule 158B I(B)(i)"
+  chunk_id: "in-drugs-rules-1945-compiled-2022#0043"
+  quote: "formulations containing only such ingredients mentioned in the formulae described in the authoritative books"
+classification:
+  human_judgment_required: true
+  risk_indicator: "Proprietary status needs every ingredient to appear in a First Schedule book; a parenteral product, or a formulation that is itself a book formula (classical), is excluded."
+  guiding_principle: "Rule 158B I(B)(i)-(iv): also covers Balya/Poshak, Saundarya Prasadak and Aushadh Ghana sub-types."
+rules:
+  - id: PP-NAMING
+    title: "Do not reuse a classical drug name"
+    obligation: "Do not use the name of a classical (s.3(a)) ASU drug for the proprietary medicine, except for single plant-ingredient formulations licensed as proprietary."
+    citations:
+      - regulation: "Drugs Rules 1945, Rule 157(1C)"
+        chunk_id: "in-drugs-rules-1945-compiled-2022#0034"
+        quote: "shall not be used for naming any patent or proprietary medicine"
+    confidence: high
+    human_judgment_required: false
+  - id: PP-LICENCE-EVIDENCE
+    title: "Licence: safety and effectiveness conditions"
+    obligation: "Safety-study and evidence-of-effectiveness conditions follow the Rule 158B II(B) table (e.g. a pilot study for proof of effectiveness). The extracted table in The Library is flattened — read source pages 178–179 before relying on a cell."
+    citations:
+      - regulation: "Drugs Rules 1945, Rule 158B II(B)"
+        chunk_id: "in-drugs-rules-1945-compiled-2022#0046"
+        quote: "The condition relating to Safety studies and experience or evidence of effectiveness shall be specified as follows"
+    confidence: medium
+    human_judgment_required: false
+  - id: PP-BALYA-SCHEDULE-E1
+    title: "Balya/Poshak and Saundarya Prasadak: textual reference + Schedule E(1) safety"
+    obligation: "For Balya/Poshak (and Saundarya Prasadak) sub-types: submit a photocopy of the textual reference of each ingredient, and conduct safety studies if any ingredient is in Schedule E(1)."
+    citations:
+      - regulation: "Drugs Rules 1945, Rule 158B III"
+        chunk_id: "in-drugs-rules-1945-compiled-2022#0047"
+        quote: "Photo-copy of the textual reference of ingredients used in the formulation as mentioned in the book of 1st Schedule"
+      - regulation: "Drugs Rules 1945, Rule 158B III(ii)"
+        chunk_id: "in-drugs-rules-1945-compiled-2022#0047"
+        quote: "Conduct safety studies in case the product contains of any of the ingredients as specified in the Schedule E(l)"
+    confidence: high
+    human_judgment_required: false
+gaps: []

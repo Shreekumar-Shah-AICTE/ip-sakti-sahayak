@@ -1,0 +1,27 @@
+# The Passport Compiler — Phytopharmaceutical drug (Drugs Rules 1945, Rule 2(ec)).
+# The definition is in The Library; the licensing pathway instrument is NOT, so the passport
+# lists that as a gap instead of inventing obligations (KERNEL §7.3).
+category: phytopharma
+title: "Phytopharmaceutical drug — Rule 2(ec)"
+jurisdiction: IN
+covered_from: "2022-11-17"
+definition:
+  regulation: "Drugs Rules 1945, Rule 2(ec)"
+  chunk_id: "in-drugs-rules-1945-compiled-2022#0003"
+  quote: "purified and standardised fraction with defined minimum four bio-active or phyto-chemical compounds (qualitatively and quantitatively assessed) of an extract of a medicinal plant or its part"
+classification:
+  human_judgment_required: true
+  risk_indicator: "The category needs at least four bio-active or phyto-chemical compounds, each assessed qualitatively and quantitatively; fewer, or unassessed markers, fall outside it."
+  guiding_principle: "Drugs Rules 1945, Rule 2(ec)."
+rules:
+  - id: PH-NO-PARENTERAL
+    title: "Route of administration"
+    obligation: "A product administered by the parenteral route is not a phytopharmaceutical drug under Rule 2(ec)."
+    citations:
+      - regulation: "Drugs Rules 1945, Rule 2(ec)"
+        chunk_id: "in-drugs-rules-1945-compiled-2022#0003"
+        quote: "but does not include administration by parenteral route"
+    confidence: high
+    human_judgment_required: false
+gaps:
+  - "The licensing pathway for phytopharmaceutical drugs is not in The Library, so no licensing, safety or efficacy obligation is given. Consult CDSCO or a regulatory professional."
