@@ -110,6 +110,8 @@ ANCHORS = [
         "Food Business Operator shall request the Food Authority",
     ),
     ("us-fda-import-alert-99-42", "Toxic elements, such as arsenic, lead, cadmium, and mercury"),
+    ("wipo-gratk-status-2026-07-08", "Albania, Malawi, Peru, Uganda (4)"),
+    ("wipo-gratk-status-2026-07-08", "Status on July 8, 2026"),
 ]
 
 

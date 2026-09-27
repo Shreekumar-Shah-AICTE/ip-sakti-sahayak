@@ -191,6 +191,20 @@
   effective_to: null
   version_note: "Treaty landing page. Signatory/ratification counts are NOT in this text; do not quote counts from it."
 
+- id: wipo-gratk-status-2026-07-08
+  title: "WIPO — GRATK treaty status (signatories and ratifications), status on July 8, 2026"
+  instrument: "WIPO GRATK"
+  publisher: "World Intellectual Property Organization"
+  jurisdiction: WIPO
+  tier: 1
+  kind: pdf
+  urls:
+    - "https://www.wipo.int/documents/d/treaties/docs-en-gratk.pdf"
+    - "https://www.wipo.int/export/sites/www/treaties/en/docs/pdf/gratk.pdf"
+  effective_from: "2026-07-08"
+  effective_to: null
+  version_note: "WIPO's own treaty-status sheet, 'Status on July 8, 2026': 44 signatories, 4 accessions/ratifications (Albania, Malawi, Peru, Uganda). India is not in the signatory list. A dated snapshot: counts are true as of 2026-07-08 only, hence effective_from; re-fetch to update. Entry into force needs 15 ratifications (treaty page)."
+
 - id: in-csir-tkdl-about
   title: "CSIR — About TKDL (scope and access)"
   instrument: "TKDL access description"

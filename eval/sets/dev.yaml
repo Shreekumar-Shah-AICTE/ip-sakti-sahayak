@@ -347,3 +347,11 @@
   as_of: '2026-09-01'
   expect:
     doc: in-fssai-ayurveda-aahara-order-2025-07-25
+# L12 (run 08, T-M1.4 / D-008): WIPO's own status sheet backs the ratification count.
+- id: L12
+  set: L
+  question: How many ratifications and accessions does the WIPO GRATK treaty have?
+  jurisdiction: WIPO-track
+  as_of: '2026-09-01'
+  expect:
+    doc: wipo-gratk-status-2026-07-08

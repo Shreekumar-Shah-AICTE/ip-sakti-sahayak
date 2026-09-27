@@ -1,7 +1,7 @@
 {
-  "corpus_version": "sha256:ad041b2d17ecc0e899282b6490bbd0324f4089cd98882e286fba58749ddc28f8",
-  "documents": 19,
-  "chunks": 1111,
+  "corpus_version": "sha256:404c93ebd4a290c96c6b67f9d4063afe1a2ecb48a56953124ed0bb4a8d4b3288",
+  "documents": 20,
+  "chunks": 1112,
   "records": [
     {
       "id": "eu-directive-2004-24-ec",
@@ -379,6 +379,26 @@
       "effective_from": null,
       "effective_to": null,
       "version_note": "Live page; the firm red list is excluded."
+    },
+    {
+      "id": "wipo-gratk-status-2026-07-08",
+      "title": "WIPO — GRATK treaty status (signatories and ratifications), status on July 8, 2026",
+      "instrument": "WIPO GRATK",
+      "publisher": "World Intellectual Property Organization",
+      "jurisdiction": "WIPO",
+      "tier": 1,
+      "canonical_url": "https://www.wipo.int/documents/d/treaties/docs-en-gratk.pdf",
+      "fetched_url": "https://www.wipo.int/documents/d/treaties/docs-en-gratk.pdf",
+      "fetch_method": "official",
+      "fetched_on": "2026-09-27",
+      "sha256": "de85433b1d2f7939c4a55d691a73322c51af6d08288fa845ff0f57dd801629be",
+      "bytes": 109221,
+      "raw_committed": true,
+      "pages": null,
+      "text_sha256": "2f2846ad1c7436721a7f2712aa13fd78bca38a824a5b335a60287154c5542db3",
+      "effective_from": "2026-07-08",
+      "effective_to": null,
+      "version_note": "WIPO's own treaty-status sheet, 'Status on July 8, 2026': 44 signatories, 4 accessions/ratifications (Albania, Malawi, Peru, Uganda). India is not in the signatory list. A dated snapshot: counts are true as of 2026-07-08 only, hence effective_from; re-fetch to update. Entry into force needs 15 ratifications (treaty page)."
     },
     {
       "id": "wipo-gratk-treaty-page",
