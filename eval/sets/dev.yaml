@@ -1,0 +1,336 @@
+# The Proving Ground — DEV set (agent-authored, NOT sealed, NOT externally validated).
+# BENCH_SPEC §5: sealed sets A/B/D must be written by teammates who do not work on The
+# Retriever and committed as hashes first. Until they exist, numbers from this file are
+# dev numbers: fine for regression gates, never a headline claim. Tuning is allowed here only.
+# Sets: A temporal traps (Rule 170), L answerable from The Library, B jurisdiction traps,
+# D must-abstain. Ground truth for A = ledger/status/rule_170.yaml evidence (primary: SC
+# order W.P.(C) 645/2022 dated 11-08-2025; CDSCO compilations footnotes 757/1345).
+- id: A01
+  set: A
+  question: Is Rule 170 in force?
+  jurisdiction: IN
+  as_of: '2019-06-01'
+  expect:
+    status: in_force
+- id: A02
+  set: A
+  question: What is the status of Rule 170 of the Drugs Rules?
+  jurisdiction: IN
+  as_of: '2019-06-01'
+  expect:
+    status: in_force
+- id: A03
+  set: A
+  question: Is Rule 170 in force?
+  jurisdiction: IN
+  as_of: '2024-06-30'
+  expect:
+    status: in_force
+- id: A04
+  set: A
+  question: What is the status of Rule 170 of the Drugs Rules?
+  jurisdiction: IN
+  as_of: '2024-06-30'
+  expect:
+    status: in_force
+- id: A05
+  set: A
+  question: Is Rule 170 in force?
+  jurisdiction: IN
+  as_of: '2024-07-01'
+  expect:
+    status: omitted
+- id: A06
+  set: A
+  question: What is the status of Rule 170 of the Drugs Rules?
+  jurisdiction: IN
+  as_of: '2024-07-01'
+  expect:
+    status: omitted
+- id: A07
+  set: A
+  question: Is Rule 170 in force?
+  jurisdiction: IN
+  as_of: '2024-08-01'
+  expect:
+    status: omitted
+- id: A08
+  set: A
+  question: What is the status of Rule 170 of the Drugs Rules?
+  jurisdiction: IN
+  as_of: '2024-08-01'
+  expect:
+    status: omitted
+- id: A09
+  set: A
+  question: Is Rule 170 in force?
+  jurisdiction: IN
+  as_of: '2024-08-27'
+  expect:
+    status: in_force_stayed_omission
+- id: A10
+  set: A
+  question: What is the status of Rule 170 of the Drugs Rules?
+  jurisdiction: IN
+  as_of: '2024-08-27'
+  expect:
+    status: in_force_stayed_omission
+- id: A11
+  set: A
+  question: Is Rule 170 in force?
+  jurisdiction: IN
+  as_of: '2025-01-15'
+  expect:
+    status: in_force_stayed_omission
+- id: A12
+  set: A
+  question: What is the status of Rule 170 of the Drugs Rules?
+  jurisdiction: IN
+  as_of: '2025-01-15'
+  expect:
+    status: in_force_stayed_omission
+- id: A13
+  set: A
+  question: Is Rule 170 in force?
+  jurisdiction: IN
+  as_of: '2025-08-11'
+  expect:
+    status: omitted_stay_vacated
+- id: A14
+  set: A
+  question: What is the status of Rule 170 of the Drugs Rules?
+  jurisdiction: IN
+  as_of: '2025-08-11'
+  expect:
+    status: omitted_stay_vacated
+- id: A15
+  set: A
+  question: Is Rule 170 in force?
+  jurisdiction: IN
+  as_of: '2026-09-01'
+  expect:
+    status: omitted_stay_vacated
+- id: A16
+  set: A
+  question: What is the status of Rule 170 of the Drugs Rules?
+  jurisdiction: IN
+  as_of: '2026-09-01'
+  expect:
+    status: omitted_stay_vacated
+- id: L01
+  set: L
+  question: What is codified traditional knowledge?
+  jurisdiction: IN
+  as_of: '2026-09-01'
+  expect:
+    doc: in-bd-amendment-act-2023
+- id: L02
+  set: L
+  question: benefit sharing amount payable annual turnover
+  jurisdiction: IN
+  as_of: '2026-09-01'
+  expect:
+    doc: in-bd-abs-regulations-2025
+- id: L03
+  set: L
+  question: Can Ayurveda Aahara labelling claim to cure a human disease?
+  jurisdiction: IN
+  as_of: '2026-09-01'
+  expect:
+    doc: in-fssai-ayurveda-aahara-regulations-2022
+- id: L04
+  set: L
+  question: Which patent offices can access TKDL?
+  jurisdiction: IN
+  as_of: '2026-09-01'
+  expect:
+    doc: in-csir-tkdl-about
+- id: L05
+  set: L
+  question: Which diseases are listed in the Drugs and Magic Remedies Act schedule?
+  jurisdiction: IN
+  as_of: '2026-09-01'
+  expect:
+    doc: in-dmr-act-1954
+- id: L06
+  set: L
+  question: Is Ayurvedic medicine patentable in India?
+  jurisdiction: IN
+  as_of: '2026-09-01'
+  expect:
+    doc: in-patents-act-1970
+- id: L07
+  set: L
+  question: simplified registration procedure for traditional herbal medicinal products
+  jurisdiction: EU
+  as_of: '2026-09-01'
+  expect:
+    doc: eu-directive-2004-24-ec
+- id: L08
+  set: L
+  question: FDA import alert on Ayurvedic medicines
+  jurisdiction: US
+  as_of: '2026-09-01'
+  expect:
+    doc: us-fda-import-alert-66-41
+- id: L09
+  set: L
+  question: import alert Ayurvedic products heavy metals
+  jurisdiction: US
+  as_of: '2026-09-01'
+  expect:
+    doc: us-fda-import-alert-66-41
+- id: L10
+  set: L
+  question: treaty on intellectual property genetic resources and associated traditional knowledge
+  jurisdiction: WIPO-track
+  as_of: '2026-09-01'
+  expect:
+    doc: wipo-gratk-treaty-page
+- id: B01
+  set: B
+  question: traditional herbal medicine registration
+  jurisdiction: US
+  as_of: '2026-09-01'
+  expect:
+    no_foreign: true
+- id: B02
+  set: B
+  question: traditional herbal medicine registration
+  jurisdiction: EU
+  as_of: '2026-09-01'
+  expect:
+    no_foreign: true
+- id: B03
+  set: B
+  question: traditional herbal medicine registration
+  jurisdiction: WIPO-track
+  as_of: '2026-09-01'
+  expect:
+    no_foreign: true
+- id: B04
+  set: B
+  question: advertisement of drugs claiming to cure diseases
+  jurisdiction: US
+  as_of: '2026-09-01'
+  expect:
+    no_foreign: true
+- id: B05
+  set: B
+  question: advertisement of drugs claiming to cure diseases
+  jurisdiction: EU
+  as_of: '2026-09-01'
+  expect:
+    no_foreign: true
+- id: B06
+  set: B
+  question: advertisement of drugs claiming to cure diseases
+  jurisdiction: WIPO-track
+  as_of: '2026-09-01'
+  expect:
+    no_foreign: true
+- id: B07
+  set: B
+  question: patent on traditional knowledge
+  jurisdiction: US
+  as_of: '2026-09-01'
+  expect:
+    no_foreign: true
+- id: B08
+  set: B
+  question: patent on traditional knowledge
+  jurisdiction: EU
+  as_of: '2026-09-01'
+  expect:
+    no_foreign: true
+- id: B09
+  set: B
+  question: patent on traditional knowledge
+  jurisdiction: WIPO-track
+  as_of: '2026-09-01'
+  expect:
+    no_foreign: true
+- id: B10
+  set: B
+  question: benefit sharing for biological resources
+  jurisdiction: US
+  as_of: '2026-09-01'
+  expect:
+    no_foreign: true
+- id: B11
+  set: B
+  question: benefit sharing for biological resources
+  jurisdiction: EU
+  as_of: '2026-09-01'
+  expect:
+    no_foreign: true
+- id: B12
+  set: B
+  question: benefit sharing for biological resources
+  jurisdiction: WIPO-track
+  as_of: '2026-09-01'
+  expect:
+    no_foreign: true
+- id: D01
+  set: D
+  question: Who won the FIFA World Cup football final?
+  jurisdiction: IN
+  as_of: '2026-09-01'
+  expect:
+    abstain: true
+- id: D02
+  set: D
+  question: What is the GST rate on Ayurvedic cosmetics?
+  jurisdiction: IN
+  as_of: '2026-09-01'
+  expect:
+    abstain: true
+- id: D03
+  set: D
+  question: Who is the Prime Minister of Japan?
+  jurisdiction: IN
+  as_of: '2026-09-01'
+  expect:
+    abstain: true
+- id: D04
+  set: D
+  question: recipe for chocolate cake
+  jurisdiction: IN
+  as_of: '2026-09-01'
+  expect:
+    abstain: true
+- id: D05
+  set: D
+  question: What is the penalty for bitcoin mining?
+  jurisdiction: IN
+  as_of: '2026-09-01'
+  expect:
+    abstain: true
+- id: D06
+  set: D
+  question: Is the SIPP scheme still available for startups?
+  jurisdiction: IN
+  as_of: '2026-09-01'
+  expect:
+    abstain: true
+- id: D07
+  set: D
+  question: Is Rule 170 in force?
+  jurisdiction: US
+  as_of: '2026-09-01'
+  expect:
+    abstain: true
+- id: D08
+  set: D
+  question: Is Rule 170 in force?
+  jurisdiction: IN
+  as_of: '2015-01-01'
+  expect:
+    abstain: true
+- id: D09
+  set: D
+  question: What was the status of Rule 170 in 2010?
+  jurisdiction: IN
+  as_of: '2010-06-01'
+  expect:
+    abstain: true
