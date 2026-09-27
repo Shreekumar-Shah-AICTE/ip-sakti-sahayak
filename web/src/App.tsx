@@ -1,8 +1,30 @@
-import { type FormEvent, useCallback, useEffect, useRef, useState } from "react";
+import {
+  type FormEvent,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { AbsPanel } from "./AbsPanel";
 import { PassportPanel } from "./PassportPanel";
-import { DEMO_DATES, DEMO_QUESTIONS, type Lang, STATUS_LABELS, STATUS_SHORT, STRINGS } from "./i18n";
-import { CONFIDENCE_PLAIN, DATE_CAPTIONS, PLAIN_STATUS, STATUS_TONE, type TourStep } from "./explain";
+import {
+  DEMO_DATES,
+  DEMO_QUESTIONS,
+  type Lang,
+  STATUS_LABELS,
+  STATUS_SHORT,
+  STRINGS,
+} from "./i18n";
+import {
+  CONFIDENCE_PLAIN,
+  CONFIDENCE_PLAIN_L,
+  DATE_CAPTIONS,
+  PLAIN_LINES,
+  PLAIN_STATUS,
+  PLAIN_STATUS_L,
+  STATUS_TONE,
+  type TourStep,
+} from "./explain";
 import { GlossaryDrawer, Term, TourCard } from "./Help";
 
 // The Two Switches live above the fold (S6 rule 1) and are sent with every question.
@@ -18,7 +40,12 @@ export type Quote = {
   role: "status_evidence" | "retrieved" | "overlay";
 };
 
-export type Segment = { from: string; to: string | null; status: string; sub_judice: boolean };
+export type Segment = {
+  from: string;
+  to: string | null;
+  status: string;
+  sub_judice: boolean;
+};
 
 export type Status = {
   instrument: string;
@@ -42,7 +69,11 @@ export type BaselineQuote = {
   source_url: string;
 };
 
-export type Baseline = { kind: string; uses_as_of: boolean; quotes: BaselineQuote[] };
+export type Baseline = {
+  kind: string;
+  uses_as_of: boolean;
+  quotes: BaselineQuote[];
+};
 
 export type Synthesis = {
   provider: string;
@@ -67,7 +98,20 @@ export type Answer = {
   synthesis?: Synthesis | null;
 };
 
-const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const MONTHS = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 // "2024-08-28" -> "28 Aug 2024": readable for a lay audience, still unambiguous.
 export function human(d: string | null | undefined): string {
   if (!d) return "today";
@@ -83,9 +127,21 @@ const JUR_NAME: Record<string, string> = {
 };
 
 const TONE = {
-  green: { box: "border-emerald-300 bg-emerald-50 text-emerald-950", dot: "bg-emerald-500", chip: "border-emerald-500 bg-emerald-100 text-emerald-950" },
-  red: { box: "border-rose-300 bg-rose-50 text-rose-950", dot: "bg-rose-500", chip: "border-rose-500 bg-rose-100 text-rose-950" },
-  amber: { box: "border-amber-300 bg-amber-50 text-amber-950", dot: "bg-amber-500", chip: "border-amber-500 bg-amber-100 text-amber-950" },
+  green: {
+    box: "border-emerald-300 bg-emerald-50 text-emerald-950",
+    dot: "bg-emerald-500",
+    chip: "border-emerald-500 bg-emerald-100 text-emerald-950",
+  },
+  red: {
+    box: "border-rose-300 bg-rose-50 text-rose-950",
+    dot: "bg-rose-500",
+    chip: "border-rose-500 bg-rose-100 text-rose-950",
+  },
+  amber: {
+    box: "border-amber-300 bg-amber-50 text-amber-950",
+    dot: "bg-amber-500",
+    chip: "border-amber-500 bg-amber-100 text-amber-950",
+  },
 } as const;
 
 export function tone(status: string | null | undefined) {
@@ -94,23 +150,42 @@ export function tone(status: string | null | undefined) {
 
 // An accepted synthesis is shown above the quotes it organises; every [n] links to quote n.
 // The model may only re-phrase quoted, cited text (S3 rule 8) — the quotes stay the authority.
-function SynthesisCard({ s, t, testId }: { s: Synthesis; t: Record<string, string>; testId: string }) {
+function SynthesisCard({
+  s,
+  t,
+  testId,
+}: {
+  s: Synthesis;
+  t: Record<string, string>;
+  testId: string;
+}) {
   if (!s.accepted || !s.text) {
     return (
-      <p data-testid="synthesis-withheld" className="mt-3 text-xs text-slate-600">
+      <p
+        data-testid="synthesis-withheld"
+        className="mt-3 text-xs text-slate-600"
+      >
         {t.synthWithheld}: {s.reason}
       </p>
     );
   }
   const parts = s.text.split(/(\[\d+\])/);
   return (
-    <section data-testid="synthesis" className="mt-4 rounded-xl border border-sky-200 bg-sky-50 px-4 py-3 text-sm">
+    <section
+      data-testid="synthesis"
+      className="mt-4 rounded-xl border border-sky-200 bg-sky-50 px-4 py-3 text-sm"
+    >
       <p className="text-xs font-semibold text-sky-900">✨ {t.synthLabel}</p>
       <p className="mt-1 leading-relaxed text-slate-900">
         {parts.map((part, i) => {
           const m = /^\[(\d+)\]$/.exec(part);
           return m ? (
-            <a key={i} href={`#${testId}-q${m[1]}`} className="font-semibold text-sky-800 underline" aria-label={`${t.synthCite} ${m[1]}`}>
+            <a
+              key={i}
+              href={`#${testId}-q${m[1]}`}
+              className="font-semibold text-sky-800 underline"
+              aria-label={`${t.synthCite} ${m[1]}`}
+            >
               [{m[1]}]
             </a>
           ) : (
@@ -139,13 +214,22 @@ const ROLE_STYLE: Record<Quote["role"], string> = {
 
 // The Status Ledger, drawn (S6 rule 2): every segment the instrument has had, with the
 // segment covering the as-of date highlighted. It makes "as of a date" visible at a glance.
-export function TimelineStrip({ st, t }: { st: Status; t: Record<string, string> }) {
+export function TimelineStrip({
+  st,
+  t,
+}: {
+  st: Status;
+  t: Record<string, string>;
+}) {
   const segs = st.timeline ?? [];
   if (segs.length < 2) return null;
   return (
     <div data-testid="timeline" className="mt-3">
       <p className="text-xs font-semibold uppercase tracking-wide opacity-80">
-        {t.timeline} <span className="font-normal normal-case">— the highlighted box is the law on your date</span>
+        {t.timeline}{" "}
+        <span className="font-normal normal-case">
+          — the highlighted box is the law on your date
+        </span>
       </p>
       <ol className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-4">
         {segs.map((sg, i) => {
@@ -157,17 +241,26 @@ export function TimelineStrip({ st, t }: { st: Status; t: Record<string, string>
               data-testid={active ? "timeline-active" : "timeline-segment"}
               aria-current={active ? "true" : undefined}
               className={`relative rounded-lg border-2 px-2 py-1.5 text-xs transition ${
-                active ? `${tn.chip} font-semibold shadow-md ring-2 ring-offset-1 ring-indigo-400` : "border-slate-200 bg-white/80 text-slate-700"
+                active
+                  ? `${tn.chip} font-semibold shadow-md ring-2 ring-offset-1 ring-indigo-400`
+                  : "border-slate-200 bg-white/80 text-slate-700"
               }`}
             >
               <span className="flex items-center gap-1">
-                <span className={`inline-block h-2 w-2 rounded-full ${tn.dot}`} aria-hidden="true" />
-                <span className="text-[10px] uppercase tracking-wide opacity-70">Step {i + 1}</span>
+                <span
+                  className={`inline-block h-2 w-2 rounded-full ${tn.dot}`}
+                  aria-hidden="true"
+                />
+                <span className="text-[10px] uppercase tracking-wide opacity-70">
+                  Step {i + 1}
+                </span>
               </span>
               <span className="block">
                 {human(sg.from)} → {sg.to ? human(sg.to) : "now"}
               </span>
-              <span className="block">{STATUS_SHORT[sg.status] ?? sg.status}</span>
+              <span className="block">
+                {STATUS_SHORT[sg.status] ?? sg.status}
+              </span>
               {active && <span className="sr-only"> ({t.timelineNow})</span>}
             </li>
           );
@@ -179,10 +272,21 @@ export function TimelineStrip({ st, t }: { st: Status; t: Record<string, string>
 
 // The static-RAG card (BENCH_SPEC §3): the same corpus without the as-of machinery, shown
 // next to the real answer so the difference is the demo's argument, not a claim.
-export function BaselineCard({ b, t }: { b: Baseline; t: Record<string, string> }) {
+export function BaselineCard({
+  b,
+  t,
+}: {
+  b: Baseline;
+  t: Record<string, string>;
+}) {
   return (
-    <article data-testid="baseline" className="fade-in rounded-2xl border-2 border-dashed border-slate-300 bg-slate-100 p-4">
-      <p className="text-[11px] font-bold uppercase tracking-wider text-slate-500">🤖 What an ordinary assistant says</p>
+    <article
+      data-testid="baseline"
+      className="fade-in rounded-2xl border-2 border-dashed border-slate-300 bg-slate-100 p-4"
+    >
+      <p className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
+        🤖 What an ordinary assistant says
+      </p>
       <h2 className="mt-1 text-sm font-semibold text-slate-900">
         <Term k="staticRag">{t.baselineTitle}</Term>
       </h2>
@@ -196,7 +300,9 @@ export function BaselineCard({ b, t }: { b: Baseline; t: Record<string, string> 
         <ol className="mt-3 space-y-3">
           {b.quotes.map((q) => (
             <li key={q.chunk_id} className="text-sm">
-              <blockquote className="line-clamp-5 border-l-4 border-slate-300 pl-3 italic text-slate-700">“{q.text}”</blockquote>
+              <blockquote className="line-clamp-5 border-l-4 border-slate-300 pl-3 italic text-slate-700">
+                “{q.text}”
+              </blockquote>
               <p className="mt-1 text-xs text-slate-600">
                 {q.doc_title} — {q.section}
               </p>
@@ -205,7 +311,8 @@ export function BaselineCard({ b, t }: { b: Baseline; t: Record<string, string> 
         </ol>
       )}
       <p className="mt-3 rounded-lg bg-white px-3 py-2 text-xs text-slate-700">
-        ⚠️ Notice: no date, no status, no refusal. Change the date — this card will not change.
+        ⚠️ Notice: no date, no status, no refusal. Change the date — this card
+        will not change.
       </p>
     </article>
   );
@@ -213,24 +320,34 @@ export function BaselineCard({ b, t }: { b: Baseline; t: Record<string, string> 
 
 // "In plain words": a newcomer's reading of the answer. It only re-states the ledger status
 // label and the presence of the DMR overlay quote — it never adds a legal fact of its own.
-function PlainWords({ a }: { a: Answer }) {
+function PlainWords({ a, lang }: { a: Answer; lang: Lang }) {
   const hasOverlay = a.quotes.some((q) => q.role === "overlay");
+  const words = PLAIN_LINES[lang];
   const lines: string[] = [];
   if (a.abstain) {
-    lines.push("The app could not find an official source that answers this, so it refuses to guess. That is on purpose.");
+    lines.push(words.abstain);
   } else {
     if (a.status && !a.status.abstain && a.status.status) {
-      lines.push(PLAIN_STATUS[a.status.status] ?? a.status.summary);
+      lines.push(
+        PLAIN_STATUS_L[lang][a.status.status] ??
+          PLAIN_STATUS[a.status.status] ??
+          a.status.summary,
+      );
     }
     if (hasOverlay) {
-      lines.push("Separately, the DMR Act, 1954 bans advertising a medicine as a treatment for the diseases on its list — and Diabetes is on it. That applies on every date.");
+      lines.push(words.overlay);
     }
-    lines.push(CONFIDENCE_PLAIN[a.confidence] ?? "");
-    lines.push("Read the exact quotes below — they are the real authority, copied word-for-word.");
+    lines.push(CONFIDENCE_PLAIN_L[lang][a.confidence] ?? "");
+    lines.push(words.read);
   }
   return (
-    <div data-testid="plain" className="mt-4 rounded-xl border border-indigo-100 bg-indigo-50/60 px-4 py-3">
-      <p className="text-xs font-bold uppercase tracking-wider text-indigo-800">💬 In plain words</p>
+    <div
+      data-testid="plain"
+      className="mt-4 rounded-xl border border-indigo-100 bg-indigo-50/60 px-4 py-3"
+    >
+      <p className="text-xs font-bold uppercase tracking-wider text-indigo-800">
+        💬 {words.title}
+      </p>
       <ul className="mt-1 space-y-1 text-sm leading-relaxed text-slate-800">
         {lines.filter(Boolean).map((l) => (
           <li key={l}>• {l}</li>
@@ -240,7 +357,19 @@ function PlainWords({ a }: { a: Answer }) {
   );
 }
 
-export function AnswerCard({ a, t, testId, compact }: { a: Answer; t: Record<string, string>; testId: string; compact?: boolean }) {
+export function AnswerCard({
+  a,
+  t,
+  testId,
+  compact,
+  lang = "en",
+}: {
+  a: Answer;
+  t: Record<string, string>;
+  testId: string;
+  compact?: boolean;
+  lang?: Lang;
+}) {
   const tn = tone(a.status?.status);
   const sources = (
     <ol className="mt-2 space-y-3">
@@ -248,48 +377,84 @@ export function AnswerCard({ a, t, testId, compact }: { a: Answer; t: Record<str
         <li
           key={q.chunk_id}
           id={`${testId}-q${i + 1}`}
-          data-testid={q.role === "overlay" && !compact ? "overlay-quote" : undefined}
+          data-testid={
+            q.role === "overlay" && !compact ? "overlay-quote" : undefined
+          }
           className={`rounded-xl border p-3 text-sm ${q.role === "overlay" ? "border-violet-200 bg-violet-50/50" : "border-slate-200 bg-slate-50/60"}`}
         >
           <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-900 text-xs font-bold text-white">{i + 1}</span>
-            <span className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${ROLE_STYLE[q.role]}`}>
+            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-900 text-xs font-bold text-white">
+              {i + 1}
+            </span>
+            <span
+              className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${ROLE_STYLE[q.role]}`}
+            >
               {t[ROLE_KEY[q.role]] ?? q.role}
             </span>
             {q.role === "overlay" && <Term k="overlay" />}
           </div>
-          <blockquote className="mt-2 border-l-4 border-indigo-300 pl-3 font-serif italic leading-relaxed text-slate-800">“{q.text}”</blockquote>
+          <blockquote className="mt-2 border-l-4 border-indigo-300 pl-3 font-serif italic leading-relaxed text-slate-800">
+            “{q.text}”
+          </blockquote>
           <p className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-slate-600">
-            <span className="font-semibold text-slate-800">📄 {q.doc_title}</span>
+            <span className="font-semibold text-slate-800">
+              📄 {q.doc_title}
+            </span>
             <span>— {q.section}</span>
-            <a className="rounded-md bg-white px-2 py-0.5 font-semibold text-indigo-700 underline ring-1 ring-indigo-200 hover:bg-indigo-50" href={q.source_url} target="_blank" rel="noreferrer">
+            <a
+              className="rounded-md bg-white px-2 py-0.5 font-semibold text-indigo-700 underline ring-1 ring-indigo-200 hover:bg-indigo-50"
+              href={q.source_url}
+              target="_blank"
+              rel="noreferrer"
+            >
               {t.openSource} ↗
             </a>
-            <code className="text-[10px] text-slate-500" title="Passage ID — exactly which passage was quoted">{q.chunk_id}</code>
+            <code
+              className="text-[10px] text-slate-500"
+              title="Passage ID — exactly which passage was quoted"
+            >
+              {q.chunk_id}
+            </code>
           </p>
         </li>
       ))}
     </ol>
   );
   return (
-    <article data-testid={testId} className={`fade-in rounded-2xl border border-slate-200 bg-white shadow-sm ${compact ? "p-4" : "p-5 shadow-lg shadow-indigo-100/60"}`}>
+    <article
+      data-testid={testId}
+      className={`fade-in rounded-2xl border border-slate-200 bg-white shadow-sm ${compact ? "p-4" : "p-5 shadow-lg shadow-indigo-100/60"}`}
+    >
       <div className="flex flex-wrap items-center gap-2 text-xs">
-        <span className="rounded-full bg-slate-100 px-2.5 py-1 font-medium text-slate-700">{JUR_NAME[a.jurisdiction] ?? a.jurisdiction}</span>
-        <span className="rounded-full bg-slate-100 px-2.5 py-1 font-medium text-slate-700">📅 {human(a.as_of)} <span className="sr-only">{a.as_of}</span></span>
-        <span className={`rounded-full px-2.5 py-1 font-semibold ${a.confidence === "high" ? "bg-emerald-100 text-emerald-900" : a.confidence === "medium" ? "bg-amber-100 text-amber-900" : "bg-rose-100 text-rose-900"}`}>
-          <Term k="confidence">{t.confidence}: {a.confidence}</Term>
+        <span className="rounded-full bg-slate-100 px-2.5 py-1 font-medium text-slate-700">
+          {JUR_NAME[a.jurisdiction] ?? a.jurisdiction}
+        </span>
+        <span className="rounded-full bg-slate-100 px-2.5 py-1 font-medium text-slate-700">
+          📅 {human(a.as_of)} <span className="sr-only">{a.as_of}</span>
+        </span>
+        <span
+          className={`rounded-full px-2.5 py-1 font-semibold ${a.confidence === "high" ? "bg-emerald-100 text-emerald-900" : a.confidence === "medium" ? "bg-amber-100 text-amber-900" : "bg-rose-100 text-rose-900"}`}
+        >
+          <Term k="confidence">
+            {t.confidence}: {a.confidence}
+          </Term>
         </span>
       </div>
       {a.status && !a.status.abstain && (
-        <div data-testid="status-line" className={`mt-3 rounded-xl border-2 px-4 py-3 text-sm ${tn.box}`}>
+        <div
+          data-testid="status-line"
+          className={`mt-3 rounded-xl border-2 px-4 py-3 text-sm ${tn.box}`}
+        >
           <p className="text-[11px] font-bold uppercase tracking-wider opacity-80">
-            <Term k="ledger">⚖️ {a.status.instrument}</Term> — {t.statusAsOf} {human(a.as_of)}
+            <Term k="ledger">⚖️ {a.status.instrument}</Term> — {t.statusAsOf}{" "}
+            {human(a.as_of)}
           </p>
           <p className={`mt-1 font-bold ${compact ? "text-base" : "text-xl"}`}>
             {STATUS_LABELS[a.status.status ?? ""] ?? a.status.status}
             {a.status.sub_judice && (
               <span className="font-semibold">
-                {" "}({t.subJudice})<Term k="subJudice" />
+                {" "}
+                ({t.subJudice})<Term k="subJudice" />
               </span>
             )}
           </p>
@@ -303,11 +468,18 @@ export function AnswerCard({ a, t, testId, compact }: { a: Answer; t: Record<str
           )}
         </div>
       )}
-      {!compact && <PlainWords a={a} />}
-      {!a.abstain && a.synthesis && <SynthesisCard s={a.synthesis} t={t} testId={testId} />}
+      {!compact && <PlainWords a={a} lang={lang} />}
+      {!a.abstain && a.synthesis && (
+        <SynthesisCard s={a.synthesis} t={t} testId={testId} />
+      )}
       {a.abstain ? (
-        <div data-testid="abstain" className="mt-4 rounded-xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm">
-          <p className="text-base font-semibold text-slate-900">🛑 {t.abstainTitle}</p>
+        <div
+          data-testid="abstain"
+          className="mt-4 rounded-xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm"
+        >
+          <p className="text-base font-semibold text-slate-900">
+            🛑 {t.abstainTitle}
+          </p>
           <p className="mt-1 text-slate-700">{a.reason}</p>
           <p className="mt-2 text-slate-700">{t.abstainNext}</p>
           <p className="mt-2 text-xs text-slate-700">
@@ -316,20 +488,27 @@ export function AnswerCard({ a, t, testId, compact }: { a: Answer; t: Record<str
         </div>
       ) : compact ? (
         <details className="mt-2 text-sm">
-          <summary className="cursor-pointer text-xs font-semibold text-slate-600">{t.sources} ({a.quotes.length})</summary>
+          <summary className="cursor-pointer text-xs font-semibold text-slate-600">
+            {t.sources} ({a.quotes.length})
+          </summary>
           {sources}
         </details>
       ) : (
         <>
           <h3 className="mt-5 flex items-center text-sm font-bold text-slate-900">
             <Term k="verbatim">📜 {t.sources}</Term>
-            <span className="ml-2 text-xs font-normal text-slate-500">exact words from the official documents</span>
+            <span className="ml-2 text-xs font-normal text-slate-500">
+              exact words from the official documents
+            </span>
           </h3>
           {sources}
         </>
       )}
       {(a.abstain || a.confidence === "low") && (
-        <p data-testid="escalation" className="mt-3 rounded-lg bg-emerald-50 px-3 py-2 text-sm text-slate-800">
+        <p
+          data-testid="escalation"
+          className="mt-3 rounded-lg bg-emerald-50 px-3 py-2 text-sm text-slate-800"
+        >
           🧑‍⚖️ {t.escalation}
         </p>
       )}
@@ -343,20 +522,37 @@ export function AnswerCard({ a, t, testId, compact }: { a: Answer; t: Record<str
 type Recognizer = {
   lang: string;
   interimResults: boolean;
-  onresult: ((e: { results: ArrayLike<ArrayLike<{ transcript: string }>> }) => void) | null;
+  onresult:
+    | ((e: { results: ArrayLike<ArrayLike<{ transcript: string }>> }) => void)
+    | null;
   onend: (() => void) | null;
   onerror: (() => void) | null;
   start: () => void;
   stop: () => void;
 };
-const SPEECH_LANG: Record<Lang, string> = { en: "en-IN", hi: "hi-IN", gu: "gu-IN" };
+const SPEECH_LANG: Record<Lang, string> = {
+  en: "en-IN",
+  hi: "hi-IN",
+  gu: "gu-IN",
+};
 
 function speechCtor(): (new () => Recognizer) | null {
   const w = window as unknown as Record<string, unknown>;
-  return ((w.SpeechRecognition ?? w.webkitSpeechRecognition) as new () => Recognizer) ?? null;
+  return (
+    ((w.SpeechRecognition ??
+      w.webkitSpeechRecognition) as new () => Recognizer) ?? null
+  );
 }
 
-export function VoiceButton({ lang, t, onText }: { lang: Lang; t: Record<string, string>; onText: (s: string) => void }) {
+export function VoiceButton({
+  lang,
+  t,
+  onText,
+}: {
+  lang: Lang;
+  t: Record<string, string>;
+  onText: (s: string) => void;
+}) {
   const [listening, setListening] = useState(false);
   const rec = useRef<Recognizer | null>(null);
   const Ctor = speechCtor();
@@ -371,7 +567,10 @@ export function VoiceButton({ lang, t, onText }: { lang: Lang; t: Record<string,
     r.lang = SPEECH_LANG[lang];
     r.interimResults = false;
     r.onresult = (e) => {
-      const said = Array.from(e.results).map((x) => x[0].transcript).join(" ").trim();
+      const said = Array.from(e.results)
+        .map((x) => x[0].transcript)
+        .join(" ")
+        .trim();
       if (said) onText(said);
     };
     r.onend = () => setListening(false);
@@ -399,7 +598,8 @@ export function VoiceButton({ lang, t, onText }: { lang: Lang; t: Record<string,
 }
 
 const SAMPLE_HINT: Record<string, string> = {
-  "Diabetes advertisement": "📣 Can I advertise a classical Ayurveda medicine for diabetes?",
+  "Diabetes advertisement":
+    "📣 Can I advertise a classical Ayurveda medicine for diabetes?",
   "Rule 170 status": "⚖️ Is the Ayurveda advertising rule (Rule 170) in force?",
   "Out of scope (abstains)": "🛑 A tax question it should refuse",
 };
@@ -407,7 +607,9 @@ const SAMPLE_HINT: Record<string, string> = {
 export default function App() {
   const [lang, setLang] = useState<Lang>("en");
   const [jurisdiction, setJurisdiction] = useState<string>("IN");
-  const [asOf, setAsOf] = useState<string>(new Date().toISOString().slice(0, 10));
+  const [asOf, setAsOf] = useState<string>(
+    new Date().toISOString().slice(0, 10),
+  );
   const [question, setQuestion] = useState<string>("");
   const [asked, setAsked] = useState<string>("");
   const [current, setCurrent] = useState<Answer | null>(null);
@@ -430,7 +632,9 @@ export default function App() {
     fetch("/health")
       .then((r) => r.json())
       .then((b) => {
-        setHealth(`${b.status} · ${b.mode}${b.retrieval ? ` · ${b.retrieval.mode}` : ""}`);
+        setHealth(
+          `${b.status} · ${b.mode}${b.retrieval ? ` · ${b.retrieval.mode}` : ""}`,
+        );
         setSendsText(b.mode === "adapters");
         setOffline(b.mode !== "adapters");
       })
@@ -500,8 +704,13 @@ export default function App() {
 
   function scrollTo(target: string) {
     window.setTimeout(() => {
-      const el = document.querySelector(`[data-testid="${target}"]`) ?? document.getElementById(target);
-      el?.scrollIntoView({ behavior: "smooth", block: target === "results" ? "start" : "center" });
+      const el =
+        document.querySelector(`[data-testid="${target}"]`) ??
+        document.getElementById(target);
+      el?.scrollIntoView({
+        behavior: "smooth",
+        block: target === "results" ? "start" : "center",
+      });
     }, 350);
   }
 
@@ -529,8 +738,17 @@ export default function App() {
   }
 
   const changed =
-    current && previous && current.status && previous.status && current.status.status !== previous.status.status
-      ? { from: previous.status.status ?? "", to: current.status.status ?? "", d0: previous.as_of, d1: current.as_of }
+    current &&
+    previous &&
+    current.status &&
+    previous.status &&
+    current.status.status !== previous.status.status
+      ? {
+          from: previous.status.status ?? "",
+          to: current.status.status ?? "",
+          d0: previous.as_of,
+          d1: current.as_of,
+        }
       : null;
   const side = (compare && baseline) || previous;
 
@@ -540,9 +758,16 @@ export default function App() {
         <div className="relative mx-auto max-w-6xl px-6 pb-8 pt-5">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/15 text-2xl shadow-inner ring-1 ring-white/30" aria-hidden="true">🌿</span>
+              <span
+                className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/15 text-2xl shadow-inner ring-1 ring-white/30"
+                aria-hidden="true"
+              >
+                🌿
+              </span>
               <div>
-                <h1 className="text-2xl font-extrabold tracking-tight">IP-SAKTI Sahayak</h1>
+                <h1 className="text-2xl font-extrabold tracking-tight">
+                  IP-SAKTI Sahayak
+                </h1>
                 <p className="text-xs text-emerald-100">{t.tagline}</p>
               </div>
             </div>
@@ -586,16 +811,23 @@ export default function App() {
               Smart India Hackathon 2026 · SIH26045 · Ministry of Ayush
             </p>
             <p className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">
-              The Ayurveda law assistant that knows <span className="text-amber-300">when</span> the law is.
+              The Ayurveda law assistant that knows{" "}
+              <span className="text-amber-300">when</span> the law is.
             </p>
             <p className="mt-2 text-base text-emerald-50">
-              Ask about Ayurveda patents, advertising or licensing rules. Pick a date. Get the{" "}
-              <b>exact words of the law that applied on that date</b>, with the official source — and an honest “I don't know” when no source exists.
+              Ask about Ayurveda patents, advertising or licensing rules. Pick a
+              date. Get the{" "}
+              <b>exact words of the law that applied on that date</b>, with the
+              official source — and an honest “I don't know” when no source
+              exists.
             </p>
           </div>
 
           {/* The Two Switches (S6 rule 1): above the fold, never in a menu. */}
-          <div className="mt-6 grid gap-3 rounded-2xl bg-white/10 p-4 ring-1 ring-white/25 backdrop-blur md:grid-cols-[auto_auto_1fr]" aria-label="The Two Switches">
+          <div
+            className="mt-6 grid gap-3 rounded-2xl bg-white/10 p-4 ring-1 ring-white/25 backdrop-blur md:grid-cols-[auto_auto_1fr]"
+            aria-label="The Two Switches"
+          >
             <div className="flex flex-col text-sm">
               <span className="flex items-center text-xs font-bold uppercase tracking-wider text-emerald-50">
                 <label htmlFor="sw-jur">① {t.jurisdiction}</label>
@@ -631,7 +863,10 @@ export default function App() {
             </div>
             <div className="flex flex-col text-sm">
               <span className="flex items-center text-xs font-bold uppercase tracking-wider text-emerald-50">
-                {t.demoDates} — the four moments <Term k="rule170" light /> <span className="ml-1 normal-case tracking-normal">changed</span>
+                {t.demoDates} — the four moments <Term k="rule170" light />{" "}
+                <span className="ml-1 normal-case tracking-normal">
+                  changed
+                </span>
               </span>
               <div className="mt-1 flex flex-wrap gap-2">
                 {DEMO_DATES.map((d) => (
@@ -642,11 +877,15 @@ export default function App() {
                     aria-pressed={asOf === d}
                     onClick={() => setAsOf(d)}
                     className={`rounded-xl px-3 py-1.5 text-left text-xs shadow transition ${
-                      asOf === d ? "bg-amber-300 font-bold text-slate-900 ring-2 ring-white" : "bg-white/90 text-slate-800 hover:bg-white"
+                      asOf === d
+                        ? "bg-amber-300 font-bold text-slate-900 ring-2 ring-white"
+                        : "bg-white/90 text-slate-800 hover:bg-white"
                     }`}
                   >
                     <span className="block font-semibold">{d}</span>
-                    <span className="block text-[10px] opacity-80">{DATE_CAPTIONS[d]}</span>
+                    <span className="block text-[10px] opacity-80">
+                      {DATE_CAPTIONS[d]}
+                    </span>
                   </button>
                 ))}
               </div>
@@ -657,15 +896,35 @@ export default function App() {
 
       <section className="mx-auto max-w-6xl px-6 py-6">
         {!current && (
-          <ol className="mb-5 grid gap-3 sm:grid-cols-3" aria-label="How to use this app">
+          <ol
+            className="mb-5 grid gap-3 sm:grid-cols-3"
+            aria-label="How to use this app"
+          >
             {[
-              ["1", "Set the two switches", "Whose law (India, US, EU, WIPO) and which date. They sit at the top because they change the answer."],
-              ["2", "Ask — or tap a sample", "Type any question in English, हिन्दी or ગુજરાતી, speak it with 🎤, or tap a sample question below."],
-              ["3", "Read the evidence", "You get the legal status on your date, a plain-words summary, and the exact quotes with links. No source → it says so."],
+              [
+                "1",
+                "Set the two switches",
+                "Whose law (India, US, EU, WIPO) and which date. They sit at the top because they change the answer.",
+              ],
+              [
+                "2",
+                "Ask — or tap a sample",
+                "Type any question in English, हिन्दी or ગુજરાતી, speak it with 🎤, or tap a sample question below.",
+              ],
+              [
+                "3",
+                "Read the evidence",
+                "You get the legal status on your date, a plain-words summary, and the exact quotes with links. No source → it says so.",
+              ],
             ].map(([n, h, p]) => (
-              <li key={n} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+              <li
+                key={n}
+                className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+              >
                 <p className="flex items-center gap-2 font-bold text-slate-900">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-emerald-600 text-sm text-white">{n}</span>
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-emerald-600 text-sm text-white">
+                    {n}
+                  </span>
                   {h}
                 </p>
                 <p className="mt-1 text-sm text-slate-600">{p}</p>
@@ -676,9 +935,14 @@ export default function App() {
         {!current && tour === null && (
           <div className="mb-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3">
             <p className="text-sm text-amber-950">
-              <b>New here?</b> The guided demo clicks through everything for you and tells you what to look at — about 2 minutes, 10 steps.
+              <b>New here?</b> The guided demo clicks through everything for you
+              and tells you what to look at — about 2 minutes, 10 steps.
             </p>
-            <button type="button" onClick={() => setTour(0)} className="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-700">
+            <button
+              type="button"
+              onClick={() => setTour(0)}
+              className="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-700"
+            >
               Start the guided demo →
             </button>
           </div>
@@ -706,8 +970,13 @@ export default function App() {
               {warming ? t.warming : busy ? t.asking : `${t.ask} →`}
             </button>
           </form>
-          <div className="mt-4 flex flex-wrap items-center gap-2 text-xs" data-testid="demo-bar">
-            <span className="font-bold uppercase tracking-wider text-slate-500">{t.demo} · try:</span>
+          <div
+            className="mt-4 flex flex-wrap items-center gap-2 text-xs"
+            data-testid="demo-bar"
+          >
+            <span className="font-bold uppercase tracking-wider text-slate-500">
+              {t.demo} · try:
+            </span>
             {DEMO_QUESTIONS.map((d) => (
               <button
                 key={d.q}
@@ -721,11 +990,19 @@ export default function App() {
                 className="rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1.5 font-medium text-indigo-900 hover:bg-indigo-100"
               >
                 {d.label}
-                {SAMPLE_HINT[d.label] && <span className="sr-only"> — {SAMPLE_HINT[d.label]}</span>}
+                {SAMPLE_HINT[d.label] && (
+                  <span className="sr-only"> — {SAMPLE_HINT[d.label]}</span>
+                )}
               </button>
             ))}
             <label className="ml-auto flex items-center gap-2 rounded-full border border-slate-300 bg-slate-50 px-3 py-1.5 font-semibold text-slate-800">
-              <input type="checkbox" data-testid="compare" checked={compare} onChange={(e) => setCompare(e.target.checked)} className="h-4 w-4 accent-indigo-600" />
+              <input
+                type="checkbox"
+                data-testid="compare"
+                checked={compare}
+                onChange={(e) => setCompare(e.target.checked)}
+                className="h-4 w-4 accent-indigo-600"
+              />
               {t.compare}
             </label>
             <Term k="staticRag" />
@@ -740,16 +1017,27 @@ export default function App() {
             </div>
           )}
           {changed && (
-            <p data-testid="changed" className="fade-in mb-3 rounded-xl border border-indigo-200 bg-gradient-to-r from-indigo-50 to-emerald-50 px-4 py-2 text-sm text-slate-800">
-              🔁 <b>The date changed the law.</b> {human(changed.d0)}: {STATUS_SHORT[changed.from] ?? changed.from} →{" "}
-              {human(changed.d1)}: <b>{STATUS_SHORT[changed.to] ?? changed.to}</b>. Same question — only the date is different.
+            <p
+              data-testid="changed"
+              className="fade-in mb-3 rounded-xl border border-indigo-200 bg-gradient-to-r from-indigo-50 to-emerald-50 px-4 py-2 text-sm text-slate-800"
+            >
+              🔁 <b>The date changed the law.</b> {human(changed.d0)}:{" "}
+              {STATUS_SHORT[changed.from] ?? changed.from} → {human(changed.d1)}
+              : <b>{STATUS_SHORT[changed.to] ?? changed.to}</b>. Same question —
+              only the date is different.
             </p>
           )}
-          <div className={`grid gap-4 ${side ? "lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]" : ""}`} aria-live="polite" aria-busy={busy}>
+          <div
+            className={`grid gap-4 ${side ? "lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]" : ""}`}
+            aria-live="polite"
+            aria-busy={busy}
+          >
             {current && (
               <div>
-                <p className="mb-1 text-xs font-bold uppercase tracking-wider text-indigo-700">✅ IP-SAKTI answer</p>
-                <AnswerCard a={current} t={t} testId="answer" />
+                <p className="mb-1 text-xs font-bold uppercase tracking-wider text-indigo-700">
+                  ✅ IP-SAKTI answer
+                </p>
+                <AnswerCard a={current} t={t} testId="answer" lang={lang} />
               </div>
             )}
             {side && (
@@ -757,8 +1045,15 @@ export default function App() {
                 {compare && baseline && <BaselineCard b={baseline} t={t} />}
                 {previous && (
                   <div className="opacity-90">
-                    <p className="mb-1 text-xs font-bold uppercase tracking-wider text-slate-500">⏪ {t.previous} — for comparison</p>
-                    <AnswerCard a={previous} t={t} testId="previous-answer" compact />
+                    <p className="mb-1 text-xs font-bold uppercase tracking-wider text-slate-500">
+                      ⏪ {t.previous} — for comparison
+                    </p>
+                    <AnswerCard
+                      a={previous}
+                      t={t}
+                      testId="previous-answer"
+                      compact
+                    />
                   </div>
                 )}
               </div>
@@ -767,8 +1062,13 @@ export default function App() {
         </div>
 
         <div className="mt-10">
-          <h2 className="text-xl font-extrabold text-slate-900">🧰 Tools for Ayurveda businesses</h2>
-          <p className="mt-1 text-sm text-slate-600">Both tools use the as-of date at the top, exactly like the question box.</p>
+          <h2 className="text-xl font-extrabold text-slate-900">
+            🧰 Tools for Ayurveda businesses
+          </h2>
+          <p className="mt-1 text-sm text-slate-600">
+            Both tools use the as-of date at the top, exactly like the question
+            box.
+          </p>
           <div className="mt-4 grid gap-5 lg:grid-cols-2">
             <div className="rounded-2xl border border-emerald-200 bg-white p-1 shadow-sm">
               <div className="rounded-t-xl bg-emerald-50 px-4 py-3">
@@ -776,21 +1076,30 @@ export default function App() {
                   💰 Benefit-sharing calculator <Term k="abs" />
                 </p>
                 <p className="mt-1 text-sm text-slate-700">
-                  Using Indian medicinal plants commercially? Enter your yearly turnover (in crore rupees) and press Calculate to see which slab of the 2025 Regulations applies — with the gazette lines behind it.
+                  Using Indian medicinal plants commercially? Enter your yearly
+                  turnover (in crore rupees) and press Calculate to see which
+                  slab of the 2025 Regulations applies — with the gazette lines
+                  behind it.
                 </p>
               </div>
               <div className="px-3 pb-3">
                 <AbsPanel asOf={asOf} t={t} />
               </div>
             </div>
-            <div id="passport-panel" className="rounded-2xl border border-indigo-200 bg-white p-1 shadow-sm">
+            <div
+              id="passport-panel"
+              className="rounded-2xl border border-indigo-200 bg-white p-1 shadow-sm"
+            >
               <div className="rounded-t-xl bg-indigo-50 px-4 py-3">
                 <p className="flex items-center font-bold text-indigo-950">
                   🛂 Compliance passport <Term k="passport" />
                 </p>
                 <p className="mt-1 text-sm text-slate-700">
-                  Pick what kind of product you make — <Term k="classical">classical</Term>, <Term k="proprietary">proprietary</Term> or{" "}
-                  <Term k="phytopharma">phytopharmaceutical</Term> — and press Compile for a printable checklist of the rules on your date.
+                  Pick what kind of product you make —{" "}
+                  <Term k="classical">classical</Term>,{" "}
+                  <Term k="proprietary">proprietary</Term> or{" "}
+                  <Term k="phytopharma">phytopharmaceutical</Term> — and press
+                  Compile for a printable checklist of the rules on your date.
                 </p>
               </div>
               <div className="px-3 pb-3">
@@ -806,12 +1115,21 @@ export default function App() {
               🔒 {sendsText ? t.privacyAdapters : t.privacyKeyless}
             </p>
             <p className="mt-2">
-              ⚖️ {t.disclaimer} Every legal statement comes from an official document in <Term k="library">The Library</Term>; if none applies, the app abstains.
+              ⚖️ {t.disclaimer} Every legal statement comes from an official
+              document in <Term k="library">The Library</Term>; if none applies,
+              the app abstains.
             </p>
           </div>
           <div className="flex flex-col items-start gap-1 md:items-end">
-            <span className={`rounded-full px-3 py-1 font-semibold ${offline ? "bg-emerald-100 text-emerald-900" : "bg-sky-100 text-sky-900"}`}>
-              ● {offline === null ? "connecting…" : offline ? "Offline mode — no internet or AI key needed" : "AI adapters enabled"}
+            <span
+              className={`rounded-full px-3 py-1 font-semibold ${offline ? "bg-emerald-100 text-emerald-900" : "bg-sky-100 text-sky-900"}`}
+            >
+              ●{" "}
+              {offline === null
+                ? "connecting…"
+                : offline
+                  ? "Offline mode — no internet or AI key needed"
+                  : "AI adapters enabled"}
               {offline && <Term k="keyless" />}
             </span>
             <span className="text-slate-500">
@@ -823,7 +1141,14 @@ export default function App() {
       </section>
 
       {glossary && <GlossaryDrawer onClose={() => setGlossary(false)} />}
-      {tour !== null && <TourCard step={tour} setStep={setTour} run={runStep} onClose={() => setTour(null)} />}
+      {tour !== null && (
+        <TourCard
+          step={tour}
+          setStep={setTour}
+          run={runStep}
+          onClose={() => setTour(null)}
+        />
+      )}
     </main>
   );
 }

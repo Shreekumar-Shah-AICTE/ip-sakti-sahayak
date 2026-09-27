@@ -807,6 +807,7 @@ function KnowledgeCard({
 function Blocks({
   blocks,
   t,
+  lang,
   id,
   asOf,
   onSend,
@@ -814,6 +815,7 @@ function Blocks({
 }: {
   blocks: Block[];
   t: Record<string, string>;
+  lang: Lang;
   id: string;
   asOf: string;
   onSend: (s: string) => void;
@@ -825,7 +827,13 @@ function Blocks({
         switch (b.type) {
           case "answer":
             return (
-              <AnswerCard key={i} a={b.answer} t={t} testId={id + "-a" + i} />
+              <AnswerCard
+                key={i}
+                a={b.answer}
+                t={t}
+                testId={id + "-a" + i}
+                lang={lang}
+              />
             );
           case "diff":
             return <DiffCard key={i} b={b} t={t} />;
@@ -948,6 +956,7 @@ function Bubble({
             <Blocks
               blocks={m.blocks}
               t={t}
+              lang={lang}
               id={"m" + m.id}
               asOf={asOf}
               onSend={onSend}

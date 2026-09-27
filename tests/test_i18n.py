@@ -59,3 +59,60 @@ def test_no_glossary_word_is_a_stopword_and_no_entry_only_serves_d_items():
         for head in GLOSSARY[lang]:
             if head in d_text:
                 assert head in l_text, f"glossary entry {head!r} motivated only by a D item"
+
+
+# ---------------------------------------------------------------------------------------
+# UI translation parity. The interface ships in the bundle (S6 rule 5), so a missing string
+# shows up as an English word in a Hindi demo rather than as a failing build. Catch it here.
+# ---------------------------------------------------------------------------------------
+import re  # noqa: E402
+from pathlib import Path  # noqa: E402
+
+WEB = Path(__file__).resolve().parent.parent / "web" / "src"
+
+
+def _object_after(source: str, marker: str) -> str:
+    """Return the body of the first `{...}` that follows `marker`, brace-matched."""
+    start = source.index(marker) + len(marker)
+    start = source.index("{", start)
+    depth = 0
+    for i in range(start, len(source)):
+        if source[i] == "{":
+            depth += 1
+        elif source[i] == "}":
+            depth -= 1
+            if depth == 0:
+                return source[start + 1 : i]
+    raise AssertionError(f"unbalanced braces after {marker!r}")
+
+
+def _keys(body: str) -> set[str]:
+    depth = 0
+    keys = set()
+    for line in body.split("\n"):
+        if depth == 0:
+            m = re.match(r'\s*"?([A-Za-z_][\w]*)"?\s*:', line)
+            if m:
+                keys.add(m.group(1))
+        depth += line.count("{") + line.count("[") - line.count("}") - line.count("]")
+    return keys
+
+
+def _trilingual(path: str, marker: str) -> None:
+    source = (WEB / path).read_text(encoding="utf-8")
+    table = _object_after(source, marker)
+    english = _keys(_object_after(table, "en:"))
+    assert english, f"{marker}: no English keys found"
+    for lang in ("hi:", "gu:"):
+        missing = english - _keys(_object_after(table, lang))
+        assert not missing, f"{marker} {lang} missing {sorted(missing)}"
+
+
+def test_interface_strings_exist_in_every_language():
+    _trilingual("i18n.ts", "export const STRINGS")
+
+
+def test_plain_words_explanations_exist_in_every_language():
+    for marker in ("export const PLAIN_STATUS_L", "export const CONFIDENCE_PLAIN_L",
+                   "export const PLAIN_LINES"):
+        _trilingual("explain.ts", marker)
