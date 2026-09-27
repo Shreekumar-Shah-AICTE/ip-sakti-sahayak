@@ -104,6 +104,8 @@ ANCHORS = [
         "in-fssai-ayurveda-aahara-regulations-2022",
         "“Ayurveda Aahara” means a food prepared in accordance with the recipes or ingredients",
     ),
+    ("us-fda-ayurvedic-heavy-metals-warning", "There are no FDA-approved ayurvedic products."),
+    ("us-fda-import-alert-99-42", "Toxic elements, such as arsenic, lead, cadmium, and mercury"),
 ]
 
 

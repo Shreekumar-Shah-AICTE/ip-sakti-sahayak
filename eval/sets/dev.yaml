@@ -327,15 +327,14 @@
   as_of: '2010-06-01'
   expect:
     abstain: true
-# D10 was L09 until run 04 (D-014). Relabelled on corpus evidence, not by feel: the only US
-# source in The Library (FDA Import Alert 66-41) never contains "heavy" or "metal" (the one
-# "metal" chunk is FSSAI, IN). Answering would cite passages that do not support the premise
-# of the question, so abstention is the correct behaviour until a heavy-metals source is added
-# to The Library — then move it back to set L with that document as the expectation.
-- id: D10
-  set: D
+# L09 → D10 (run 04, D-014) → L09 again (run 06, T-M1.3). It abstained correctly while the
+# only US source (FDA Import Alert 66-41) never mentioned heavy metals. Run 06 added FDA's own
+# consumer warning on heavy metals in unapproved ayurvedic drug products (it names import
+# alerts 66-41 and 99-42) plus Import Alert 99-42, so the premise is now supported by The Library.
+- id: L09
+  set: L
   question: import alert Ayurvedic products heavy metals
   jurisdiction: US
   as_of: '2026-09-01'
   expect:
-    abstain: true
+    doc: us-fda-ayurvedic-heavy-metals-warning

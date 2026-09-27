@@ -1,7 +1,7 @@
 {
-  "corpus_version": "sha256:fa2761684792d7a1af3b01ffb66fe8bf7870b988bfee766022e7fae9c999aa52",
-  "documents": 16,
-  "chunks": 1096,
+  "corpus_version": "sha256:772e268b316b4d856e172f50cf0258c09b16f7befd55eeb9f0bffaa7aeacb02a",
+  "documents": 18,
+  "chunks": 1107,
   "records": [
     {
       "id": "eu-directive-2004-24-ec",
@@ -299,6 +299,26 @@
       "version_note": "Quotes the order dated 27-08-2024 (stay of the 01-07-2024 omission of Rule 170) and, at para 9, vacates that interim order while disposing of the writ petition."
     },
     {
+      "id": "us-fda-ayurvedic-heavy-metals-warning",
+      "title": "US FDA — FDA warns about heavy metal poisoning associated with certain unapproved ayurvedic drug products",
+      "instrument": "FDA consumer warning: heavy metals in unapproved ayurvedic drug products",
+      "publisher": "US Food and Drug Administration",
+      "jurisdiction": "US",
+      "tier": 1,
+      "canonical_url": "https://www.fda.gov/drugs/fraudulent-products/fda-warns-about-heavy-metal-poisoning-associated-certain-unapproved-ayurvedic-drug-products",
+      "fetched_url": "https://www.fda.gov/drugs/fraudulent-products/fda-warns-about-heavy-metal-poisoning-associated-certain-unapproved-ayurvedic-drug-products",
+      "fetch_method": "official",
+      "fetched_on": "2026-09-27",
+      "sha256": "9ae860b51a5ea0275521e39424770ed5c242988f1884153652d43e971aaf0643",
+      "bytes": 35855,
+      "raw_committed": true,
+      "pages": null,
+      "text_sha256": "0bb3008e0b7b802466bfbc5add9fac519d223b4e5c858a8e95857d400289a33b",
+      "effective_from": "2025-12-02",
+      "effective_to": null,
+      "version_note": "Live page; FDA footer states 'Content current as of: 12/02/2025', used as effective_from. Consumer warning, not a regulation: it states FDA's position and names import alerts 66-41 and 99-42."
+    },
+    {
       "id": "us-fda-import-alert-66-41",
       "title": "US FDA Import Alert 66-41 — Detention Without Physical Examination of Unapproved New Drugs Promoted in the U.S. (header and guidance text)",
       "instrument": "FDA Import Alert 66-41",
@@ -314,6 +334,26 @@
       "raw_committed": false,
       "pages": null,
       "text_sha256": "c77114eb1d67dd1ff8406193fa88df27b4c84f0d2199d0b76e779549804d98e0",
+      "effective_from": null,
+      "effective_to": null,
+      "version_note": "Live page; the firm red list is excluded."
+    },
+    {
+      "id": "us-fda-import-alert-99-42",
+      "title": "US FDA Import Alert 99-42 — Detention Without Physical Examination of Dietary Supplements and Bulk Dietary Ingredients due to heavy metal (toxic element) contamination (header and guidance text)",
+      "instrument": "FDA Import Alert 99-42",
+      "publisher": "US Food and Drug Administration",
+      "jurisdiction": "US",
+      "tier": 1,
+      "canonical_url": "https://www.accessdata.fda.gov/cms_ia/importalert_1167.html",
+      "fetched_url": "https://www.accessdata.fda.gov/cms_ia/importalert_1167.html",
+      "fetch_method": "official",
+      "fetched_on": "2026-09-27",
+      "sha256": "c8936f4504df8f8010d21169e22bce27afda037b7a33d7bdbe53461b75c6dc4d",
+      "bytes": 365750,
+      "raw_committed": true,
+      "pages": null,
+      "text_sha256": "187c0a17104e5cd2d548698fca7809ed126692e1e0095072577ec43e73b4023e",
       "effective_from": null,
       "effective_to": null,
       "version_note": "Live page; the firm red list is excluded."

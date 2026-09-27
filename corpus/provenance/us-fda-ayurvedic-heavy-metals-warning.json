@@ -1,0 +1,20 @@
+{
+  "id": "us-fda-ayurvedic-heavy-metals-warning",
+  "title": "US FDA — FDA warns about heavy metal poisoning associated with certain unapproved ayurvedic drug products",
+  "instrument": "FDA consumer warning: heavy metals in unapproved ayurvedic drug products",
+  "publisher": "US Food and Drug Administration",
+  "jurisdiction": "US",
+  "tier": 1,
+  "canonical_url": "https://www.fda.gov/drugs/fraudulent-products/fda-warns-about-heavy-metal-poisoning-associated-certain-unapproved-ayurvedic-drug-products",
+  "fetched_url": "https://www.fda.gov/drugs/fraudulent-products/fda-warns-about-heavy-metal-poisoning-associated-certain-unapproved-ayurvedic-drug-products",
+  "fetch_method": "official",
+  "fetched_on": "2026-09-27",
+  "sha256": "9ae860b51a5ea0275521e39424770ed5c242988f1884153652d43e971aaf0643",
+  "bytes": 35855,
+  "raw_committed": true,
+  "pages": null,
+  "text_sha256": "0bb3008e0b7b802466bfbc5add9fac519d223b4e5c858a8e95857d400289a33b",
+  "effective_from": "2025-12-02",
+  "effective_to": null,
+  "version_note": "Live page; FDA footer states 'Content current as of: 12/02/2025', used as effective_from. Consumer warning, not a regulation: it states FDA's position and names import alerts 66-41 and 99-42."
+}

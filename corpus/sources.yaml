@@ -232,3 +232,31 @@
   effective_from: null
   effective_to: null
   version_note: "Regulation 1(2): in force from publication in the Official Gazette. fssai.gov.in serves an HTML shell to scripted clients, so a complete Wayback snapshot (2024-05-26) of the official URL is used; the 2024-06-15 snapshot is truncated at 1 MiB. Later changes (25-07-2025 order, 2026 Regulations) are NOT in this document."
+
+- id: us-fda-import-alert-99-42
+  title: "US FDA Import Alert 99-42 — Detention Without Physical Examination of Dietary Supplements and Bulk Dietary Ingredients due to heavy metal (toxic element) contamination (header and guidance text)"
+  instrument: "FDA Import Alert 99-42"
+  publisher: "US Food and Drug Administration"
+  jurisdiction: US
+  tier: 1
+  kind: html
+  keep_between: ["Import Alert # 99-42", "List of firms"]
+  urls:
+    - "https://www.accessdata.fda.gov/cms_ia/importalert_1167.html"
+  effective_from: null
+  effective_to: null
+  version_note: "Live page; the firm red list is excluded."
+
+- id: us-fda-ayurvedic-heavy-metals-warning
+  title: "US FDA — FDA warns about heavy metal poisoning associated with certain unapproved ayurvedic drug products"
+  instrument: "FDA consumer warning: heavy metals in unapproved ayurvedic drug products"
+  publisher: "US Food and Drug Administration"
+  jurisdiction: US
+  tier: 1
+  kind: html
+  keep_between: ["Heavy Metal Poisoning Associated with Ayurvedic Drug Products", "Content current as of:"]
+  urls:
+    - "https://www.fda.gov/drugs/fraudulent-products/fda-warns-about-heavy-metal-poisoning-associated-certain-unapproved-ayurvedic-drug-products"
+  effective_from: "2025-12-02"
+  effective_to: null
+  version_note: "Live page; FDA footer states 'Content current as of: 12/02/2025', used as effective_from. Consumer warning, not a regulation: it states FDA's position and names import alerts 66-41 and 99-42."

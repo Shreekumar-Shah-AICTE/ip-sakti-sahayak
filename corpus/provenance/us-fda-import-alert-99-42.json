@@ -1,0 +1,20 @@
+{
+  "id": "us-fda-import-alert-99-42",
+  "title": "US FDA Import Alert 99-42 — Detention Without Physical Examination of Dietary Supplements and Bulk Dietary Ingredients due to heavy metal (toxic element) contamination (header and guidance text)",
+  "instrument": "FDA Import Alert 99-42",
+  "publisher": "US Food and Drug Administration",
+  "jurisdiction": "US",
+  "tier": 1,
+  "canonical_url": "https://www.accessdata.fda.gov/cms_ia/importalert_1167.html",
+  "fetched_url": "https://www.accessdata.fda.gov/cms_ia/importalert_1167.html",
+  "fetch_method": "official",
+  "fetched_on": "2026-09-27",
+  "sha256": "c8936f4504df8f8010d21169e22bce27afda037b7a33d7bdbe53461b75c6dc4d",
+  "bytes": 365750,
+  "raw_committed": true,
+  "pages": null,
+  "text_sha256": "187c0a17104e5cd2d548698fca7809ed126692e1e0095072577ec43e73b4023e",
+  "effective_from": null,
+  "effective_to": null,
+  "version_note": "Live page; the firm red list is excluded."
+}

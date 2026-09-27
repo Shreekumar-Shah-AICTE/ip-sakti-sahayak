@@ -1,0 +1,31 @@
+Import Alert # 99-42
+Published Date: 09/22/2026
+Type: DWPE
+Import Alert Name:
+DETENTION WITHOUT PHYSICAL EXAMINATION OF FOODS DUE TO HEAVY METAL (TOXIC ELEMENT) CONTAMINATION
+Reason for Alert:
+NOTE: The revision of this Import Alert, dated 4/21/2025, updates the alert to include additional guidance on recommendations for articles subject to detention without physical examination under this import alert and updates on how petitions for removal from Import Alert should be received. Changes are bracketed by asterisks (***).
+Toxic elements, such as arsenic, lead, cadmium, and mercury, are found in certain foods. Toxic elements in foods can present a risk to human health; therefore, the FDA actively monitors the levels of toxic elements in the food supply and takes a systematic approach to reduce the risks posed by toxic elements, especially to vulnerable populations such as infants and children.
+FDA has established action levels for toxic elements in certain foods, such as infant rice cereal, and proposed action levels for toxic elements in other foods such as fruit juices, including apple juice. More information on action levels can be found on FDA's website, Chemical, Metals, Natural Toxins & Pesticides Guidance Documents & Regulations. Where the agency has not established limits, FDA evaluates contaminants such as toxic elements in food on a case-by-case basis. In making a determination as to whether a level of a toxic element in a food may render that product injurious to health, FDA takes into account the properties of the specific toxic element present in the product, the amount of the toxic element present in the product, consumption data available for that product, and the segment of population to be most at risk if they consume the product.
+On April 8, 2021, FDA announced the "Closer to Zero" action plan which identifies actions the Agency will take to reduce exposure to toxic elements from foods eaten by babies and young children�to as low as possible. FDA has prioritized babies and young children because their smaller body sizes and metabolism make them more vulnerable to the harmful effects of these contaminants. The Closer to Zero action plan can be found on FDA's website at https://www.fda.gov/food/metals-and-your-food/closer-zero-action-plan-baby-foods.
+Guidance:
+Divisions may detain, without physical examination (DWPE), the identified products from the firms on the Red List of this Import Alert.
+***Recommendations for DWPE addition to Red List require documentation of Center/Program concurrence, when the action is not covered by direct reference authority (DRA). Final recommendations for DWPE additions to Red List should be forwarded to the Division of Import Operations (DIO).***
+Release of Articles Subject to Detention without Physical Examination under This Import Alert:
+In order to secure release of an individual shipment subject to DWPE under this alert, the owner, consignee and/or other responsible party for the affected goods should provide evidence which demonstrates that the product does not contain levels of toxic elements that may render it injurious to health. Such evidence may include private laboratory analysis of a representative sample(s) collected from the affected article.
+Such evidence should be submitted to the appropriate FDA Division Compliance Office for consideration per the notice of detention. If a private laboratory is used, further information regarding private laboratory analyses is found in FDA's ORA Lab Manual, Volume III, Section 7. Following receipt and review of analytical results, the FDA may, at its discretion, collect and analyze audit samples before rendering a final decision on the admissibility of the article.
+*** Beginning 10/23/2026 for Toxic Elements (specific analytes arsenic, lead, cadmium and mercury) food testing in support of admission of an article of food detained under section 801(a) of the Federal Food, Drug, and Cosmetic Act must be conducted by a Laboratory Accreditation for Analyses of Food (LAAF)-accredited laboratory (21 CFR 1.1107). The LAAF-accredited laboratories capable of conducting analysis for this analyte group are available at: https://datadashboard.fda.gov/ora/fd/laaf.htm ***Compliance Officers will include this LAAF messaging in their Notices of Action to firms.
+Removal from Detention Without Physical Examination (REMOVE FROM RED LIST):
+In order to remove a firm/product from DWPE, information should be provided to the Agency to adequately demonstrate that the firm in question has resolved the conditions that gave rise to the appearance of the violation. The purpose of this is so the Agency will have confidence that future entries will be in compliance with the FD&C Act.
+For guidance on removal from DWPE, refer to FDA's Regulatory Procedures Manual (RPM), Chapter 9-8, "Detention Without Physical Examination (DWPE)."
+If a firm and/or a representative thereof would like to petition for removal from DWPE under this Import Alert, all relevant information supporting the request should be sent via email to: Importalerts2@fda.hhs.gov
+Questions or issues involving import operations ***or the submission of petitions*** should be addressed to OII Division of Import Operations (DIO) at (301) 796-0356 or Imports@fda.hhs.gov.
+Questions or issues involving science policy, analysis, preparation, or analytical methodology, should be addressed to FDAPRIVATELABIMPORTALERTS@fda.hhs.gov
+Questions or issues with on policy, sample collection recommendations, or any additional questions not directly related to a detained entry, should be addressed to the Human Foods Program Imports Enforcement Branch at HFP-OCE-Imports@fda.hhs.gov
+*** ***
+Product Description:
+Various Food Products
+Charge:
+The article is subject to refusal of admission pursuant to Section 801(a)(3) in that it appears to bear or contain a poisonous or deleterious substance which may render the article injurious to health. Contains: [Adulteration, Section 402(a)(1)]
+OASIS charge code - POISONOUS
+List of firms
