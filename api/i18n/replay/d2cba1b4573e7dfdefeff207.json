@@ -1,0 +1,17 @@
+{
+ "provider": "groq",
+ "model": "openai/gpt-oss-120b",
+ "lang": "gu",
+ "words": [
+  "સ્ટાર્ટઅપ",
+  "એસઆઈપીપી",
+  "યોજના",
+  "ઉપલબ્ધ"
+ ],
+ "replies": [
+  "startup",
+  "?",
+  "plan",
+  "available"
+ ]
+}

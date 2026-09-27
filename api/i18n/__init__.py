@@ -98,6 +98,7 @@ class Translation:
     english: str  # the translated content words, space-joined (for dense + display)
     terms: list[str] = field(default_factory=list)  # coverage/scoring terms, unknowns kept
     unknown: list[str] = field(default_factory=list)
+    machine: list[str] = field(default_factory=list)  # words resolved by the MT fallback
 
 
 def _lookup(lang: str, word: str) -> str | None:
@@ -134,7 +135,13 @@ def translate(question: str) -> Translation | None:
             english.append(w.lower())  # Latin words inside a hi/gu question pass through
         else:
             unknown.append(w)
+    # Optional MT fallback (off by default) for the words the Glossary does not know.
+    from api.i18n.mt import lookup
+    mt = lookup(lang, unknown)
+    if mt:
+        english += [mt[w] for w in unknown if w in mt]
+        unknown = [w for w in unknown if w not in mt]
     en = " ".join(english)
     # Unknown words stay as terms: they never match an English chunk, so they lower coverage.
     terms = list(dict.fromkeys(tokenize(en) + unknown))
-    return Translation(lang, en, terms, unknown)
+    return Translation(lang, en, terms, unknown, sorted(mt))

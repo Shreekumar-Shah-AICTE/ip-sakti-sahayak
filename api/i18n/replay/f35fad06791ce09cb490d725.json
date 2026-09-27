@@ -1,0 +1,17 @@
+{
+ "provider": "groq",
+ "model": "openai/gpt-oss-120b",
+ "lang": "gu",
+ "words": [
+  "ચોકલેટ",
+  "કેક",
+  "બનાવવાની",
+  "રીત"
+ ],
+ "replies": [
+  "chocolate",
+  "cake",
+  "making",
+  "method"
+ ]
+}

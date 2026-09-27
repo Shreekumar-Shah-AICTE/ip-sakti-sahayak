@@ -102,7 +102,8 @@ def answer(
     query = f"{question} {tr.english}" if tr else question
     out = Answer(terms, code, day.isoformat(), idx.corpus_version, abstain=True)
     if tr:
-        out.translation = {"lang": tr.lang, "english": tr.english, "unknown": tr.unknown}
+        out.translation = {"lang": tr.lang, "english": tr.english, "unknown": tr.unknown,
+                           "machine": tr.machine}
 
     entry = _find_instrument(question)
     superseded: set[str] = set()

@@ -1,0 +1,17 @@
+{
+ "provider": "groq",
+ "model": "openai/gpt-oss-120b",
+ "lang": "gu",
+ "words": [
+  "બ્રાન્ડના",
+  "ટ્રેડમાર્ક",
+  "નોંધણીની",
+  "ફી"
+ ],
+ "replies": [
+  "brand",
+  "trademark",
+  "registration",
+  "fee"
+ ]
+}

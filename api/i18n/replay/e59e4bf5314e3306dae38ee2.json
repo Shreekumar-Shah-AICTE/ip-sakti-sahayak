@@ -1,0 +1,13 @@
+{
+ "provider": "groq",
+ "model": "openai/gpt-oss-120b",
+ "lang": "hi",
+ "words": [
+  "जापान",
+  "प्रधानमंत्री"
+ ],
+ "replies": [
+  "japan",
+  "prime minister"
+ ]
+}

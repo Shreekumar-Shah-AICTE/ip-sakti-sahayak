@@ -1,0 +1,15 @@
+{
+ "provider": "groq",
+ "model": "openai/gpt-oss-120b",
+ "lang": "hi",
+ "words": [
+  "बिटकॉइन",
+  "माइनिंग",
+  "जुर्माना"
+ ],
+ "replies": [
+  "bitcoin",
+  "mining",
+  "fine"
+ ]
+}

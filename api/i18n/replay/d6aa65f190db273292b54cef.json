@@ -1,0 +1,17 @@
+{
+ "provider": "groq",
+ "model": "openai/gpt-oss-120b",
+ "lang": "hi",
+ "words": [
+  "चॉकलेट",
+  "केक",
+  "बनाने",
+  "विधि"
+ ],
+ "replies": [
+  "chocolate",
+  "cake",
+  "making",
+  "method"
+ ]
+}

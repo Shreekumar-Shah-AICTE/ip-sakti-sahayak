@@ -1,0 +1,15 @@
+{
+ "provider": "groq",
+ "model": "openai/gpt-oss-120b",
+ "lang": "hi",
+ "words": [
+  "ब्रांड",
+  "ट्रेडमार्क",
+  "शुल्क"
+ ],
+ "replies": [
+  "brand",
+  "trademark",
+  "duty"
+ ]
+}

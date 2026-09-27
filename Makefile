@@ -19,6 +19,9 @@ test:
 eval:
 	SAHAYAK_DENSE=0 $(PY) eval/run_eval.py --gate
 	$(PY) eval/run_eval.py --gate
+	# The MT fallback (replayed, no key, no network) must hold the same gates in both modes.
+	SAHAYAK_MT=groq SAHAYAK_MT_REPLAY=replay SAHAYAK_DENSE=0 $(PY) eval/run_eval.py --gate
+	SAHAYAK_MT=groq SAHAYAK_MT_REPLAY=replay $(PY) eval/run_eval.py --gate
 
 # Type-check and build the web bundle.
 web:

@@ -1,0 +1,17 @@
+{
+ "provider": "groq",
+ "model": "openai/gpt-oss-120b",
+ "lang": "gu",
+ "words": [
+  "સૌંદર્ય",
+  "પ્રસાધનો",
+  "જીએસટીનો",
+  "દર"
+ ],
+ "replies": [
+  "beauty",
+  "offerings",
+  "gst's",
+  "rate"
+ ]
+}

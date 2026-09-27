@@ -1,0 +1,23 @@
+{
+ "provider": "groq",
+ "model": "openai/gpt-oss-120b",
+ "lang": "hi",
+ "words": [
+  "फीफा",
+  "विश्व",
+  "कप",
+  "फुटबॉल",
+  "फाइनल",
+  "किसने",
+  "जीता"
+ ],
+ "replies": [
+  "?",
+  "world",
+  "cup",
+  "football",
+  "final",
+  "?",
+  "won"
+ ]
+}
