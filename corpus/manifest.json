@@ -1,7 +1,7 @@
 {
-  "corpus_version": "sha256:eed34b8baa1495ac75b21f94e035a545e926f052e1e421306a81354f034b693c",
-  "documents": 14,
-  "chunks": 1002,
+  "corpus_version": "sha256:fa2761684792d7a1af3b01ffb66fe8bf7870b988bfee766022e7fae9c999aa52",
+  "documents": 16,
+  "chunks": 1096,
   "records": [
     {
       "id": "eu-directive-2004-24-ec",
@@ -44,6 +44,26 @@
       "effective_from": null,
       "effective_to": null,
       "version_note": "Gazette PDF (Hindi pp. 1-15, English pp. 16-29). Commencement to be read from the regulation text; not asserted here."
+    },
+    {
+      "id": "in-bd-amendment-act-2023",
+      "title": "The Biological Diversity (Amendment) Act, 2023 (No. 10 of 2023, 3rd August, 2023)",
+      "instrument": "Biological Diversity (Amendment) Act, 2023",
+      "publisher": "Ministry of Environment, Forest and Climate Change — copy of the Gazette of India text",
+      "jurisdiction": "IN",
+      "tier": 1,
+      "canonical_url": "https://egazette.gov.in/WriteReadData/2023/247815.pdf",
+      "fetched_url": "http://moef.gov.in/storage/tender/Biological-Diversity-Amendment-Act-2023%20(3).pdf",
+      "fetch_method": "mirror-1",
+      "fetched_on": "2026-09-27",
+      "sha256": "03af902a2b3ea88b100b60cf59e7ae067fa25f9d445368b9078dce1ad8a53892",
+      "bytes": 217544,
+      "raw_committed": true,
+      "pages": null,
+      "text_sha256": "489acf84ee9dd6d6d5fe1a8bac80651b3609b73663953dd55ec98c4b536dd6d2",
+      "effective_from": null,
+      "effective_to": null,
+      "version_note": "Act No. 10 of 2023 dated 3rd August, 2023; inserts section 2(ea) 'codified traditional knowledge'. Commencement is by notification under section 1(2) and is not asserted here. eGazette is blocked from the sandbox; MoEFCC copy used."
     },
     {
       "id": "in-csir-tkdl-about",
@@ -155,6 +175,28 @@
       "effective_from": "2024-07-01",
       "effective_to": null,
       "version_note": "Cover states: As amended vide G.S.R. 360(E) dated 01-07-2024 (w.e.f. 01-07-2024). Rule 170 appears as [*****]; footnote 757 records its insertion by G.S.R. 1230(E) dated 21-12-2018 (w.e.f. 24-12-2018); footnote 1345 records omission by G.S.R 360(E) dated 01.07.2024 (w.e.f. 01.07.2024)."
+    },
+    {
+      "id": "in-fssai-ayurveda-aahara-regulations-2022",
+      "title": "Food Safety and Standards (Ayurveda Aahara) Regulations, 2022 — Gazette notification (English text)",
+      "instrument": "Food Safety and Standards (Ayurveda Aahara) Regulations, 2022",
+      "publisher": "Food Safety and Standards Authority of India (FSSAI) — Gazette of India, Extraordinary",
+      "jurisdiction": "IN",
+      "tier": 1,
+      "canonical_url": "https://fssai.gov.in/upload/notifications/2022/05/62789a20b54bdGazette_Notification_Ayurveda_Aahara_09_05_2022.pdf",
+      "fetched_url": "https://web.archive.org/web/20240526144555id_/https://www.fssai.gov.in/upload/notifications/2022/05/62789a20b54bdGazette_Notification_Ayurveda_Aahara_09_05_2022.pdf",
+      "fetch_method": "mirror-1",
+      "fetched_on": "2026-09-27",
+      "sha256": "1ae8cfc632fad0a775316a84999a48adb6cf4b47d05bd4faa75f5190c511f699",
+      "bytes": 2307105,
+      "raw_committed": true,
+      "pages": [
+        "15-27"
+      ],
+      "text_sha256": "d5e2283a607caee9df44ae0cdf2dd54546021457ba06b0d6c7e91cd545d7ee22",
+      "effective_from": null,
+      "effective_to": null,
+      "version_note": "Regulation 1(2): in force from publication in the Official Gazette. fssai.gov.in serves an HTML shell to scripted clients, so a complete Wayback snapshot (2024-05-26) of the official URL is used; the 2024-06-15 snapshot is truncated at 1 MiB. Later changes (25-07-2025 order, 2026 Regulations) are NOT in this document."
     },
     {
       "id": "in-ipindia-ayush-guidelines-2025",

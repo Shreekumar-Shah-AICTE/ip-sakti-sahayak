@@ -99,6 +99,11 @@ ANCHORS = [
     ("in-dmr-act-1954", "9. Diabetes."),
     ("in-bd-abs-regulations-2025", "Above 5 crore to 50 crore 0.2%"),
     ("in-csir-tkdl-about", "access of TKDL is available to sixteen Patent Offices"),
+    ("in-bd-amendment-act-2023", "“codified traditional knowledge” means the knowledge"),
+    (
+        "in-fssai-ayurveda-aahara-regulations-2022",
+        "“Ayurveda Aahara” means a food prepared in accordance with the recipes or ingredients",
+    ),
 ]
 
 
@@ -111,3 +116,10 @@ def test_no_tkdl_database_content():
     # TKDL is a pointer only (KERNEL 7.8): the only TKDL document is CSIR's public "about" page.
     tk = [d["id"] for d in MANIFEST["records"] if "tkdl" in d["id"]]
     assert tk == ["in-csir-tkdl-about"]
+
+
+def test_truncated_pdf_is_rejected():
+    import fetch  # noqa: E402 — corpus/ is on sys.path above
+
+    assert fetch._looks_right("pdf", b"%PDF-1.6 body %%EOF\n")
+    assert not fetch._looks_right("pdf", b"%PDF-1.6 body cut off at 1 MiB")

@@ -203,3 +203,32 @@
   effective_from: null
   effective_to: null
   version_note: "Pointer only. No TKDL database content is in The Library."
+
+- id: in-bd-amendment-act-2023
+  title: "The Biological Diversity (Amendment) Act, 2023 (No. 10 of 2023, 3rd August, 2023)"
+  instrument: "Biological Diversity (Amendment) Act, 2023"
+  publisher: "Ministry of Environment, Forest and Climate Change — copy of the Gazette of India text"
+  jurisdiction: IN
+  tier: 1
+  kind: pdf
+  urls:
+    - "https://egazette.gov.in/WriteReadData/2023/247815.pdf"
+    - "http://moef.gov.in/storage/tender/Biological-Diversity-Amendment-Act-2023%20(3).pdf"
+  effective_from: null
+  effective_to: null
+  version_note: "Act No. 10 of 2023 dated 3rd August, 2023; inserts section 2(ea) 'codified traditional knowledge'. Commencement is by notification under section 1(2) and is not asserted here. eGazette is blocked from the sandbox; MoEFCC copy used."
+
+- id: in-fssai-ayurveda-aahara-regulations-2022
+  title: "Food Safety and Standards (Ayurveda Aahara) Regulations, 2022 — Gazette notification (English text)"
+  instrument: "Food Safety and Standards (Ayurveda Aahara) Regulations, 2022"
+  publisher: "Food Safety and Standards Authority of India (FSSAI) — Gazette of India, Extraordinary"
+  jurisdiction: IN
+  tier: 1
+  kind: pdf
+  pages: ["15-27"]
+  urls:
+    - "https://fssai.gov.in/upload/notifications/2022/05/62789a20b54bdGazette_Notification_Ayurveda_Aahara_09_05_2022.pdf"
+    - "https://web.archive.org/web/20240526144555id_/https://www.fssai.gov.in/upload/notifications/2022/05/62789a20b54bdGazette_Notification_Ayurveda_Aahara_09_05_2022.pdf"
+  effective_from: null
+  effective_to: null
+  version_note: "Regulation 1(2): in force from publication in the Official Gazette. fssai.gov.in serves an HTML shell to scripted clients, so a complete Wayback snapshot (2024-05-26) of the official URL is used; the 2024-06-15 snapshot is truncated at 1 MiB. Later changes (25-07-2025 order, 2026 Regulations) are NOT in this document."

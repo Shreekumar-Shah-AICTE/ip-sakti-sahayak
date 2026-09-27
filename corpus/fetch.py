@@ -65,7 +65,8 @@ def _wayback(url: str) -> str | None:
 
 def _looks_right(kind: str, data: bytes) -> bool:
     if kind == "pdf":
-        return data[:5] == b"%PDF-"
+        # A truncated download (seen from Wayback at exactly 1 MiB) has no trailing %%EOF.
+        return data[:5] == b"%PDF-" and b"%%EOF" in data[-2048:]
     return b"<html" in data[:4096].lower() or b"<!doctype" in data[:4096].lower()
 
 
