@@ -26,9 +26,10 @@ Abstentions are never synthesised. Quotes and cited chunk ids are never touched.
 
 Record-replay (`api/synth/replay/*.json`, keyed by sha256 of provider+model+prompt) keeps
 `make check` offline and deterministic and lets the demo run in airplane mode:
-SAHAYAK_LLM_REPLAY=replay (default: cache only, no network) | record (live, then cache) |
-live (no cache). Provider: SAHAYAK_LLM=none (default) | gemini | groq | sarvam. Keys come from
-the environment only and are never logged, cached or returned.
+SAHAYAK_LLM_REPLAY=replay (offline default: cache only, no network) | record (online
+default: cache, then live, then save to var/cache) | live (no cache). Provider: SAHAYAK_LLM=
+auto (default: the first key present, Gemini first; none offline) | gemini | groq |
+sarvam | none. Keys come from the environment only and are never logged, cached or returned.
 """
 
 from __future__ import annotations
@@ -42,7 +43,7 @@ import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
 
-from api import config
+from api import config, gemini
 from api.retriever import tokenize
 
 REPLAY_DIR = Path(__file__).resolve().parent / "replay"
@@ -69,7 +70,7 @@ def ledger_conflict(sentence: str, status_line: str | None) -> bool:
 
 # provider -> (key env var, default model)
 PROVIDERS = {
-    "gemini": ("GEMINI_API_KEY", "gemini-flash-latest"),
+    "gemini": ("GEMINI_API_KEY", gemini.PRIMARY),
     "groq": ("GROQ_API_KEY", "openai/gpt-oss-120b"),
     "sarvam": ("SARVAM_API_KEY", "sarvam-105b"),  # sarvam-m deprecated (run 10)
 }
@@ -160,25 +161,9 @@ def _post(url: str, headers: dict, payload: dict) -> dict:
         return json.loads(r.read())
 
 
-GEMINI_FALLBACK = "gemini-2.5-flash"
-
-
 def _call_live(provider: str, model: str, key: str, prompt: str) -> str:
-    if provider == "gemini":
-        body = {"systemInstruction": {"parts": [{"text": SYSTEM}]},
-                "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-                "generationConfig": {"temperature": 0}}
-        for name in dict.fromkeys([model, GEMINI_FALLBACK]):
-            try:
-                data = _post(
-                    f"https://generativelanguage.googleapis.com/v1beta/models/{name}"
-                    ":generateContent", {"x-goog-api-key": key}, body)
-            except urllib.error.HTTPError as e:  # a retired model name, not a real failure
-                if e.code != 404:
-                    raise
-                continue
-            return "".join(p.get("text", "") for p in data["candidates"][0]["content"]["parts"])
-        raise RuntimeError("no usable Gemini model")
+    if provider == "gemini":  # walks the probed model chain (api/gemini.py)
+        return gemini.generate(key, SYSTEM, prompt)[0]
     url = {"groq": "https://api.groq.com/openai/v1/chat/completions",
            "sarvam": "https://api.sarvam.ai/v1/chat/completions"}[provider]
     headers = {"Authorization": f"Bearer {key}"}
@@ -199,9 +184,11 @@ def complete(provider: str, prompt: str, mode: str | None = None) -> tuple[str |
     key_var, model = PROVIDERS[provider]
     model = os.environ.get("SAHAYAK_LLM_MODEL", model)
     mode = mode or config.replay_mode("SAHAYAK_LLM_REPLAY")
-    path = REPLAY_DIR / f"{cache_key(provider, model, prompt)}.json"
-    if mode != "live" and path.exists():
-        return json.loads(path.read_text(encoding="utf-8"))["text"], "replay", ""
+    name = f"{cache_key(provider, model, prompt)}.json"
+    if mode != "live":
+        for d in config.cache_dirs("SAHAYAK_LLM_REPLAY", REPLAY_DIR, "synth"):
+            if (d / name).exists():
+                return json.loads((d / name).read_text(encoding="utf-8"))["text"], "replay", ""
     if mode == "replay":
         return None, "none", "no recorded response (replay mode, network off)"
     key = os.environ.get(key_var)
@@ -210,10 +197,12 @@ def complete(provider: str, prompt: str, mode: str | None = None) -> tuple[str |
     try:
         text = _call_live(provider, model, key, prompt)
     except Exception as e:  # network, quota, schema: the extractive answer stands
-        return None, "none", f"provider error: {type(e).__name__}"
+        code = getattr(e, "code", "")  # an HTTP status is safe to show; a key never is
+        return None, "none", f"provider error: {type(e).__name__} {code}".rstrip()
     if mode == "record":
-        REPLAY_DIR.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps({"provider": provider, "model": model, "prompt": prompt,
+        out = config.cache_write_dir("SAHAYAK_LLM_REPLAY", REPLAY_DIR, "synth")
+        out.mkdir(parents=True, exist_ok=True)
+        (out / name).write_text(json.dumps({"provider": provider, "model": model, "prompt": prompt,
                                     "text": text}, ensure_ascii=False, indent=1) + "\n",
                         encoding="utf-8")
     return text, "live", ""

@@ -1117,6 +1117,8 @@ export default function ChatApp() {
   const [warming, setWarming] = useState(false);
   const [health, setHealth] = useState("checking…");
   const [sendsText, setSendsText] = useState(false);
+  // What the header badge promises: online only when a provider will actually be called.
+  const [online, setOnline] = useState<{ on: boolean; provider: string } | null>(null);
   const [glossary, setGlossary] = useState(false);
   const [clock, setClock] = useState<Seg[]>([]);
   const [pilot, setPilot] = useState<number | null>(null);
@@ -1142,6 +1144,12 @@ export default function ChatApp() {
             llm,
         );
         setSendsText(b.mode === "adapters");
+        const prov =
+          b.llm && b.llm.provider !== "none" ? b.llm.provider : b.chat_llm;
+        setOnline({
+          on: b.mode === "adapters",
+          provider: prov && prov !== "none" && prov !== "replay" ? prov : "",
+        });
       })
       .catch(() => setHealth("offline"));
   }, []);
@@ -1357,6 +1365,27 @@ export default function ChatApp() {
               <p className="text-xs text-white/70">{t.chatSub}</p>
             </div>
           </div>
+
+          {online && (
+            <span
+              data-testid="online-badge"
+              data-online={online.on ? "1" : "0"}
+              title={online.on ? t.badgeOnlineTip : t.badgeOfflineTip}
+              className={
+                "rounded-full px-2.5 py-1 text-xs font-semibold " +
+                (online.on
+                  ? "bg-emerald-500 text-emerald-950"
+                  : "bg-white/15 text-white/90")
+              }
+            >
+              {online.on ? "● " + t.badgeOnline : "○ " + t.badgeOffline}
+              {online.on && online.provider
+                ? " · " +
+                  online.provider.charAt(0).toUpperCase() +
+                  online.provider.slice(1)
+                : ""}
+            </span>
+          )}
 
           <label className="text-xs text-white/80">
             {t.jurisdiction}

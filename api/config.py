@@ -101,17 +101,50 @@ def mt_provider() -> str | None:
     return _resolve(MT_ORDER, os.environ.get("SAHAYAK_MT"))
 
 
+# Answers recorded on *this* machine while online. Git-ignored (under var/), so a user's
+# own cache never dirties their clone; the committed fixtures stay the eval's ground truth.
+USER_CACHE = ROOT / "var" / "cache"
+
+
+def chat_provider() -> str | None:
+    """Provider for free-form Ayurveda chat, or None (offline, or no key)."""
+    return _resolve(LLM_ORDER, os.environ.get("SAHAYAK_CHAT_LLM"))
+
+
 def replay_mode(var: str) -> str:
-    """"live" online, "replay" offline — unless the caller pinned it in the environment.
+    """"record" online, "replay" offline — unless the caller pinned it in the environment.
 
     `replay` reads the recorded cache and never opens a socket, so the default offline is
-    the guarantee that an unconfigured clone makes no network call. A deliberate pin
-    (`SAHAYAK_LLM_REPLAY=live`) is still obeyed: that is an instruction, not an accident.
+    the guarantee that an unconfigured clone makes no network call. Online defaults to
+    `record` (cache first, then live, then save): the free Gemini tier allows ~20 requests
+    a day per model, so a demo that re-asks its questions must not spend quota twice, and a
+    repeated question comes back instantly. A deliberate pin (`SAHAYAK_LLM_REPLAY=live`)
+    is still obeyed: that is an instruction, not an accident.
     """
     pinned = os.environ.get(var, "").lower()
     if pinned in ("replay", "record", "live"):
         return pinned
-    return "live" if online() else "replay"
+    return "record" if online() else "replay"
+
+
+def cache_dirs(var: str, committed: Path, name: str) -> list[Path]:
+    """Where recorded answers are read from.
+
+    Online, only this machine's own cache counts: the committed fixtures were recorded by
+    whatever model the eval was built with, and letting them shadow the live model would
+    mean a user with a working key sees last month's answer (or its "INSUFFICIENT") forever.
+    Offline, or when a developer pinned a replay mode, exactly the committed fixtures count,
+    so the test suite and the eval gates never see a user's cache.
+    """
+    if os.environ.get(var, "").lower() in ("replay", "record", "live") or not online():
+        return [committed]
+    return [USER_CACHE / name]
+
+
+def cache_write_dir(var: str, committed: Path, name: str) -> Path:
+    """Where a new recording goes: the committed fixtures only when a developer pinned
+    record mode on purpose (that is how fixtures are authored), else the user cache."""
+    return committed if os.environ.get(var, "").lower() == "record" else USER_CACHE / name
 
 
 def summary() -> dict:
@@ -119,7 +152,7 @@ def summary() -> dict:
     return {
         "mode": mode(),
         "llm": llm_provider() or "none",
-        "chat": os.environ.get("SAHAYAK_CHAT_LLM", "auto").lower(),
+        "chat": chat_provider() or "none",
         "translation": mt_provider() or "none",
         "keys_present": sorted(k for k in PROVIDER_KEYS if os.environ.get(k)),
         "env_file": str(ENV_PATH) if ENV_PATH.exists() else None,

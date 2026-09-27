@@ -1,6 +1,7 @@
 {
  "provider": "gemini",
- "model": "gemini-3.8-flash",
+ "model": "gemini-3.1-flash-lite",
  "prompt": "Question: क्या संहिताबद्ध पारंपरिक ज्ञान क्या है?\n[1] India is rich in traditional medicinal bio-resources and possesses centuries old associated traditional knowledge. (IP India — Guidelines for Examination of Ayush Related Inventions (2025), 1)\n[2] codified traditional knowledge only for Indians) and information relating to the use of such biological resources, innovations and practices associated with such use and application;’; (The Biological Diversity (Amendment) Act, 2023 (No. 10 of 2023, 3rd August, 2023), 1)\n[3] (aa) “benefit claimers” means the conservers of biological resources, their by-products, creators or holders of traditional knowledge associated thereto (excluding codified traditional knowledge only for Indians) and information relating to the use of such biological resources, innovations and practices associated with such use and application;’; (The Biological Diversity (Amendment) Act, 2023 (No. 10 of 2023, 3rd August, 2023), 1)",
- "text": "INSUFFICIENT"
+ "text": "INSUFFICIENT",
+ "recorded_with": "gemini-3.8-flash"
 }

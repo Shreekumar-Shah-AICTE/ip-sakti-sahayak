@@ -565,3 +565,31 @@ def test_autopilot_walks_the_presenter_through_the_demo(base_url):
         expect(bar).to_contain_text("2/")
         expect(page.get_by_test_id("chat-msg-assistant").last).to_contain_text("The law changed")
         browser.close()
+
+
+def test_badge_says_offline_with_no_key(base_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = _chat(browser.new_page(), base_url)
+        badge = page.get_by_test_id("online-badge")
+        expect(badge).to_have_attribute("data-online", "0")
+        expect(badge).to_contain_text("Offline")
+        browser.close()
+
+
+def test_badge_says_online_when_a_provider_is_on():
+    # Online, but pinned to replay with no key: the badge logic is exercised with no network.
+    proc, url = _serve({"SAHAYAK_MODE": "online", "SAHAYAK_LLM": "gemini",
+                        "SAHAYAK_LLM_REPLAY": "replay", "SAHAYAK_CHAT_LLM": "none",
+                        "SAHAYAK_MT": "none", "SAHAYAK_DENSE": "0"})
+    try:
+        with sync_playwright() as p:
+            browser = _browser(p)
+            page = _chat(browser.new_page(), url)
+            badge = page.get_by_test_id("online-badge")
+            expect(badge).to_have_attribute("data-online", "1")
+            expect(badge).to_contain_text("Online · Gemini")
+            browser.close()
+    finally:
+        proc.terminate()
+        proc.wait(timeout=10)
