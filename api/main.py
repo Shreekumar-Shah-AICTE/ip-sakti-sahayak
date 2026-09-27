@@ -16,6 +16,7 @@ from pydantic import BaseModel, Field
 
 from api import ledger
 from api.answer import answer
+from api.passport import abs as abs_calc
 from api.retriever import JURISDICTIONS
 
 VERSION = "0.0.1"
@@ -83,6 +84,19 @@ def ledger_status(instrument: str, as_of: dt.date) -> dict:
             for e in r.evidence
         ],
     }
+
+
+@app.get("/passport/abs")
+def passport_abs(
+    turnover_inr: int,
+    as_of: dt.date | None = None,
+    ex_factory_sales_inr: int | None = None,
+    high_value: bool = False,
+) -> dict:
+    """The Passport Compiler: ABS benefit share with the arithmetic shown, as of a date."""
+    if turnover_inr < 0 or (ex_factory_sales_inr is not None and ex_factory_sales_inr < 0):
+        raise HTTPException(422, "amounts must be non-negative")
+    return abs_calc.compute(turnover_inr, as_of, ex_factory_sales_inr, high_value)
 
 
 if WEB_DIST.is_dir():

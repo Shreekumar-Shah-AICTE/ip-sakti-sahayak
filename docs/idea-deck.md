@@ -110,9 +110,10 @@ question ──► The Two Switches (jurisdiction, as-of) ──► filter chunk
 - **Ayush manufacturers, especially MSMEs** — licensing category, advertising limits, ABS
   obligations and export regimes, each changing on its own clock.
 - **ABS burden under the Biological Diversity (ABS) Regulations 2025**, which replaced the 2014
-  Guidelines: benefit sharing is nil up to ₹5 crore annual turnover, then 0.2% / 0.4% / 0.6% by slab
-  (₹5–50 cr / ₹50–250 cr / above ₹250 cr), read from the primary gazette [E24]. The calculator shows
-  the arithmetic *(planned M5)*.
+  Guidelines: turnover selects the slab — nil up to ₹5 crore, then 0.2% / 0.4% / 0.6%
+  (₹5–50 cr / ₹50–250 cr / above ₹250 cr) — and the rate applies to the product's annual gross
+  ex-factory sale price excluding taxes, not to turnover; read from the primary gazette [E24].
+  The Passport Compiler's calculator shows the arithmetic and the gazette line behind each rate.
 - **Codified traditional knowledge** — the Biological Diversity (Amendment) Act 2023 §2(ea) defines it
   by reference to the authoritative books in the First Schedule of the Drugs & Cosmetics Act [E5]; this
   links a *classical* formulation to ABS exemptions for Indian entities.

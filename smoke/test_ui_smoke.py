@@ -81,3 +81,23 @@ def test_abstention_has_a_designed_state(base_url):
         page.get_by_test_id("ask").click()
         expect(page.get_by_test_id("abstain")).to_contain_text("No sourced answer")
         browser.close()
+
+
+def test_abs_panel_shows_slab_and_abstains_before_commencement(base_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = browser.new_page()
+        page.goto(base_url)
+        page.get_by_test_id("as-of").fill("2026-09-27")
+        page.get_by_test_id("abs-turnover").fill("60")
+        page.get_by_test_id("abs-sales").fill("100")
+        page.get_by_test_id("abs-compute").click()
+        result = page.get_by_test_id("abs-result")
+        expect(result).to_contain_text("0.4%")
+        expect(result).to_contain_text("4000000.00")
+        expect(result).to_contain_text("3. Above 50 crore to 250 crore 0.4%")
+
+        page.get_by_test_id("as-of").fill("2025-04-29")
+        page.get_by_test_id("abs-compute").click()
+        expect(page.get_by_test_id("abs-abstain")).to_contain_text("2025-04-30")
+        browser.close()

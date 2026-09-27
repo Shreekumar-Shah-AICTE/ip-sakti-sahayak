@@ -25,6 +25,12 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     disclaimer: "Guidance with sources, not legal advice.",
     statusEvidence: "status evidence",
     retrieved: "retrieved passage",
+    absTitle: "ABS benefit share (Biological Diversity Regulations 2025)",
+    absTurnover: "Annual turnover (₹ crore)",
+    absSales: "Ex-factory sale price excl. taxes (₹ crore, optional)",
+    absHighValue: "High conservation / economic value resource",
+    absCompute: "Calculate",
+    absJudgment: "Needs human judgment",
   },
   hi: {
     tagline: "आयुर्वेद बौद्धिक संपदा और नियामक मार्गदर्शन — किसी तिथि के अनुसार।",
@@ -48,6 +54,12 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     disclaimer: "स्रोत सहित मार्गदर्शन; यह कानूनी सलाह नहीं है।",
     statusEvidence: "स्थिति का प्रमाण",
     retrieved: "प्राप्त अंश",
+    absTitle: "ABS लाभ-साझाकरण (जैव विविधता विनियम 2025)",
+    absTurnover: "वार्षिक टर्नओवर (₹ करोड़)",
+    absSales: "कर-रहित एक्स-फ़ैक्टरी बिक्री मूल्य (₹ करोड़, वैकल्पिक)",
+    absHighValue: "उच्च संरक्षण / आर्थिक मूल्य वाला संसाधन",
+    absCompute: "गणना करें",
+    absJudgment: "मानवीय निर्णय आवश्यक",
   },
   gu: {
     tagline: "આયુર્વેદ બૌદ્ધિક સંપદા અને નિયમનકારી માર્ગદર્શન — કોઈ તારીખ મુજબ.",
@@ -71,6 +83,12 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     disclaimer: "સ્રોતો સાથેનું માર્ગદર્શન; આ કાનૂની સલાહ નથી.",
     statusEvidence: "સ્થિતિનો પુરાવો",
     retrieved: "મળેલો અંશ",
+    absTitle: "ABS લાભ-વહેંચણી (જૈવ વિવિધતા નિયમનો 2025)",
+    absTurnover: "વાર્ષિક ટર્નઓવર (₹ કરોડ)",
+    absSales: "કર સિવાયની એક્સ-ફેક્ટરી વેચાણ કિંમત (₹ કરોડ, વૈકલ્પિક)",
+    absHighValue: "ઉચ્ચ સંરક્ષણ / આર્થિક મૂલ્ય ધરાવતું સંસાધન",
+    absCompute: "ગણતરી કરો",
+    absJudgment: "માનવ નિર્ણય જરૂરી",
   },
 };
 

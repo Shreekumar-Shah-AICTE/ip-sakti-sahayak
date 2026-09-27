@@ -1,0 +1,78 @@
+# The Passport Compiler — ABS benefit-share rules (skill S4).
+# Every number below is copied from the primary gazette text in The Library and carries the
+# chunk_id + verbatim quote it came from. api/passport/abs.py refuses to load this file if
+# any quote is not a (whitespace-normalised) substring of its chunk.
+instrument: "Biological Diversity (ABS) Regulations, 2025"
+doc_id: in-bd-abs-regulations-2025
+jurisdiction: IN
+# Reg 1(2): in force "on the date of their publication in the Official Gazette".
+# Publication date = 30-04-2025: gazette ID CG-TN-E-30042025-262783 (doc title) and the
+# digital signature date 2025.04.30 on the last page. (The notification itself is dated
+# 29 April 2025 — the making date, not the publication date.)
+effective_from: "2025-04-30"
+effective_to: null
+commencement:
+  - chunk_id: "in-bd-abs-regulations-2025#0002"
+    quote: "They shall come into force on the date of their publication in the Official Gazette."
+  - chunk_id: "in-bd-abs-regulations-2025#0059"
+    quote: "Date: 2025.04.30 22:25:32"
+supersedes:
+  - chunk_id: "in-bd-abs-regulations-2025#0001"
+    quote: "in supersession of the Guidelines on Access to Biological Resources and Associated Knowledge and Benefits Sharing Regulations, 2014"
+# The rate applies to the product's ex-factory sale price — NOT to turnover.
+# Turnover only selects the slab.
+base:
+  chunk_id: "in-bd-abs-regulations-2025#0007"
+  quote: "Percentage of annual gross ex-factory sale price of product excluding Government taxes"
+# Same table appears in reg 4(1) (persons under s.3 of the Act) and reg 5(7) (s.7 persons).
+slabs:
+  - id: ABS-SLAB-1
+    above_inr: 0
+    up_to_inr: 50000000        # 5 crore
+    rate_pct: "0"
+    label: "Up to ₹5 crore"
+    citations:
+      - {regulation: "4(1)", chunk_id: "in-bd-abs-regulations-2025#0007", quote: "1. Up to 5 crore Nil"}
+      - {regulation: "5(7)", chunk_id: "in-bd-abs-regulations-2025#0013", quote: "1. Up to 5 crore Nil"}
+  - id: ABS-SLAB-2
+    above_inr: 50000000
+    up_to_inr: 500000000       # 50 crore
+    rate_pct: "0.2"
+    label: "Above ₹5 crore to ₹50 crore"
+    citations:
+      - {regulation: "4(1)", chunk_id: "in-bd-abs-regulations-2025#0007", quote: "2. Above 5 crore to 50 crore 0.2%"}
+      - {regulation: "5(7)", chunk_id: "in-bd-abs-regulations-2025#0013", quote: "2. Above 5 crore to 50 crore 0.2%"}
+  - id: ABS-SLAB-3
+    above_inr: 500000000
+    up_to_inr: 2500000000      # 250 crore
+    rate_pct: "0.4"
+    label: "Above ₹50 crore to ₹250 crore"
+    citations:
+      - {regulation: "4(1)", chunk_id: "in-bd-abs-regulations-2025#0007", quote: "3. Above 50 crore to 250 crore 0.4%"}
+      - {regulation: "5(7)", chunk_id: "in-bd-abs-regulations-2025#0013", quote: "3. Above 50 crore to 250 crore 0.4%"}
+  - id: ABS-SLAB-4
+    above_inr: 2500000000
+    up_to_inr: null
+    rate_pct: "0.6"
+    label: "Above ₹250 crore"
+    citations:
+      - {regulation: "4(1)", chunk_id: "in-bd-abs-regulations-2025#0008", quote: "4. Above 250 crore 0.6%"}
+      - {regulation: "5(7)", chunk_id: "in-bd-abs-regulations-2025#0014", quote: "4. Above 250 crore 0.6%"}
+high_value_uplift:
+  pct: "20"
+  citations:
+    - {regulation: "4(4) proviso", chunk_id: "in-bd-abs-regulations-2025#0009", quote: "the benefit sharing component shall be twenty percent. more than the benefit sharing amount due as referred under sub-regulation (1) of this regulation"}
+    - {regulation: "5(8) proviso", chunk_id: "in-bd-abs-regulations-2025#0015", quote: "the benefit sharing component shall be twenty percent. more than the benefit sharing amount due as mentioned in sub-regulation (7) of this regulation"}
+  # Separate from the uplift: an upfront payment "not less than five percent" of auction/sale/
+  # purchase price, fixed by the Authority/Board case by case -> human judgment, never computed.
+  upfront:
+    human_judgment_required: true
+    citations:
+      - {regulation: "4(4)", chunk_id: "in-bd-abs-regulations-2025#0008", quote: "the benefit sharing shall not be less than five percent. of the proceeds of the auction or sale amount or the purchase price"}
+form_a:
+  id: ABS-FORM-A
+  threshold_inr: 10000000      # 1 crore; obligation applies to turnover strictly above it
+  obligation: "Submit an annual statement in Form A on biological resources consumed in the financial year, within three months of finalising the income-tax / corporate-tax return."
+  citations:
+    - {regulation: "4(2)", chunk_id: "in-bd-abs-regulations-2025#0008", quote: "Any person having an annual turnover of more than one crore rupees shall submit an annual statement"}
+    - {regulation: "5(9)", chunk_id: "in-bd-abs-regulations-2025#0015", quote: "Any person having an annual turnover of more than one crore rupees shall submit an annual statement"}

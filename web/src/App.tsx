@@ -1,4 +1,5 @@
 import { type FormEvent, useCallback, useEffect, useRef, useState } from "react";
+import { AbsPanel } from "./AbsPanel";
 import { type Lang, STATUS_LABELS, STRINGS } from "./i18n";
 
 // The Two Switches live above the fold (S6 rule 1) and are sent with every question.
@@ -219,6 +220,7 @@ export default function App() {
             </div>
           )}
         </div>
+        <AbsPanel asOf={asOf} t={t} />
         <p className="mt-6 text-xs text-stone-500">
           {t.disclaimer} · API: {health}
           {current && <> · corpus {current.corpus_version.slice(0, 19)}…</>}
