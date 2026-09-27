@@ -5,6 +5,7 @@ the previous one still on screen. Runs keyless against a real uvicorn process.
 """
 
 import os
+import re
 import shutil
 import socket
 import subprocess
@@ -225,3 +226,122 @@ def test_hybrid_replay_is_stable_from_the_first_ask(hybrid_replay_url):
     health = json.load(urllib.request.urlopen(hybrid_replay_url + "/health", timeout=5))
     assert health["ready"] is True
     assert health["retrieval"]["mode"] == "hybrid", health["retrieval"]
+
+
+# ---- M4: voice input + accessibility (S6 rules 5-6) ----
+
+NO_SPEECH = "delete window.SpeechRecognition; delete window.webkitSpeechRecognition;"
+FAKE_SPEECH = """
+window.__recs = [];
+class FakeRec {
+  constructor() { window.__recs.push(this); }
+  start() {
+    setTimeout(() => {
+      this.onresult && this.onresult({ results: [[{ transcript: "Is Rule 170 in force?" }]] });
+      this.onend && this.onend();
+    }, 50);
+  }
+  stop() { this.onend && this.onend(); }
+}
+window.SpeechRecognition = FakeRec;
+"""
+
+
+def test_mic_is_disabled_without_speech_recognition_and_typing_still_works(base_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = browser.new_page()
+        page.add_init_script(NO_SPEECH)
+        page.goto(base_url)
+        mic = page.get_by_test_id("mic")
+        expect(mic).to_be_disabled()
+        expect(mic).to_have_attribute("aria-label", re.compile("not available"))
+        expect(page.get_by_test_id("question")).to_be_editable()
+        browser.close()
+
+
+def test_mic_fills_the_question_in_the_selected_language(base_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = browser.new_page()
+        page.add_init_script(FAKE_SPEECH)
+        page.goto(base_url)
+        page.get_by_test_id("language").select_option("hi")
+        page.get_by_test_id("mic").click()
+        expect(page.get_by_test_id("question")).to_have_value("Is Rule 170 in force?")
+        assert page.evaluate("window.__recs[0].lang") == "hi-IN"
+        browser.close()
+
+
+def test_tab_reaches_switch_question_ask_and_first_source(base_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = browser.new_page()
+        page.add_init_script(NO_SPEECH)
+        _ask(page, base_url, "Is Rule 170 in force?")
+        expect(page.get_by_test_id("answer").locator("blockquote").first).to_be_visible()
+        page.locator("h1").click()  # sets the sequential-focus start point to the top
+        order = []
+        for _ in range(40):
+            page.keyboard.press("Tab")
+            tag = page.evaluate(
+                "(() => { const e = document.activeElement;"
+                " if (e.dataset.testid) return e.dataset.testid;"
+                " if (e.tagName === 'A' && e.closest('[data-testid=answer] ol'))"
+                " return 'source-link';"
+                " return e.tagName; })()")
+            order.append(tag)
+            if tag == "source-link":
+                break
+        want = ["jurisdiction", "question", "ask", "source-link"]
+        pos = [order.index(w) for w in want]  # ValueError = element not keyboard-reachable
+        assert pos == sorted(pos), order
+        # Visible focus: the focused link draws an outline.
+        width = page.evaluate("getComputedStyle(document.activeElement).outlineWidth")
+        assert width not in ("0px", ""), width
+        browser.close()
+
+
+CONTRAST_JS = """
+(el) => {
+  const cv = document.createElement('canvas'); cv.width = cv.height = 1;
+  const cx = cv.getContext('2d', { willReadFrequently: true });
+  const rgba = (c) => { cx.clearRect(0, 0, 1, 1); cx.fillStyle = c; cx.fillRect(0, 0, 1, 1);
+                        return Array.from(cx.getImageData(0, 0, 1, 1).data); };
+  let bg = null;
+  for (let n = el; n; n = n.parentElement) {
+    const c = rgba(getComputedStyle(n).backgroundColor);
+    if (c[3] > 0) { bg = c; break; }
+  }
+  bg = bg || [255, 255, 255, 255];
+  const fg = rgba(getComputedStyle(el).color);
+  const a = parseFloat(getComputedStyle(el).opacity);
+  const lum = (c) => { const v = c.slice(0, 3).map((x) => { x /= 255;
+      return x <= 0.03928 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4); });
+    return 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]; };
+  const [l1, l2] = [lum(fg), lum(bg)].sort((x, y) => y - x);
+  return (l1 + 0.05) / (l2 + 0.05);
+}
+"""
+
+
+def _contrast(locator) -> float:
+    return locator.evaluate(CONTRAST_JS)
+
+
+def test_synthesis_card_and_escalation_meet_wcag_aa_contrast(replay_url, base_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = browser.new_page()
+        answer = _ask(page, replay_url, "Is Rule 170 in force?")
+        card = answer.get_by_test_id("synthesis")
+        expect(card).to_be_visible()
+        for el in card.locator("p, a").all():
+            assert _contrast(el) >= 4.5, el.inner_text()[:60]
+        answer = _ask(page, base_url, "What is the GST rate on Ayurvedic cosmetics?")
+        esc = answer.get_by_test_id("escalation")
+        expect(esc).to_be_visible()
+        assert _contrast(esc) >= 4.5
+        for el in answer.get_by_test_id("abstain").locator("p").all():
+            assert _contrast(el) >= 4.5, el.inner_text()[:60]
+        browser.close()

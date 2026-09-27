@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* S6 rule 6: a visible focus ring on every interactive element, keyboard only. */
+:focus-visible {
+  outline: 3px solid #0369a1;
+  outline-offset: 2px;
+}
+
 /* The Passport Compiler: print only the compiled passport. */
 @media print {
   body * { visibility: hidden; }

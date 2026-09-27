@@ -81,7 +81,7 @@ function SynthesisCard({ s, t, testId }: { s: Synthesis; t: Record<string, strin
           );
         })}
       </p>
-      <p className="mt-1 text-xs text-stone-500">
+      <p className="mt-1 text-xs text-stone-600">
         {s.provider} · {s.model} · {s.source}
       </p>
     </section>
@@ -145,6 +145,66 @@ function AnswerCard({ a, t, testId }: { a: Answer; t: Record<string, string>; te
       )}
       <p className="mt-3 text-xs text-stone-500">{a.disclaimer}</p>
     </article>
+  );
+}
+
+// Voice input (S6 rule 5): the Web Speech API when the browser has it; the typed field is
+// always present. Audio goes to the browser's own speech service, never to our API.
+type Recognizer = {
+  lang: string;
+  interimResults: boolean;
+  onresult: ((e: { results: ArrayLike<ArrayLike<{ transcript: string }>> }) => void) | null;
+  onend: (() => void) | null;
+  onerror: (() => void) | null;
+  start: () => void;
+  stop: () => void;
+};
+const SPEECH_LANG: Record<Lang, string> = { en: "en-IN", hi: "hi-IN", gu: "gu-IN" };
+
+function speechCtor(): (new () => Recognizer) | null {
+  const w = window as unknown as Record<string, unknown>;
+  return ((w.SpeechRecognition ?? w.webkitSpeechRecognition) as new () => Recognizer) ?? null;
+}
+
+function VoiceButton({ lang, t, onText }: { lang: Lang; t: Record<string, string>; onText: (s: string) => void }) {
+  const [listening, setListening] = useState(false);
+  const rec = useRef<Recognizer | null>(null);
+  const Ctor = speechCtor();
+  const supported = Ctor !== null;
+  function toggle() {
+    if (!Ctor) return;
+    if (listening) {
+      rec.current?.stop();
+      return;
+    }
+    const r = new Ctor();
+    r.lang = SPEECH_LANG[lang];
+    r.interimResults = false;
+    r.onresult = (e) => {
+      const said = Array.from(e.results).map((x) => x[0].transcript).join(" ").trim();
+      if (said) onText(said);
+    };
+    r.onend = () => setListening(false);
+    r.onerror = () => setListening(false);
+    rec.current = r;
+    setListening(true);
+    r.start();
+  }
+  const label = !supported ? t.micUnsupported : listening ? t.micStop : t.mic;
+  return (
+    <button
+      type="button"
+      data-testid="mic"
+      data-lang={SPEECH_LANG[lang]}
+      onClick={toggle}
+      disabled={!supported}
+      aria-pressed={supported ? listening : undefined}
+      aria-label={label}
+      title={label}
+      className="rounded border border-stone-400 bg-white px-3 py-2 text-sm text-stone-800 disabled:cursor-not-allowed disabled:opacity-60"
+    >
+      <span aria-hidden="true">{listening ? "■" : "🎤"}</span>
+    </button>
   );
 }
 
@@ -244,6 +304,7 @@ export default function App() {
           <label className="flex flex-col text-sm">
             {t.language}
             <select
+              data-testid="language"
               className="mt-1 rounded border border-stone-300 px-2 py-1"
               value={lang}
               onChange={(e) => setLang(e.target.value as Lang)}
@@ -267,6 +328,7 @@ export default function App() {
               onChange={(e) => setQuestion(e.target.value)}
             />
           </label>
+          <VoiceButton lang={lang} t={t} onText={setQuestion} />
           <button
             data-testid="ask"
             type="submit"
@@ -276,7 +338,7 @@ export default function App() {
             {warming ? t.warming : busy ? t.asking : t.ask}
           </button>
         </form>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
+        <div className="mt-6 grid gap-4 md:grid-cols-2" aria-live="polite" aria-busy={busy}>
           {current && (
             <div>
               <AnswerCard a={current} t={t} testId="answer" />
