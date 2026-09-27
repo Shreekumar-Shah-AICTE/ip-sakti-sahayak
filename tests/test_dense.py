@@ -95,3 +95,18 @@ def test_dense_alone_cannot_pass_the_gate_by_default():
     idx._dense = _FakeDense(idx.chunks[0]["chunk_id"], idx.chunks)
     a = answer_mod.answer("zzqx unrelated gibberish term", "EU", DAY, index=idx)
     assert a.abstain
+
+
+def test_term_map_ranks_patents_act_first_for_lay_patentable_question():
+    """D-013: 'patentable' is scored as patent/invention, so the Patents Act outranks the
+    Drugs Rules' 'patent or proprietary medicine' chunks. Coverage stays on the user's terms."""
+    import datetime as dt
+
+    from api.retriever import TERM_MAP, default_index, expand
+
+    assert expand(["patentable", "india"]) == ["patentable", "india", "patent", "invention"]
+    assert all(v for v in TERM_MAP.values())
+    hits = default_index().search("Is Ayurvedic medicine patentable in India?", "IN",
+                                  dt.date(2026, 9, 1), k=3)
+    assert hits[0].chunk["doc_id"] == "in-patents-act-1970"
+    assert all(0 <= h.coverage <= 1 for h in hits)

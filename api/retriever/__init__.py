@@ -34,6 +34,25 @@ K1, B = 1.5, 0.75
 RRF_K = 60  # reciprocal-rank-fusion constant (Cormack et al. 2009); not tuned
 
 
+# The lay→statutory term map (D-013). Users ask "is X patentable?"; the Patents Act says
+# "invention" and "patent". Each lay token is also scored as its statutory terms, and counts as
+# *covered* in a chunk if the chunk has the token or any mapped term — synonymy, not a free
+# pass. Curated by hand, deliberately tiny; every entry needs an eval item that motivated it
+# (DECISIONS D-013). Never add an entry just to make a must-abstain item answer.
+TERM_MAP: dict[str, tuple[str, ...]] = {
+    "patentable": ("patent", "invention"),
+    "patentability": ("patent", "invention"),
+}
+
+
+def expand(terms: list[str]) -> list[str]:
+    """Query terms plus their mapped statutory terms, de-duplicated, original order first."""
+    out = list(terms)
+    for t in terms:
+        out.extend(x for x in TERM_MAP.get(t, ()) if x not in out)
+    return out
+
+
 def tokenize(text: str) -> list[str]:
     toks = re.findall(r"[a-z0-9]+", text.lower())
     out = []
@@ -90,31 +109,35 @@ class Index:
             ids.append(i)
         return ids
 
-    def _bm25(self, terms: list[str], ids: list[int]) -> list[Hit]:
+    def _bm25(self, terms: list[str], ids: list[int], base: list[str] | None = None) -> list[Hit]:
+        """BM25 over `terms`; coverage is measured on `base` (the user's terms) when given."""
         hits = []
         for i in ids:
             tf, dl = self.tfs[i], self.lens[i]
-            score, present = 0.0, 0
+            score = 0.0
             for t in terms:
                 f = tf.get(t, 0)
                 if not f:
                     continue
-                present += 1
                 score += self.idf[t] * f * (K1 + 1) / (f + K1 * (1 - B + B * dl / self.avgdl))
             if score > 0:
-                hits.append(Hit(self.chunks[i], score, present / len(terms)))
+                hits.append(Hit(self.chunks[i], score, self._coverage(base or terms, i)))
         hits.sort(key=lambda h: h.score, reverse=True)
         return hits
 
     def _coverage(self, terms: list[str], i: int) -> float:
-        return sum(1 for t in terms if self.tfs[i].get(t)) / len(terms) if terms else 0.0
+        """Share of the user's own terms present in chunk i (a mapped synonym counts)."""
+        tf = self.tfs[i]
+        got = sum(1 for t in terms if tf.get(t) or any(tf.get(x) for x in TERM_MAP.get(t, ())))
+        return got / len(terms) if terms else 0.0
 
     def search(self, query: str, jurisdiction: str, as_of: dt.date, k: int = 5) -> list[Hit]:
         """BM25 only (the keyless path, and what the vanilla baseline mirrors)."""
         terms = list(dict.fromkeys(tokenize(query)))
         if not terms:
             return []
-        return self._bm25(terms, self.allowed(jurisdiction, as_of))[:k]  # filter BEFORE rank
+        ids = self.allowed(jurisdiction, as_of)  # filter BEFORE rank
+        return self._bm25(expand(terms), ids, terms)[:k]
 
     @property
     def dense(self):
@@ -139,7 +162,7 @@ class Index:
             return self.search(query, jurisdiction, as_of, k)
         ids = self.allowed(jurisdiction, as_of)  # filter BEFORE rank
         terms = list(dict.fromkeys(tokenize(query)))
-        lexical = self._bm25(terms, ids) if terms else []
+        lexical = self._bm25(expand(terms), ids, terms) if terms else []
         dense = self._dense.rank(query, ids)
         fused: dict[int, float] = {}
         pos = {id(c): i for i, c in enumerate(self.chunks)}
