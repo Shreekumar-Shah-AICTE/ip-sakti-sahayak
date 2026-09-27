@@ -51,7 +51,7 @@ _RULES = [
         S4,
         "makes a false claim for the drug",
         "Absolute or unverifiable wording can be a false or misleading claim under section 4 — "
-        "whether it is depends on evidence, so a human must judge.",
+        "whether it actually is turns on the evidence behind it, so a human must judge.",
     ),
     (
         "s5",
@@ -123,6 +123,19 @@ def _cite(chunk_id: str, quote: str) -> dict:
     }
 
 
+def _whole_word(text: str, start: int, end: int) -> tuple[int, int]:
+    """Grow a stem match ("diabet") out to the word the reader sees ("diabetes").
+
+    The stems are deliberately short so inflections match; highlighting only the stem
+    would look like a bug to the person whose copy is being checked.
+    """
+    while start > 0 and (text[start - 1].isalnum() or text[start - 1] == "-"):
+        start -= 1
+    while end < len(text) and (text[end].isalnum() or text[end] == "-"):
+        end += 1
+    return start, end
+
+
 def scan(text: str) -> dict:
     """Risk indicators for an ad/label text. Spans index into the original text."""
     rules, sched = _verified()
@@ -130,11 +143,12 @@ def scan(text: str) -> dict:
     flags = []
     for rx, (cid, entry) in sched.items():
         for m in re.finditer(rx, low):
+            lo, hi = _whole_word(text, m.start(), m.end())
             flags.append(
                 {
                     "id": "s3d",
-                    "span": [m.start(), m.end()],
-                    "match": text[m.start() : m.end()],
+                    "span": [lo, hi],
+                    "match": text[lo:hi],
                     "title": f"Schedule disease: {entry.split('. ', 1)[1].rstrip('.')}",
                     "why": "Section 3(d) of the DMR Act prohibits advertising a drug for the "
                     "diseases in its Schedule. This wording appears to name one.",
@@ -153,11 +167,12 @@ def scan(text: str) -> dict:
     for rid, rx, cid, quote, why in rules:
         m = re.search(rx, low)
         if m:
+            lo, hi = _whole_word(text, m.start(), m.end())
             flags.append(
                 {
                     "id": rid,
-                    "span": [m.start(), m.end()],
-                    "match": text[m.start() : m.end()],
+                    "span": [lo, hi],
+                    "match": text[lo:hi],
                     "title": {
                         "s3a": "Conception / miscarriage claim",
                         "s3b": "Sexual-capacity claim",

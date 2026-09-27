@@ -7,10 +7,9 @@ import {
   type KeyboardEvent,
   type ReactNode,
 } from "react";
-import { STRINGS, type Lang } from "./i18n";
+import { STATUS_SHORT, STRINGS, type Lang } from "./i18n";
 import {
   AnswerCard,
-  TimelineStrip,
   VoiceButton,
   human,
   tone,
@@ -365,7 +364,9 @@ function DiffCard({
             <p className="text-xs uppercase tracking-wide text-stone-500">
               {human(side.as_of)}
             </p>
-            <p className={"mt-1 " + tone(side.status)}>{side.status}</p>
+            <p className={"mt-1 " + tone(side.status)}>
+              {STATUS_SHORT[side.status] ?? side.status}
+            </p>
           </div>
         ))}
       </div>
@@ -412,7 +413,7 @@ function TimelineCard({
               </button>
             </div>
             <p className={"mt-1 text-sm " + tone(s.status)}>
-              {s.status}
+              {STATUS_SHORT[s.status] ?? s.status}
               {s.sub_judice ? " · " + t.subJudice : ""}
             </p>
             {s.summary ? (
@@ -486,7 +487,10 @@ function ClaimsCard({
         <p className="mt-2 text-sm">{t.chatNoFlags}</p>
       )}
       {r.rule170 ? (
-        <p className="mt-3 text-xs text-stone-600">{r.rule170.status_line}</p>
+        <p className="mt-3 text-xs text-stone-600">
+          Rule 170 as of {human(r.rule170.as_of)}:{" "}
+          {STATUS_SHORT[r.rule170.status] ?? r.rule170.status}
+        </p>
       ) : null}
       <p className="mt-2 text-xs text-stone-500">{r.note}</p>
     </Card>
@@ -1111,6 +1115,7 @@ export default function ChatApp() {
   const histRef = useRef<{ role: string; text: string }[]>([]);
   const idRef = useRef(1);
   const endRef = useRef<HTMLDivElement | null>(null);
+  const lastRef = useRef<HTMLDivElement | null>(null);
   const boxRef = useRef<HTMLTextAreaElement | null>(null);
   const t = STRINGS[lang];
 
@@ -1254,11 +1259,16 @@ export default function ChatApp() {
     [busy, post],
   );
 
+  // Scroll to the *start* of the newest reply. Answers carry their quotes with them and can
+  // be long; landing at the bottom would show a demo audience the footnotes, not the answer.
   useEffect(() => {
-    endRef.current?.scrollIntoView({
-      behavior: reduceMotion() ? "auto" : "smooth",
-      block: "end",
-    });
+    const behavior = reduceMotion() ? "auto" : "smooth";
+    const last = messages[messages.length - 1];
+    if (last?.role === "assistant" && lastRef.current) {
+      lastRef.current.scrollIntoView({ behavior, block: "start" });
+    } else {
+      endRef.current?.scrollIntoView({ behavior, block: "end" });
+    }
   }, [messages, busy]);
 
   const onDate = useCallback(
@@ -1438,7 +1448,7 @@ export default function ChatApp() {
                       >
                         <span className="block">{human(s.from)}</span>
                         <span className="block truncate opacity-80">
-                          {s.status}
+                          {STATUS_SHORT[s.status] ?? s.status}
                         </span>
                       </button>
                     </li>
@@ -1505,16 +1515,21 @@ export default function ChatApp() {
                 </div>
               </div>
             ) : (
-              messages.map((m) => (
-                <Bubble
+              messages.map((m, i) => (
+                <div
                   key={m.id}
-                  m={m}
-                  t={t}
-                  lang={lang}
-                  asOf={asOf}
-                  onSend={(s) => void send(s)}
-                  onDate={onDate}
-                />
+                  ref={i === messages.length - 1 ? lastRef : undefined}
+                  className="scroll-mt-4"
+                >
+                  <Bubble
+                    m={m}
+                    t={t}
+                    lang={lang}
+                    asOf={asOf}
+                    onSend={(s) => void send(s)}
+                    onDate={onDate}
+                  />
+                </div>
               ))
             )}
             {busy ? (
@@ -1615,11 +1630,6 @@ export default function ChatApp() {
               ))}
             </div>
           </div>
-          {clockStatus ? (
-            <div className="rounded-2xl border border-stone-200 bg-white p-3">
-              <TimelineStrip st={clockStatus} t={t} />
-            </div>
-          ) : null}
         </aside>
       </main>
 
