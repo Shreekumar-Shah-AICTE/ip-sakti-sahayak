@@ -25,11 +25,11 @@ def _free_port() -> int:
         return s.getsockname()[1]
 
 
-@pytest.fixture(scope="module")
-def base_url():
+def _serve(extra_env: dict):
     assert (ROOT / "web" / "dist" / "index.html").exists(), "run `make web` first"
     port = _free_port()
     env = {k: v for k, v in os.environ.items() if not k.endswith("_API_KEY")}  # keyless
+    env.update(extra_env)
     proc = subprocess.Popen(
         [sys.executable, "-m", "uvicorn", "api.main:app", "--port", str(port)],
         cwd=ROOT, env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
@@ -41,6 +41,24 @@ def base_url():
             break
         except OSError:
             time.sleep(0.25)
+    return proc, url
+
+
+@pytest.fixture(scope="module")
+def base_url():
+    proc, url = _serve({"SAHAYAK_LLM": "none"})
+    yield url
+    proc.terminate()
+    proc.wait(timeout=10)
+
+
+@pytest.fixture(scope="module")
+def replay_url():
+    # The committed Gemini recording, replayed with no key and no network (D-016).
+    # Pinned to the BM25 core: replay keys hash the quotes, and the dense warm-up races the
+    # first request, so hybrid would change the quotes mid-test (DECISIONS D-017).
+    proc, url = _serve({"SAHAYAK_LLM": "gemini", "SAHAYAK_LLM_REPLAY": "replay",
+                        "SAHAYAK_DENSE": "0"})
     yield url
     proc.terminate()
     proc.wait(timeout=10)
@@ -122,4 +140,58 @@ def test_passport_compiles_and_follows_the_date(base_url):
         page.get_by_test_id("as-of").fill("2022-01-01")
         page.get_by_test_id("passport-compile").click()
         expect(page.get_by_test_id("passport-abstain")).to_contain_text("2022-11-17")
+        browser.close()
+
+
+def _ask(page, base, question, as_of="2026-09-01"):
+    page.goto(base)
+    page.get_by_test_id("jurisdiction").select_option("IN")
+    page.get_by_test_id("as-of").fill(as_of)
+    page.get_by_test_id("question").fill(question)
+    page.get_by_test_id("ask").click()
+    return page.get_by_test_id("answer")
+
+
+def test_synthesis_card_from_committed_recording(replay_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = browser.new_page()
+        answer = _ask(page, replay_url, "Is Rule 170 in force?")
+        card = answer.get_by_test_id("synthesis")
+        expect(card).to_contain_text("AI-organised from the quotes below")
+        expect(card).to_contain_text("stands vacated")
+        expect(card).to_contain_text("replay")
+        link = card.locator('a[href="#answer-q1"]')
+        expect(link).to_have_text("[1]")
+        expect(answer.locator("#answer-q1 blockquote")).to_be_visible()
+        expect(answer.get_by_test_id("status-line")).to_contain_text("stay vacated")
+        # The card sits above the quotes it organises.
+        box_card, box_q = card.bounding_box(), answer.locator("#answer-q1").bounding_box()
+        assert box_card["y"] < box_q["y"]
+        browser.close()
+
+
+def test_rejected_synthesis_is_withheld_quietly(replay_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = browser.new_page()
+        answer = _ask(page, replay_url, "What is codified traditional knowledge?")
+        expect(answer.get_by_test_id("synthesis-withheld")).to_contain_text("insufficient")
+        expect(answer.get_by_test_id("synthesis")).to_have_count(0)
+        expect(answer.locator("blockquote").first).to_be_visible()
+        browser.close()
+
+
+def test_keyless_shows_no_synthesis_and_escalates_on_abstain(base_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = browser.new_page()
+        answer = _ask(page, base_url, "Is Rule 170 in force?")
+        expect(answer.get_by_test_id("status-line")).to_contain_text("stay vacated")
+        expect(answer.get_by_test_id("synthesis")).to_have_count(0)
+        expect(answer.get_by_test_id("synthesis-withheld")).to_have_count(0)
+        answer = _ask(page, base_url, "What is the GST rate on Ayurvedic cosmetics?")
+        expect(answer.get_by_test_id("abstain")).to_be_visible()
+        expect(answer.get_by_test_id("escalation")).to_contain_text("registered patent agent")
+        expect(answer.get_by_test_id("escalation")).not_to_contain_text("lawyer")
         browser.close()

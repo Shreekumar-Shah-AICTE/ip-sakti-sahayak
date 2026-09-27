@@ -4,6 +4,10 @@ export type Lang = "en" | "hi" | "gu";
 
 export const STRINGS: Record<Lang, Record<string, string>> = {
   en: {
+    synthLabel: "AI-organised from the quotes below — verify against them",
+    synthWithheld: "Synthesis withheld",
+    synthCite: "Go to quote",
+    escalation: "Next step: ask a registered patent agent or your institution's IPR cell, and bring the sources shown here.",
     tagline: "Ayurveda IP and regulatory guidance, as of a date.",
     jurisdiction: "Jurisdiction",
     asOf: "As-of date",
@@ -43,6 +47,10 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     passportGaps: "Not covered by The Library",
   },
   hi: {
+    synthLabel: "नीचे दिए उद्धरणों से AI द्वारा व्यवस्थित — उनसे मिलान करें",
+    synthWithheld: "सारांश रोका गया",
+    synthCite: "उद्धरण देखें",
+    escalation: "अगला कदम: किसी पंजीकृत पेटेंट एजेंट या अपने संस्थान के IPR सेल से पूछें, और यहाँ दिखाए गए स्रोत साथ ले जाएँ।",
     tagline: "आयुर्वेद बौद्धिक संपदा और नियामक मार्गदर्शन — किसी तिथि के अनुसार।",
     jurisdiction: "क्षेत्राधिकार",
     asOf: "तिथि (के अनुसार)",
@@ -82,6 +90,10 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     passportGaps: "लाइब्रेरी में शामिल नहीं",
   },
   gu: {
+    synthLabel: "નીચેનાં અવતરણોમાંથી AI દ્વારા ગોઠવેલું — તેમની સાથે ચકાસો",
+    synthWithheld: "સારાંશ રોકવામાં આવ્યો",
+    synthCite: "અવતરણ જુઓ",
+    escalation: "આગળનું પગલું: નોંધાયેલા પેટન્ટ એજન્ટ અથવા તમારી સંસ્થાના IPR સેલને પૂછો, અને અહીં બતાવેલા સ્રોતો સાથે રાખો.",
     tagline: "આયુર્વેદ બૌદ્ધિક સંપદા અને નિયમનકારી માર્ગદર્શન — કોઈ તારીખ મુજબ.",
     jurisdiction: "અધિકારક્ષેત્ર",
     asOf: "તારીખ (મુજબ)",

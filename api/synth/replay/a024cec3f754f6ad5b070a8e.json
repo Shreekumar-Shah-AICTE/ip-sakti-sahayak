@@ -1,0 +1,6 @@
+{
+ "provider": "groq",
+ "model": "openai/gpt-oss-120b",
+ "prompt": "Question: Is Rule 170 in force?\nStatus: Status as of 2026-09-01: omitted_stay_vacated\n[1] interim order dated 27.08.2024 stands vacated. (Supreme Court of India — W.P.(C) No. 645/2022, Indian Medical Association & Anr v. Union of India & Ors, with W.P.(C) No. 400/2025 — Order dated 11-08-2025, 8)\n[2] Learned Amicus Curiae submitted that as a result, the said Rule is still in force and various compliances have been made pursuant to the said Rule by the respective States/Union Territories. (Supreme Court of India — W.P.(C) No. 645/2022, Indian Medical Association & Anr v. Union of India & Ors, with W.P.(C) No. 400/2025 — Order dated 11-08-2025, 7)",
+ "text": "The Amicus Curiae submitted that, as a result, the said Rule is still in force and various compliances have been made pursuant to it by the respective States/Union Territories [2]. However, the interim order dated 27 August 2024 stands vacated [1]."
+}

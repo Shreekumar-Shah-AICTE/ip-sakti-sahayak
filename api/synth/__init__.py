@@ -47,7 +47,7 @@ MIN_GROUNDING = 0.5  # share of a sentence's content words found in its cited qu
 PROVIDERS = {
     "gemini": ("GEMINI_API_KEY", "gemini-3.8-flash"),
     "groq": ("GROQ_API_KEY", "openai/gpt-oss-120b"),
-    "sarvam": ("SARVAM_API_KEY", "sarvam-m"),
+    "sarvam": ("SARVAM_API_KEY", "sarvam-105b"),  # sarvam-m deprecated (run 10)
 }
 
 SYSTEM = (

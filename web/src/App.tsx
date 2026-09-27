@@ -27,6 +27,15 @@ type Status = {
   reason: string;
 };
 
+type Synthesis = {
+  provider: string;
+  model: string;
+  accepted: boolean;
+  text: string | null;
+  reason: string;
+  source: string;
+};
+
 type Answer = {
   jurisdiction: string;
   as_of: string;
@@ -38,7 +47,46 @@ type Answer = {
   status: Status | null;
   quotes: Quote[];
   disclaimer: string;
+  synthesis?: Synthesis | null;
 };
+
+// An accepted synthesis is shown above the quotes it organises; every [n] links to quote n.
+// The model may only re-phrase quoted, cited text (S3 rule 8) — the quotes stay the authority.
+function SynthesisCard({ s, t, testId }: { s: Synthesis; t: Record<string, string>; testId: string }) {
+  if (!s.accepted || !s.text) {
+    return (
+      <p data-testid="synthesis-withheld" className="mt-3 text-xs text-stone-500">
+        {t.synthWithheld}: {s.reason}
+      </p>
+    );
+  }
+  const parts = s.text.split(/(\[\d+\])/);
+  return (
+    <section data-testid="synthesis" className="mt-3 rounded border border-sky-200 bg-sky-50 px-3 py-2 text-sm">
+      <p className="text-xs font-semibold text-sky-900">{t.synthLabel}</p>
+      <p className="mt-1">
+        {parts.map((part, i) => {
+          const m = /^\[(\d+)\]$/.exec(part);
+          return m ? (
+            <a
+              key={i}
+              href={`#${testId}-q${m[1]}`}
+              className="text-sky-800 underline"
+              aria-label={`${t.synthCite} ${m[1]}`}
+            >
+              [{m[1]}]
+            </a>
+          ) : (
+            <span key={i}>{part}</span>
+          );
+        })}
+      </p>
+      <p className="mt-1 text-xs text-stone-500">
+        {s.provider} · {s.model} · {s.source}
+      </p>
+    </section>
+  );
+}
 
 function AnswerCard({ a, t, testId }: { a: Answer; t: Record<string, string>; testId: string }) {
   return (
@@ -62,6 +110,7 @@ function AnswerCard({ a, t, testId }: { a: Answer; t: Record<string, string>; te
           )}
         </div>
       )}
+      {!a.abstain && a.synthesis && <SynthesisCard s={a.synthesis} t={t} testId={testId} />}
       {a.abstain ? (
         <div data-testid="abstain" className="mt-3 rounded bg-stone-100 px-3 py-3 text-sm">
           <p className="font-medium">{t.abstainTitle}</p>
@@ -72,8 +121,9 @@ function AnswerCard({ a, t, testId }: { a: Answer; t: Record<string, string>; te
         <>
           <h3 className="mt-3 text-sm font-semibold">{t.sources}</h3>
           <ol className="mt-1 space-y-3">
-            {a.quotes.map((q) => (
-              <li key={q.chunk_id} className="text-sm">
+            {a.quotes.map((q, i) => (
+              <li key={q.chunk_id} id={`${testId}-q${i + 1}`} className="text-sm">
+                <span className="mr-1 text-xs font-semibold text-stone-500">[{i + 1}]</span>
                 <blockquote className="border-l-4 border-stone-300 pl-3 italic">“{q.text}”</blockquote>
                 <p className="mt-1 text-xs text-stone-600">
                   {q.doc_title} — {q.section} ·{" "}
@@ -87,6 +137,11 @@ function AnswerCard({ a, t, testId }: { a: Answer; t: Record<string, string>; te
             ))}
           </ol>
         </>
+      )}
+      {(a.abstain || a.confidence === "low") && (
+        <p data-testid="escalation" className="mt-3 text-sm text-stone-700">
+          {t.escalation}
+        </p>
       )}
       <p className="mt-3 text-xs text-stone-500">{a.disclaimer}</p>
     </article>
