@@ -1,0 +1,6 @@
+{
+ "provider": "groq",
+ "model": "openai/gpt-oss-120b",
+ "prompt": "Question: Is Rule 170 in force?\nStatus: Status as of 2025-01-15: in_force_stayed_omission (sub judice)\n[1] Rule 170 shall remain on the statute book and in force. (Supreme Court of India — W.P.(C) No. 645/2022, Indian Medical Association & Anr v. Union of India & Ors, with W.P.(C) No. 400/2025 — Order dated 11-08-2025, 6)",
+ "text": "Yes, Rule 170 remains on the statute book and is in force [1]."
+}

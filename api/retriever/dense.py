@@ -36,48 +36,73 @@ class Dense:
         self._encoder = None
         self._lock = threading.Lock()
         self._tried = False
+        self._start_lock = threading.Lock()
+        self._thread: threading.Thread | None = None
+        self._settled = threading.Event()  # set once load() has finished, ready or not
+
+    @property
+    def settled(self) -> bool:
+        """True once loading has finished (ready or failed); retrieval mode is then fixed."""
+        return self._settled.is_set()
+
+    def wait(self, timeout: float | None = None) -> bool:
+        """Block until loading has finished. False on timeout (D-017)."""
+        return self._settled.wait(timeout)
 
     def load(self) -> bool:
         with self._lock:
             if self._tried:
                 return self.ready
             self._tried = True
-            if os.environ.get("SAHAYAK_DENSE", "1") == "0":
-                self.reason = "disabled by SAHAYAK_DENSE=0"
-                return False
             try:
-                import numpy as np
+                return self._load()
+            finally:
+                self._settled.set()
 
-                meta = json.loads((self.index_dir / "ids.json").read_text(encoding="utf-8"))
-                matrix = np.load(self.index_dir / "embeddings.npy")
-            except Exception as exc:  # missing numpy, missing/corrupt index
-                self.reason = f"no dense index ({type(exc).__name__})"
-                return False
-            ids = [c["chunk_id"] for c in self.chunks]
-            version = self.chunks[0]["corpus_version"] if self.chunks else ""
-            if meta.get("ids") != ids or meta.get("corpus_version") != version:
-                self.reason = "dense index is stale (ids/corpus_version mismatch) - rebuild it"
-                return False
-            if matrix.shape[0] != len(ids):
-                self.reason = "dense index row count mismatch"
-                return False
-            try:
-                from fastembed import TextEmbedding
+    def _load(self) -> bool:
+        """Load the index and encoder; the caller (load) holds the lock."""
+        if os.environ.get("SAHAYAK_DENSE", "1") == "0":
+            self.reason = "disabled by SAHAYAK_DENSE=0"
+            return False
+        try:
+            import numpy as np
 
-                self._encoder = TextEmbedding(meta.get("model", MODEL))
-            except Exception as exc:  # fastembed absent, or model not cached and offline
-                self.reason = f"encoder unavailable ({type(exc).__name__})"
-                return False
-            self.matrix = matrix
-            self.ready = True
-            self.reason = "ready"
-            return True
+            meta = json.loads((self.index_dir / "ids.json").read_text(encoding="utf-8"))
+            matrix = np.load(self.index_dir / "embeddings.npy")
+        except Exception as exc:  # missing numpy, missing/corrupt index
+            self.reason = f"no dense index ({type(exc).__name__})"
+            return False
+        ids = [c["chunk_id"] for c in self.chunks]
+        version = self.chunks[0]["corpus_version"] if self.chunks else ""
+        if meta.get("ids") != ids or meta.get("corpus_version") != version:
+            self.reason = "dense index is stale (ids/corpus_version mismatch) - rebuild it"
+            return False
+        if matrix.shape[0] != len(ids):
+            self.reason = "dense index row count mismatch"
+            return False
+        try:
+            from fastembed import TextEmbedding
+
+            self._encoder = TextEmbedding(meta.get("model", MODEL))
+        except Exception as exc:  # fastembed absent, or model not cached and offline
+            self.reason = f"encoder unavailable ({type(exc).__name__})"
+            return False
+        self.matrix = matrix
+        self.ready = True
+        self.reason = "ready"
+        return True
 
     def warm_up(self) -> threading.Thread:
-        """Load in the background so API cold start is not slowed by model loading."""
-        t = threading.Thread(target=self.load, daemon=True, name="dense-warm-up")
-        t.start()
-        return t
+        """Load in the background so API cold start is not slowed by model loading.
+
+        Idempotent: a second call returns the thread already started.
+        """
+        with self._start_lock:
+            if self._thread is None:
+                self._thread = threading.Thread(target=self.load, daemon=True,
+                                                name="dense-warm-up")
+                self._thread.start()
+            return self._thread
 
     def encode(self, text: str):
         import numpy as np

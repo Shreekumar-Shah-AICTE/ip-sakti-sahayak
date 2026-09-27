@@ -64,6 +64,16 @@ def replay_url():
     proc.wait(timeout=10)
 
 
+@pytest.fixture(scope="module")
+def hybrid_replay_url():
+    # D-017 closed: /ask holds until the dense warm-up settles, so a hybrid server answers
+    # in one mode for its whole life and the Groq hybrid recordings replay deterministically.
+    proc, url = _serve({"SAHAYAK_LLM": "groq", "SAHAYAK_LLM_REPLAY": "replay"})
+    yield url
+    proc.terminate()
+    proc.wait(timeout=10)
+
+
 def _browser(p):
     exe = os.environ.get("CHROMIUM_PATH") or shutil.which("chromium")
     return p.chromium.launch(executable_path=exe) if exe else p.chromium.launch()
@@ -195,3 +205,23 @@ def test_keyless_shows_no_synthesis_and_escalates_on_abstain(base_url):
         expect(answer.get_by_test_id("escalation")).to_contain_text("registered patent agent")
         expect(answer.get_by_test_id("escalation")).not_to_contain_text("lawyer")
         browser.close()
+
+
+def test_hybrid_replay_is_stable_from_the_first_ask(hybrid_replay_url):
+    import json
+
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = browser.new_page()
+        seen = []
+        for _ in range(2):
+            answer = _ask(page, hybrid_replay_url, "Is Rule 170 in force?")
+            card = answer.get_by_test_id("synthesis")
+            expect(card).to_contain_text("replay")
+            expect(answer.get_by_test_id("status-line")).to_contain_text("stay vacated")
+            seen.append(answer.locator("blockquote").all_inner_texts())
+        assert seen[0] and seen[0] == seen[1]
+        browser.close()
+    health = json.load(urllib.request.urlopen(hybrid_replay_url + "/health", timeout=5))
+    assert health["ready"] is True
+    assert health["retrieval"]["mode"] == "hybrid", health["retrieval"]

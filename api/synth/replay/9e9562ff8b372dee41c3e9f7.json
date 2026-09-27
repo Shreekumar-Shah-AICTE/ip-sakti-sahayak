@@ -1,0 +1,6 @@
+{
+ "provider": "groq",
+ "model": "openai/gpt-oss-120b",
+ "prompt": "Question: Is Rule 170 in force?\nStatus: Status as of 2024-07-15: omitted\n[1] 1345. Omitted by G.S.R 360(E) dated 01.07.2024 (w.e.f. 01.07.2024). (The Drugs Rules, 1945 — compiled version as amended vide G.S.R. 360(E) dated 01-07-2024 (extract: cover, Rule 170 position, footnotes), 764)\n[2] [170.] [*****] (The Drugs Rules, 1945 — compiled version as amended vide G.S.R. 360(E) dated 01-07-2024 (extract: cover, Rule 170 position, footnotes), 7)",
+ "text": "Rule 170 has been omitted by G.S.R 360(E) dated 01‑07‑2024, effective from 01‑07‑2024, indicating that it is no longer in force [1][2]."
+}

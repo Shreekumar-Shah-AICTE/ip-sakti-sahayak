@@ -157,6 +157,7 @@ export default function App() {
   const [current, setCurrent] = useState<Answer | null>(null);
   const [previous, setPrevious] = useState<Answer | null>(null);
   const [busy, setBusy] = useState(false);
+  const [warming, setWarming] = useState(false);
   const [health, setHealth] = useState<string>("checking…");
   const currentRef = useRef<Answer | null>(null);
   const t = STRINGS[lang];
@@ -164,18 +165,30 @@ export default function App() {
   useEffect(() => {
     fetch("/health")
       .then((r) => r.json())
-      .then((b) => setHealth(`${b.status} · ${b.mode}`))
+      .then((b) =>
+        setHealth(`${b.status} · ${b.mode}${b.retrieval ? ` · ${b.retrieval.mode}` : ""}`),
+      )
       .catch(() => setHealth("offline"));
   }, []);
 
   const ask = useCallback(async (q: string, j: string, d: string) => {
     setBusy(true);
     try {
-      const r = await fetch("/ask", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ question: q, jurisdiction: j, as_of: d }),
-      });
+      let r: Response;
+      // D-017: while the retriever settles the API answers 503 + Retry-After; wait and
+      // retry rather than show an answer from a mode that is about to change.
+      for (let attempt = 0; ; attempt++) {
+        r = await fetch("/ask", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ question: q, jurisdiction: j, as_of: d }),
+        });
+        if (r.status !== 503 || attempt >= 30) break;
+        setWarming(true);
+        const wait = Number(r.headers.get("retry-after") ?? "2") * 1000;
+        await new Promise((res) => setTimeout(res, wait));
+      }
+      setWarming(false);
       const body = (await r.json()) as Answer;
       // Keep the previous answer on screen so a switch change shows its effect (S6 rule 2).
       setPrevious(currentRef.current);
@@ -260,7 +273,7 @@ export default function App() {
             className="rounded bg-stone-900 px-4 py-2 text-sm text-white focus:outline-2 focus:outline-offset-2 disabled:opacity-50"
             disabled={busy}
           >
-            {busy ? t.asking : t.ask}
+            {warming ? t.warming : busy ? t.asking : t.ask}
           </button>
         </form>
         <div className="mt-6 grid gap-4 md:grid-cols-2">

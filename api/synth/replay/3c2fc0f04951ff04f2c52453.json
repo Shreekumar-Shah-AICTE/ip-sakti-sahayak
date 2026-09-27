@@ -1,0 +1,6 @@
+{
+ "provider": "groq",
+ "model": "openai/gpt-oss-120b",
+ "prompt": "Question: Is Rule 170 in force?\nStatus: Status as of 2024-01-15: in_force\n[1] 757. Ins. by G.S.R. 1230(E), dated 21st December, 2018 (w.e.f. 24-12-2018). (The Drugs Rules, 1945 — compiled version as amended vide G.S.R. 823(E) dated 17-11-2022 (extract: definitions, Part XVI ASU, Rule 170, footnotes), 752)",
+ "text": "Yes, Rule 170 is currently in force, as it is included in the compiled version of the Drugs Rules, 1945 as amended (see the amendment by G.S.R. 1230(E) dated 21 December 2018, effective 24‑12‑2018) [1]."
+}

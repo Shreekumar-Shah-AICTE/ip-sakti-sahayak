@@ -11,6 +11,7 @@ import os
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
@@ -37,11 +38,24 @@ OPTIONAL_ADAPTERS = {
 app = FastAPI(title="IP-SAKTI Sahayak", version=VERSION)
 
 
+# D-017: /ask waits for the dense warm-up to *settle* (loaded or failed) so the retrieval
+# mode never changes mid-session. Past this bound it answers 503 + Retry-After and the UI
+# retries; it never silently answers in a different mode.
+WARM_TIMEOUT_S = float(os.environ.get("SAHAYAK_WARM_TIMEOUT", "20"))
+
+
 @app.on_event("startup")
 def _warm_dense() -> None:
-    # Background thread: the server answers (BM25) immediately while the optional dense
-    # encoder loads; answers switch to hybrid once it is ready. Keyless either way.
+    # Background thread: /health and the web shell are up at once while the optional
+    # dense encoder loads; /ask holds until the load settles. Keyless either way.
     default_index().dense.warm_up()
+
+
+def retriever_ready(timeout: float = 0.0) -> bool:
+    """True once the retrieval mode is fixed for the life of the process."""
+    dense = default_index().dense
+    dense.warm_up()  # no-op if startup already began it (e.g. TestClient without lifespan)
+    return dense.wait(timeout)
 
 
 def adapter_status() -> dict[str, bool]:
@@ -59,6 +73,7 @@ def health() -> dict:
         "adapters": adapters,
         "llm": {"provider": os.environ.get("SAHAYAK_LLM", "none"),
                 "replay": os.environ.get("SAHAYAK_LLM_REPLAY", "replay")},
+        "ready": retriever_ready(),
         "retrieval": {"mode": default_index().mode, "dense": default_index().dense.reason},
     }
 
@@ -70,10 +85,13 @@ class AskRequest(BaseModel):
 
 
 @app.post("/ask")
-def ask(req: AskRequest) -> dict:
+def ask(req: AskRequest):
     """The Answer Contract. Query text is not logged or stored (KERNEL §7.6)."""
     if req.jurisdiction not in JURISDICTIONS:
         raise HTTPException(422, f"jurisdiction must be one of {sorted(JURISDICTIONS)}")
+    if not retriever_ready(WARM_TIMEOUT_S):
+        return JSONResponse({"detail": "warming up", "warming_up": True}, status_code=503,
+                            headers={"Retry-After": "2"})
     out = answer(req.question, req.jurisdiction, req.as_of).to_dict()
     # Optional LLM layer (M7): organises the cited quotes; never replaces them.
     out["synthesis"] = synthesize(out, req.question)
