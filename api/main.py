@@ -6,11 +6,17 @@ extractive core. LLM and translation providers are optional adapters.
 
 from __future__ import annotations
 
+import datetime as dt
 import os
 from pathlib import Path
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel, Field
+
+from api import ledger
+from api.answer import answer
+from api.retriever import JURISDICTIONS
 
 VERSION = "0.0.1"
 ROOT = Path(__file__).resolve().parent.parent
@@ -41,6 +47,41 @@ def health() -> dict:
         "version": VERSION,
         "mode": "keyless" if not any(adapters.values()) else "adapters",
         "adapters": adapters,
+    }
+
+
+class AskRequest(BaseModel):
+    question: str = Field(min_length=3, max_length=1000)
+    jurisdiction: str = "IN"
+    as_of: dt.date | None = None
+
+
+@app.post("/ask")
+def ask(req: AskRequest) -> dict:
+    """The Answer Contract. Query text is not logged or stored (KERNEL §7.6)."""
+    if req.jurisdiction not in JURISDICTIONS:
+        raise HTTPException(422, f"jurisdiction must be one of {sorted(JURISDICTIONS)}")
+    return answer(req.question, req.jurisdiction, req.as_of).to_dict()
+
+
+@app.get("/ledger/{instrument}")
+def ledger_status(instrument: str, as_of: dt.date) -> dict:
+    """The Status Ledger: status of an instrument on a date, with evidence."""
+    r = ledger.resolve(instrument, as_of)
+    return {
+        "instrument": r.instrument,
+        "as_of": r.as_of.isoformat(),
+        "abstain": r.abstain,
+        "reason": r.reason,
+        "status": r.status,
+        "sub_judice": r.sub_judice,
+        "summary": r.summary,
+        "stale": r.stale,
+        "status_line": r.status_line(),
+        "evidence": [
+            {"chunk_id": e.chunk_id, "quote": e.quote, "ref": e.ref, "source_url": e.source_url}
+            for e in r.evidence
+        ],
     }
 
 

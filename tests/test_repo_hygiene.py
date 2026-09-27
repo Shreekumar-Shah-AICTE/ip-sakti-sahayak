@@ -32,3 +32,11 @@ def test_no_forbidden_claims():
         text = p.read_text(encoding="utf-8", errors="ignore").lower()
         hits += [f"{p.relative_to(ROOT)}: {phrase}" for phrase in FORBIDDEN if phrase in text]
     assert not hits, hits
+
+
+def test_run_sh_is_executable_in_git():
+    """`./run.sh` is the evaluator's first command; git must store it as 100755."""
+    out = subprocess.run(
+        ["git", "ls-files", "-s", "run.sh"], capture_output=True, text=True, cwd=ROOT
+    ).stdout
+    assert not out or out.startswith("100755")
