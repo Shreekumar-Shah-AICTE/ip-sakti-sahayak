@@ -1,0 +1,205 @@
+# The Library — source register (Tier 1, M1).
+# One entry per document. fetch.py tries `urls` in order (official first), then the
+# Wayback Machine snapshot of the first URL. The step that succeeded is recorded in
+# corpus/provenance/<id>.json as fetch_method.
+#
+# Field meanings:
+#   pages          PDF page ranges to extract ("a-b", 1-based). Omitted = whole document.
+#                  Used only to keep large compilations to the provisions we cite; the
+#                  extracted pages are verbatim, never summarised.
+#   keep_between   [start_marker, end_marker] — trim extracted text to the first span
+#                  starting at start_marker and ending after end_marker (verbatim).
+#   effective_from / effective_to
+#                  the period this text is the operative version, where the document
+#                  itself states it. null = not stated by the document. Point-in-time
+#                  status of individual provisions is The Status Ledger's job, not this file's.
+#   version_note   what the document says about its own version.
+
+- id: in-drugs-rules-1945-compiled-2022
+  title: "The Drugs Rules, 1945 — compiled version as amended vide G.S.R. 823(E) dated 17-11-2022 (extract: definitions, Part XVI ASU, Rule 170, footnotes)"
+  instrument: "Drugs Rules, 1945"
+  publisher: "Central Drugs Standard Control Organisation (CDSCO), Government of India"
+  jurisdiction: IN
+  tier: 1
+  kind: pdf
+  pages: ["1-3", "167-208", "844-848"]
+  urls:
+    - "https://cdsco.gov.in/opencms/resources/UploadCDSCOWeb/2022/drug_rules/Drugs%20Rules%2C%201945%20%281%29.pdf"
+  effective_from: null
+  effective_to: null
+  version_note: "Cover states: As amended vide G.S.R. 823(E) dated 17-11-2022 (w.e.f. 01-08-2023). Contains the text of Rule 170 as inserted by G.S.R. 1230(E). Government compilation, not the Gazette itself."
+
+- id: in-drugs-rules-1945-compiled-2024-09
+  title: "The Drugs Rules, 1945 — compiled version as amended vide G.S.R. 360(E) dated 01-07-2024 (extract: cover, Rule 170 position, footnotes)"
+  instrument: "Drugs Rules, 1945"
+  publisher: "State Drugs Control / CDSCO compilation, Government of India"
+  jurisdiction: IN
+  tier: 1
+  kind: pdf
+  pages: ["1-3", "208", "948", "963"]
+  urls:
+    - "https://statedrugs.gov.in/SFDA/resources/app_srv/SFDA/global/newLandingPage_assests/licence_Forms/Drugs%20Rules%201945_2024%2009.pdf"
+  effective_from: "2024-07-01"
+  effective_to: null
+  version_note: "Cover states: As amended vide G.S.R. 360(E) dated 01-07-2024 (w.e.f. 01-07-2024). Rule 170 appears as [*****]; footnote 757 records its insertion by G.S.R. 1230(E) dated 21-12-2018 (w.e.f. 24-12-2018); footnote 1345 records omission by G.S.R 360(E) dated 01.07.2024 (w.e.f. 01.07.2024)."
+
+- id: in-sc-wpc-645-2022-order-2025-08-11
+  title: "Supreme Court of India — W.P.(C) No. 645/2022, Indian Medical Association & Anr v. Union of India & Ors, with W.P.(C) No. 400/2025 — Order dated 11-08-2025"
+  instrument: "Supreme Court order, W.P.(C) 645/2022 (11-08-2025)"
+  publisher: "Supreme Court of India"
+  jurisdiction: IN
+  tier: 1
+  kind: pdf
+  urls:
+    - "https://api.sci.gov.in/supremecourt/2022/24832/24832_2022_5_42_63155_Order_11-Aug-2025.pdf"
+  effective_from: "2025-08-11"
+  effective_to: null
+  version_note: "Quotes the order dated 27-08-2024 (stay of the 01-07-2024 omission of Rule 170) and, at para 9, vacates that interim order while disposing of the writ petition."
+
+- id: in-pib-2148433
+  title: "PIB release 2148433 — Government Strengthens Measures for Consumer Protection and Curb Unverified Claims by Ayush Product Manufacturers (25-07-2025)"
+  instrument: "PIB release PRID 2148433"
+  publisher: "Press Information Bureau, Government of India"
+  jurisdiction: IN
+  tier: 2
+  kind: html
+  keep_between: ["Government Strengthens Measures", "(Release ID: 2148433)"]
+  urls:
+    - "https://pib.gov.in/PressReleasePage.aspx?PRID=2148433"
+  effective_from: "2025-07-25"
+  effective_to: null
+  version_note: "Corroboration only (SOURCES §3.1): a PIB release is not Status Ledger evidence. Predates the 11-08-2025 order."
+
+- id: in-dmr-act-1954
+  title: "The Drugs and Magic Remedies (Objectionable Advertisements) Act, 1954 and Rules, 1955"
+  instrument: "Drugs and Magic Remedies (Objectionable Advertisements) Act, 1954"
+  publisher: "Central Ayurveda Research Institute (CCRAS, Ministry of Ayush) — reproduction of the Act"
+  jurisdiction: IN
+  tier: 1
+  kind: pdf
+  urls:
+    - "http://cari.gov.in/PDF/Drug%20and%20magic%20remedies%20act%201954%20rules%201955.pdf"
+    - "https://www.indiacode.nic.in/bitstream/123456789/19159/1/drugs_and_magic_remedies_act_1954.pdf"
+  effective_from: null
+  effective_to: null
+  version_note: "Government-institute reproduction; India Code is blocked from the sandbox."
+
+- id: in-bd-abs-regulations-2025
+  title: "Biological Diversity (Access to Biological Resources and Knowledge Associated thereto and Fair and Equitable Sharing of Benefits) Regulations, 2025 — Gazette of India CG-TN-E-30042025-262783 (English text)"
+  instrument: "Biological Diversity (ABS) Regulations, 2025"
+  publisher: "National Biodiversity Authority — Gazette of India, Extraordinary (copy hosted by Uttarakhand Biodiversity Board)"
+  jurisdiction: IN
+  tier: 1
+  kind: pdf
+  pages: ["16-29"]
+  urls:
+    - "https://cdnbbsr.s3waas.gov.in/s3fcdb3b4550e745d29a64a696047067b7/uploads/2025/05/202505151889481287.pdf"
+  effective_from: null
+  effective_to: null
+  version_note: "Gazette PDF (Hindi pp. 1-15, English pp. 16-29). Commencement to be read from the regulation text; not asserted here."
+
+- id: in-ipindia-ayush-guidelines-2025
+  title: "IP India — Guidelines for Examination of Ayush Related Inventions (2025)"
+  instrument: "Guidelines for Examination of Ayush Related Inventions"
+  publisher: "Office of the Controller General of Patents, Designs and Trade Marks"
+  jurisdiction: IN
+  tier: 1
+  kind: pdf
+  urls:
+    - "https://ipindia.gov.in/storage/uploads/docs-operator/335e2746-58c1-4b56-a1e5-cdd172a92a3c.pdf"
+  effective_from: null
+  effective_to: null
+  version_note: "2025 edition."
+
+- id: in-patents-act-1970
+  title: "The Patents Act, 1970 (incorporating all amendments till 01-08-2024)"
+  instrument: "Patents Act, 1970"
+  publisher: "Office of the Controller General of Patents, Designs and Trade Marks"
+  jurisdiction: IN
+  tier: 1
+  kind: pdf
+  urls:
+    - "https://ipindia.gov.in/frontend/pdf/patents/1_113_1_The_Patents_Act__1970___incorporating_all_amendments_till_1-08-2024.pdf"
+  effective_from: null
+  effective_to: null
+  version_note: "Consolidated to 01-08-2024."
+
+- id: in-drugs-cosmetics-act-1940
+  title: "The Drugs and Cosmetics Act, 1940 incl. the First Schedule (authoritative books of Ayurveda, Siddha and Unani Tibb) — CDSCO 2016 compilation"
+  instrument: "Drugs and Cosmetics Act, 1940"
+  publisher: "Central Drugs Standard Control Organisation (CDSCO)"
+  jurisdiction: IN
+  tier: 1
+  kind: pdf
+  pages: ["1-37"]
+  urls:
+    - "https://cdsco.gov.in/opencms/export/sites/CDSCO_WEB/Pdf-documents/acts_rules/2016DrugsandCosmeticsAct1940Rules1945.pdf"
+  effective_from: null
+  effective_to: null
+  version_note: "2016 compilation; later amendments to the Act are not reflected."
+
+- id: in-sansad-lsq-au1724
+  title: "Lok Sabha unstarred question AU1724 — answer (Ministry of Ayush), Rule 170 insertion and advertisement control"
+  instrument: "Lok Sabha question AU1724"
+  publisher: "Sansad (Parliament of India)"
+  jurisdiction: IN
+  tier: 2
+  kind: pdf
+  urls:
+    - "https://sansad.in/getFile/loksabhaquestions/annex/1710/AU1724.pdf?source=pqals"
+  effective_from: null
+  effective_to: null
+  version_note: "Parliamentary answer; corroboration, not Status Ledger evidence."
+
+- id: eu-directive-2004-24-ec
+  title: "Directive 2004/24/EC — traditional herbal medicinal products (amending Directive 2001/83/EC)"
+  instrument: "Directive 2004/24/EC"
+  publisher: "EUR-Lex, Publications Office of the European Union"
+  jurisdiction: EU
+  tier: 1
+  kind: html
+  urls:
+    - "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32004L0024"
+  effective_from: null
+  effective_to: null
+  version_note: "Original act text as published in the OJ (not the consolidated 2001/83/EC)."
+
+- id: us-fda-import-alert-66-41
+  title: "US FDA Import Alert 66-41 — Detention Without Physical Examination of Unapproved New Drugs Promoted in the U.S. (header and guidance text)"
+  instrument: "FDA Import Alert 66-41"
+  publisher: "US Food and Drug Administration"
+  jurisdiction: US
+  tier: 1
+  kind: html
+  keep_between: ["Import Alert # 66-41", "List of firms"]
+  urls:
+    - "https://www.accessdata.fda.gov/cms_ia/importalert_190.html"
+  effective_from: null
+  effective_to: null
+  version_note: "Live page; the firm red list is excluded."
+
+- id: wipo-gratk-treaty-page
+  title: "WIPO Treaty on Intellectual Property, Genetic Resources and Associated Traditional Knowledge (GRATK) — treaty page"
+  instrument: "WIPO GRATK"
+  publisher: "World Intellectual Property Organization"
+  jurisdiction: WIPO
+  tier: 1
+  kind: html
+  urls:
+    - "https://www.wipo.int/treaties/en/ip/gratk/"
+  effective_from: null
+  effective_to: null
+  version_note: "Treaty landing page. Signatory/ratification counts are NOT in this text; do not quote counts from it."
+
+- id: in-csir-tkdl-about
+  title: "CSIR — About TKDL (scope and access)"
+  instrument: "TKDL access description"
+  publisher: "CSIR — Traditional Knowledge Digital Library Unit"
+  jurisdiction: IN
+  tier: 1
+  kind: html
+  urls:
+    - "https://www.tkdl.res.in/tkdl/langdefault/common/Abouttkdl.asp"
+  effective_from: null
+  effective_to: null
+  version_note: "Pointer only. No TKDL database content is in The Library."

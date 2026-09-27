@@ -1,0 +1,2261 @@
+                                        *THE DRUGS RULES, 19451
+                                           [21st December, 1945]
+               [As amended vide G.S.R. 823(E) dated 17-11-2022 (w.e.f. 01-08-2023]
+
+   In exercise of the powers conferred by 2[sections 6(2), 12, 33 and 33(N)] of
+the Drugs and Cosmetics Act, 1940 (23 of 1940), the Central Government is
+pleased to make the following Rules:—
+
+                                                       PART I
+                                                    PRELIMINARY
+
+    1. Short title, extent and commencement.—(1) These Rules may be
+called the Drugs 3[***] Rules, 1945.
+
+(2) They extend to the whole of India 4[***].
+     5
+         [***]
+
+   2. Definitions.—In these Rules, unless there is anything repugnant in the
+subject or context—
+
+(a) "the Act" means the Drugs and Cosmetics Act, 1940 (23 of 1940), as
+amended from time to time;
+           6
+            [(aa) "biopharmaceutical classification system" means a system used to
+           classify drugs on the basis of solubility and permeability, classified as
+           category I-high solubility and high permeability, category II-low
+           solubility and high permeability, category III-high solubility and low
+           permeability, and category IV-low solubility and low permeability;]
+           7
+            [(b) "Central Licence Approving Authority" means the Drugs Controller,
+           India, or the Joint Drugs Controller (India) or the Deputy Drugs
+           Controller (India) appointed by the Central Government;]
+
+           (c) "Director" means the Director of the Central Drugs Laboratory;
+
+           (d) "Form" means a Form set forth in Schedule A;
+           8
+           [(dd) "Homoeopathic medicines" include any drug which is recorded in
+           Homoeopathic provings or therapeutic efficacy of which has been
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 1 of 859
+          established through long clinical experience as recorded in authoritative
+          Homoeopathic literature of India and abroad and which is prepared
+          according to the techniques of Homoeopathic pharmacy and covers
+          combination of ingredients of such Homoeopathic medicines but does not
+          include a medicine which is administered by parenteral route;]
+
+          (e) "Laboratory" means the Central Drugs Laboratory;
+          9
+           [(ea) "Marketer" means a person who as an agent or in any other
+          capacityadopts any drug manufactured by another manufacturer under an
+          agreement for marketing of such drug by labeling or affixing his name on
+          the label of the drug with a view for its sale and distribution;]
+          10 11
+           [ [(eb)] "registered Homoeopathic medical practitioner" means a
+          person who is registered in the Central Register or a State Register of
+          Homeopathy;]
+          12 13
+            [ [(ec)] "Phytopharmaceutical drug" includes purified and standardised
+          fraction with defined minimum four bio-active or phyto-chemical
+          compounds (qualitatively and quantitatively assessed) of an extract of a
+          medicinal plant or its part, for internal or external use of human beings or
+          animals for diagnosis, treatment, mitigation or prevention of any disease
+          or disorder but does not include administration by parenteral route.]
+          14
+               [(ee) "Registered medical practitioner" means a person—
+
+                     (i) holding a qualification granted by an authority specified or
+                     notified under section 3 of the Indian Medical Degrees Act, 1916
+                     (7 of 1916), or specified in the Schedules to the Indian Medical
+                     Council Act, 1956 (102 of 1956); or
+
+                     (ii) registered or eligible for registration in a medical register of a
+                     State meant for the registration of persons practicing the modern
+                     scientific system of medicine 15[excluding the Homoeopathic
+                     system of medicine]; or
+
+                     (iii) registered in a medical register 15[other than a register for the
+                     registration of Homoeopathic practitioners] of a State, who
+                     although not falling within sub-clause (i) or sub-clause (ii) is
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 2 of 859
+                     declared by a general or special order made by the State
+                     Government in this behalf as a person practicing the modern
+                     scientific system of medicine for the purposes of this Act; or
+
+                     (iv) registered or eligible for registration in the register of dentists
+                     for a State under the Dentists Act, 1948 (16 of 1948); or
+
+                     (v) who is engaged in the practice of veterinary medicine and
+                     who possesses qualifications approved by the State Government;]
+          16
+            [(f) 'retail sale' means a sale 17[whether to a hospital, or a dispensary, or
+          a medical, educational or research institute or to any other person] other
+          than a sale by way of wholesale dealing;]
+          18
+           [(g) 'sale by way of wholesale dealing' means sale to a person for the
+          purpose of selling again and includes sale to a hospital, dispensary,
+          medical, educational or research institution;]
+          19
+               [(h) "Schedule" means a Schedule to these Rules;]
+          18
+             [(i) State Government in relation to a Union Territory means the
+          Administrator thereof;]
+          20
+             [***]
+                                     PART II
+                       THE CENTRAL DRUGS LABORATORY
+
+
+3. Functions.—Itshall be the function of the Laboratory—
+
+          (i) to analyse or test such samples of drugs as may be sent to it under sub-
+          section (2) of section 11, or under sub-section (4) of section 25 of the
+          Act;
+
+          [***]21
+
+          (iii) to carry out such other duties as may be entrusted to it by the Central
+          Government or, with the permission of the Central Government, by a
+          State Government after consultation with the Drugs Technical Advisory
+          Board.
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 3 of 859
+had failed to comply with any of the conditions of the approval or with any
+provision of the Act or the rules made thereunder.
+
+   (2) Any approved institution whose approval has been suspended or
+withdrawn may within three months of the date of the order, appeal to the State
+Government which shall dispose of the appeal in consultation with a panel of
+competent persons appointed by it in this behalf and notified in the Official
+Gazette.]
+                              701
+                                 [PART XVI
+            MANUFACTURE FOR SALE OF AYURVEDIC
+                    702
+                        [SIDDHA] OR UNANI DRUGS
+
+    151. Manufacture on more than one set of premises.—If Ayurvedic
+703
+   [Siddha] or Unani drugs are manufactured on more than one set of premises,
+a separate application shall be made and a separate licence shall be obtained in
+respect of each such set of premises.
+
+   152. Licensing authorities.—-For the purpose of this Part the State
+Government shall appoint such licensing authorities and for such areas as may
+be specified in this behalf by notification in the Official Gazette.
+      704
+      [153. Application for licence to manufacture Ayurvedic, Siddha or
+Unani drugs.—(1) An application for the grant of licence to manufacture for
+sale of Ayurvedic, Siddha or Unani drug, shall be made—
+
+              (a) as defined under clause (a) of section 3 of the Act, in Form 24D to
+              the licensing authority alongwith a fee of rupees two thousand; and
+
+              (b) as defined in sub-clause (i) of clause (h) of section 3 of the Act, in
+              Form 24D to the licensing authority alongwith a fee of mpees three
+              thousand for the first ten products and after the said ten products, an
+              additional fee of rupees two thousand per product, through the portal e-
+              AUSHADHI (www.e-aushadhi.gov.in ) as per the format provided in
+              the said portal, pertaining to the licence for manufacture for sale of
+              Ayurvedic, Siddha or Unani drugs.
+
+  Provided that this rule shall not be applicable to licence obtained under Form
+25D prior to the date of commencement of the Drugs (4th Amendment) Rules,
+2021 and such licence holder having a Good Manufacturing Practices
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 167 of 859
+Certificate on the date of its renewal has to deposit a onetime licence retention
+fee of rupees one thousand for existing licenced drugs falling under clause (a) of
+section 3 of the Act; and rupees one thousand for first ten products and a fee at
+the rate of rupees one thousand per product over and above the said first ten
+products for existing licenced drugs falling under sub-clause (i) of clause (h) of
+section 3 of the Act.
+
+   Provided further that till the portal e-AUSHADHI (www.e-aushadhi.gov.in)
+shall come to effect within six months of the commencement of the Drugs (4th
+Amendment) Rules, 2021 and during this period either of online and offline
+process of licence application shall be accepted.]
+     705
+      [153A.Application for loan licence to manufacture Ayurvedic, Siddha
+or Unani drugs.—(1) An application for grant of a loan licence to manufacture
+for sale of Ayurvedic, Siddha or Unani drug, shall be made—
+
+              (a) as defined under clause (a) of section 3 of the Act, in Form 24E to
+              the licensing authority alongwith a fee of rupees two thousand; and
+
+              (b) as defined in sub-clause (i) of clause (h) of section 3 of the Act, in
+              Form 24E to the licensing authority alongwith a fee of rupees three
+              thousand for the first ten products and after the said ten products, an
+              additional fee of rupees two thousand per product, through the portal e-
+              AUSHADHI (www.e-aushadhi.gov.in) as per the format provided in
+              the said portal, pertaining to the loan licence for manufacture for sale
+              of Ayurvedic, Siddha or Unani drugs:
+
+   Provided that this rule shall not be applicable to licence obtained under Form
+25E prior to the date of commencement of the Drags (4th Amendment) Rules,
+2021 and such licence holder having a Good Manufacturing Practices
+Certificate of the manufacturing facilitieshe intends to avail on the date of
+renewal of its licence has to deposit a onetime licenceretention fee of rupees one
+thousand for existing licenced drags falling under clause (a) of section 3 of the
+Act; and rupees one thousand for first ten products and a fee at the rate of
+rupees one thousand per product over and above the said first ten products for
+existing licenced drags falling under sub clause (i) of clause (h) of section 3 of
+the Act.
+
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 168 of 859
+   Provided further that till the portal e-AUSHADHI (www.e-aushadhi.gov.in)
+shall come to effect within six months of the commencement of the Drugs (4th
+Amendment) Rules, 2021 and during this period either of online and offline
+process of licence application shall be accepted.
+
+   Explanation—For the purposes of this rule, a "loan licence" means a licence
+issued by the Licensing Authority to an applicant who does not have his own
+arrangements for manufacture but intends to avail himself of the manufacturing
+facilities owned by a licencee in Form 25D.
+
+    153B. Application for Certificate of Good Manufacturing Practices for
+Ayurvedic, Siddha or Unani drugs manufacturing unit.—(1) An application
+for the grant of a Certificate of Good Manufacturing Practices for Ayurvedic,
+Siddha or Unani drugs manufacturing unit shall be made in Form 24E-1 to the
+licensing authority along with a fee of rupees five thousand.
+
+   (2) Every application in Form 24E-1 shall be made for a unit having
+premises and other requirements as prescribed under Schedule T.
+
+   (3) The application shall be made through portal e-AUSHADHI (www.e-
+aushadhi.gov.in ) as per the format provided in the said portal, pertaining to the
+Good Manufacturing Practices for Ayurvedic, Siddha or Unani drugs
+manufacturing units.]
+     706
+      [154.Form of licence to manufacture Ayurvedic, Siddha or Unani
+drugs.—(1) Subject to the conditions of rule 157 being fulfilled, a licence to
+manufacture for sale of any Ayurvedic, Siddha or Unani drags shall be issued in
+Form 25D within a period of two months from the date of receipt of the
+application or from the date of compliance by the applicant of shortcomings, if
+any, highlighted by the licensing authority, as the case may be.
+
+    (2) A licence under this rule shall be granted by the licensing authority
+after consulting such expert in Ayurvedic, Siddha or Unani Systems of
+medicine, as the case may be, which the State Government may approve in this
+behalf.
+
+   (3) The application shall be processed through portal e-AUSHADHI
+(www.e-ajshadhi.gov.in) and the licence in Form 25D shall be issued online as
+per the format provided in the said portal.]
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 169 of 859
+     707
+      [154A. Form of loan licence to manufacture for sale of Ayurvedic,
+Siddha or Unani drugs.—(1) A loan licence to manufacture for sale of any
+Ayurvedic, Siddha or Unani drugs shall be issued in Form 25E within a period
+of two months from the date of receipt of the application or from the date of
+compliance of shortcomings, if any, highlighted by the licensing authority, as
+the case may be.
+
+    (2) A licence under this rule shall be granted by the Licensing Authority
+after consulting such expert in Ayurvedic, Siddha or Unani systems of
+medicine, as the case may be, which the State Government may approve in this
+behalf.
+
+   (3) The Licensing Authority after being satisfied that the manufacturing
+unit licenced under Form 25D has adequate equipment, staff and capacity for
+manufacture and facilities for testing, to undertake the manufacture on behalf of
+the applicant for a loan licence shall grant a loan licence.
+
+   (4) The application shall be processed through portal e-AUSHADHI
+(www.e-aushadhi.gov.in) and licence in Form 25E shall be issued online as per
+the format provided in the said portal.]
+
+     155. 708[***]
+
+     155A. 709[***]
+     710
+      [155B. Certificate of award of Good Manufacturing Practices
+Ayurveda, Siddha and Uriani Drugs.—711[(1)] The certificate of Good
+Manufacturing Practices (GMP) to manufacturers of Ayurved-Siddha or Unani
+drugs shall be issued 712[in Form 26E-1] to licensee who comply with the
+requirements of Good Manufacturing Practice (GMP) of Ayurveda, Siddha and
+Unani drugs as laid down Schedule T.]
+
+     (2) 713[***]
+     714
+    [156. Duration of licence.—(1) A licence issued in Form 25D shall
+remain valid perpetually:
+
+   Provided that the licencee shall submit a self-declaration of adherence to the
+conditions of licence and the provisions of the Drugs and Cosmetics Act and the
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 170 of 859
+rules made thereunder, every year from the date of issue of licence in Form 25
+D or from the date of submission of last self-declaration, as the case may be:
+
+     Provided further that such self-declaration shall be made within three
+months, of completion of one year from the date of issue of licence in form 25
+D or from the date of submission of last self-declaration, as the case may be,
+and in the event of non-submission of such self-declaration, within the time
+mentioned in the licence of the said product shall be suspended temporarily and
+if the licensee fails to submit the self-declaration within a further period of three
+months, the licence of the said product shall be deemed to have been cancelled.]
+      715
+       [156A. Duration of loan licence.—A loan licence issued in Form 25E
+shall remain valid perpetually:
+
+    Provided that the licencee shall submit a self-declaration of adherence to the
+conditions of licence and the provisions of the Drugs and Cosmetics Act and the
+rules made thereunder, every year from the date of issue of licence in form 25 E
+or from the date of submission of last self-declaration, as the case may be.
+
+     Provided further that such self-declaration shall be made within three
+months, of completion of one year from the date of issue of licence in form 25 E
+or from the date of submission of last self-declaration, as the case may be, and
+in the event of non-submission of such self-declaration, within the time
+mentioned in the Licence of the said product shall be suspended temporarily and
+if the licensee fails to submit the self-declaration within a further period of three
+months, the licence of the said product shall be deemed to have been cancelled.
+
+    156B. Duration of Certificate of Good Manufacturing Practices for
+Ayurvedic, Siddha or Unani drugs manufacturing units—(1) A certificate
+issued in form 26E-1 shall remain valid unless it is cancelled by the Licensing
+Authority subject to deposit of a certificate retention fee of rupees one thousand
+before the expiry of a period of every succeeding five years from the date of its
+issue.
+
+    (2) If the licencee fails to pay certificate retention fee on or before the due
+date as referred to in sub-rule (1), he shall be liable to pay certificate retention
+fee alongwith a late fee calculated at the rate of two per cent of the certificate
+retention fee for every month or part thereof up to six months, and in the event
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 171 of 859
+of non-payment of such fee, the certificate shall be deemed to have been
+cancelled.
+
+    156C.Inspection for grant of licence and verification of compliance.—
+(1) Before a certificate in Form 26E-1 is granted, the licensing authority shall
+cause the establishment in which the manufacture of drugs is proposed to be
+conducted or being conducted to be inspected by one or more inspectors
+appointed by the State Government under this Act, with or without an expert in
+the field concerned and the inspector or inspectors shall examine the
+establishment intended to be used or being used for the manufacture of drugs.
+
+   (2) The inspectors shall verify the self-declaration of adherence to the
+conditions of licence and the provisions of the Drugs and Cosmetics Act and the
+Drugs Rules once in five years or as needed as per risk based approach.
+
+    Provided that the inspectors are allotted the inspection duty in a randomized
+manner ensuring that the same inspector is not assigned inspection of a
+particular establishment consecutively for two terms of not less than five years’
+duration.
+
+   Provided further that if the premises is not inspected within the period of the
+validity of the GMP certificate or even after submission of retention fee, the
+GMP certificate shall be deemed to be continued for further term of five years.
+
+    156D. Report by Inspector.—(1) The Inspector or Inspectors shall examine
+all areas of the premises, plant and appliances and also inspect the process of
+manufacture intended to be employed or being employed along with the means
+to be employed or being employed for standardizing and testing the drugs to be
+manufactured or being manufactured and enquire into the professional
+qualifications of the technical staff to be employed and he shall also examine
+and verify the statements made in the application in regard to their correctness,
+and the capability of the applicant to comply with the requirements of
+competent technical staff, manufacturing plants, testing equipments and the
+Requirements of Good Manufacturing Practices and Plant and Equipments as
+laid down in Schedule T.
+
+   (2) The Inspector after completion of his inspection shall forward a detailed
+report giving his findings on each aspect of inspection alongwith his
+recommendations, to the Licensing Authority.
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 172 of 859
+    156E. Procedure of Licensing Authority.—(1) If the Licensing Authority
+after such further enquiry, if any, as he may consider necessary, and after being
+satisfied that the requirements of the provisions referred to in the rules under the
+Act have been complied with and that the conditions of the licence shall be
+observed, shall issue a licence under this Part.
+
+   (2) If the Licensing Authority is not satisfied of the requirements under
+sub-rule (l), shall issue a memorandum of shortcoming, and the conditions
+which shall be satisfied before a licence is granted and shall supply the
+applicant a copy of the inspection report.
+
+   (3) The applicant within two months of issue of such memorandum under
+sub-rule (2) shall reply the same.
+
+   (4) On non-submission of requirements under sub-rule (2), the Licensing
+Authority shall reject the application and shall inform the applicant, the reasons
+for such rejection.
+
+   (5) For this purpose, the licensing authority shall intimate the applicant and
+process the application through portal e-AUSHADHI (www.e-aushadhi.gov.in).
+
+    156F. Further application after rejection.—If the applicant, within a
+period of six months from the rejection of an application for a licence or
+Certificate of Good Manufacturing Practices, as the case may be, informs the
+Licensing Authority that the conditions laid down have been complied with and
+deposit an inspection fee of rupees one thousand, the Licensing Authority may,
+after a further inspection, if any, is satisfied that the conditions for the grant of a
+licence or certificate have been complied with, issue a licence or certificate
+under thus Part.]
+
+   157. Conditions for the grant 716[***] of a licence in Form 25D.—Before
+a licence in Form 25D is granted 717[***], the following conditions shall be
+complied with by the applicant, namely:—
+
+       (1) The manufacture of Ayurvedic 718[Siddha] or Unani drugs shall be
+       carried out in such premises and under such hygienic conditions as are
+       specified in Schedule T.
+
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 173 of 859
+       719
+          [(1A) For issuing of the certificate of Good Manufacturing Practices, the
+       Licensing Authority shall verify the requirements as per Schedule T and
+       issue the Good Manufacturing Practices certificate in Form 26E-I,
+       simultaneously along with grant 720[***] of Licence in Form 25D.]
+       721
+          [(1B) No manufacturer shall use any prefix or suffix with the name of
+       any Ayurvedic, Siddha or Unani Tibb drug falling under clause (a) of
+       section 3 of the Act, except as described in the authoritative books specified
+       in the First Schedule to the Act:
+
+          Provided that a formulation without any specific name, described in the
+       authoritative books may be named on the basis of the ingredients of that
+       formulation.]
+
+       (1C) The name of any Ayurvedic, Siddha or Unani Tibb drug falling under
+       clause (a) of section 3 of the Act shall not be used for naming any patent or
+       proprietary medicine relating to Ayurvedic, Siddha or Unani Tibb systems
+       of medicine referred to in sub-clause(i) of clause (h) of the said section:
+
+           Provided that this rule shall not be applicable for single plant-ingredient
+       based Ayurvedic, Siddha or Unani Tibb formulation Licensed or to be
+       Licensed as patent or proprietary medicine under sub-clause (i) of clause
+       (h) of section 3 of the Act.
+       722
+         [(1D) Whoever contravenes the provisions of sub-rules (IB) and (1C)
+       shall be punishable in accordance with the provisions of the Act.]
+
+     (1E) 723[***]
+
+(2) The manufacture of Ayurvedic (including Siddha) or Unani drugs shall be
+conducted under the direction and supervision of competent technical staff
+consisting at least of one person, who is a whole-time employee and who
+possesses the following qualification, namely:—
+
+          (a) a degree in Ayurveda or Ayurvedic Pharmacy, Siddha or Unani
+          system of medicine, as the case may be, conferred by a University, a State
+          Government or Statutory Faculties, Councils and Boards of Indian
+          Systems of Medicine recognised by the Central Government or a State
+          Government for this purpose, or
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 174 of 859
+           (b) a diploma in Ayurveda, Siddha or Unani system of medicine granted
+           by a State Government or an Institution recognised by the Central
+           Government for this purpose, or
+
+           (c) a graduate in Pharmacy or Pharmaceutical Chemistry or Chemistry
+           or Botany or a University recognised by the Central Government with
+           experience of at least two years in the manufacture of drugs pertaining to
+           the Ayurvedic or Siddha or Unani system of medicine, or
+
+           (d) a Vaid or Hakim registered in a State Register of Practitioners of
+           indigenous system of medicines having experience of at least four years in
+           the manufacture of Siddha or Unani drugs, or
+
+           (e) a qualification as Pharmacist in Ayurvedic (including Siddha) or
+           Unani systems of medicine, possessing experience of not less than eight
+           years in the manufacture of Ayurvedic or Siddha or Unani drugs as may
+           be recognised by the Central Government.
+
+(3) The competent technical staff to direct and supervise the manufacture of
+Ayurvedic drugs shall have qualifications in Ayurveda and the competent
+technical staff to direct and supervise the manufacture of Siddha drugs and
+Unani drugs shall have qualifications in Siddha or Unani, as the case may be.
+     724
+      [157A. Maintaining of records of raw material used by licensed
+manufacturing unit of Ayurveda, Siddha and Unani drugs in the preceding
+financial year.—Each licensed manufacturing unit of Ayurveda or Siddha or
+Unani drugs shall keep a record of raw material used by each licensed
+manufacturing unit of Ayurveda, Siddha or Unani drugs, as the case may be, in
+the performa given in Schedule TA in respect of all raw materials utilized by
+that unit in the manufacture of Ayurveda or Siddha or Unani drugs in the
+preceding financial year, and shall submit the same by the 30 th day of June of
+the succeeding financial year to the State Drug Licensing Authority of
+Ayurveda, Siddha and Unani drugs and to the National Medicinal Plants Board
+or any agency nominated by the National Medicinal Plant Board for this
+purpose:]
+     725
+    [Provided that the apphcant shall submit the record online through portal
+e-AUSHADHI (www.e-aushadhi.gov.in) as per the format provided in the said
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 175 of 859
+portal and such records shall be retained by the manufacturer for a period of one
+year after the submission.]
+
+   158. Conditions of licence.—A licence in Form 25D shall be subject to
+the conditions stated therein and to the following further conditions,
+namely:—
+
+      (a)   The licensee shall maintain proper records of the details of
+      manufacture and of the tests, if any, carried out by him, or by any other
+      person on his behalf, of the raw materials and finished products.
+
+      (b) The licensee shall allow an Inspector appointed under the Act to enter
+      any premises where the manufacture of a substance in respect of which the
+      licence is issued is carried on, to inspect the premises, to take samples of the
+      raw materials as well as the finished products, and to inspect the records
+      maintained under these rales.
+      726
+        [(c) The applicant and inspector shall submit the record online through e-
+      AUSHADHI (www.e-aushadhi.gov.in) portal as per the format provided in
+      the said portal.]
+    727
+     [158A. Conditions of loan licence.—A licence in Form 25E shall be
+subject to the following further conditions, namely:—
+
+      (a) The licence in Form 25E shall be deemed to be cancelled or
+      suspended, if the licence owned by the licensee in Form 25D whose
+      manufacturing facilities have been availed of by the licensee is cancelled or
+      suspended, as the case may be, under these rules.
+
+      (b) The licensee shall comply with the provisions of the Act and of the
+      rules and with such further requirements if any, as may be specified in any
+      rules subsequently made under Chapter IVA of the Act, provided that where
+      such further requirements are specified in the rules, these would come into
+      force four months after publication in the Official Gazette.
+
+      (c)    The licensee shall maintain proper records of the details of
+      manufacture and of the tests, if any, carried out by him, or any other person
+      on his behalf, the raw materials and finished products.
+
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 176 of 859
+      (d) The licensee shall allow an Inspector appointed under the Act to
+      inspect all registers and records maintained under these rules and shall
+      supply to the Inspector such information as he may require for the purpose
+      of ascertaining whether the provisions of the Act and the rules have been
+      observed.]
+      728
+        [(e) The applicant and inspector shall submit the record online through e-
+      AUSHADHI (www.e-aushadhi.gov.in) portal as per the format provided in
+      the said portal.]
+    729
+      [158B. Guidelines for issue of license with respect to Ayurveda, Siddha
+or Unani drags.—I. (A) Ayurveda, Siddha Unani Medicines under section
+3(a):— Ayurveda, Siddha or Unani drugs includes all medicines intended for
+internal or external use for or in the diagnosis, treatment, mitigation or
+prevention of disease or disorder in human beings or animals, and manufactured
+exclusively in accordance with the formulae described in the authoritative books
+of Ayurvedic, Siddha and Unani Tibb system of medicine, as specified in the
+First Schedule;
+
+(B) Patent or proprietary medicine under section 3(h)—
+
+      (i) In relation to Ayurvedic, Siddha and Unani Tibb system of medicine of
+      all formulations containing only such ingredients mentioned in the formulae
+      described in the authoritative books of Ayurveda, Siddha or Unani Tibb
+      system of medicines specified in the First Schedule, but does not include a
+      medicine which is administered by parenteral route and also a formulation
+      included in the authoritative books as specified in clause (a);
+
+      (ii)    Balya/Poshak/Muqawi/Unavuporutkal/posilive health Promoter
+      formulations having ingredients mentioned in books of First Schedule of the
+      Drugs and Cosmetics Act and recommended for promotional and preventive
+      health;
+
+      (iii)  Saundarya Prasadak (Husane afza)/Azhagh-sadhan formulation
+      having ingredients mentioned in Books of First Schedule of the Drugs and
+      Cosmetics Act and recommended for oral, skin, hair and body care;
+
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 177 of 859
+       (iv) Aushadh Ghana (Medicinal plant extracts - dry/wet) extract obtained
+       from plant mentioned in books of First Schedule of the Act including
+       Aqueous or hydro-alcohol.
+
+ II. (A) For issue of licence to the medicine with respect to Ayurvedic, Siddha
+ and Unani, the conditions relating to safety study and the experience or
+ evidence of effectiveness shall be such as specified in columns (5) and (6) ot
+ The Table given below:—
+
+   Serial                                Ingredient          Indication            Safety               Experience / Evidence of
+                    Category
+  number                                    (S)                  (s)               study                     Effectiveness
+      (1)                (2)                  (3)                (4)                  (5)                          (6)
+                                                                                                      Published         Proof of
+                                                                                                      Literature      Effectiveness
+               (A) Ayurveda,
+               Siddha         and
+                                                                                   Not
+      1.       Unani       drugs, As per text               As per text                                Required       Not Required
+                                                                                 Required
+               given in 158B as
+               referred in 3(a)
+               (B) Any change
+               in dosage form
+               of     Ayurveda,
+               Siddha      and
+               Unani drugs as                                                      Not
+      2.                        As per text                 As per text                                Required       Not Required
+               described     in                                                  Required
+               section 3(a) of
+               the Drugs and
+               Cosmetics Act,
+               1940
+               (C) Ayurveda,
+               Siddha       and
+               Unani      drugs                                                    Not                    If
+ 3.                             As per text                New                                                      Required
+               referred in 3(a)                                                  Required              Required
+               to be used for
+               new indication
+
+
+     II. (B) For issue of license with respect to Patent or Proprietary medicine.
+ The condition relating to Safety studies and experience or evidence of
+ effectiveness shall be specified as follows:—
+
+ Serial                               Ingredient       Indication             Safety                  Experience / Evidence of
+                  Category
+number                                   (S)               (s)                study                        Effectiveness
+
+
+
+ Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India                Page 178 of 859
+ Serial                               Ingredient       Indication             Safety                  Experience / Evidence of
+                  Category
+number                                   (S)               (s)                study                        Effectiveness
+  (1)                 (2)                 (3)               (4)                 (5)                             (6)
+                                                                                               Published        Proof               of
+                                                                                               Literature       Effectiveness
+                                                                                                                *Pilot study as per
+             Patent or                                                                                          relevant protocol
+                                                      Textual          Not                     Of
+   1.        Proprietary            As per text                                                                 for      Ayurveda,
+                                                      rationale        Required                Ingredients
+             medicine                                                                                           Sidha and Unani
+                                                                                                                drugs.
+             Ayurveda,
+             Siddha, Unani
+             drug with any
+             of           the
+   2.        ingredients of As per text               Existing         Required                Required         Required
+             Schedule E(l) of
+             The Drugs and
+             Cosmetics Act,
+             1940.
+
+
+ III. For issue of license with respect to Balya and Poshak medicines the
+ person who applied for license is required to submit the following:
+       (i) Photo-copy of the textual reference of ingredients used in the
+       formulation as mentioned in the book of 1st Schedule;
+
+           (ii) Conduct safety studies in case the product contains of any of the
+           ingredients as specified in the Schedule E(l), as per the guidelines for
+           evaluation of Ayurveda Siddha and Unani Drugs formulations;
+
+           (iii) For textual indications the safety and effectiveness study is not
+           required.
+
+ IV. For issue of license with respect to Saundarya Prasadak (Husane afza/
+ Azhagu Sodhan) the person who applied for license is required to:—
+
+           (i) Submit photo-copy of the textual reference of ingredients used in the
+           formulation as mentioned in the book of 1st Schedule;
+
+           (ii) Conduct safety studies, in case the formulation contains of any of
+           the ingredients as specified in the Schedule E(l), as per the guidelines for
+           evaluation of Ayurveda, Siddha and Unani formulation;
+
+
+ Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India               Page 179 of 859
+              (iii) For textual indications the safety and effectiveness study is not
+              required.
+
+ V. For issue of license with respect to medicine Aushadh Ghana [extract of
+ medicinal plant (dry or wet).
+
+ Serial                                    Ingredient Indication                  Safety              Experience / Evidence of
+                    Category
+number                                        (S)         (s)                     study                    Effectiveness
+  (1)                   (2)                     (3)              (4)                (5)                         (6)
+                                                                                                 Published        Proof of
+                                                                                                 Literature     Effectiveness
+                                              As per                              Not               Not             Not
+  1.      (A)Aqueous                                       As per text
+                                               text                             Required          Required        Required
+                                              As per           New                Not               Not
+  2.      (Al) Aqueous                                                                                            Required
+                                               text         indication          Required          Required
+                                              As per                              Not                If             Not
+  3.      (B) Hydro-Alcohol                                As per text
+                                               text                             Required          Required        Required
+                                               As         New                                        If
+  4.      (Bl) Hydro-Alcohol                                                    Required                          Required
+                                            specified Indication**                                Required
+                                                                              Required
+                                                                               Acute,
+          Other than                           As               As            Chronic,      If
+  5.                                                                                                              Required
+          Hydro/Hydro-Alcohol               specified        specified      Mutagenicity Required
+                                                                                 and
+                                                                            Teratogenicity
+
+
+ * The standard protocol will also include concept of Anupan, Prakriti
+ & Tridosh, etc., published by Central Research Councils Ayurveda, Siddha,
+ Unani and other Government/Research Bodies.
+
+ ** New indication means which is other than mentioned in 1st Schedule books
+ of Drugs and Cosmetics Act, 1940.]
+        730
+        [158C. Form of Free Sale Certificate and Non-Conviction
+ Certificate.—The State Drug Controller or Licensing Authority shall, on
+ request by the Ayurveda, Siddha and Unani Drugs manufacturer, issue, within
+ fifteen days ;from the date of application. Free Sale Certificate in Form 26 E2-I
+ for original License holder or in Form 26 E2-II for loan licensee and Non-
+ Conviction Certificate for both original and loan license holder in Form 26 E3
+ or in the format as specified by the importing country or tenderer respectively,
+
+
+ Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India               Page 180 of 859
+after fulfillment of all requisite formalities as required in the respective
+formats.]
+      731
+       [Explanation.—For the purposes of this rule, the applicant shall apply
+online and licensing authority shall issue such certificate online through portal
+e-AUSHADHI (www.e-aushadhi.gov.in) as per the format provided in the said
+portal.]
+
+    159. Cancellation and suspension of licences.—(1) The licensing authority
+may, after giving the licensee an opportunity to show cause, within a period
+which shall not be less than fifteen days form the date of receipt of such notice,
+why such an order should not be passed, by an order in writing stating the
+reasons therefor, cancel a licence issued under this Part or suspend it for such
+period as he thinks fit, either wholly or in respect of some of the drugs to which
+it relates, if in his opinion, the licensee has failed to comply with any of the
+conditions of the licence or with any provisions of the Act or the rules made
+thereunder.
+
+    (2) A licensee whose licence has been suspended or cancelled may appeal to
+the State Government within a period of three months from the date of receipt
+of the order which shall, after considering the appeal, decide the same.
+
+   160. Identification of raw materials.—Raw materials used in the
+preparation of Ayurvedic (including Siddha) or Unani drugs shall be identified
+and tested, wherever tests are available for their genuineness, and records of
+such tests as are carried out for the purpose and the methods thereof shall be
+maintained.]
+                                                   206
+                                                       [PART XVI (A)
+
+  APPROVAL OF INSTITUTIONS FOR CARRYING OUT TESTS ON
+ AYURVEDIC, SIDDHA AND UNANI DRUGS AND RAW MATERIALS
+ USED IN THEIR MANUFACTURE ON BEHALF OF LICENSEES FOR
+ MANUFACTURE FOR SALE OF AYURVEDIC, SIDDHA AND UNANI
+                        DRUGS
+
+   160A. Application for grant of approval for testing Ayurvedic, Siddha
+and Unani drugs.—Application for grant or renewal of approval for carrying
+out tests for identity, purity, quality and strength of Ayurvedic, Siddha and
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 181 of 859
+Unani drugs or the raw materials used in the manufacture thereof on behalf of
+licensees for manufacture for sale of the said Ayurvedic, Siddha and Unani
+drugs, shall be made in Form 47 to the Licensing Authority appointed by the
+State Government for the purposes of Part XVI, XVII or XVIII of these rules, as
+the case may be, and referred to as the "approving authority" under this Part and
+shall be accompanied by an inspection fee of six thousand rupees in respect of
+the drugs specified in First Schedule to the Act:
+
+   Provided that the applicant shall furnish to the approving authority such
+additional information as may be required by it in connection with the
+application in Form 47:
+
+    Provided further that if the applicant applies for renewal of approval after its
+expiry but within six months of such expiry, the inspection fee payable shall be
+six thousand rupees plus an additional inspection fee at the rate of one thousand
+rupees per month in the case of testing of Ayurvedic, Siddha and Unani drugs
+specified in First Schedule to the Act.
+
+   Explanation.—For the purpose of this Part, the words "Ayurvedic, Siddha
+and Unani drags" shall also mean and include the raw materials used in the
+manufacture of Ayurvedic, Siddha and Unani drugs, as the case may be.
+
+    160B. Form in which approval to be granted for carrying out tests on
+Ayurvedic, Siddha and Unani drugs on behalf of licensees for manufacture
+of Ayurvedic, Siddha and Unani drugs and conditions for grant or renewal
+of such approval.—(1) Approval for carrying out such tests of identity, purity,
+quality and strength of Ayurvedic, Siddha and Unani drugs as may be required
+under the provisions of these rules, on behalf of licensee for manufacture of
+Ayurvedic, Siddha and Unani drugs shall be granted in Form 48.
+      207
+      [(1A) The licence shall be issued within a period of two months, from the
+date of receipt of the application or from the date of fulfillment of shortcomings,
+if any, as the case may be, communicated by the licensing authority.]
+
+   (2) Before approval in Form 48 is granted or renewed, the following
+conditions shall be complied with by the applicants, namely:—
+
+            (i) The premises where the tests are carried out shall be well lighted and
+            properly ventilated except where the nature of tests of any Ayurvedic,
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 182 of 859
+            Siddha and Unani drug warrants otherwise. Wherever necessary, the
+            premises shall be air-conditioned so as to maintain the accuracy and
+            functioning of laboratory instruments or to enable the performance of
+            special tests such as sterility tests and microbiological tests.
+
+            (ii) (a) The applicant shall provide adequate space having regard to the
+                 nature and number of samples of drugs proposed to be tested:
+                 Provided that the approving authority shall determine from time to
+                 time whether the space provided continues to be adequate. Provided
+                 further that separate section shall be provided for (i) Chemistry, (ii)
+                 Pharmacognosy, (iii) Ayurveda, Siddha and Unani, (iv)
+                 Microbiology, (v) Sample Room, (vi) Office-cum-Record Room,
+                 with proper partitions and minimum required area is 800 sq. ft.
+                  208
+                     *(b) The applicant shall provide a list of persons who may be
+                  employed with him as experts, such as Chemist, Botanist and expert
+                  in Avurveda/Siddha/Unani or Pharmacist who shall possess a degree
+                  in Chemistry, Botany, Ayurveda/Siddha/ Unani/Bachelor in
+                  Pharmacy from a recognized University or equivalent, with
+                  experience for 2 years for carrying out tests or analysis as per the
+                  Ayurvedic, Siddha and Unani pharmacopoeias.
+
+                  (c) The applicant shall provide adequate equipments essential for
+                  carrying out tests for identity, purity, quality and strength of
+                  Ayurvedic, Siddha and Unani drugs as per pharmacopoeial standards
+                  or other available standards.
+
+                           List of equipment recommended is given below:
+
+CHEMISTRY SECTION
+
+1.     Alcohol determination apparatus complete set.
+2.     Volatile oil determination apparatus.
+3.     Boiling point determination apparatus.
+4.     Melting point determination apparatus.
+5.     Refractometer
+6.     Polarimeter.
+7.     Viscometer (ostwalds, Redwood viscometer).
+8.     Tablet disintegration apparatus.
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 183 of 859
+9. Moisture determination apparatus (IC filtrator).
+10. U.V. Spectro-Photometer.
+11. Muffle furnace.
+12. Electronic Balance.
+13. Hot air oven(s) different range of temperature/vacuum oven.
+14. Refrigerator.
+15. Glass distillation apparatus/plant.
+16. Water supply demineralised exchange equipment/Distillation equipment.
+17. Air conditioner.
+18. LPG Gas Cylinder with burners.
+19. Water bath (temperature controlled).
+20. Heating mantle (4) or as required.
+21. TLC apparatus with all accessories.
+22. Sieves 10 to 120 with sieve shaker.
+23. Centrifuge machine.
+24. Dehumidifier (where necessary).
+25. PH meter.
+26. G.L.C. with F.I. detector.
+27. Silica crucible.
+28. Tablet friability tester.
+29. Tablet dissolution tester.
+30. Other related equipment, regents, chemicals and glasswares.
+
+PHARMACOGNOSY SECTION
+
+1. Microscope binocular.
+2. Dissecting Microscope
+3. Microtome
+4. Chemical balance
+5. Microslide cabinet.
+6. Aluminium slide trays.
+7. Hot air oven
+8. Occular Micrometer
+9. Stage Micrometer
+10. Camera Lucida Prism type and mirror type.
+11. Hot plates.
+12. Refrigerator.
+13. LPG Cylinder with burners.
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 184 of 859
+14. Other related equipments, reagents, glasswares, etc.
+
+   Note.—Instruments     like    HPLC,      HPTLC,       Atomic      Absorption
+spectrophotometer could be arranged by tie up with other laboratories.
+
+MICROBIOLOGY SECTION
+
+     1.     Laminar air flow bench (L.A.F.).
+     2.     B.O.D. Incubator.
+     3.     Plain incubator.
+     4.     Serological water bath.
+     5.     Oven.
+     6.     Autoclave/Sterilizer.
+     7.     Microscope (high power).
+     8.     Colony counter.
+     9.     Other related equipment and reagents.
+
+   (3) The applicant shall provide and maintain suitable equipment having
+regard to the nature and number of samples of Ayurvedic, Siddha and Unani
+drugs intended to be tested which shall be adequate in the opinion of the
+approving authority.
+
+    (4) The testing of Ayurvedic, Siddha and Unani drugs, as the case may be,
+for identity, purity, quality and strength shall be carried out under the active
+direction of one of the experts stated in clause (b) of sub-rule (2) who shall be
+the person-in-charge of testing and shall be held responsible for the reports of
+test issued by the applicant.
+
+   (5) The testing of Ayurvedic, Siddha and Unani drugs, as the case may be,
+for identity, purity, quality and strength shall be carried out by persons whose
+qualifications and experience of testing are adequate as stated in clause (b) of
+sub-rule (2).
+
+   (6) The applicant shall provide books of standard recognized under the
+provisions of the Act and the rules made thereunder and such books of reference
+as may be required in connection with the testing or analysis of the products for
+the testing of which approval is applied for.
+
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 185 of 859
+   (7) The applicant shall provide list of standard Ayurvedic, Siddha and
+Unani drugs (with Reference samples) recognized under the provisions of the
+Act and rules made thereunder and such reference samples kept in the
+laboratory may be required in connection with the testing or analysis of the
+products of which approval is applied for.
+
+   160C. Duration of approval.—An approval granted in Form 41 or renewed
+in Form 42 unless sooner suspended or withdrawn, shall be valid for a period of
+three years from the date on which it is granted or renewed:
+
+    Provided that if an application for the renewal of an approval in Form 40 is
+made before its expiry or if the application is made within six months of its
+expiry after the payment of the additional inspection fee, the approval shall
+continue to be in force until orders to the contrary are passed on the application
+and the approval shall be deemed to have expired if the application for renewal
+is not made within six months of expiry.
+
+    160D. Conditions of approval.—An approval in Form 41 shall be subject
+to the following conditions, namely:
+
+     I.     The Institution granted approval under this Part (hereinafter referred to
+            as the approved laboratory) shall provide and maintain adequate staff
+            and adequate premises and equipment as specified in rule 160 B.
+
+     II.     The approved laboratory shall provide proper facilities for storage so as
+            to preserve the properties of the samples to be tested by it.
+
+     III.     The approved laboratory shall maintain records of tests for identity,
+            purity, quality and strength carried out on all samples of Ayurvedic,
+            Siddha and Unani drugs and the results thereof together with the
+            protocols of tests showing the readings and calculation in such form as
+            to be available for inspection and such records shall be retained in the
+            case of substances for which date of expiry is assigned; for a period of
+            two years from such date of expiry and in the case of other substances,
+            for a period of three years.
+
+     IV.      The approved laboratory shall allow the Inspector appointed under this
+            Act to enter with or without prior notice the premises where the testing
+            is carried out and to inspect the premises and the equipment used for test
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 186 of 859
+            and the testing procedures employed. The laboratory shall allow the
+            Inspectors to inspect the registers and records maintained under these
+            rules and shall supply to such Inspectors such information as they may
+            require for the purpose of ascertaining whether the provisions of the Act
+            and rules made thereunder have been observed.
+
+     V.      The approved laboratory shall from time to time report to the approving
+            authority any changes in the person-in-charge of testing of Ayurvedic,
+            Siddha and Unani drugs or the expert staff responsible for testing, as the
+            case may be, and any material alterations in the premises or changes in
+            the equipment used for the purposes of testing which have been made
+            since the date of last inspection made on behalf of the approving
+            authority before the grant or renewal of approval.
+
+     VI.     The approved laboratory shall furnish reports of the results of tests or
+            analysis in Form 50.
+
+     VII.      In case any sample of Ayurvedic, Siddha and Unani drug is found on
+            test to be not of standard quality, the approved laboratory shall furnish to
+            the approving authority and the licensing authority of the State where
+            the manufacturer and/or sender of the Ayurvedic, Siddha and Unani
+            drugs is located, a copy of the test report on the sample with the
+            protocols of tests applied.
+
+     VIII. The approved laboratory shall comply with the provisions of the Act
+         and rules made thereunder and with such further requirements, if any, as
+         may be specified in the rules made from time to time under Chapter IVA
+         of the Act of which the approving authority has given the approved
+         laboratory not less than four months' notice.
+
+     IX. The approved laboratory shall maintain an inspection book to enable the
+         Inspector to record his impression or defects notices.
+
+    160E. Inspection before grant of approval.—Before an approval in Form
+48 is granted, the approving authority shall cause the laboratory at which the
+testing of Ayurvedic, Siddha and Unani drugs, as the case may be, is proposed
+to be carried out to be inspected jointly by the Inspectors appointed or
+designated by the Central Government and State Government for this purpose,
+who shall examine the premises and the equipment intended to be used for
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 187 of 859
+testing of drugs and varify into the professional qualifications of the expert staff
+who are or may be employed by the laboratory.
+
+   160F. Report of inspection.—The Inspectors appointed by the Central
+Government as stated in rule 160E shall forward to the approving authority a
+detailed report of the results of the inspection.
+
+    160G. Procedure of approving authority.—(1) If the approving authority
+after such further enquiry, if any, as it may consider necessary, is satisfied that
+the requirements of the rules made under the Act have been complied with and
+that the conditions of the approval and the rules made under the Act have been
+observed, it shall grant approval in Form 48.
+
+   (2) If the approving authority is not so satisfied, it shall reject the application
+and shall inform the applicant of the reasons for such rejection and of the
+conditions which shall be satisfied before approval could be granted.
+
+   160H. Application after rejection.—If within a period of six months from
+the rejection of an application for approval, the applicant informs the approving
+authority that the conditions laid down have been satisfied and deposits
+inspection fee of two thousand rupees, the approving authority may, if, after
+causing a further inspection to be made and after being satisfied that the
+conditions for grant of approval have been complied with, grant the approval in
+Form 48.
+
+   160-I. Renewal—On an application being made for renewal, the approving
+authority shall, after causing an inspection to be made and if satisfied that the
+conditions of the approval and the rules made under the Act have been complied
+with, shall issue a certificate of renewal in Form 49.
+
+    160J. Withdrawal and suspension of approvals.—(1) The approving
+authority may, after giving the approved laboratory an opportunity to show
+cause why such an order should not be passed, by an order in writing stating the
+reasons therefor, withdraw an approval granted under this Part or suspend it for
+such period as it thinks fit either wholly or in respect of testing of some of the
+categories of Avurvedic, Siddha and Unani drugs to which it relates, if in his
+opinion the approved laboratory had failed to comply with any of the conditions
+of the approval or with any provision of the Act of the rules made thereunder.
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 188 of 859
+   (2) any approved laboratory, whose approval has been suspended or
+withdrawn, may, within three months of the date of the order of suspension or
+withdrawal, appeal to the State Government which shall dispose of the appeal in
+consultation with a panel of competent persons appointed by the Department of
+Indian Systems of Medicine and Homoeopathy, Government of India in this
+behalf and notified in the Official Gazette.]
+    732
+      [160K. Information to be uploaded by the licencee on online portal.—
+(1) The applicant or licencee under this part shall register with portal, e-
+AUSHADHI (www.e-aushadhi.gov.in) and upload information, as per the
+format provided in the said portal, pertaining to licence application, renewal,
+tests carried out and other such information as required and shall be updated
+from time to time.
+
+   (2) The information uploaded by the licencee in the portal under sub-rule (1)
+shall be verified by the concerned licensing authority.]
+                                                     733
+                               [PART XVII
+           734
+              [LABELLING, PACKING AND LIMIT OF ALCOHOL IN]
+             AYURVEDIC (INCLUDING SIDDHA) OR UNANI DRUGS
+
+    161. 734[Labelling, packing and limit of alcohol].—(1) There shall be
+conspicuously displayed on the label of the container or package of an
+Ayurvedic (including Siddha) or Unani drug, the true list of all the ingredients
+735
+   [with the botanical names of plant based ingredients along with plant part(s)
+and form of ingredients, in which, these are] used in the manufacture of the
+preparation together with the quantity of each of the ingredients incorporated
+therein and a reference to the method of preparation thereof as detailed in the
+standard text and Adikarana, as are prescribed in the authoritative books
+specified in the First Schedule of the Act 735[and in respect of Patent or
+Proprietary Ayurveda, Siddha or Unani drugs, the true list of all the ingredients
+with the botanical names of plant based ingredients along with plant part(s) and
+form of ingredients, in which, these are used in the formulation, with their
+quantity:
+
+   Provided that if needed, standardized abbreviations prescribed for part(s) and
+form of Ingredient(s) in the official Ayurveda, Siddha and Unani
+Pharmacopoeias and Formularies, may be used on the label:]
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 189 of 859
+   Provided that if the list of ingredients contained in the medicine is large and
+cannot be accommodated on the label, the same may be printed separately and
+enclosed with the packing and reference be made to this effect on the label.
+
+   (2) The container of a medicine for internal use made up ready for the
+treatment of human ailments shall, if it is made up from a substance specified in
+Schedule E(l), be labelled conspicuously with the words 'Caution: to be taken
+under medical supervision' both English and Hindi languages.
+
+   (3) Subject to the other provisions of these rules, the following particulars
+shall be either printed or written in indelible ink and shall appear in a
+conspicuous manner on the label of the innermost container of any Ayurvedic
+(including Siddha) or Unani drug 735[and Patent or Proprietary Ayurveda,
+Siddha or Unani drugs] and on any other covering in which the container is
+packed, namely:—
+
+         (i)      The name of the drug. 736[For Ayurveda, Siddha or Unani Drug]
+                  purpose the name shall be the same as mentioned in the authoritative
+                  books included in the First Schedule of the Act.
+
+         (ii)     A correct statement of the net content in terms of weight, measure or
+                  number as the case may be. The weight and volume shall be
+                  expressed in metric system.
+
+         (iii) The name and address of the manufacturer.
+
+         (iv) The number of the licence under which the drug is manufactured, the
+              figure representing the manufacturing licence number being preceded
+              by the words 'Manufacturing Licence Number' or "Mfg. Lie. No." or
+              "M.L.".
+
+          (v)      A distinctive batch number, that is to say, the number by reference
+                  to which details of manufacture of the particular batch from which
+                  the substance in the container is taken are recorded and are available
+                  for inspection, the figure representing the batch number being
+                  preceded by the words "Batch No." or "Batch" or "Lot Number" or
+                  "Lot No." or "Lot" or any distinguishing prefix.
+
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 190 of 859
+         (vi)      The date of manufacture. For this purpose the date of manufacture
+                  shall be the date of completion of the final products, or the date of
+                  bottling or packing for issue.
+
+         (vii)     The words "Ayurvedic medicine" or "Siddha medicine" or "Unani
+                  medicine" as the case may be.
+
+         (viii)     The words "FOR EXTERNAL USE ONLY" if the medicine is for
+                  external application.
+
+         (ix) Every drug intended for distribution to the medical profession as a
+              free sample shall, while complying with the labelling provisions
+              under clause (i) or (viii), further bear on the label of the container the
+              words "Physician's sample. Not to be sold" which shall be
+              overprinted.
+         737
+               [(x) (a) Preparation (Asavas) with high content of alcohol as base.
+
+Name of the drug                                     Maximum size of packing
+
+(i) Kapur Asava                                      15 ml.
+(ii) Ahiphenasava                                    15 ml.
+(iii) Margamadasava                                  15 ml.
+(b) Preparation containing self-generated alcohol.
+                                                     Maximum content               of    alcohol
+Name of the drug                                                                                     Maximum size of packing
+                                                     (Ethylalcohol v/v)
+(i) Mritsanjivani Sura                               16 per cent                                     30 ml.
+(ii) Mahadrakshava                                   16 per cent                                     120 ml.]
+
+
+     (4) Nothing in these rules shall be deemed to require the labelling of airy
+transparent cover or of any wrapper-case or other covering used solely for the
+purpose of packing, transport in delivery.]
+       738
+       [161A. Exemption in labelling and packing provisions for export of
+Ayurvedic (including Siddha) and Unani Drugs.—(1) Label and packages or
+containers of Ayurvedic, Siddha and Unani Drugs for export may be adapted to
+meet the specific requirements of the law of the country to which the said drugs
+is to be exported, but the following particulars shall appear in conspicuous
+
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India              Page 191 of 859
+position on the container in which drug is packed and on every other covering in
+which that container is packed, namely:—
+
+         (a)      name of the Ayurvedic, Siddha and Unani drug (single or compound
+                  formulation);
+
+         (b)      the name, address of the manufacturer and the number of licence
+                  under which the drug has been manufactured;
+
+         (c) batch or lot number;
+
+         (d) date of manufacture, along with date for "Best for use before".
+
+         (e)      main ingredients, if required by the importing country;
+
+         (f) for EXPORT:
+
+    Provided that where Ayurvedic, Siddha and Unani single or compound drug
+not classified under the First Schedule or Schedule E(l), is required by the
+consignee to be not labelled with the name and address of the manufacturer, the
+labels on packages or containers shall bear a code number as approved by the
+licensing authority mentioned in rule 152.
+
+    (2) The provisions of rule 161 shall not apply to a medicine made up “ready
+for treatment” whether after, or without, alteration, which is supplied on the
+prescription of a registered medical practitioner, if the medicine is labelled with
+the following particulars, namely:—
+
+         (a) the name and address of the suppliers;
+
+         (b) the words "For External Use Only", if the medicine is for external
+              application.]
+      739
+      [161B. Shelf life or date of expiry of medicines.—(1) The date of expiry
+of Ayurvedic, Siddha or Unani medicines shall be conspicuously displayed on
+the label of container or package of Ayurvedic, Siddha or Unani medicine, as
+the case may be, and after the said date of expiry, no medicine shall be
+marketed, sold, distributed or consumable;
+
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 192 of 859
+   Provided that this rule shall apply to Ayurvedic, Siddha and Unani medicines
+seeking licence or renewal of licence for manufacturing after the date of
+notification of the rules.
+
+   Provided also that this rule shall not be applicable to the Ayurvedic, Siddha
+or Unani medicines manufactured and marketed prior to the date of this
+notification.
+
+    (2) Every person applying for licence or renewal of licence for the
+manufacturing of Ayurveda, Siddha or Unani medicines defined under clause
+(h) of section 3 of the Act shall submit to the State Licensing Authority
+scientific data based shelf life or date of expiry of the medicine based on the
+Real time stability studies of medicines in accordance with the guidelines
+prescribed in the Ayurvedic Pharmacopoeia of India.
+
+   Provided that this sub-rule shall be applicable after three years from the date
+of notification of the rules.
+
+    (3) The guidelines regarding stability studies as prescribed in the
+Ayurvedic Pharmacopoeia of India, Part-I, Volume-VIII shall be applicable to
+all the medicines of Ayurvedic, Siddha and Unani.
+
+   (4) The State Licensing Authority shall, before granting license or renewal
+of license for an Ayurvedic, Siddha or Unani medicine, ensure validity of the
+data submitted by the manufacturer in support of the claimed shelf-life of that
+medicine.
+
+   (5) The State Licensing Authority may at any time direct the manufacturer
+to provide the samples of the medicine and any other related information; and
+may share it with the Pharmacopoeial Laboratory for Indian Medicine,
+Ghaziabad for analysis or independent validation.
+
+    (6) Where the manufacturer fails to comply with direction of the State
+licensing Authority under sub-rule (5), the license for the manufacturing of the
+medicine shall be liable for suspension after giving a reasonable opportunity of
+being heard.
+
+  (7) Any person aggrieved by an order passed by the State Licensing
+Authority under sub-rule (6), may within sixty days of such order, appeal to the
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 193 of 859
+Central Government, and the Central Government may, after such enquiry into
+the matter as is considered necessary, pass such order in relation thereto as it
+deems fit. The decision of the Central Government shall be final and binding.
+
+   (8) The shelf life or date of expiry of an Ayurveda, Siddha or Unani
+medicine defined under clause (a) of section 3 of the Act shall, unless otherwise
+determined on the basis of scientific data, be as follows:—
+
+
+                                               (Ayurvedic medicines)
+                                                                                                  Shelf life or date of
+ SI.
+            Dosage form                                                                         expiry with effect from
+ No.
+                                                                                                the date of manufacture
+   (1)                                            (2)                                                     (3)
+ (i)        Anjana
+            (a) Anjana made from Kasthaushadhi                                                          1 year
+            (b) Anjana made from Kasthaushadhi along with
+                                                                                                        2 years
+            Rasa/ Uprasa / Bhasma
+            (c) Anjana made only from Rasa/Uprasa/Bhasma                                                3 years
+ (ii)       Arka                                                                                        1 year
+ (iii)      Asava Arista                                                                               10 years
+ (iv)       Avaleha, Khanda, Paka, Guda                                                                 3 years
+            Chuma, Kwatha Chuma, Lepa Chuma, Danta
+ (v)                                                                                                    2 years
+            Manjan (Chuma)
+ (vi)       Dhoopan                                                                                     2 years
+ (vii)      Dravaka, Lavana, Kshara                                                                     5 years
+ (viii) Ghrita                                                                                          2 years
+ (ix)       Guggulu                                                                                     5 years
+ (x)        Gutika/Vati
+            (I) Gutika or Vati containing Kasthaushadhi along
+            with Rasa/Uprasa/Bhasma/Guggulu (including Lepa                                             5 years
+            Gutika and GhanVati)
+            (II) Gutika or Vati containing only Kasthaushadhi
+                                                                                                        3 years
+            (including Lepa Gutika and Ghan Vati)
+            (III)            Gutika/Vati                   containing                 only             10 years
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India              Page 194 of 859
+            Ras/Uprasa/Bhasma except Naga, Vanga and Tamra
+            Bhasma
+ (xi)       Kama /Nasabindu                                                                           2 years
+ (xii)      Kupipakva Rasayana                                                                        10 years
+ (xiii) Malahar                                                                                       3 years
+ (xiv) Mandura-Lauha                                                                                  10 years
+ (xv)       Naga Bhasma, Vanga Bhasma and Tamra Bhasma                                                5 years
+ (xvi) Netrabindu                                                                                      1 year
+ (xvii) Parpati                                                                                       10 years
+            Pishti and Bhasma except Naga, Vanga and Tamra
+ (xviii)                                                                                              10 years
+            Bhasma
+ (xix) Pravahi Kwatha                                                                                 3 years
+
+  (1)                                             (2)                                                    (3)
+           Rasayoga
+           (I) Rasayoga Containing only Rasa/Uprasa/Bhasma
+                                                                                                      10 years
+(xx)       except Naga, Vanga and Tamra Bhasma
+           (II) Rasayoga Containing Rasa/Uprasa/Bhasma along
+                                                                                                       5 years
+           with Kasthaushadhi/Guggulu
+(xxi) Sattva (derived from medicinal plant)                                                            2 years
+(xxii) Sharkar/Panak / Sharbat                                                                         3 years
+(xxiii) Shveta parpati                                                                                 2 years
+(xxiv) Taila                                                                                           3 years
+(xxv) Varti                                                                                            2 years
+                                                   (Siddha medicines)
+                                                                                                     Shelf life or date
+                                                                                                      of expiry with
+ SI.
+                                             Dosage form                                              effect from the
+ No.
+                                                                                                          date of
+                                                                                                       manufacture
+ (1)                                                 (2)                                                    (3)
+ (i) Curanam
+         Kutinir Curanam/Adai Curanam/Kanchi Curanam/Utkali
+                                                                                                          2 years
+         Curanam/Pittu Curanam/Podithimirthal Curanam/Podi/
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India          Page 195 of 859
+        Pattru Curanam/Pottanam or Kizhi Curanam/Ottratam
+        Curanam/Vethu        Curanam/Pugai   Curanam/Kah
+        Curanam/Thuvalai Curanam
+ (ii) Mattirai/V atakam
+        (I) Containing only Moohgai ingredients (including
+        Kudineer Curanam Mattirai) (e.g. Nilavembu kutinir                                           2 years
+        Mattirai)
+        (II) Containing Mooligai ingredients along with Thathu
+        Porutkal/Jeeva          Porutkal/Parpam/Centuram/Cunnam.                                     5 years
+        (including kutinir Curanam Mattirai)
+        (m) Containing only Thathu Porutkal/Parpam/Centuram/
+                                                                                                     10 years
+        Cimnam/Kattu/Kalanku.
+ (iii) Rasa-Paadana Marunthugal (All Mercurial Preparation)
+        (I) Containing Mooligai ingredients along with Thathu
+                                                                                                     2 years
+        Porutkal/Parpan/Centuram/Cunnam/ Kattu/Kalanku
+        (II)   Containing  only    Thathu                                   Porutkal/Parpam/
+                                                                                                     10 years
+        Centuram/Cunnam Kattu/Kalanku
+ (iv) Parpam/Centuram
+        (I) Containing only Mooligai ingredients (e.g. Kungiliya
+                                                                                                     2 years
+        Parpam)
+
+  (1)                                                 (2)                                              (3)
+          (II) Containing Mooligai ingredients with Thathu
+          Porutkal/Parpam/Centuram/Cunnam/Kattu / Kalanku (e.g.,                                     10 years
+          Aya Centuram)
+          (HI) Containing Mooligai ingredients with Jeeva Porutkal
+                                                                                                     10 years
+          (e.g., Sangu Parpam)
+ (v)      Karuppu
+          (I) Containing only Mooligai ingredients (e.g., Vasambu
+                                                                                                     2 years
+          Sutta Kari)
+          (II) Containing Mooligai ingredients with Thathu
+                                                                                                     5 years
+          Porutkal (e.g., Sivanar Amirtham, Thalaga Karuppu)
+          (III) Containing Mooligai ingredients with Jeeva Porutkal
+                                                                                                     5 years
+          (e.g., Kasthuri Karuppu, Pattu Karuppu)
+ (vi) Patankam
+          (I) Mooligai based Patankam (e.g., Sambirani Patankam)                                     5 years
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India     Page 196 of 859
+          (II) Rasa based Patankam (eg., Rasa Centuram)                                              10 years
+ (vii) Kulampu
+          Based on process—
+          (I) Araippu Kulampu (e.g., Agathiyar Kulampu)                                              5 years
+          (II) Erippu Kulampu (e.g., Kumatti Kulampu)                                                3 years
+ (viii) Meluku
+          Based on process—
+          (I) Araippu Meluku (e.g., Linga Meluku)                                                    5 years
+          Based on Process—
+          (II) Idippu Meluku (e.g., Rasa Gandhi Meluku/Idi Vallthi
+                                                                                                     3 years
+          Meluku)
+          Based on raw materials-
+          (III) Mooligai Meluku (e.g., Malaikudara Meluku)                                           3 years
+ (ix) Karpam
+          Based on raw materials—
+          (I) Mooligai Karpam (e.g., Karisalai Karpam, Thiripala
+                                                                                                     2 years
+          Karpam)
+          Based on raw materials—
+          (II) Mooligai Thathu Karpam (e.g., Aya Bringaraja
+                                                                                                     5 years
+          Karpam)
+          Based on process-
+          (III) Araippu Karpam (e.g., Irunelli Karpam)                                               3 years
+ (x)      Satthu
+          (I) Satthu derived from Mooligai (e.g., Seenthil Satthu)                                   2 years
+          (II) Satthu derived from Thathu Porutkal (e.g., Aya Satthu,
+                                                                                                     10 years
+          Eya Satthu,Thurusu Satthu)
+   (1)                                                 (2)                                             (3)
+           (III) Satthu derived from Jeeva Porutkal (e.g., Sembu
+                                                                                                     5 years
+           Satthu derived from Poonagam, Mayiliragu)
+(xi)       Ilakam/Legiyam/Iracayanaam                                                                3 years
+(xii)      Kallikkam/Mai/Kalimbu/Neer/Venney                                                          1 year
+(xiii)     Karam (Karanool)                                                                          2 years
+(xiv)      Kattu (Medicated bandage cloth)/See!ai/Varthy/Thiri                                        1 year
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India     Page 197 of 859
+(xv)       Kattu/Kalanku/Cunnam                                                                              10 years
+(xvi)      Kutinir/Kiyazham (with preservatives)                                                             3 years
+(xvii) Manappaku/Panagam                                                                                     3 years
+(viii)     Nasiyathuli/Kanthuli/Sevithuli                                                                     1 year
+(xix)      Ney/Ghirutham/Kadugu                                                                              2 years
+(XX) Oothal./Nasigaparanam/Thoopasarakku                                                                      1 year
+(xxi)      Pakkuvam, Thennoral                                                                                1 year
+(xxii) Panda Vaippu                                                                                          10 years
+(xxiii) Peechu                                                                                               2 years
+(xxiv) Sutigai                                                                                               2 years
+(xxv) Tailam/Ennai/Poochu                                                                                    3 years
+(xxvi) Tinir                                                                                                  1 year
+(xxvii) Tiravakam (derived from Thathu Porutkal )                                                            2 years
+                                                    (Unani medicines)
+                                                                                         Shelf life or date of expiry
+ SI.
+                                      Dosage form                                        with effect from the date of
+ No.
+                                                                                                 manufacture
+  (1)                                        (2)                                                       (3)
+ (i)      Arq (except Arq-e-Ajeeb)                                                                   1 year
+ (ii)     Arq-e-Ajeeb                                                                                5 years
+ (iii) Ayarij / Sunoon/Zuroor/Ghazah                                                                 2 years
+ (iv) Burood                                                                                         1 year
+ (v)      Shiyaf                                                                                     2 years
+ (vi) Surma/Kohal                                                                                    3 years
+ (vii) Habb                                                                                          3 years
+ (viii) Halwa                                                                                        3 years
+ (ix) Itrifai                                                                                        3 years
+ (x)      lauhar/Jawahir                                                                             5 years
+ (xi) Jawarish                                                                                       4 years
+ (xii) Khamira                                                                                       3 years
+
+  (1)                                         (2)                                                      (3)
+(xiii) Kushta                                                                                        10 years
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India             Page 198 of 859
+(xiv) Laboob                                                                                         3 years
+(xv)       Laooq                                                                                     3 years
+(xvi) Majoon/Dawa                                                                                    3 years
+(xvii) Marham/Zimad/Qairooti                                                                         2 years
+(xviii) Mufarreh                                                                                     3 years
+(xix) Murabba                                                                                         1 year
+(xx)       Nabeez                                                                                    10 years
+(xxi) Qurs                                                                                           3 years
+(xxii) Qutoor                                                                                         1 year
+(xxiii) Raughaniyat/Tila                                                                             3 years
+(xxiv) Sharbat,/ Sikajabeen                                                                          3 years
+           (I) Sufoof (Without Salt)                                                                 2 years
+(xxv)
+           (II) Sufoof (Containing salt)                                                              1 year
+(xxvi) Tiryaq                                                                                        3 years.]
+
+                                                     740
+                       [PART XVIII
+   GOVERNMENT ANALYSTS AND INSPECTORS FOR AYURVEDIC
+          (INCLUDING SIDDHA) OR UNANI DRUGS
+
+162. Duties of inspectors specially authorised to inspect the manufacture of
+Ayurvedic (including Siddha) or Unani drugs.—Subject to the instructions of
+the controlling authority, it shall be the duty of an Inspector authorised to
+inspect the manufacture of Ayurvedic (including Siddha) or Unani drugs—
+
+           (i)       to inspect not less than twice a year, all premises licensed for
+                    manufacture of Ayurvedic (including Siddha) or Unani drugs within
+                    the area allotted to him and to satisfy himself that the conditions of
+                    the licence and the provisions of the Act and the rules made
+                    thereunder are being observed;
+
+           (ii)      to send forthwith to the controlling authority after each inspection a
+                    detailed report indicating whether or not the conditions of the
+                    licence and the provisions of the Act and the rules made thereunder
+                    are being observed;
+
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India             Page 199 of 859
+           (iii)     to take samples of the drugs manufactured on the premises and
+                    send them for test or analysis in accordance with these rules;
+
+           (iv)      to institute prosecution in respect of violation of the Act and the
+                    rules made thereunder.
+     741
+      [162A. Qualifications for State Drug Licensing Authority for licensing
+of Ayurveda, Siddha and Unani drugs.—(a) The Ayurvedic/Siddha/Unani
+qualifications as per Schedule II of CCIM Act 1970/B. Pharma (Ayurveda) of a
+recognized University.
+
+   (b) At least 5 years' experience in the Ayurveda/Siddha/Unani drug
+manufacturing or testing of Ayurvedic, Siddha and Unani drugs or enforcement
+of provisions of Chapter IVA of the Drugs and Cosmetics Act, 1940 and rules
+made thereunder or teaching/ research on clinical practice of
+Ayurveda/Siddha/Unani System.]
+
+   163. Procedure for despatch of sample to Government Analyst and its
+receipt by the Government Analyst.—(1) Sample for test or analysis shall be
+sent to the Government Analyst by registered post or by hand in a sealed
+package enclosed together with a memorandum in Form 18A in an outer cover
+addressed to the Government Analyst.
+
+   (2) The package as well as the outer cover shall be marked with
+distinguishing number.
+
+   (3) A copy of the memorandum and a specimen impression of the seal used
+to seal the package shall be sent by registered post or by hand to the
+Government Analyst.
+
+   (4) On receipt of the package from an Inspector, the Government Analyst
+or an Officer authorised by him writing in this behalf shall open the package
+and shall also record the conditions of the seals on the package.
+
+   (5) After the test or analysis has been completed, one copy of the results of
+the test or analysis shall be supplied forthwith to the sender in Form 13A. A
+copy of the result in Form 13A shall be sent simultaneously to the controlling
+authority and to the Drugs Controller, India.
+
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 200 of 859
+ 742
+  [PHARMACOPOEIA COMMISSION FOR INDIAN MEDICINE AND
+   HOMOEOPATHY AND CENTRAL DRUGS LABORATORY OF
+   INDIAN MEDICINE AND HOMOEOPATHY TO FUNCTION AS
+CENTRAL DRUGS LABORATORY FOR THE PURPOSE OF TESTING
+      OR ANALYSIS OF AYURVEDA, SIDDHA, UNANI AND
+                 HOMOEOPATHY DRUGS
+
+   163A. Functions.—Pharmacopoeia Commission of Indian Medicine and
+Homoeopathy at Ghaziabad (Uttar Pradesh) under the Central Government shall
+function to develop and amend standards of Ayurvedic, Siddha, Unani and
+Homoeopathy drugs and publish pharmacopoeial monographs, formularies and
+standardize procedures with the approval of the Central Government laboratory
+of the Pharmacopoeia Commission shall be the Central Drugs Laboratory for
+Indian Medicine and Homoeopathy for the purpose of testing or analysis of
+Ayurveda, Siddha, Unani and Homoeopathy Drugs.
+
+   163AA.—(1) The Central Government shall, by notification in the Official
+Gazette and with effect from such date as may be specified therein, constitute
+Scientific Advisory Board for the Pharmacopoeia Commission for Indian
+Medicine and Homoeopathy for a term of three years, to advise the Central
+Government, the State Governments and the stakeholders on the matters of
+standards, standard operating procedures and testing protocols of Ayurveda,
+Siddha, Unani and Homoeopathy Drugs.
+
+   (2) The Scientific Advisory Board shall consist of the following members,
+namely:—
+
+               (i) Retired Scientific Expert of drugs to be nominated as Chairman
+               by the Central Government;
+
+               (ii) Director, Pharmacopoiea Commission for Indian Medicine and
+               Homoeopathy; ex officio Member Secretary;
+
+               (iii) Advisor dealing with drugs, Ministry of AYUSH, ex officio-,
+
+               (iv) Drugs Controler General, India, ex officio;
+
+               (v) Scientific Director, Indian Pharmacopoeia Commission, ex
+               officio;
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 201 of 859
+               (vi) Director General, Central Council for Research in Ayurvedic
+               Sciences, ex officio;
+
+               (vii) Director General, Central Council for Research in Unani
+               Medicine, ex officio;
+
+               (viii) Director General, Central Council for Research in Siddha, ex
+               officio;
+
+               (ix) Director General, Central Council for Research in Homoeopathy,
+               ex officio;
+
+               (x) Central Government Analyst for Ayurveda, Siddha, Unani and
+               Homoeopathy, Drugs, ex officio;
+
+               (xi) One professionally experienced expert each of standardization or
+               quality control of Ayurveda, Siddha, Unani, Homoeopathy drugs,
+               pharmacognosy or botany, chemistry, Phyto-chemistry and pharmacy
+               to be nominated by the Central Government from amongst the
+               scientific institutions.
+
+               (xii) Chairman shall have the discretion to co-opt two experts for
+               advice and guidance in specific matters of standards of Ayurvedic,
+               Siddha, Unani and Homoeopathy drugs.
+
+   (3) The functions of Scientific Advisory Board may be exercised
+notwithstanding any vacancy therein.
+
+   (4) The Commission shall constitute a pharmacopoeia committee and sub-
+committees there under for a period of three years on the recommendation of
+Scientific Advisory Board.
+
+   (5) The meetings of Scientific Advisory Board, Pharmacopoeia Committee
+and Subcommittees shall be supported by the Commission.]
+     743
+      [163B. The functions of the Central Drug Laboratory in respect of
+Ayurvedic, Siddha, Unani and Homoeopathy drugs shall be carried out at the
+Pharmacopoeia Commission for Indian Medicine and Homoeopathy,
+Ghaziabad, (Uttar Pradesh) and the functions of the Director in respect of the
+said drugs shall be exercised by the Director of the said laboratory.
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 202 of 859
+   163BB. (1) The laboratory of Pharmacopoeia Commission for Indian
+Medicine and Homoeopathy shall act as the Central Appellate Drugs Laboratory
+under section 6 of the Act for testing or analysis of samples of Ayurveda,
+Siddha, Unani and Homoeopathy Drugs as may be sent to it under sub-
+section(2) of section 11 or sub-section(4) of section 25 and 33H of the said Act.
+
+    (2) The Central Drugs Laboratory shall maintain reference museum and
+herbarium of Ayurveda, Siddha, Unani and Homoeopathy drugs, conduct
+training programmes for analytical and drugs quality control methods and carry
+out such activities and duties as may be entrusted to it by the Central
+Government.
+
+   (3) All functions of the Central Drugs Laboratory for Ayurvedic, Siddha,
+Unani and Homoeopathy drugs shall be exercised by the Director or the officer
+appointed on his behalf of the Pharmacopoeia Commission for Indian Medicine
+and Homoeopathy.]
+
+    163C. Despatch of samples for test or analysis.—(1) Samples for testing or
+analysis of Ayurveda, Siddha and Unani drugs under sub-section (2) of section
+11 or sub-section (1) of section 25 and section 33H of the Act shall be sent by
+registered post in a sealed packet, enclosed with a memorandum in Form 1A,
+744
+   [Form 18 or Form 18-A] specified in Schedule A, in an outer cover addressed
+to the Director, 745[Pharmacopoeia Commission for Indian Medicine and
+Homoeopathy, Ghaziabad (Uttar Pradesh)].
+
+   (2) The packet as well as the outer cover, shall be marked with a
+distinguishing number.
+
+   (3) A copy of the memorandum in Form 1A and a specimen impression of
+the seal used to seal the packet shall be sent separately by registered post to the
+Director, 746[Pharmacopoeia Commission for Indian Medicine and
+Homoeopathy, Ghaziabad (Uttar Pradesh)].
+
+    163D. Recording of condition of seals.—On receipt of the packet, it shall
+be opened by an officer authorised in writing on that behalf by the Director,
+746
+   [Pharmacopoeia Commission for Indian Medicine and Homoeopathy,
+Ghaziabad (Uttar Pradesh)], who shall record the condition of the seal on the
+packet.
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 203 of 859
+   163E. Report of result of test or analysis.—After test or analysis, the result
+of the test or analysis, together with full protocols of the tests applied, shall be
+supplied forthwith to the sender in Form 2A 747[or Form 13] of as specified in
+the said Schedule.
+
+   163F. Fees.—The fees for test and analysis shall be as specified in Schedule
+B-l.
+
+   163G. Signature on certificates.—Certificates issued under these rules by
+the 746[Pharmacopoeia Commission for Indian Medicine and Homoeopathy,
+Ghaziabad (Uttar Pradesh)] shall be signed by the Director or by an officer
+authorised by the Central Government to sign such certificates.]
+     748
+      [164. Method of test or analysis to be employed in relation to
+Ayurvedic, Siddha, Unani or Homoeopathy drugs.—The method of test or
+analysis to be employed in relation to an Ayurvedic, Siddha, Unani or
+Homoeopathy drugs shall be such as may be specified in the Ayurvedic, Siddha,
+Unani or Homoeopathy Pharmacopoeia, or if no such pharmacopoeias are
+available or if no test is specified in such pharmacopoeias, such test as the
+Government Analyst may employ, such tests being scientifically established to
+determine whether the drug contains the ingredients as stated on the label.]
+
+   165. Qualifications of Government Analyst.—A person who is appointed
+a Government Analyst under section 33F of the Act shall be a person possessing
+the qualifications prescribed in rule 44 or a degree in 749[Ayurveda, Siddha,
+Unani or Homoeopathy] system, as the case may be, conferred by a University,
+a State Government or Statutory Faculties, Councils 750[Boards of Indian
+Systems of Medicine and Homoeopathy Boards] recognised by the Central or
+State Government, as the case may be, for this purpose and has had not less than
+three years' post-graduate experience in the analysis of drugs in a laboratory
+under the control of (i) a Government Analyst appointed under the Act, or (ii) a
+Chemical Examiner to Government, or (iii) the head of an institution specially
+approved for the purpose by the appointing authority.
+
+   166. Duties of Government Analyst.—(1) The Government Analyst shall
+analyse or test or cause to be analysed or tested such samples of 751[Ayurveda,
+Siddha, Unani or Homoeopathy] drugs as may be sent to him by Inspectors or
+any other person or authority authorised by the Central Government or a State
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 204 of 859
+Government under the provisions 752[***] of the Act and shall furnish reports of
+the results of test or analysis in accordance with these rules.
+
+   (2) A Government Analyst appointed under section 34F shall from time to
+time forward to the Government reports giving the results of analytical work
+and research with a view to their publication at the discretion of the
+Government.]
+     753
+     [167. Qualifications of Inspector.—A person who is appointed an
+Inspector under section 33 G shall be a person who—
+
+   (a) has the qualifications laid down under rule 49 and shall have undergone
+practical training in the manufacture of Ayurvedic, Siddha, Unani or
+Homoeopathy drug, as the case may be; or
+
+   (b) has a degree in Ayurvedic, Siddha, Unani or Homoeopathy system or
+degree in Ayurvedic, Siddha, Unani or Homoeopathy Pharmacy, as the case
+may be, conferred by a University or a State Government or a Statutory Faculty,
+Council or Board of Indian Systems of Medicine or Board of Homoeopathy
+recognized by the Central Government or the State Government for this
+purpose.]
+                                                       754
+                           [PART XIX
+        STANDARDS OF AYURVEDIC SIDDHA AND UNANI DRUGS
+
+   168. Standards to be complied with in manufacture for sale or for
+distribution of Ayurvedic, Siddha and Unani Drugs.—
+
+S.No              Class of Drugs                               Standards to be complied with
+         755                     The standards for identity, purity and
+          [Drugs] included in
+                                 strength as given in the editions of
+1.       Ayurvedic Pharmacopoeia
+                                 Ayurvedic Pharmacopoeia of India for the
+                                 time being in force.
+                                                          The upper limit of alcohol as self-
+                                                          generated alcohol should not exceed 12%
+2.       Asavas and Aristas                               v/v excepting those that are otherwise
+                                                          notified by the Central Government from
+                                                          time to time.]
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 205 of 859
+        756
+       [169. Permitted Excipients.—Permitted Excipients along with their
+standards i.e., additives, preservatives, antioxidants, flavouring agents, chelating
+agents, etc., permitted in the Indian Pharmacopoeia (IP), Prevention of Food
+Adulteration Act, 1954 and Bureau of Indian Standard Act, 1986 are permitted
+for use in Ayurveda, Siddha and Unani drugs with the following conditions,
+namely:—
+
+          1.      The above excipients shall be used in the permissible limits as
+                  prescribed in the Indian Pharmacopoeia/Prevention of Food
+                  Adulteration Act, 1954/Food Product Order/Bureau of Indian
+                  Standard Act, 1986 and they shall comply with the respective quality
+                  specifications, not exceeding any specified limits of usage therein,
+                  and except Hydrogenated vegetable oil.
+
+          2.       Only natural colouring agents as permitted under rule 26 of
+                  Prevention of Food Adulteration Rules, 1955 will be used for
+                  Ayurveda, Siddha and Unani drugs and additionally, colours
+                  permitted under rule 127 of Drugs and Cosmetic Rules, 1945 shall
+                  be used for Proprietary Ayurveda, Siddha and Unani drugs as
+                  defined in sub-clause (i) of clause (h) of section 3 of the Drugs and
+                  Cosmetics Act, 1940, not exceeding any specified limits of usage
+                  therein.
+
+          3.      Preservatives and Colouring agents shall be mentioned on the label
+                  for the information of the consumer as required under rule 161 of the
+                  Drugs and Cosmetics Rule, 1945.
+
+          4.      Additives used in various processes and in formulating dosage forms
+                  shall be mentioned clearly with quantities used, in the application for
+                  licenses and the record for the same shall be maintained by the
+                  manufacturers.
+
+          5.      Manufacturers shall be responsible to ensure rationality, safety and
+                  quantity used of various excipients in the formulation.
+
+          6.      If any excipients or additive or preservative etc., referred in Indian
+                  Pharmacopoeia/Prevention of Food Adulteration Act, 1954/Food
+                  Product Order/Bureau of Indian Standard Act, 1986 is deleted at a
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 206 of 859
+                  particular point of time, this will also be deleted simultaneously for
+                  the use in Ayurveda, Siddha and Unani drugs.
+
+           7.     Following artificial sweeteners as per maximum limit indicated
+                  below may be used in various dosage forms of Ayurveda, Siddha,
+                  Unani Proprietary Medicines:—
+
+                  Artificial sweeteners may be used only in proprietary ASU products
+                  and the label of such products should carry a statutory warning
+                  stating the name and quantity of the artificial sweetener used.
+
+    The recommended Acceptable Daily Intake (ADI) of these sweeteners as
+laid down by US FDA is as follows:
+           S.
+                       Sucralose                Aspartame                  Saccharin                 Acesulfame K
+           No.
+           1.
+                       5mg/kg                   40 mg/kg                   3 mg/kg                    15 mg/kg
+                     body weight               body weight               body weight                 body weight
+
+
+                  One-third of the above ADI would be permissible for use in
+                  Ayurveda, Siddha, Unani Patent and Proprietary drugs.
+
+           8. Any previous notification issued by the Department of AYUSH
+               regarding use of excipients/additives or preservatives in Ayurveda,
+               Siddha and Unani medicines stands superseded.]
+     757
+      [170. Prohibition of advertisements of Ayurvedic, Siddha or Unani
+drugs.—
+    (1) The manufacturer or his agent, of Ayurvedic, Siddha or Unani drugs,
+shall not participate in the publication of any advertisement relating to any drug
+for the use of diagnosis, cure, mitigation, treatment or prevention of any disease,
+disorder, syndrome or condition.
+
+   (2) The Ayurvedic, Siddha or Unani drug shall be advertised for the
+purpose other than specified in sub-rule (1) after the allotment of the Unique
+Identification Number.
+
+   (3) The manufacturer of the Ayurvedic, Siddha or Unani drug shall apply
+for the Unique Identification Number for the advertisement issued or aired
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India            Page 207 of 859
+before this notification, within the period of three months from the date of the
+publication of this notification.
+
+     (4) The application for advertisement shall be rejected if,
+
+              (i) it is incomplete; or
+
+              (ii) the intended advertisement does not contain the contact details of
+              the manufacturer; or
+
+              (iii)  the contents of the advertisement directly or indirectly
+              tantamount to vulgarity or obscenity; or
+
+              (iv) it refers to any Ayurvedic, Siddha or Unani drug in terms which
+              suggest or calculated to lead to the use of that drug or medicine for the
+              enhancement of height and dimensions or capacity of performance of
+              male or female sexual organs; or
+
+              (v) it depicts photographs or testimonials of celebrities or government
+              officials; or
+
+              (vi) it refers to any Government or Autonomous organization of the
+              Government; or
+
+              (vii) it gives a false impression about the true character of Ayurvedic,
+              Siddha or Unani drug; or
+
+              (viii) it makes a misleading or exaggerated claim about the
+              effectiveness of the said drug.
+
+   (5) The application for allotment of the Unique Identification Number for
+an advertisement shall be submitted in Form 26 E-4 to the State Licensing
+Authority or Drug Controller specifying therein the claims such as textual
+references, rationale from the authoritative books, indication(s) or use(s),
+evidence regarding safety, effectiveness and quality of the drug.
+
+   (6) The application fee of rupees one thousand per advertisement shall be
+deposited along with Form 26E-4 and other supporting documents.
+
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 208 of 859
+           Subs, by G.S.R. 376(E), dated 3rd May, 2010, for clause (1A) (w.e.f. 4-5-2010). Earlier clause (1A)
+ 719.      was inserted by G.S.R. 198(E), dated 7th March, 2003 (w.e.f. 7-3-2003).
+ 720.      The words "OR RENEWAL" omitted by G.S.R. 716(E), dated 1st October, 2021 (w.e.f. 1-10-2021).
+           Subs. by G.S.R. 390(E), dated 18 th May, 2015, for sub-rules (1B) and (1C) (w.e.f .18-5-2016). Earlier
+ 721.      sub-rules (1B) and (1C) was inserted by G.S.R704(E), dated 25 th October, 2013 (w.e.f. 25-10-2013).
+ 722.      Subs. by G.S.R. 716(E), dated 1st October, 2021, for sub-rule (1D) (w.e.f. 1-10-2021).
+ 723.      Sub-rule (1E) omitted by G.S.R. 716(E), dated 1st October, 2021 (w.e.f. 1-10-2021).
+ 724.      Ins. by G.S.R. 512(E), dated 9th July, 2008 (w.e.f. 9-7-2008).
+ 725.      Ins. by G.S.R. 716(E), dated 1st October, 2021 (w.e.f. 1-10-2021).
+           Subs. by G.S.R. 716(E), dated 1st October, 2021, for sub-clause (c) (w.e.f. 1-10-2021). Earlier sub-
+ 726.      clause (c) was inserted by G.S.R. 331(E) dated 8 th May, 1984 (w.e.f.8-5-1984).
+ 727.      Added by G.S.R. 376(E), dated 20th July, 1978 (w.e.f. 20-7-1978)
+           Subs. by G.S.R. 716(E), dated 1st October, 2021, for sub-clause (e) (w.e.f. 1-10-2021). Earlier sub-
+ 728.      clause (e) was inserted by G.S.R. 331(E) dated 8 th May, 1984 (w.e.f.8-5-1984).
+ 729.      Ins. by G.S.R. 663(E), dated 10th August, 2010 (w.e.f. 10-8-2010).
+ 730.      Ins. by G.S.R. 153(E), dated 5th March, 2014 (w.e.f. 5-3-2014).
+ 731.      Ins. by G.S.R. 716(E), dated 1st October, 2021 (w.e.f. 1-10-2021).
+ 732.      Ins. by G.S.R. 716(E), dated 1st October, 2021 (w.e.f. 1-10-2021).
+ 733.      Part XVII (containing rule 161) added by Notification No. F. 1-23/6, dated 2nd Feburary, 1970.
+ 734.      Subs. by G.S.R. 904(E), dated 2nd November, 1992 (w.e.f. 2-11-1992).
+ 735.      Ins. by G.S.R. 844(E), dated 26th November, 2012 (w.e.f. 26-11-2013).
+ 736.      Subs. by G.S.R. 844(E), dated 26th November, 2012 (w.e.f. 26-11-2013).
+ 737.      Ins. by G.S.R. 904(E), dated 2nd November, 1992 (w.e.f. 2-11-1992).
+ 738.      Ins. by G.S.R. 787(E), dated 17th October, 2000 (w.e.f. 17-10-2000).
+           Subs. by G.S.R. 789(E), dated 12th August, 2016, for rule 161B (w.e.f. 12-8-2016). Earlier rule 161B
+ 739.      was inserted by G.S.R. 764(E), dated 15th October, 2009 (w.e.f. 15-10-2009).
+ 740.      Part XVIII (containing rule 162 to 167) added by Notification No. F. 1-23/6, dated 2nd Feburary, 1970.
+ 741.      Ins. by G.S.R. 76(E), dated 3rd February, 2003 (w.e.f. 3-2-2003).
+           Subs. by G.S.R. 202(E), dated 22nd March, 2021, for rule 163A (w.e.f. 23-3-2021). Earlier rule 163A
+ 742.      was inserted by G.S.R. 352(E), dated 1st June, 2006 (w.e.f. 8-6-2006).
+ 743.      Subs. by G.S.R. 202(E), dated 22nd March, 2021, for rule 163B (w.e.f. 23-3-2021).
+ 744.      Ins. by G.S.R. 202(E), dated 22nd March, 2021 (w.e.f. 23-3-2021).
+           Subs. by G.S.R. 202(E), dated 22nd March, 2021, for “Pharmacopoeial Laboratory for Indian
+ 745.      Medicine” (w.e.f. 23-3-2021).
+           Subs. by G.S.R. 202(E), dated 22nd March, 2021, for “Pharmacopoeial Laboratory for Indian
+ 746.      Medicine” (w.e.f. 23-3-2021).
+ 747.      Ins. by G.S.R. 202(E), dated 22nd March, 2021 (w.e.f. 23-3-2021).
+ 748.      Subs. by G.S.R. 202(E), dated 22nd March, 2021, for rule 164 (w.e.f. 23-3-2021).
+ 749.      Subs. by G.S.R. 202(E), dated 22nd March, 2021, for “Ayurveda, Siddha or Unani” (w.e.f. 23-3-2021).
+           Subs. by G.S.R. 202(E), dated 22nd March, 2021, for “and Boards of Indian Systems of Medicine”
+ 750.      (w.e.f. 23-3-2021).
+           Subs. by G.S.R. 202(E), dated 22nd March, 2021, for “Ayurvedic (including Siddha) or Unani” (w.e.f.
+ 751.      23-3-2021).
+ 752.      The words “of Chapter VIA” omitted by G.S.R. 202(E), dated 22nd March, 2021 (w.e.f. 23-3-2021).
+           Subs. by G.S.R. 202(E), dated 22nd March, 2021, for rule 167 (w.e.f. 23-3-2021). Earlier rule 167 was
+ 753.      sub. by G.S.R. 376(E), dated 20th July, 1978 (w.e.f. 20-7-1978)
+ 754.      Part XIX (containing rule 168) inserted by G.S.R. 519(E), dated 26 th June, 1995 (w.e.f. 26-6-1995).
+ 755.      Subs. by G.S.R. 422(E), dated 11th June, 2002 (w.e.f. 11-6-2002).
+           Subs. by G.S.R. 755(E), dated 23ed October, 2008, for rule 169 (w.e.f. 27-10-2008). Earlier rule 169
+ 756.      was added by G.S.R. 285(E) dated 11th May, 2005 (w.e.f. 12-5-2005).
+ 757.      Ins. by G.S.R. 1230(E), dated 21st December, 2018 (w.e.f. 24-12-2018).
+ 758.      Ins. by G.S.R. 352(E), dated 1st June, 2006 (w.e.f. 8-6-2006).
+           Subs. by G.S.R. 202(E), dated 22nd March, 2021, for heading “Memorandum to the Pharmocoposial
+ 759.      Laboratory for Indian Medicine (PLIM)” (w.e.f. 23-3-2021).
+ 760.      Ins. by G.S.R. 352(E), dated 1st June, 2006 (w.e.f. 8-6-2006).
+           Subs. by G.S.R. 202(E), dated 22nd March, 2021, for “Pharmacopoeial Laboratory for Indian
+ 761.      Medicine” (w.e.f. 23-3-2021).
+ 762.      Forms 3 to 7 omitted by Notification No. F. 1-16/57-D, dated 15th June, 1957.
+ 763.      Subs. by G.S.R. 604(E), dated 24th August, 2001, for Form 8 (w.e.f. 24-8-2001).
+ 764.      Subs. by G.S.R. 604(E), dated 24th August, 2001, for Form 8A (w.e.f. 24-8-2001). Earlier Form 8A
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 844 of 859
+           was inserted by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+ 765.      Subs. by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+           Subs. By G.S.R. 604(E), dated 24th August, 2001, for “signed by or on behalf of the manufacturer”
+ 766.      (w.e.f. 1-1-2003).
+ 767.      Subs. by G.S.R. 604(E), dated 24th August, 2001, for Form 10 (w.e.f. 24-8-2001).
+           Subs. by G.S.R. 604(E), dated 24th August, 2001, for Form 10A (w.e.f. 24-8-2001). Earlier Form 10A
+ 768.      was inserted by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+ 769.      Subs. by G.S.R. 103(E), dated 2nd February, 2017, for “one year” (w.e.f. 2-2-2017).
+ 770.      Ins. by G.S.R. 604(E), dated 24th August, 2001, (w.e.f. 24-8-2001).
+           Added by Notification No. F. 1-36/54-DS, dated 3rd March, 1955 and amended by G.S.R. 753(E),
+ 771.      dated 4th November, 1999 (w.e.f. 4-11-1999).
+           Subs. by G.S.R. 604(E), dated 24th August, 2001, for “A fee of rupees fifteen has been credited to
+           Government under the Head of Account “ 0210-Medical and Public Health, 04-Public Health, 104-
+           Fees and Fines under the Drugs and Cosmetics Rules, 1945- Central” vide treasury receipt attached.”
+ 772.      (w.e.f. 24-8-2001).
+ 773.      Ins. by Notification No. F. 1-36/54-DS, dated 3rd March, 1955.
+ 774.      Ins. by G.S.R. 604(E), dated 24th August, 2001, (w.e.f. 24-8-2001).
+ 775.      Subs. by G.S.R. 753(E), dated 4th November, 1999 (w.e.f. 4-11-1999).
+ 776.      Subs. by G.S.R. 521(E), dated 1st June, 2018, for "for a period of six months" (w.e.f. 1-6-2018).
+ 777.      Subs, by G.S.R. 59 (E), dated 7th February, 1995 (w.e.f. 7-2-1995).
+ 778.      Added by Notification No. F. 1-23/67-D (S.O. 642(E)), dated 2nd February, 1970 (w.e.f. 21-2-1970).
+ 779.      Ins. by G.S.R. 376(E), dated 3rd May, 2010 (w.e.f. 3-5-2010).
+ 780.      Added by Notification No. 1-3/51-DS, dated 15th October, 1954.
+ 781.      Subs. by G.S.R. 1594, dated 28th October, 1976 (w.e.f. 13-11-1976).
+ 782.      The words “cosmetics” omitted by G.S.R. 763(E), dated 15 th December, 2020 (w.e.f. 15-12-2020).
+ 783.      Subs. by G.S.R. 926, dated 24th June, 1977 (w.e.f. 16-7-1977).
+ 784.      The words “or cosmetics” omitted by G.S.R. 763(E), dated 15th December, 2020 (w.e.f. 15-12-2020).
+ 785.      Subs. by S.O. 2139(E), dated 5th June, 1972 (w.e.f. 12-8-1972).
+ 786.      The words “cosmetics” omitted by G.S.R. 763(E), dated 15 th December, 2020 (w.e.f. 15-12-2020).
+ 787.      Ins. By G.S.R. 292(E) dated 29th May, 1997 (w.e.f.29-5-1997)
+ 788.      The words “or cosmetics” omitted by G.S.R. 763(E), dated 15 th December, 2020 (w.e.f. 15-12-2020).
+ 789.      Subs. by G.S.R. 592(E), dated 13th August, 2008, for the figure"19" (w.e.f. 13-8-2008).
+ 790.      Subs. By G.S.R. 370(E), dated 7th April, 1994 (w.e.f. 7-4-1994).
+ 791.      Added by Notification No. F. 1-23/67-D (S.O. 642(E)), dated 2nd February, 1970 (w.e.f. 21-2-1970).
+ 792.      Subs. By G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+           The words "OR RENEWAL" omitted by G.S.R. 1337(E), dated 27th October, 2017 (w.e.f. 27-10-
+ 793.      2017).
+           The words "OR RENEWAL" omitted by G.S.R. 1337(E), dated 27th October, 2017 (w.e.f. 27-10-
+ 794.      2017).
+ 795.      Subs. by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+ 796.      Omitted by G.S.R. 231(E), dated 4th June, 1996 (w.e.f. 4-6-1996).
+ 797.      Subs. by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+ 798.      Subs. by G.S.R. 487(E) dated 2nd July, 1984 (w.e.f. 2-7-1984).
+ 799.      Ins. by G.S.R. 42(E), dated, 25th January, 1979 (w.e.f. 25-1-1979).
+ 800.      Ins. by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+           The words "OR RENEWAL" omitted by G.S.R. 1337(E), dated 27th October, 2017 (w.e.f. 27-10-
+ 801.      2017).
+ 802.      Subs. by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+ 803.      Ins. by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+ 804.      Subs. by G.S.R. 1337(E), dated 27th October, 2017 (w.e.f. 27-10-2017).
+ 805.      Subs. by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+ 806.      Subs. by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+ 807.      Certain words omitted by G.S.R. 231(E), dated 4th June, 1996 (w.e.f. 4-6-1996).
+ 808.      Subs. by G.S.R. 1337(E), dated 27th October, 2017 (w.e.f. 27-10-2017).
+ 809.      Certain words omitted by G.S.R. 504(E) dated 18th July, 2002 (w.e.f. 18-7-2002)
+ 810.      Subs. by Notification No. 1-63/61-D, dated 17th July, 1963.
+ 811.      Ins. By S.O. 23 (E) dated 23rd December, 1969 (w.e.f. 3-1-1970).
+           Clause 4 omitted by S.O. 289(E) dated 20 th December, 1992 (w.e.f. 3-2-1973). Earlier clause (4) added
+ 812.      by Notification No. F.1-113/69-D, dated 23rd December, 1969.
+ 813.      Ins. by G.S.R. 42(E), dated, 25th January, 1979 (w.e.f. 25-1-1979).
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 845 of 859
+ 814.      Subs. by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+ 815.      Subs. by G.S.R. 1337(E), dated 27th October, 2017, for paragraph 2 (w.e.f. 27-10-2017).
+ 816.      Added by Notification No. F. 1-35/64-D (G.S.R. 1185), dated 18th August, 1964 (w.e.f. 22-8-1964)
+ 817.      Subs. by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+ 818.      Added by Notification No. F. 1-59/68-D (S.O. 4816), dated 19th November , 1969 (w.e.f. 6-12-1969)
+ 819.      Added by G.S.R 665(E), dated 6th May, 1977 (w.e.f. 28-5-1977).
+ 820.      Added by Notification No. F. 1-35/64-D (G.S.R. 1185), dated 18th August, 1964 (w.e.f. 22-8-1964)
+ 821.      Subs. by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+ 822.      Added by G.S.R 665(E), dated 6th May, 1977 (w.e.f. 28-5-1977) (w.e.f. 28-5-1977).
+ 823.      Added by Notification no. F.1-14/67-D (G.S.R. 594), dated 3rd February, 1969.
+ 824.      Subs. by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+           Ins. by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982) corrected vide corrigendum G.S.R.
+ 825.      373(E) dated 2nd May, 1983.
+ 826.      Subs. by G.S.R. 1337(E), dated 27th October, 2017, for paragraph 3 (w.e.f. 27-10-2017).
+           Ins. by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982) corrected vide corrigendum G.S.R.
+ 827.      373(E) dated 2nd May, 1983.
+ 828.      Subs. by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+ 829.      Subs. by G.S.R. 1337(E), dated 27th October, 2017, for paragraph 3 (w.e.f. 27-10-2017).
+ 830.      Ins. By G.S.R. 370(E), dated 7th April, 1994 (w.e.f. 7-4-1994).
+ 831.      Subs. by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+ 832.      Ins. by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+ 833.      Subs. by S.O. 2139(E), dated 5th June, 1972 (w.e.f. 12-8-1972).
+ 834.      Subs. by G.S.R. 1337(E), dated 27th October, 2017, for paragraph 2 (w.e.f. 27-10-2017).
+ 835.      Condition No. 3 omitted by G.S.R. 17(E) dated 7 th January 1986 (w.e.f.7-1-1986).
+ 836.      Added by Notification No. 1-63/61-D, dated 17th July, 1963.
+ 837.      Subs. by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+ 838.      Ins. by S.O. 1458(E), dated 27th April, 1965 (w.e.f. 8-5-1965).
+ 839.      Ins. by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+ 840.      Subs. by G.S.R. 487(E), dated 2nd July, 1984 (w.e.f. 2-7-1984).
+ 841.      Subs. by G.S.R. 1337(E), dated 27th October, 2017, for paragraph 2 (w.e.f. 27-10-2017).
+ 842.      SI. No. 4 omitted by G.S.R. 504(E) dated 18th July, 2002 (w.e.f. 18-7-2002)
+ 843.      Certain words omitted by G.S.R. 231(E), dated 4th June, 1996 (w.e.f. 4-6-1996).
+ 844.      Condition No. 2 omitted by G.S.R. 17(E) dated 7 th January 1986 (w.e.f. 7-1-1986).
+ 845.      Ins. by S.O. 1458(E), dated 27th April, 1965 (w.e.f. 8-5-1965).
+ 846.      Subs. by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+ 847.      Ins. by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+ 848.      Subs. by G.S.R. 1337(E), dated 27th October, 2017, for paragraph 2 (w.e.f. 27-10-2017).
+ 849.      Ins. by G.S.R. 681(E), dated 6th June, 1988 (w.e.f. 6-6-1988).
+ 850.      Condition No. 2 omitted by G.S.R. 17(E) dated 7 th January 1986 (w.e.f. 7-1-1986).
+ 851.      Added by Notification No. 1-63/61-D, dated 17th July, 1963.
+ 852.      Added by Notification No. F.1-113/69-D (S.O. 23), dated 23rd December, 1969 (w.e.f. 3-1-1970)
+ 853.      Ins. by S.O. 1458(E), dated 27th April, 1965 (w.e.f. 8-5-1965).
+ 854.      Ins. by G.S.R. 42(E), dated, 25th January, 1979 (w.e.f. 25-1-1979).
+ 855.      Subs. by G.S.R. 1337(E), dated 27th October, 2017, for paragraph 2 (w.e.f. 27-10-2017).
+           FORM 21C omitted by G.S.R. 1337(E), dated 27th October, 2017 (w.e.f. 27-10-2017). Earlier FORM
+           21C was amended by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982) and by G.S.R. 788(E),
+ 856.      dated 10th October, 1985 (w.e.f. 10-10-1985).
+           FORM 21CC omitted by G.S.R. 1337(E), dated 27th October, 2017 (w.e.f. 27-10-2017). Earlier
+           FORM 21CC was inserted by G.S.R. 42(E), dated 25th January, 1979 (w.e.f. 25-1-1979) and amended
+ 857.      by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+ 858.      FORMS 22 and 23 omitted by S.O. 289(E), dated 20th December, 1962.
+           The words "OR RENEWAL” omitted by G.S.R. 1337(E), dated 27th October, 2017 (w.e.f. 27-10-
+ 859.      2017).
+ 860.      Subs. by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+ 861.      Subs. by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+ 862.      Subs. by G.S.R. 1337(E), dated 27th October, 2017, for "grant/renewal" (w.e.f. 27-10-2017).
+ 863.      Ins. by S.O. 1196(E), dated 6th May, 1960 (w.e.f. 14-5-1960).
+           The words "OR RENEWAL” omitted by G.S.R. 1337(E), dated 27th October, 2017 (w.e.f. 27-10-
+ 864.      2017).
+ 865.      Ins. by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 846 of 859
+ 866.      Subs. by G.S.R. 1337(E), dated 27th October, 2017, for "grant/renewal" (w.e.f. 27-10-2017).
+ 867.      Subs. by Notification No. F. 1-598-D (S.O. 4816) dated 19th November, 1969(w.e.f. 6-12-1969).
+           Ins. by G.S.R. 499(E), dated 17th July, 2019 (w.e.f. 17-7-2019). Earlier it was omitted by G.S.R.
+ 868.      1337(E), dated 27th October, 2017 (w.e.f. 27-10-2017)
+ 869.      Subs. by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+           Subs. By G.S.R. 13(E) dated 7th January, 1983 (w.e.f. 7-1-1983) corrected vide corrigendum G.S.R.
+ 870.      334(E) dated 11th May, 1983.
+           Subs. by G.S.R. 499(E), dated 17th July, 2019, for “grant” (w.e.f. 17-7-2019). Earlier the word “grant”
+ 871.      was substituted by G.S.R. 1337(E), dated 27 th October, 2017 (w.e.f. 27-10-2017)
+           Subs. by G.S.R. 716(E), dated 1st October, 2021, for Form 24D (w.e.f. 4-10-2021). Earlier Form 24D
+ 872.      was inserted by Notification No. 1-23/6 (S.O. 642), dated 2nd February, 1970 (w.e.f. 21-2-1970).
+           Subs. by G.S.R. 716(E), dated 1st October, 2021, for Form 24E (w.e.f. 4-10-2021). Earlier Form 24E
+ 873.      was added by G.S.R. 376(E) dated 20th July, 1978 (w.e.f. 20-7-1978).
+ 874.      Ins. by G.S.R. 716(E), dated 1st October, 2021, (w.e.f. 4-10-2021).
+ 875.      Ins. by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+           The words "OR RENEWAL” omitted by G.S.R. 1337(E), dated 27th October, 2017 (w.e.f. 27-10-
+ 876.      2017).
+ 877.      Subs. by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+ 878.      Subs. by G.S.R. 1337(E), dated 27th October, 2017, for "grant/renewal" (w.e.f. 27-10-2017).
+ 879.      Subs. by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+ 880.      Subs. by G.S.R. 231(E), dated 4th June, 1996 (w.e.f. 4-6-1996).
+ 881.      Subs. by G.S.R. 1337(E), dated 27th October, 2017, for paragraph 3 (w.e.f. 27-10-2017).
+ 882.      Ins. by G.S.R. 923(E), dated 14th December, 1992 (w.e.f. 14-12-1992).
+           The words "and any certificate of renewal in force" omitted by G.S.R. 1337(E), dated 27th October,
+ 883.      2017 (w.e.f. 27-10-2017).
+ 884.      Subs. by G.S.R. 231(E), dated 4th June, 1996 (w.e.f. 4-6-1996).
+ 885       Subs. by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+ 886.      Subs. by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+ 887.      Subs. by G.S.R. 231(E), dated 4th June, 1996 (w.e.f. 4-6-1996).
+ 888.      Subs. by G.S.R. 1337(E), dated 27th October, 2017, for paragraph 4 (w.e.f. 27-10-2017).
+           The words "and any certificate of renewal in force" omitted by G.S.R. 1337(E), dated 27 th October,
+ 889.      2017 (w.e.f. 27-10-2017).
+ 890.      Added by Notification No. F. 1-22/59-D, dated 9th April, 1960.
+ 891.      Subs. by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+ 892.      Subs. by G.S.R. 1337(E), dated 27th October, 2017, for paragraph 2 (w.e.f. 27-10-2017).
+           The words "and any certificate of renewal in force" omitted by G.S.R. 1337(E), dated 27 th October,
+ 893.      2017 (w.e.f. 27-10-2017).
+ 894.      Added by Notification No. F. 1-36/64-D, dated 18th august, 1964.
+ 895.      Subs. by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+ 896.      Subs. By G.S.R. 13(E) dated 7th January, 1983 (w.e.f. 7-1-1983)
+ 897.      Added by S.O. 903(E), dated 10th February, 1976 (w.e.f. 28-2-1976).
+           Subs. by G.S.R. 716(E), dated 1st October, 2021, for Form 25D (w.e.f. 4-10-2021). Earlier Form 25D
+ 898.      was added by Notification No. 1-23/67-D (S.O. 642), dated 2nd February, 1970 (w.e.f. 21-2-1970).
+           Subs. by G.S.R. 716(E), dated 1st October, 2021, for Form 25E (w.e.f. 4-10-2021). Earlier Form 25E
+ 899.      was added by G.S.R. 376(E) dated 20th July, 1978 (w.e.f. 20-7-1978).
+ 900.      Ins. By G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+ 901.      Subs. by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+ 902.      Subs. by G.S.R. 231(E), dated 4th June, 1996 (w.e.f. 4-6-1996).
+ 903.      Ins. by G.S.R. 923(E), dated 14th December, 1992 (w.e.f. 14-12-1992).
+           The words "and any certificate of renewal in force" omitted by G.S.R. 1337(E), dated 27th
+ 904.      October, 2017 (w.e.f. 27-10-2017).
+ 905.      Subs. by G.S.R. 231(E), dated 4th June, 1996 (w.e.f. 4-6-1996).
+ 906.      Subs. by G.S.R. 1337(E), dated 27th October, 2017 (w.e.f. 27-10-2017).
+           FORM 26 omitted by G.S.R. 1337(E), dated 27 th October, 2017 (w.e.f. 27-10-2017). Earlier FORM
+ 907.      26 was substituted by G.S.R. 462(E), dated 22 nd June, 1982 (w.e.f. 22-6-1982).
+           FORM 26A omitted by G.S.R 1337(E), dated 27th October, 2017 (w.e.f. 27-10-2017). Earlier FORM
+ 908.      26 was substituted by G.S.R 462(E), dated 22 nd June, 1982 (w.e.f. 22-6-1982).
+           FORM 26B omitted by G.S.R. 1337(E), dated 27 th October, 2017 (w.e.f. 27-10-2017). Earlier FORM
+ 909.      26B was substituted by Notification No. F. 1-22/59-D, dated 9th April, 1964.
+ 910.      Subs. By G.S.R. 370(E), dated 7th April, 1994 (w.e.f. 7-4-1994).
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 847 of 859
+ 911.      Added by Notification No. 1-23/67-D (S.O. 642(E)) dated 2nd February, 1970 (w.e.f. 21-2-1970).
+ 912.      Added by G.S.R. 376(E), dated 20th July, 1978 (w.e.f. 20-7-1978).
+ 913.      Added by G.S.R. 376(E), dated 20th July, 1978 (w.e.f. 20-7-1978).
+ 914.      Ins. By G.S.R. 198(E) dated 7th March, 2003 (w.e.f. 7-3-2003).
+ 915.      Subs. by G.S.R. 376(E), dated 3rd May, 2010, for "period of two years" (w.e.f. 4-5-2010).
+           Subs. by G.S.R. 716(E), dated 1st October, 202, for Form 26E2-I (w.e.f. 4-10-2021). Earlier Form
+ 916.      26E2-I was inserted by G.S.R. 153(E) dated 5 th March, 2014 (w.e.f. 5-3-2014).
+           Subs. by G.S.R. 716(E), dated 1st October, 202, for Form 26E2-II (w.e.f. 4-10-2021). Earlier Form
+ 917.      26E2-II was inserted by G.S.R. 153(E) dated 5 th March, 2014 (w.e.f. 5-3-2014).
+           Subs. by G.S.R. 716(E), dated 1st October, 202, for Form 26E3 (w.e.f. 4-10-2021). Earlier Form 26E3
+ 918.      was inserted by G.S.R. 153(E) dated 5th March, 2014 (w.e.f. 5-3-2014).
+ 919.      Ins. By G.S.R. 1230(E) dated 21st December, 2018 (w.e.f. 24-12-2018).
+ 920.      Ins. By G.S.R. 1230(E) dated 21st December, 2018 (w.e.f. 24-12-2018).
+           FORM 26F omitted by G.S.R. 1337(E), dated 27 th October, 2017 (w.e.f. 27-10-2017). Earlier FORM
+           26F was inserted by G.S.R. 462(E), dated 22 nd June, 1982 (w.e.f. 22-6-1982) and amended by G.S.R.
+           923(E), dated 14th December, 1992 (w.e.f. 14.12.1992), by G.S.R. 231(E), dated 4 th June, 1996 (w.e.f.
+ 921.      4-6-1996).
+           Subs. By G.S.R 245(E) dated 5th April, 1999, for Form 26G (w.e.f. 5-4-1999). Earlier Form 26G was
+ 922.      inserted by G.S.R. 28(E) dated 22nd January, 1993 (w.e.f. 22-1-1993).
+ 923.      Subs. by G.S.R. 166(E), dated 11th March, 2020, for "BLOOD BANK" (w.e.f. 11-3-2020).
+ 924.      Subs. by G.S.R. 166(E), dated 11th March, 2020, for "Blood Bank" (w.e.f. 11-3-2020).
+           FORM 26H omitted by G.S.R. 1337(E), dated 27 th October, 2017 (w.e.f. 27-10-2017).Earlier FORM
+           26H was inserted by G.S.R. 119(E) dated 11 th March , 1996 (w.e.f.11-3-1996) and corrected vide
+           corrigendum G.S.R. 513(E) dated 5th November, 1996 and by G.S.R. 26(E) dated 19 th January, 2006
+ 925.      (w.e.f. 19-1-2006).
+ 926.      Ins. By G.S.R 245(E) dated 5th April, 1999 (w.e.f. 5-4-1999).
+ 927.      Ins. by G.S.R. 899(E), dated 27th December, 2011 (w.e.f. 27-12-2011).
+           Form 26J omitted by G.S.R. 499(E), dated 17 th July, 2019 (w.e.f. 17-7-2019). Earlier Form 26J was
+ 928.      inserted by G.S.R. 574(E), dated 17th July, 2012 (w.e.f. 17-7-2012).
+           The words "OR RENEWAL" omitted by G.S.R. 1337(E), dated 27th October, 2017 (w.e.f. 27-10-
+ 929.      2017).
+ 930.      Subs. by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+ 931.      Ins. by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+ 932.      Ins. by G.S.R. 28(E), dated 22nd January, 1993 (w.e.f. 22-1-1993).
+ 933.      Subs. by G.S.R. 1337(E), dated 27 th October, 2017, for "grant/renewal" (w.e.f. 27-10-2017).
+ 934.      Ins. by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+           The words "OR RENEWAL" omitted by G.S.R. 1337(E), dated 27th October, 2017 (w.e.f. 27-10-
+ 935.      2017).
+ 936.      Subs. by G.S.R. 788(E), dated 10th October, 1985, for FORM 21C (w.e.f. 10-10-1985).
+ 937.      Subs. by G.S.R. 1337(E), dated 27 th October, 2017, for "grant/renewal" (w.e.f. 27-10-2017).
+           Subs. By G.S.R 245(E) dated 5th April, 1999, for Form 27C(w.e.f. 5-4-1999). Earlier Form 27C was
+ 938.      inserted by G.S.R. 28(E) dated 22nd January, 1993 (w.e.f. 22-1-1993)
+ 939.      Subs. by G.S.R. 166(E), dated 11th March, 2020, for "BLOOD BANK" (w.e.f. 11-3-2020).
+ 940.      Subs. by G.S.R. 166(E), dated 11th March, 2020, for "Blood Bank" (w.e.f. 11-3-2020).
+ 941.      Subs. by G.S.R. 166(E), dated 11th March, 2020, for "Blood Bank" (w.e.f. 11-3-2020).
+           Ins. by G.S.R. 119(E) dated 11th March, 1996 (w.e.f.11-3-1996) corrected vide corrigendum G.S.R.
+ 942.      513(E) dated 5th November, 1996
+           The words "OR RENEWAL" omitted by G.S.R. 1337(E), dated 27th October, 2017 (w.e.f. 27-10-
+ 943.      2017).
+ 944.      Subs. by G.S.R. 26(E) dated 19th January, 2006 (w.e.f. 19-1-2006).
+ 945.      Subs. by G.S.R. 1337(E), dated 27 th October, 2017, for "grant/renewal" (w.e.f. 27-10-2017).
+ 946.      Ins. by G.S.R. 574(E), dated 17th July, 2012 (w.e.f. 17-7-2012).
+           The words "OR RENEWAL" omitted by G.S.R. 1337(E), dated 27th October, 2017 (w.e.f. 27-10-
+ 947.      2017).
+ 948.      Subs. by G.S.R. 1337(E), dated 27 th October, 2017, for "grant/renewal" (w.e.f. 27-10-2017).
+ 949.      Ins. By G.S.R 245(E) dated 5th April, 1999 (w.e.f. 5-4-1999).
+ 950.      Ins. by G.S.R. 899(E), dated 27th December, 2011 (w.e.f. 27-12-2011).
+ 951.      Subs. by G.S.R. 788(E), dated 10th October, 1985 (w.e.f. 10-10-1985).
+ 952.      Ins. by G.S.R. 462(E), dated 22nd June, 1982 (w.e.f. 22-6-1982).
+ 953.      Subs. by G.S.R. 231(E), dated 4th June, 1996 (w.e.f. 4-6-1996).
+
+
+
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India   Page 848 of 859
+

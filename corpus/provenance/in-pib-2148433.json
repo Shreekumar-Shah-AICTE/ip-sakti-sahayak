@@ -1,0 +1,20 @@
+{
+  "id": "in-pib-2148433",
+  "title": "PIB release 2148433 — Government Strengthens Measures for Consumer Protection and Curb Unverified Claims by Ayush Product Manufacturers (25-07-2025)",
+  "instrument": "PIB release PRID 2148433",
+  "publisher": "Press Information Bureau, Government of India",
+  "jurisdiction": "IN",
+  "tier": 2,
+  "canonical_url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2148433",
+  "fetched_url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2148433",
+  "fetch_method": "official",
+  "fetched_on": "2026-09-27",
+  "sha256": "dfb1e1bae63b5e5e066aa654d385d92769dfb425d34c6a9bb5a0decb331d2519",
+  "bytes": 79653,
+  "raw_committed": true,
+  "pages": null,
+  "text_sha256": "efc6601dc41eaf8ca9bf73d16cce0ee9498a7011ee7281d08462fd4debbb5c36",
+  "effective_from": "2025-07-25",
+  "effective_to": null,
+  "version_note": "Corroboration only (SOURCES §3.1): a PIB release is not Status Ledger evidence. Predates the 11-08-2025 order."
+}

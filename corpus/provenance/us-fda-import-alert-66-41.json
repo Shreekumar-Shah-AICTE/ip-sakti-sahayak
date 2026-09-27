@@ -1,0 +1,20 @@
+{
+  "id": "us-fda-import-alert-66-41",
+  "title": "US FDA Import Alert 66-41 — Detention Without Physical Examination of Unapproved New Drugs Promoted in the U.S. (header and guidance text)",
+  "instrument": "FDA Import Alert 66-41",
+  "publisher": "US Food and Drug Administration",
+  "jurisdiction": "US",
+  "tier": 1,
+  "canonical_url": "https://www.accessdata.fda.gov/cms_ia/importalert_190.html",
+  "fetched_url": "https://www.accessdata.fda.gov/cms_ia/importalert_190.html",
+  "fetch_method": "official",
+  "fetched_on": "2026-09-27",
+  "sha256": "7d3eb4d73c4d4ae4d6b23d405201e024ce53f21eed5757a4a7d1d9d567e661a1",
+  "bytes": 6704211,
+  "raw_committed": false,
+  "pages": null,
+  "text_sha256": "c77114eb1d67dd1ff8406193fa88df27b4c84f0d2199d0b76e779549804d98e0",
+  "effective_from": null,
+  "effective_to": null,
+  "version_note": "Live page; the firm red list is excluded."
+}

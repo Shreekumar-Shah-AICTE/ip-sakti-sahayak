@@ -1,0 +1,20 @@
+{
+  "id": "in-csir-tkdl-about",
+  "title": "CSIR — About TKDL (scope and access)",
+  "instrument": "TKDL access description",
+  "publisher": "CSIR — Traditional Knowledge Digital Library Unit",
+  "jurisdiction": "IN",
+  "tier": 1,
+  "canonical_url": "https://www.tkdl.res.in/tkdl/langdefault/common/Abouttkdl.asp",
+  "fetched_url": "https://www.tkdl.res.in/tkdl/langdefault/common/Abouttkdl.asp",
+  "fetch_method": "official",
+  "fetched_on": "2026-09-27",
+  "sha256": "df35fdd77ae32cc6067e800d08bc7caa2bd70078080f8d11b9d02a740f701bbf",
+  "bytes": 8157,
+  "raw_committed": true,
+  "pages": null,
+  "text_sha256": "2918bd5ec10c59b80237ba4c7612aa41aa49a973a2f234dd8ecbac45e09441ab",
+  "effective_from": null,
+  "effective_to": null,
+  "version_note": "Pointer only. No TKDL database content is in The Library."
+}

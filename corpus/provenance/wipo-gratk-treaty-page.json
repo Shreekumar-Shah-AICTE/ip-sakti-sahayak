@@ -1,0 +1,20 @@
+{
+  "id": "wipo-gratk-treaty-page",
+  "title": "WIPO Treaty on Intellectual Property, Genetic Resources and Associated Traditional Knowledge (GRATK) — treaty page",
+  "instrument": "WIPO GRATK",
+  "publisher": "World Intellectual Property Organization",
+  "jurisdiction": "WIPO",
+  "tier": 1,
+  "canonical_url": "https://www.wipo.int/treaties/en/ip/gratk/",
+  "fetched_url": "https://www.wipo.int/treaties/en/ip/gratk/",
+  "fetch_method": "official",
+  "fetched_on": "2026-09-27",
+  "sha256": "f047748ef3b632f82f6ead1552ca7d173ed5a99f8f86414578800d72064558c7",
+  "bytes": 91104,
+  "raw_committed": true,
+  "pages": null,
+  "text_sha256": "9353c4728d79548c57ed3acb34daa2ab3c5c8e331b6cfc9da91c718f82f05765",
+  "effective_from": null,
+  "effective_to": null,
+  "version_note": "Treaty landing page. Signatory/ratification counts are NOT in this text; do not quote counts from it."
+}

@@ -1,0 +1,20 @@
+{
+  "id": "eu-directive-2004-24-ec",
+  "title": "Directive 2004/24/EC — traditional herbal medicinal products (amending Directive 2001/83/EC)",
+  "instrument": "Directive 2004/24/EC",
+  "publisher": "EUR-Lex, Publications Office of the European Union",
+  "jurisdiction": "EU",
+  "tier": 1,
+  "canonical_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32004L0024",
+  "fetched_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32004L0024",
+  "fetch_method": "official",
+  "fetched_on": "2026-09-27",
+  "sha256": "9f83bd245cce4c7e544dcd2688edda39fb8e98b2ff6fb0fcd6e6edaa8a862eb8",
+  "bytes": 26620,
+  "raw_committed": true,
+  "pages": null,
+  "text_sha256": "40775940b4a6022b4e8b1f68d10c2cc7b5a8405a2f18df130d5d2f9bb68d16c5",
+  "effective_from": null,
+  "effective_to": null,
+  "version_note": "Original act text as published in the OJ (not the consolidated 2001/83/EC)."
+}

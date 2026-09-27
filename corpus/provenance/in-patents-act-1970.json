@@ -1,0 +1,20 @@
+{
+  "id": "in-patents-act-1970",
+  "title": "The Patents Act, 1970 (incorporating all amendments till 01-08-2024)",
+  "instrument": "Patents Act, 1970",
+  "publisher": "Office of the Controller General of Patents, Designs and Trade Marks",
+  "jurisdiction": "IN",
+  "tier": 1,
+  "canonical_url": "https://ipindia.gov.in/frontend/pdf/patents/1_113_1_The_Patents_Act__1970___incorporating_all_amendments_till_1-08-2024.pdf",
+  "fetched_url": "https://ipindia.gov.in/frontend/pdf/patents/1_113_1_The_Patents_Act__1970___incorporating_all_amendments_till_1-08-2024.pdf",
+  "fetch_method": "official",
+  "fetched_on": "2026-09-27",
+  "sha256": "d57084888c69d70b16ed6a52a612363a526994203effa58880a26faaaa6e0678",
+  "bytes": 665996,
+  "raw_committed": true,
+  "pages": null,
+  "text_sha256": "b1cd0ad66dcc315a4ac1a1965004ebfe33bc4f1de00525ff4be08dd7391cda5c",
+  "effective_from": null,
+  "effective_to": null,
+  "version_note": "Consolidated to 01-08-2024."
+}

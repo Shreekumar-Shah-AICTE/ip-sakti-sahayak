@@ -1,0 +1,22 @@
+{
+  "id": "in-drugs-cosmetics-act-1940",
+  "title": "The Drugs and Cosmetics Act, 1940 incl. the First Schedule (authoritative books of Ayurveda, Siddha and Unani Tibb) — CDSCO 2016 compilation",
+  "instrument": "Drugs and Cosmetics Act, 1940",
+  "publisher": "Central Drugs Standard Control Organisation (CDSCO)",
+  "jurisdiction": "IN",
+  "tier": 1,
+  "canonical_url": "https://cdsco.gov.in/opencms/export/sites/CDSCO_WEB/Pdf-documents/acts_rules/2016DrugsandCosmeticsAct1940Rules1945.pdf",
+  "fetched_url": "https://cdsco.gov.in/opencms/export/sites/CDSCO_WEB/Pdf-documents/acts_rules/2016DrugsandCosmeticsAct1940Rules1945.pdf",
+  "fetch_method": "official",
+  "fetched_on": "2026-09-27",
+  "sha256": "62bc0d8fd5f9d0c6be90b2fb86f67f8ed5280ac719a038fbf9f26fc8aa5036bf",
+  "bytes": 8643659,
+  "raw_committed": false,
+  "pages": [
+    "1-37"
+  ],
+  "text_sha256": "02daedfd2a659abd73268c0fceb987b7375a5e16e18b90e4a74bf6fefbd0dd1e",
+  "effective_from": null,
+  "effective_to": null,
+  "version_note": "2016 compilation; later amendments to the Act are not reflected."
+}

@@ -1,0 +1,20 @@
+{
+  "id": "in-sc-wpc-645-2022-order-2025-08-11",
+  "title": "Supreme Court of India — W.P.(C) No. 645/2022, Indian Medical Association & Anr v. Union of India & Ors, with W.P.(C) No. 400/2025 — Order dated 11-08-2025",
+  "instrument": "Supreme Court order, W.P.(C) 645/2022 (11-08-2025)",
+  "publisher": "Supreme Court of India",
+  "jurisdiction": "IN",
+  "tier": 1,
+  "canonical_url": "https://api.sci.gov.in/supremecourt/2022/24832/24832_2022_5_42_63155_Order_11-Aug-2025.pdf",
+  "fetched_url": "https://api.sci.gov.in/supremecourt/2022/24832/24832_2022_5_42_63155_Order_11-Aug-2025.pdf",
+  "fetch_method": "official",
+  "fetched_on": "2026-09-27",
+  "sha256": "c47eb89e21a2e62834730c5f82cdcd5235cc9e856f8d6439ab4da2bd28778418",
+  "bytes": 125374,
+  "raw_committed": true,
+  "pages": null,
+  "text_sha256": "53feadd4fad982e31cdc74447c6266fb79be7df7918c5a205e441aca3007cd7a",
+  "effective_from": "2025-08-11",
+  "effective_to": null,
+  "version_note": "Quotes the order dated 27-08-2024 (stay of the 01-07-2024 omission of Rule 170) and, at para 9, vacates that interim order while disposing of the writ petition."
+}

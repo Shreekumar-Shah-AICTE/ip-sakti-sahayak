@@ -1,0 +1,34 @@
+Import Alert # 66-41
+Published Date: 09/25/2026
+Type: DWPE
+Import Alert Name:
+Detention Without Physical Examination of Unapproved New Drugs Promoted In The U.S.
+Reason for Alert:
+NOTE: The revision of this Import Alert, dated 05/19/2026, updates the guidance section, including Agency contacts. Changes to the import alert are bracketed by asterisks (***).
+Unapproved new drugs present public health and safety risks because they have not been reviewed by FDA for safety or effectiveness. Without FDA review, there is no way to know if these drugs are safe and effective for their intended use, whether they are manufactured in a way that ensures consistent drug quality, or whether their labels are complete and accurate. Unapproved new drugs have resulted in patient harm, and the agency works to protect patients from the risks posed by these drugs.
+In part, the Federal Food, Drug, and Cosmetic Act (FD&C Act) defines "drug" as (B) articles intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease in man or other animals; and (C) articles (other than food) intended to affect the structure or any function of the body of man or other animals; and (D) articles intended for use as a component of any article specified in clause (B) or (C).
+Under section 201 (p) of the FD&C Act, a drug is a new drug if it "is not generally recognized, among experts qualified by scientific training and experience to evaluate the safety and effectiveness of drugs, as safe and effective for use under the conditions prescribed, recommended, or suggested in the labeling thereof" (i.e., not GRAS/E). Further, under section 201(p) of the FD&C Act, a drug that is so recognized is still a new drug if it has not been used to a material extent or for a material time under such conditions.
+In general, "new drugs" may not be introduced or delivered for introduction into interstate commerce without an approved application from FDA in effect, as described in section 505(a) of the FD&C Act, 21 U.S.C. 355(a), unless they are nonprescription drugs governed by and lawfully marketed under section 505G of the FD&C Act.
+Guidance:
+*** Divisions may detain without physical examination (DWPE), the identified products from the firms on the Red List of this Import Alert. ***
+Divisions should follow the guidance in the Regulatory Procedures Manual (RPM) Chapter 9-2 for Personal Importation shipments. Commercial or promotional shipments, and products subject to DWPE are generally not amenable to the use of enforcement discretion.
+Recommendations for addition to DWPE of ***unapproved new drug products not listed on the Red List and currently under detention status should be routed to CDER/OC/ODSIR/DGDD/ICB for refusal and CDER concurrence for addition to import alert. Recommendations for addition to DWPE of unapproved new drug*** products not listed on the Red List that have been refused entry and CDER approved for addition to import alert should be routed to Division of Import Operations (DIO) for review.
+*** Recommendations for additions to DWPE of products that appear to be labeled as dietary supplements under Section 201(ff) or conventional foods under Section 201(f) (e.g., coffee, honey, water, etc.) with claims that appear to make the products unapproved new drugs may be supported by the Human Foods Program (HFP) without CDER review or concurrence. Recommendations for the addition to DWPE of products not listed on the Red List that have been refused entry and HFP approved for addition to import alert should be routed to Division of Import Operations (DIO) for review. ***
+*** Recommendations for additions to DWPE of products that appear to be cosmetics under Section 201(i) with claims that appear to make the products unapproved new drugs may be supported by the Office of the Chief Scientist (OCS) without CDER review or concurrence. Recommendations for the addition to DWPE of products not listed on the Red List that have been refused entry and OCS approved for addition to import alert should be routed to Division of Import Operations (DIO) for review. ***
+Release of Articles Subject to Detention without Physical Examination Under this Import Alert:
+In order to secure release of an individual shipment subject to detention without physical examination under this import alert, the owner, consignee and/or another responsible party for the affected goods should provide evidence that the shipment does not contain unapproved new drug products.
+Removal from Detention Without Physical Examination (REMOVE FROM RED LIST):
+*** In order to remove a firm's product from the Red List, information should be provided to the Agency to adequately demonstrate that the firm has resolved the condition(s) that gave rise to the appearance of a violation. The purpose of this is so that the Agency will have confidence that future entries will be in compliance with the FD&C Act. For guidance on removal from detention without physical examination, refer to FDA's Regulatory Procedures Manual, Chapter 9-8, "Detention Without Physical Examination (DWPE).
+If a firm and/or a representative thereof would like to petition for removal from detention without physical examination under this Import Alert, all relevant information supporting the request should be sent via email to: Importalerts2@fda.hhs.gov.
+When applicable, OIO/DIO should consult with the responsible recommending office regarding the petition to remove a firm or product from DWPE under this Import Alert.
+Questions or issues involving import operations or the submissions of petitions for removal from DWPE should be addressed to OII/DIO (301) 796-0356 or Imports@fda.hhs.gov. ***
+Questions or issues involving compliance of imported drug products should be addressed to the CDER Imports Compliance Branch at CDERImports@fda.hhs.gov.
+*** Questions or issues involving compliance of products labeled as dietary supplements or conventional foods, should be addressed to the Human Foods Program Imports Enforcement Branch at HFP-OCE-Imports@fda.hhs.gov.
+Questions or issues involving compliance of cosmetics should be addressed to Imports@fda.hhs.gov to consult the Office of the Chief Scientist.***
+Product Description:
+Unapproved new drugs
+Charge:
+The article is subject to refusal of admission pursuant to section 801(a)(3) in that it appears to be a new drug within the meaning of Section 201(p) without an approved New Drug Application (NDA).
+[Unapproved New Drug, Section 505(a)]
+OASIS charge code: UNAPPROVED
+List of firms

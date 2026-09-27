@@ -1,5 +1,5 @@
 PY ?= python3
-.PHONY: install check lint test eval web run
+.PHONY: install check lint test eval web run corpus corpus-offline
 
 install:
 	$(PY) -m pip install -q -r requirements-dev.txt
@@ -22,3 +22,10 @@ web:
 
 run:
 	./run.sh
+
+# The Library: fetch + extract + chunk (needs network) / rebuild from local raw files.
+corpus:
+	$(PY) corpus/fetch.py && $(PY) corpus/chunk.py
+
+corpus-offline:
+	$(PY) corpus/fetch.py --offline && $(PY) corpus/chunk.py

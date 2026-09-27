@@ -14,3 +14,6 @@ web/dist/
 # Logs and local state
 *.log
 *.sqlite
+
+# The Library: large raw source files are re-fetched and sha256-verified, not committed
+corpus/cache/
