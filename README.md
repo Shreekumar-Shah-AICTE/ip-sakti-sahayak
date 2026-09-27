@@ -22,11 +22,12 @@ answers on both.
 |---|---|---|
 | The Two Switches | Jurisdiction + as-of date, applied as hard filters | working |
 | The Status Ledger | Dated legal-status timeline; every entry cites a gazette notification or court order | working (Rule 170 only) |
-| The Library | Full-text primary instruments with provenance and a corpus-version hash | working (19 documents) |
+| The Library | Full-text primary instruments with provenance and a corpus-version hash | working (20 documents) |
 | The Retriever | BM25 + optional multilingual dense (MiniLM-L12, precomputed in `corpus/index/`), fused by RRF k=60; filters applied before ranking; falls back to BM25 when the dense index or model is absent | working |
 | The Answer Contract | Verbatim quotes, citations, status-as-of, abstention | working |
 | The Passport Compiler | Per-product compliance passport (classical / proprietary / phytopharmaceutical, printable, compiled as of the date; judgment calls shown as risk indicators) + ABS benefit-share calculator. Rules in `rules/*.yaml`; every rule's quote is checked verbatim against The Library at load | working (v0) |
-| The Proving Ground | Benchmark vs a vanilla-RAG baseline | working — internal dev set only, not externally validated |
+| The Proving Ground | Benchmark vs a vanilla-RAG baseline (also served at `POST /baseline` for the side-by-side demo) | working — internal dev set only, not externally validated |
+| The Audit Trail | Hash-chained JSONL of every answer's decision — query hashes, never query text (§5) | working |
 
 ## 3. Run it
 
@@ -50,11 +51,37 @@ make install
 make check        # ruff + pytest + eval gate + web build
 ```
 
-## 5. Limits
+## 5. Privacy and the audit trail
+
+Data minimisation, stated as what the tests actually prove (`tests/test_audit.py`):
+
+- **Your question text is never stored.** Every answered `/ask` appends one JSONL row to
+  `var/audit.jsonl` holding a salted SHA-256 of the question plus the decision: jurisdiction,
+  as-of date, retrieval mode, the chunk ids served, abstain/confidence, and the ledger status.
+  A test asserts that no word of the question appears in the file and that no undeclared field
+  is written. Set `SAHAYAK_AUDIT_SALT` to keep hashes comparable across restarts; unset, a
+  fresh random salt is used per process.
+- **The trail is tamper-evident.** Rows are hash-chained (`prev` → `row_hash`).
+  `GET /audit/verify` walks the chain and returns only the verdict. Editing or deleting a past
+  row is detected.
+- **`SAHAYAK_AUDIT=off`** disables logging entirely. An unwritable audit path is ignored rather
+  than failing the answer.
+- **Keyless mode sends nothing anywhere.** Enabling an LLM or translation adapter sends your
+  question text to that provider; the UI says so as soon as an adapter is detected.
+- Purpose limitation: this data exists to let a decision be reproduced and challenged. It is
+  not shared with third parties.
+
+Threat model we design against: **prompt injection from corpus text** — corpus content is
+never executed, and the optional LLM may only rephrase quotes already retrieved and cited;
+**source spoofing** — every quote carries a chunk id, source URL and the corpus hash;
+**stale law shown as current** — the ledger carries `last_verified` and the UI shows a
+staleness warning.
+
+## 6. Limits
 
 IP-SAKTI Sahayak gives guidance with sources and routes you to a qualified professional.
 It is not legal advice. Where it lacks dated evidence, it abstains and says why.
 
-## 6. Licence
+## 7. Licence
 
 MIT — see `LICENSE`.

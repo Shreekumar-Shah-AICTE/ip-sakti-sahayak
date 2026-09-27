@@ -301,6 +301,9 @@ export default function App() {
   const [busy, setBusy] = useState(false);
   const [warming, setWarming] = useState(false);
   const [health, setHealth] = useState<string>("checking…");
+  // DPDP data minimisation (S7 rule 6): say plainly where the question goes, and change the
+  // wording the moment an AI adapter is enabled.
+  const [sendsText, setSendsText] = useState(false);
   const [compare, setCompare] = useState(false);
   const [baseline, setBaseline] = useState<Baseline | null>(null);
   const currentRef = useRef<Answer | null>(null);
@@ -309,9 +312,10 @@ export default function App() {
   useEffect(() => {
     fetch("/health")
       .then((r) => r.json())
-      .then((b) =>
-        setHealth(`${b.status} · ${b.mode}${b.retrieval ? ` · ${b.retrieval.mode}` : ""}`),
-      )
+      .then((b) => {
+        setHealth(`${b.status} · ${b.mode}${b.retrieval ? ` · ${b.retrieval.mode}` : ""}`);
+        setSendsText(b.mode === "adapters");
+      })
       .catch(() => setHealth("offline"));
   }, []);
 
@@ -503,7 +507,10 @@ export default function App() {
         </div>
         <AbsPanel asOf={asOf} t={t} />
         <PassportPanel asOf={asOf} t={t} />
-        <p className="mt-6 text-xs text-stone-500">
+        <p data-testid="privacy" className="mt-6 text-xs text-stone-600">
+          {sendsText ? t.privacyAdapters : t.privacyKeyless}
+        </p>
+        <p className="mt-2 text-xs text-stone-500">
           {t.disclaimer} · API: {health}
           {current && <> · corpus {current.corpus_version.slice(0, 19)}…</>}
         </p>

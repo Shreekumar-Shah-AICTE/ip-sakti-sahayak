@@ -15,7 +15,7 @@ from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from api import ledger
+from api import audit, ledger
 from api.answer import answer, best_span
 from api.baseline import retrieve as static_retrieve
 from api.passport import abs as abs_calc
@@ -96,6 +96,8 @@ def ask(req: AskRequest):
     out = answer(req.question, req.jurisdiction, req.as_of).to_dict()
     # Optional LLM layer (M7): organises the cited quotes; never replaces them.
     out["synthesis"] = synthesize(out, req.question)
+    # The audit trail: decisions and chunk ids, never the query text (KERNEL §7.6).
+    audit.record(req.question, out)
     return out
 
 
@@ -114,6 +116,13 @@ def baseline(req: BaselineRequest) -> dict:
         {"text": best_span(c["text"], terms), "chunk_id": c["chunk_id"],
          "doc_title": c["doc_title"], "section": c["section"], "source_url": c["source_url"]}
         for c in static_retrieve(req.question, req.jurisdiction)]}
+
+
+@app.get("/audit/verify")
+def audit_verify() -> dict:
+    """Is the audit chain intact? No row contents are returned — only the verdict."""
+    intact, rows, reason = audit.verify()
+    return {"enabled": audit.enabled(), "intact": intact, "rows": rows, "reason": reason}
 
 
 @app.get("/ledger/{instrument}")
