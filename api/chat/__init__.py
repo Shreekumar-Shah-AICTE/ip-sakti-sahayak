@@ -303,6 +303,7 @@ ABS = re.compile(
 )
 PASSPORT = re.compile(
     r"passport|checklist|check list|what rules apply|obligations|compliance (for|of)|"
+    r"need an? (manufactur\w* )?licen[cs]e|licen[cs]e (for|to make|to manufacture)|"
     r"पासपोर्ट|चेकलिस्ट|પાસપોર્ટ",
     re.I,
 )

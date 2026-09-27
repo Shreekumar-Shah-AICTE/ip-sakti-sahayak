@@ -177,6 +177,13 @@ def test_passport_asks_for_a_category_then_compiles_it():
     assert result["category"] == "classical" and result["rules"]
 
 
+def test_licence_question_reaches_the_passport_compiler():
+    # Autopilot beat 10 asks this exact sentence; it used to fall through to /ask and abstain.
+    out = chat.reply("Do I need a licence for a classical formulation?")
+    result = next(b for b in out["blocks"] if b["type"] == "passport")["result"]
+    assert result["category"] == "classical" and result["rules"]
+
+
 def test_the_library_can_be_listed_from_chat():
     out = chat.reply("what documents do you have?")
     docs = next(b for b in out["blocks"] if b["type"] == "library")["docs"]
