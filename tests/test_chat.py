@@ -197,6 +197,8 @@ def test_compare_needs_a_question_first_then_shows_both_answers():
     out = chat.reply("compare", as_of=JUN30, context=first["context"])
     block = next(b for b in out["blocks"] if b["type"] == "compare")
     assert block["ours"]["as_of"] == "2024-06-30"
+    # The static card printed empty quotes because it read `quote` while we sent `text`.
+    assert block["baseline"] and all(b["quote"] for b in block["baseline"])
 
 
 def test_hindi_and_gujarati_reach_the_same_ledger():

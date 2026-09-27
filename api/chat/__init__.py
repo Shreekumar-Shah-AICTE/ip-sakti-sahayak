@@ -660,7 +660,9 @@ def _compare(q: str, jur: str, day: dt.date, lang: str, ctx: dict, tr: Trace) ->
     terms = list(dict.fromkeys(tokenize(q)))
     base = [
         {
-            "text": best_span(c["text"], terms),
+            # The chat card renders `quote` (the Cite shape); `text` kept for API callers.
+            "quote": (span := best_span(c["text"], terms)),
+            "text": span,
             "chunk_id": c["chunk_id"],
             "doc_title": c["doc_title"],
             "section": c["section"],
