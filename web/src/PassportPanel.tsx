@@ -54,14 +54,14 @@ export function PassportPanel({ asOf, t }: { asOf: string; t: Record<string, str
   }
 
   return (
-    <section className="mt-8 rounded border border-stone-300 p-4">
-      <h2 className="font-semibold">{t.passportTitle}</h2>
+    <section className="mt-2 p-2">
+      <h2 className="text-xs font-semibold uppercase tracking-wide text-slate-500">{t.passportTitle}</h2>
       <form className="no-print mt-2 flex flex-wrap items-end gap-3" onSubmit={onSubmit}>
         <label className="text-sm">
           {t.passportCategory}
           <select
             data-testid="passport-category"
-            className="ml-2 rounded border px-2 py-1"
+            className="ml-2 rounded-lg border border-slate-300 px-2 py-1.5"
             value={cat}
             onChange={(e) => setCat(e.target.value as (typeof CATS)[number])}
           >
@@ -72,7 +72,7 @@ export function PassportPanel({ asOf, t }: { asOf: string; t: Record<string, str
             ))}
           </select>
         </label>
-        <button data-testid="passport-compile" className="rounded bg-stone-800 px-3 py-1 text-white">
+        <button data-testid="passport-compile" className="rounded-lg bg-indigo-700 px-4 py-1.5 font-semibold text-white hover:bg-indigo-800">
           {t.passportCompile}
         </button>
         {p && !p.abstain && (

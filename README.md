@@ -44,6 +44,11 @@ Rule 170's status changed, next to a static-RAG baseline on the same corpus — 
 [`docs/demo-script.md`](docs/demo-script.md). It runs keyless and offline, and
 `tests/test_demo_script.py` asserts every outcome it claims.
 
+**New to the domain?** Open http://localhost:8000 and click **🧭 Guided demo**: a ten-step
+coach that performs each beat with one click, says what should appear, and why it matters.
+Every legal, Ayurveda and AI term carries a **?** with a plain-English explanation, each answer
+has an *In plain words* box, and **📖 Glossary** lists every term.
+
 ## 4. Develop
 
 ```sh

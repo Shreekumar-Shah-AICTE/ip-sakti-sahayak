@@ -16,6 +16,11 @@ set, the only visible difference is the AI-organised synthesis card above the qu
 quotes, the status line and the abstention behaviour are identical. Open the app, leave the
 jurisdiction on **IN**, and use the **Demo** chip bar under the question box.
 
+**Easiest path for a first-time presenter:** click **🧭 Guided demo** (top right). It performs
+each beat below with one click (**▶ Do it**), says what should appear on screen, and gives the
+line to say. Every legal or Ayurveda word with a small **?** opens a plain-English explanation,
+and **📖 Glossary** lists them all.
+
 ## The beats
 
 **0:00 — One question.** Click the **Diabetes advertisement** chip:
@@ -61,7 +66,8 @@ law. Abstention is a feature, and it is a designed screen, not an error.*
 - **Hindi** — click the **हिन्दी** chip (the same advertising question in Hindi). It routes to
   the same ledger entry and the same evidence; the interface labels change, the legal quotes
   stay verbatim in their original language. With a microphone, use the 🎤 button instead and
-  speak it — speech recognition runs in the browser, so no audio leaves the machine.
+  speak it. Note: Chrome's speech recognition sends the audio to Google's speech service, so
+  say so if asked — typing keeps everything on the machine.
 - **ABS calculator** — set the date to `2026-09-27` and open the benefit-share panel. It applies
   the Biological Diversity Regulations, 2025 slabs and abstains for dates before their
   commencement, the same way the ledger does.

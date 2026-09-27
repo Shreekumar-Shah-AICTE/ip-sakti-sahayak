@@ -285,7 +285,7 @@ def test_tab_reaches_switch_question_ask_and_first_source(base_url):
         expect(page.get_by_test_id("answer").locator("blockquote").first).to_be_visible()
         page.locator("h1").click()  # sets the sequential-focus start point to the top
         order = []
-        for _ in range(40):
+        for _ in range(60):  # run 13: glossary "?" buttons add tab stops
             page.keyboard.press("Tab")
             tag = page.evaluate(
                 "(() => { const e = document.activeElement;"
@@ -404,4 +404,51 @@ def test_hindi_advertisement_question_reaches_the_ledger(base_url):
         answer = page.get_by_test_id("answer")
         expect(answer.get_by_test_id("status-line")).to_contain_text("न्यायालय में विचाराधीन")
         expect(answer.get_by_test_id("timeline-active")).to_be_visible()
+        browser.close()
+
+
+def test_guided_demo_walks_a_newcomer_through_the_script(base_url):
+    """Run 13: the guided demo performs each scripted beat for a lay presenter."""
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = browser.new_page()
+        page.goto(base_url)
+        page.get_by_test_id("tour-open").click()
+        tour = page.get_by_test_id("tour")
+        expect(tour).to_contain_text("step 1 of 10")
+        page.get_by_test_id("tour-do").click()
+        answer = page.get_by_test_id("answer")
+        expect(answer.get_by_test_id("status-line")).to_contain_text("In force")
+        expect(answer.get_by_test_id("plain")).to_contain_text("applied")
+        page.get_by_test_id("tour-next").click()
+        page.get_by_test_id("tour-do").click()
+        expect(answer.get_by_test_id("status-line")).to_contain_text("Omitted")
+        expect(page.get_by_test_id("changed")).to_contain_text("Omitted")
+        for _ in range(3):
+            page.get_by_test_id("tour-next").click()
+        page.get_by_test_id("tour-do").click()  # step 5: compare with static RAG
+        expect(page.get_by_test_id("compare")).to_be_checked()
+        expect(page.get_by_test_id("baseline")).to_be_visible()
+        page.get_by_test_id("tour-next").click()
+        page.get_by_test_id("tour-next").click()
+        page.get_by_test_id("tour-do").click()  # step 7: deliberate abstention
+        expect(answer.get_by_test_id("abstain")).to_be_visible()
+        expect(answer.get_by_test_id("plain")).to_contain_text("refuses to guess")
+        browser.close()
+
+
+def test_glossary_explains_terms_in_plain_words(base_url):
+    with sync_playwright() as p:
+        browser = _browser(p)
+        page = browser.new_page()
+        page.goto(base_url)
+        page.get_by_test_id("term-asOf").click()
+        expect(page.get_by_role("note")).to_contain_text("The date your question is about")
+        page.keyboard.press("Escape")
+        expect(page.get_by_role("note")).to_have_count(0)
+        page.get_by_test_id("glossary-open").click()
+        g = page.get_by_test_id("glossary")
+        expect(g).to_contain_text("Sub judice")
+        page.get_by_label("Search the glossary").fill("abstain")
+        expect(g.locator("dt")).to_have_count(1)
         browser.close()

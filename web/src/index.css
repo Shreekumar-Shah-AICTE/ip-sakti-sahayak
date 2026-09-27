@@ -13,3 +13,23 @@
   [data-print-root] { position: absolute; inset: 0 auto auto 0; width: 100%; }
   .no-print { display: none !important; }
 }
+
+/* Run 13 look: a deep indigo → emerald hero, soft motion. Offline: no web fonts. */
+body { font-family: ui-sans-serif, system-ui, "Segoe UI", "Noto Sans", "Noto Sans Devanagari", "Noto Sans Gujarati", Roboto, Arial, sans-serif; }
+.hero {
+  background:
+    radial-gradient(60rem 30rem at 85% -10%, rgba(251, 191, 36, 0.28), transparent 60%),
+    radial-gradient(50rem 30rem at 0% 110%, rgba(16, 185, 129, 0.45), transparent 60%),
+    linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #065f46 100%);
+}
+.hero::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.12;
+  background-image: radial-gradient(circle at 1px 1px, #fff 1px, transparent 0); background-size: 22px 22px;
+}
+@keyframes fade-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes pop { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: none; } }
+@keyframes slide-in { from { transform: translateX(100%); } to { transform: none; } }
+.fade-in { animation: fade-in 0.35s ease-out; }
+.pop { animation: pop 0.18s ease-out; }
+.slide-in { animation: slide-in 0.25s ease-out; }
+@media (prefers-reduced-motion: reduce) { .fade-in, .pop, .slide-in { animation: none; } }

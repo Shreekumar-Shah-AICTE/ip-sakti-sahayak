@@ -52,20 +52,20 @@ export function AbsPanel({ asOf, t }: { asOf: string; t: Record<string, string> 
   }
 
   return (
-    <section data-testid="abs-panel" className="mt-8 rounded border border-stone-200 bg-white p-4">
-      <h2 className="text-sm font-semibold">{t.absTitle}</h2>
+    <section data-testid="abs-panel" className="mt-2 p-2">
+      <h2 className="text-xs font-semibold uppercase tracking-wide text-slate-500">{t.absTitle}</h2>
       <form onSubmit={onSubmit} className="mt-2 flex flex-wrap items-end gap-3 text-sm">
         <label className="flex flex-col">
           {t.absTurnover}
           <input data-testid="abs-turnover" type="number" min="0" step="any" value={turnover}
             onChange={(e) => setTurnover(e.target.value)}
-            className="mt-1 w-40 rounded border border-stone-300 px-2 py-1" />
+            className="mt-1 w-40 rounded-lg border border-slate-300 px-2 py-1.5" />
         </label>
         <label className="flex flex-col">
           {t.absSales}
           <input data-testid="abs-sales" type="number" min="0" step="any" value={sales}
             onChange={(e) => setSales(e.target.value)}
-            className="mt-1 w-40 rounded border border-stone-300 px-2 py-1" />
+            className="mt-1 w-40 rounded-lg border border-slate-300 px-2 py-1.5" />
         </label>
         <label className="flex items-center gap-1">
           <input data-testid="abs-high-value" type="checkbox" checked={highValue}
@@ -73,7 +73,7 @@ export function AbsPanel({ asOf, t }: { asOf: string; t: Record<string, string> 
           {t.absHighValue}
         </label>
         <button data-testid="abs-compute" type="submit"
-          className="rounded bg-stone-900 px-3 py-1 text-white focus:outline-2 focus:outline-offset-2">
+          className="rounded-lg bg-emerald-700 px-4 py-1.5 font-semibold text-white hover:bg-emerald-800 focus:outline-2 focus:outline-offset-2">
           {t.absCompute}
         </button>
       </form>
