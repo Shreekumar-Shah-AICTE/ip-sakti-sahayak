@@ -217,8 +217,11 @@ def test_hybrid_replay_is_stable_from_the_first_ask(hybrid_replay_url):
         seen = []
         for _ in range(2):
             answer = _ask(page, hybrid_replay_url, "Is Rule 170 in force?")
-            card = answer.get_by_test_id("synthesis")
-            expect(card).to_contain_text("replay")
+            # The recorded Groq synthesis leans on a quoted Amicus submission ("still in
+            # force"); The Status Ledger says omitted, so the contract withholds it (D-020).
+            withheld = answer.get_by_test_id("synthesis-withheld")
+            expect(withheld).to_contain_text("Status Ledger")
+            expect(answer.get_by_test_id("synthesis")).to_have_count(0)
             expect(answer.get_by_test_id("status-line")).to_contain_text("stay vacated")
             seen.append(answer.locator("blockquote").all_inner_texts())
         assert seen[0] and seen[0] == seen[1]

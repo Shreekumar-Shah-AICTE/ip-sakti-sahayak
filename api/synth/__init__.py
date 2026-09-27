@@ -11,7 +11,12 @@ if it passes `check()`:
 3. every sentence is *grounded*: at least MIN_GROUNDING of its content words occur in the
    quotes it cites. A sentence with no checkable English words (e.g. a Hindi paraphrase of
    English quotes) is rejected -- it cannot be verified, so it does not ship;
-4. no "replace your lawyer" style claims (FTC/DoNotPay; KERNEL 7.4).
+4. no "replace your lawyer" style claims (FTC/DoNotPay; KERNEL 7.4);
+5. no sentence contradicts The Status Ledger: when the status line says the instrument is
+   omitted, a sentence may not say it is "in force" (and vice versa). Added run 12 after the
+   MIN_GROUNDING sweep (DECISIONS D-020) found a fully grounded sentence -- a quoted Amicus
+   submission that "the said Rule is still in force" -- replayed at an as-of date on which the
+   ledger says the rule is omitted. Lexical grounding cannot see that; polarity can.
 
 Known limit: these are lexical proxies. A sentence can reuse the quotes' words and still
 misstate them; that is why synthesis is off by default and always rendered beside the quotes.
@@ -42,6 +47,23 @@ REPLAY_DIR = Path(__file__).resolve().parent / "replay"
 TIMEOUT_S = 20
 MAX_CHARS = 1500
 MIN_GROUNDING = 0.5  # share of a sentence's content words found in its cited quotes
+# confirmed by eval/sweep_min_grounding.py (DECISIONS D-020); pinned in tests/test_synth.py
+
+_STATUS = re.compile(r"Status as of [0-9-]+:\s*([a-z_]+)")
+_IN_FORCE = re.compile(r"\bin\s+force\b", re.I)
+_NEGATED = re.compile(r"\b(not|no longer|never|ceased|isn't|is not)\b[^.;]*\bin\s+force\b"
+                      r"|\bno\s+longer\b", re.I)
+
+
+def ledger_conflict(sentence: str, status_line: str | None) -> bool:
+    """True if the sentence asserts the opposite of the ledger's in-force status."""
+    m = _STATUS.search(status_line or "")
+    if not m or not _IN_FORCE.search(sentence):
+        return False
+    ledger_in_force = m.group(1).startswith("in_force")
+    if not ledger_in_force and not m.group(1).startswith("omitted"):
+        return False
+    return ledger_in_force == bool(_NEGATED.search(sentence))
 
 # provider -> (key env var, default model)
 PROVIDERS = {
@@ -90,8 +112,10 @@ def _sentences(text: str) -> list[str]:
     return [s for s in re.split(r"(?<=[.!?।])\s+", text.strip()) if s.strip()]
 
 
-def check(text: str, quotes: list[dict], status_line: str | None = None) -> str | None:
+def check(text: str, quotes: list[dict], status_line: str | None = None,
+          min_grounding: float | None = None) -> str | None:
     """None if the synthesis honours the contract, else the reason it is rejected."""
+    floor = MIN_GROUNDING if min_grounding is None else min_grounding
     if not text or not text.strip():
         return "empty"
     if text.strip() == "INSUFFICIENT":
@@ -113,8 +137,10 @@ def check(text: str, quotes: list[dict], status_line: str | None = None) -> str 
             return f"sentence cannot be checked against the quotes: {s[:60]!r}"
         cited = set(tokenize(" ".join(src[m - 1] for m in marks) + " " + (status_line or "")))
         share = len(words & cited) / len(words)
-        if share < MIN_GROUNDING:
+        if share < floor:
             return f"sentence not grounded in its cited quotes ({share:.2f}): {s[:60]!r}"
+        if ledger_conflict(s, status_line):
+            return f"sentence contradicts The Status Ledger: {s[:60]!r}"
     body = re.sub(r"\[\d+\]", " ", text)
     pool = " ".join(src) + " " + (status_line or "")
     have = {x.lstrip("0") or "0" for x in re.findall(r"\d+", pool)}

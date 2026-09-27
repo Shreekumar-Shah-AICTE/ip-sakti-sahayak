@@ -114,3 +114,39 @@ def test_committed_replay_fixtures_hold_no_secrets():
         assert set(rec) == {"provider", "model", "prompt", "text"}
         assert p.stem == synth.cache_key(rec["provider"], rec["model"], rec["prompt"])
         assert not any(s in p.read_text(encoding="utf-8") for s in ("gsk_", "AQ.", "sk_", "Bearer"))
+
+
+# ---- run 12: MIN_GROUNDING sweep + Status Ledger polarity (DECISIONS D-020) ----
+
+def test_min_grounding_is_pinned_at_the_swept_value():
+    assert synth.MIN_GROUNDING == 0.5
+
+
+def test_sweep_never_accepts_a_contract_violating_recording():
+    import importlib.util
+    from pathlib import Path
+
+    path = Path(__file__).resolve().parent.parent / "eval" / "sweep_min_grounding.py"
+    spec = importlib.util.spec_from_file_location("sweep_min_grounding", path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    rows = mod.load()
+    assert rows, "no committed synthesis recordings"
+    for row in mod.sweep(rows):
+        assert row["violating_accepted"] == 0, row
+    by_t = {r["t"]: r for r in mod.sweep(rows)}
+    assert by_t[0.5]["accepted"] == by_t[0.0]["accepted"]  # 0.0-0.5 is one band today
+
+
+def test_synthesis_may_not_contradict_the_status_ledger():
+    q = [{"text": "the said Rule is still in force and compliances have been made",
+          "doc_title": "SC order", "section": "9"}]
+    omitted = "Status as of 2026-09-01: omitted_stay_vacated"
+    stayed = "Status as of 2024-09-15: in_force_stayed_omission (sub judice)"
+    why = synth.check("The said Rule is still in force [1].", q, omitted)
+    assert why and "Status Ledger" in why
+    assert synth.check("The said Rule is still in force [1].", q, stayed) is None
+    assert synth.ledger_conflict("It is no longer in force [1].", stayed)
+    assert not synth.ledger_conflict("It is no longer in force [1].", omitted)
+    assert not synth.ledger_conflict("Rule 170 is not in force [1].", omitted)
+    assert not synth.ledger_conflict("The Rule is in force [1].", None)
