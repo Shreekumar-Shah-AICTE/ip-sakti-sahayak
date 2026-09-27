@@ -37,10 +37,12 @@ import hashlib
 import json
 import os
 import re
+import urllib.error
 import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
 
+from api import config
 from api.retriever import tokenize
 
 REPLAY_DIR = Path(__file__).resolve().parent / "replay"
@@ -67,7 +69,7 @@ def ledger_conflict(sentence: str, status_line: str | None) -> bool:
 
 # provider -> (key env var, default model)
 PROVIDERS = {
-    "gemini": ("GEMINI_API_KEY", "gemini-3.8-flash"),
+    "gemini": ("GEMINI_API_KEY", "gemini-flash-latest"),
     "groq": ("GROQ_API_KEY", "openai/gpt-oss-120b"),
     "sarvam": ("SARVAM_API_KEY", "sarvam-105b"),  # sarvam-m deprecated (run 10)
 }
@@ -158,15 +160,25 @@ def _post(url: str, headers: dict, payload: dict) -> dict:
         return json.loads(r.read())
 
 
+GEMINI_FALLBACK = "gemini-2.5-flash"
+
+
 def _call_live(provider: str, model: str, key: str, prompt: str) -> str:
     if provider == "gemini":
-        data = _post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
-            {"x-goog-api-key": key},
-            {"systemInstruction": {"parts": [{"text": SYSTEM}]},
-             "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-             "generationConfig": {"temperature": 0}})
-        return "".join(p.get("text", "") for p in data["candidates"][0]["content"]["parts"])
+        body = {"systemInstruction": {"parts": [{"text": SYSTEM}]},
+                "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+                "generationConfig": {"temperature": 0}}
+        for name in dict.fromkeys([model, GEMINI_FALLBACK]):
+            try:
+                data = _post(
+                    f"https://generativelanguage.googleapis.com/v1beta/models/{name}"
+                    ":generateContent", {"x-goog-api-key": key}, body)
+            except urllib.error.HTTPError as e:  # a retired model name, not a real failure
+                if e.code != 404:
+                    raise
+                continue
+            return "".join(p.get("text", "") for p in data["candidates"][0]["content"]["parts"])
+        raise RuntimeError("no usable Gemini model")
     url = {"groq": "https://api.groq.com/openai/v1/chat/completions",
            "sarvam": "https://api.sarvam.ai/v1/chat/completions"}[provider]
     headers = {"Authorization": f"Bearer {key}"}
@@ -186,7 +198,7 @@ def complete(provider: str, prompt: str, mode: str | None = None) -> tuple[str |
     """(text, source, error). Replay first; network only in record/live mode with a key."""
     key_var, model = PROVIDERS[provider]
     model = os.environ.get("SAHAYAK_LLM_MODEL", model)
-    mode = mode or os.environ.get("SAHAYAK_LLM_REPLAY", "replay")
+    mode = mode or config.replay_mode("SAHAYAK_LLM_REPLAY")
     path = REPLAY_DIR / f"{cache_key(provider, model, prompt)}.json"
     if mode != "live" and path.exists():
         return json.loads(path.read_text(encoding="utf-8"))["text"], "replay", ""
@@ -209,7 +221,7 @@ def complete(provider: str, prompt: str, mode: str | None = None) -> tuple[str |
 
 def synthesize(answer: dict, question: str, provider: str | None = None) -> dict | None:
     """Attach-able synthesis dict for an answered contract, or None when no provider is set."""
-    provider = (provider or os.environ.get("SAHAYAK_LLM", "none")).lower()
+    provider = (provider or config.llm_provider() or "none").lower()
     if provider in ("", "none") or answer.get("abstain"):
         return None
     if provider not in PROVIDERS:

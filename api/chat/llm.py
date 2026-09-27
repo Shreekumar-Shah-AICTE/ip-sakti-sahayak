@@ -20,6 +20,7 @@ import os
 import re
 from pathlib import Path
 
+from api import config
 from api.synth import _post
 
 REPLAY_DIR = Path(__file__).resolve().parent / "replay"
@@ -49,12 +50,15 @@ _LEGAL = re.compile(
 
 
 def provider() -> str | None:
+    """The provider for general Ayurveda chat, or "replay" to answer from the cache only."""
     p = os.environ.get("SAHAYAK_CHAT_LLM", "auto").lower()
     if p == "none":
         return None
+    if not config.online():  # offline is a hard floor, whatever keys happen to be around
+        return "replay"
     if p == "auto":
         return next((n for n, (k, _) in MODELS.items() if os.environ.get(k)), None) or "replay"
-    return p if p in MODELS else None
+    return p if p in MODELS and os.environ.get(MODELS[p][0]) else "replay"
 
 
 def build_prompt(question: str, history: list[dict], background: str | None) -> str:

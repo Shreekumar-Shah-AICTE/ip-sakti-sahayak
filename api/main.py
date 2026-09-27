@@ -15,7 +15,7 @@ from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from api import audit, chat, ledger
+from api import audit, chat, config, ledger
 from api.answer import answer, best_span
 from api.baseline import retrieve as static_retrieve
 from api.chat import llm as chat_llm
@@ -68,13 +68,19 @@ def adapter_status() -> dict[str, bool]:
 @app.get("/health")
 def health() -> dict:
     adapters = adapter_status()
+    # "mode" is what the visitor is promised on screen, so it follows what the app will
+    # actually do, not merely which keys happen to exist in the environment.
+    llm = config.llm_provider()
+    online = config.online() and bool(llm or config.mt_provider())
     return {
         "status": "ok",
         "version": VERSION,
-        "mode": "keyless" if not any(adapters.values()) else "adapters",
+        "mode": "adapters" if online else "keyless",
+        "online": config.online(),
         "adapters": adapters,
-        "llm": {"provider": os.environ.get("SAHAYAK_LLM", "none"),
-                "replay": os.environ.get("SAHAYAK_LLM_REPLAY", "replay")},
+        "llm": {"provider": llm or "none",
+                "replay": config.replay_mode("SAHAYAK_LLM_REPLAY")},
+        "translation": config.mt_provider() or "none",
         "chat_llm": chat_llm.provider() or "none",
         "ready": retriever_ready(),
         "retrieval": {"mode": default_index().mode, "dense": default_index().dense.reason},

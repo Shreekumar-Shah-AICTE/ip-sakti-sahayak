@@ -30,6 +30,7 @@ def _serve(extra_env: dict):
     assert (ROOT / "web" / "dist" / "index.html").exists(), "run `make web` first"
     port = _free_port()
     env = {k: v for k, v in os.environ.items() if not k.endswith("_API_KEY")}  # keyless
+    env["SAHAYAK_MODE"] = "offline"  # and .env on this machine must not re-add them
     env.update(extra_env)
     proc = subprocess.Popen(
         [sys.executable, "-m", "uvicorn", "api.main:app", "--port", str(port)],

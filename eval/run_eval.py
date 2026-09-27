@@ -14,10 +14,16 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import os
 import platform
 import statistics
 import subprocess
 import sys
+
+# The gates are a contract, so the runner is offline by construction: a key sitting in a
+# developer's .env must not be able to score a different number than CI did. Override
+# deliberately (SAHAYAK_MODE=online) when measuring a provider on purpose.
+os.environ.setdefault("SAHAYAK_MODE", "offline")
 import time
 from pathlib import Path
 
