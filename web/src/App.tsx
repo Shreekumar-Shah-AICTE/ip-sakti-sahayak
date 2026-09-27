@@ -188,7 +188,10 @@ function BaselineCard({ b, t }: { b: Baseline; t: Record<string, string> }) {
       </h2>
       <p className="mt-1 text-xs text-slate-700">{t.baselineNote}</p>
       {b.quotes.length === 0 ? (
-        <p className="mt-2 text-sm">{t.baselineEmpty}</p>
+        <div className="mt-2">
+          <p className="text-sm">{t.baselineEmpty}</p>
+          <p className="mt-1 text-xs text-slate-600">{t.baselineEmptyWhy}</p>
+        </div>
       ) : (
         <ol className="mt-3 space-y-3">
           {b.quotes.map((q) => (

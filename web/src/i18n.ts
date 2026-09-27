@@ -60,6 +60,7 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     baselineTitle: "Static RAG (no as-of date, no Status Ledger)",
     baselineNote: "Same corpus, same search. It cannot tell you which date you are asking about, and it never abstains.",
     baselineEmpty: "No passage matched.",
+    baselineEmptyWhy: "It has no translation layer (the Glossary), so a Hindi or Gujarati question usually finds nothing here.",
   },
   hi: {
     synthLabel: "नीचे दिए उद्धरणों से AI द्वारा व्यवस्थित — उनसे मिलान करें",
@@ -118,6 +119,7 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     baselineTitle: "साधारण RAG (न तिथि, न स्टेटस लेजर)",
     baselineNote: "वही संग्रह, वही खोज। यह नहीं बता सकता कि आप किस तिथि के बारे में पूंछ रहे हैं, और यह कभी उत्तर से नहीं बचता।",
     baselineEmpty: "कोई अंश नहीं मिला।",
+    baselineEmptyWhy: "इसमें अनुवाद की परत (शब्दावली) नहीं है, इसलिए हिंदी या गुजराती प्रश्न पर आमतौर पर कुछ नहीं मिलता।",
   },
   gu: {
     synthLabel: "નીચેનાં અવતરણોમાંથી AI દ્વારા ગોઠવેલું — તેમની સાથે ચકાસો",
@@ -176,6 +178,7 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     baselineTitle: "સાદા RAG (તારીખ નહિં, સ્ટેટસ લેજર નહિં)",
     baselineNote: "એજ સંગ્રહ, એજ શોધ. તે કહી શકતું નથી કે તમે ક્યા તારીખ વિષે પૂછો છો, અને તે કદી જવાબ ટાળતું નથી.",
     baselineEmpty: "કોઈ અંશ મળ્યો નહિં.",
+    baselineEmptyWhy: "તેમાં અનુવાદનું સ્તર (શબ્દાવલિ) નથી, તેથી હિન્દી કે ગુજરાતી પ્રશ્નમાં સામાન્ય રીતે કંઈ મળતું નથી.",
   },
 };
 
