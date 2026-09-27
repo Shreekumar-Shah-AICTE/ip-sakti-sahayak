@@ -19,6 +19,7 @@ from api.answer import answer
 from api.passport import abs as abs_calc
 from api.passport import categories as passport_cat
 from api.retriever import JURISDICTIONS, default_index
+from api.synth import synthesize
 
 VERSION = "0.0.1"
 ROOT = Path(__file__).resolve().parent.parent
@@ -56,6 +57,8 @@ def health() -> dict:
         "version": VERSION,
         "mode": "keyless" if not any(adapters.values()) else "adapters",
         "adapters": adapters,
+        "llm": {"provider": os.environ.get("SAHAYAK_LLM", "none"),
+                "replay": os.environ.get("SAHAYAK_LLM_REPLAY", "replay")},
         "retrieval": {"mode": default_index().mode, "dense": default_index().dense.reason},
     }
 
@@ -71,7 +74,10 @@ def ask(req: AskRequest) -> dict:
     """The Answer Contract. Query text is not logged or stored (KERNEL §7.6)."""
     if req.jurisdiction not in JURISDICTIONS:
         raise HTTPException(422, f"jurisdiction must be one of {sorted(JURISDICTIONS)}")
-    return answer(req.question, req.jurisdiction, req.as_of).to_dict()
+    out = answer(req.question, req.jurisdiction, req.as_of).to_dict()
+    # Optional LLM layer (M7): organises the cited quotes; never replaces them.
+    out["synthesis"] = synthesize(out, req.question)
+    return out
 
 
 @app.get("/ledger/{instrument}")
