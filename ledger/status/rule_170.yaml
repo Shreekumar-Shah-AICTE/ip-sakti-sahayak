@@ -1,0 +1,72 @@
+# The Status Ledger — Drugs Rules 1945, Rule 170 (advertisement of ASU drugs).
+# Every segment cites chunks in The Library (corpus/chunks.jsonl) with a verbatim quote.
+# The loader rejects any segment without evidence, and any quote not found in its chunk.
+#
+# Date notes (open conflict, tracked for primary gazettes):
+# - G.S.R. 1230(E) is "dated 21st December, 2018 (w.e.f. 24-12-2018)" per the 2022
+#   compilation footnote 757. The in-force segment starts on the w.e.f. date, 2018-12-24.
+#   A parliamentary answer gives 24-12-2018 as the notification date; the primary
+#   gazette has not been fetched yet.
+# - G.S.R. 360(E) is "dated 01.07.2024 (w.e.f. 01.07.2024)" per the 2024-09 compilation
+#   footnote 1345. One secondary source says 02-07-2024; it is not a Library source, so the
+#   compilation date stands until the primary gazette is fetched.
+instrument: "Drugs Rules, 1945 — Rule 170"
+instrument_id: in-drugs-rules-1945-rule-170
+jurisdiction: IN
+aliases: ["Rule 170", "rule 170", "ASU advertisement rule", "Drugs and Cosmetics Rules Rule 170"]
+last_verified: "2026-09-27"
+steward: "TBD"
+timeline:
+  - from: "2018-12-24"
+    to: "2024-06-30"
+    status: in_force
+    sub_judice: false
+    summary: "Rule 170 inserted by G.S.R. 1230(E) and in force."
+    evidence:
+      - type: compilation_footnote
+        ref: "G.S.R. 1230(E) dated 21-12-2018 (w.e.f. 24-12-2018) — footnote 757"
+        date: "2018-12-24"
+        chunk_id: "in-drugs-rules-1945-compiled-2022#0126"
+        quote: "757. Ins. by G.S.R. 1230(E), dated 21st December, 2018 (w.e.f. 24-12-2018)."
+  - from: "2024-07-01"
+    to: "2024-08-26"
+    status: omitted
+    sub_judice: false
+    summary: "Rule 170 omitted by G.S.R. 360(E)."
+    evidence:
+      - type: compilation_footnote
+        ref: "G.S.R. 360(E) dated 01-07-2024 (w.e.f. 01-07-2024) — footnote 1345"
+        date: "2024-07-01"
+        chunk_id: "in-drugs-rules-1945-compiled-2024-09#0016"
+        quote: "1345. Omitted by G.S.R 360(E) dated 01.07.2024 (w.e.f. 01.07.2024)."
+      - type: compilation_text
+        ref: "Drugs Rules 1945 as amended to G.S.R. 360(E): Rule 170 shown as [*****]"
+        date: "2024-07-01"
+        chunk_id: "in-drugs-rules-1945-compiled-2024-09#0006"
+        quote: "[170.] [*****]"
+  - from: "2024-08-27"
+    to: "2025-08-10"
+    status: in_force_stayed_omission
+    sub_judice: true
+    summary: >-
+      Supreme Court stayed the omission (W.P.(C) 645/2022, interim order 27-08-2024);
+      Rule 170 remains on the statute book and in force while the matter is pending.
+    evidence:
+      - type: court_order
+        ref: "W.P.(C) 645/2022 — interim order dated 27-08-2024, as quoted in the order of 11-08-2025"
+        date: "2024-08-27"
+        chunk_id: "in-sc-wpc-645-2022-order-2025-08-11#0019"
+        quote: "Rule 170 shall remain on the statute book and in force."
+  - from: "2025-08-11"
+    to: null
+    status: omitted_stay_vacated
+    sub_judice: false
+    summary: >-
+      Supreme Court disposed of the petition and vacated the 27-08-2024 interim order;
+      the omission operates. Liberty reserved to challenge the omission in fresh proceedings.
+    evidence:
+      - type: court_order
+        ref: "W.P.(C) 645/2022 — order dated 11-08-2025, para 9"
+        date: "2025-08-11"
+        chunk_id: "in-sc-wpc-645-2022-order-2025-08-11#0036"
+        quote: "interim order dated 27.08.2024 stands vacated."
