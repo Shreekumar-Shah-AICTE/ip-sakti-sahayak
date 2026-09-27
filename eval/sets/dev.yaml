@@ -338,3 +338,12 @@
   as_of: '2026-09-01'
   expect:
     doc: us-fda-ayurvedic-heavy-metals-warning
+# L10 (run 06): the 25-07-2025 FSSAI order is the instrument that actually issues the category A
+# list; the 2022 Regulations only say the Authority "may provide" one.
+- id: L10
+  set: L
+  question: Who provides the list of Ayurveda Aahara covered under category A?
+  jurisdiction: IN
+  as_of: '2026-09-01'
+  expect:
+    doc: in-fssai-ayurveda-aahara-order-2025-07-25

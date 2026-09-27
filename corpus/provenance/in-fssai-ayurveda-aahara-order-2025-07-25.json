@@ -1,0 +1,22 @@
+{
+  "id": "in-fssai-ayurveda-aahara-order-2025-07-25",
+  "title": "FSSAI Order dated 25-07-2025 — Ayurveda Aahara covered under category A of the FSS (Ayurveda Aahara) Regulations, 2022 (order text, pp. 1–2; enclosed list excluded)",
+  "instrument": "FSSAI Order SS-T0SP05(EC)/2/2022-Standard-FSSAI dated 25-07-2025",
+  "publisher": "Food Safety and Standards Authority of India (FSSAI), Science and Standards Division",
+  "jurisdiction": "IN",
+  "tier": 1,
+  "canonical_url": "https://fssai.gov.in/upload/advisories/2025/07/68835f872eaf4Order%20dated%2025-07-2025%20enclosing%20Ayurveda%20Aahara.pdf",
+  "fetched_url": "https://fssai.gov.in/upload/advisories/2025/07/68835f872eaf4Order%20dated%2025-07-2025%20enclosing%20Ayurveda%20Aahara.pdf",
+  "fetch_method": "official",
+  "fetched_on": "2026-09-27",
+  "sha256": "498d6f579357e7bb8e8d7b9f7741db5863f6eea8d29ffd559ff9add7d32d7edc",
+  "bytes": 9881569,
+  "raw_committed": false,
+  "pages": [
+    "1-2"
+  ],
+  "text_sha256": "d047c3d23f04bab52a2ec6cb37f5df137bb5edfdf257daf03c501be37a2e1ccd",
+  "effective_from": "2025-07-25",
+  "effective_to": null,
+  "version_note": "172-page PDF. Pages 1–2 (the order, Hindi + English) have a text layer and are extracted verbatim. Pages 3–172 (the enclosed category A list) are a scan with no text layer and are NOT in The Library: OCR output cannot be guaranteed verbatim, so no product-level list claim may be made from this document. A Part-2 recipes order dated 19-06-2026 exists on fssai.gov.in and is not yet ingested."
+}
