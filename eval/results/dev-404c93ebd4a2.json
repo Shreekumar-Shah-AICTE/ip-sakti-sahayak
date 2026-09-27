@@ -1,0 +1,789 @@
+{
+ "set": "dev",
+ "corpus_version": "sha256:404c93ebd4a290c96c6b67f9d4063afe1a2ecb48a56953124ed0bb4a8d4b3288",
+ "commit": "f9f5ac9",
+ "date": "2026-09-27",
+ "machine": "Linux x86_64 py3.13.14",
+ "mode": "keyless",
+ "retrieval": "bm25",
+ "dense": "disabled by SAHAYAK_DENSE=0",
+ "metrics": {
+  "n": 49,
+  "temporal_accuracy": 1.0,
+  "temporal_accuracy_baseline": 0.125,
+  "library_answer_rate": 0.9167,
+  "library_answer_rate_baseline": 0.9167,
+  "citation_exactness": 1.0,
+  "abstention_accuracy": 1.0,
+  "false_abstentions_on_answerable": 1,
+  "jurisdiction_leakage": 0,
+  "library_answer_rate_by_lang": null,
+  "latency_ms_p50": 0.89,
+  "latency_ms_p95": 1.96
+ },
+ "failures": [
+  {
+   "id": "L06",
+   "set": "L",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": "in-drugs-rules-1945-compiled-2022#0084",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": false,
+   "baseline_ok": false
+  }
+ ],
+ "rows": [
+  {
+   "id": "A01",
+   "set": "A",
+   "lang": "en",
+   "abstain": false,
+   "status": "in_force",
+   "cited": [
+    "in-drugs-rules-1945-compiled-2022#0126",
+    "in-drugs-rules-1945-compiled-2022#0118",
+    "in-sansad-lsq-au1724#0001",
+    "in-drugs-rules-1945-compiled-2022#0041"
+   ],
+   "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0019",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "A02",
+   "set": "A",
+   "lang": "en",
+   "abstain": false,
+   "status": "in_force",
+   "cited": [
+    "in-drugs-rules-1945-compiled-2022#0126",
+    "in-drugs-rules-1945-compiled-2022#0118",
+    "in-sansad-lsq-au1724#0001",
+    "in-sansad-lsq-au1724#0002"
+   ],
+   "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0012",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "A03",
+   "set": "A",
+   "lang": "en",
+   "abstain": false,
+   "status": "in_force",
+   "cited": [
+    "in-drugs-rules-1945-compiled-2022#0126",
+    "in-drugs-rules-1945-compiled-2022#0118",
+    "in-sansad-lsq-au1724#0001",
+    "in-drugs-rules-1945-compiled-2022#0041"
+   ],
+   "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0019",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "A04",
+   "set": "A",
+   "lang": "en",
+   "abstain": false,
+   "status": "in_force",
+   "cited": [
+    "in-drugs-rules-1945-compiled-2022#0126",
+    "in-drugs-rules-1945-compiled-2022#0118",
+    "in-sansad-lsq-au1724#0001",
+    "in-sansad-lsq-au1724#0002"
+   ],
+   "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0012",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "A05",
+   "set": "A",
+   "lang": "en",
+   "abstain": false,
+   "status": "omitted",
+   "cited": [
+    "in-drugs-rules-1945-compiled-2024-09#0016",
+    "in-drugs-rules-1945-compiled-2024-09#0006",
+    "in-drugs-rules-1945-compiled-2022#0118",
+    "in-sansad-lsq-au1724#0001",
+    "in-drugs-rules-1945-compiled-2022#0041"
+   ],
+   "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0019",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "A06",
+   "set": "A",
+   "lang": "en",
+   "abstain": false,
+   "status": "omitted",
+   "cited": [
+    "in-drugs-rules-1945-compiled-2024-09#0016",
+    "in-drugs-rules-1945-compiled-2024-09#0006",
+    "in-drugs-rules-1945-compiled-2022#0118",
+    "in-sansad-lsq-au1724#0001",
+    "in-sansad-lsq-au1724#0002"
+   ],
+   "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0012",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "A07",
+   "set": "A",
+   "lang": "en",
+   "abstain": false,
+   "status": "omitted",
+   "cited": [
+    "in-drugs-rules-1945-compiled-2024-09#0016",
+    "in-drugs-rules-1945-compiled-2024-09#0006",
+    "in-drugs-rules-1945-compiled-2022#0118",
+    "in-sansad-lsq-au1724#0001",
+    "in-drugs-rules-1945-compiled-2022#0041"
+   ],
+   "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0019",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "A08",
+   "set": "A",
+   "lang": "en",
+   "abstain": false,
+   "status": "omitted",
+   "cited": [
+    "in-drugs-rules-1945-compiled-2024-09#0016",
+    "in-drugs-rules-1945-compiled-2024-09#0006",
+    "in-drugs-rules-1945-compiled-2022#0118",
+    "in-sansad-lsq-au1724#0001",
+    "in-sansad-lsq-au1724#0002"
+   ],
+   "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0012",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "A09",
+   "set": "A",
+   "lang": "en",
+   "abstain": false,
+   "status": "in_force_stayed_omission",
+   "cited": [
+    "in-sc-wpc-645-2022-order-2025-08-11#0019",
+    "in-drugs-rules-1945-compiled-2022#0118",
+    "in-sansad-lsq-au1724#0001",
+    "in-drugs-rules-1945-compiled-2022#0041"
+   ],
+   "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0019",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": true
+  },
+  {
+   "id": "A10",
+   "set": "A",
+   "lang": "en",
+   "abstain": false,
+   "status": "in_force_stayed_omission",
+   "cited": [
+    "in-sc-wpc-645-2022-order-2025-08-11#0019",
+    "in-drugs-rules-1945-compiled-2022#0118",
+    "in-sansad-lsq-au1724#0001",
+    "in-sansad-lsq-au1724#0002"
+   ],
+   "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0012",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "A11",
+   "set": "A",
+   "lang": "en",
+   "abstain": false,
+   "status": "in_force_stayed_omission",
+   "cited": [
+    "in-sc-wpc-645-2022-order-2025-08-11#0019",
+    "in-drugs-rules-1945-compiled-2022#0118",
+    "in-sansad-lsq-au1724#0001",
+    "in-drugs-rules-1945-compiled-2022#0041"
+   ],
+   "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0019",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": true
+  },
+  {
+   "id": "A12",
+   "set": "A",
+   "lang": "en",
+   "abstain": false,
+   "status": "in_force_stayed_omission",
+   "cited": [
+    "in-sc-wpc-645-2022-order-2025-08-11#0019",
+    "in-drugs-rules-1945-compiled-2022#0118",
+    "in-sansad-lsq-au1724#0001",
+    "in-sansad-lsq-au1724#0002"
+   ],
+   "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0012",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "A13",
+   "set": "A",
+   "lang": "en",
+   "abstain": false,
+   "status": "omitted_stay_vacated",
+   "cited": [
+    "in-sc-wpc-645-2022-order-2025-08-11#0036",
+    "in-sc-wpc-645-2022-order-2025-08-11#0012",
+    "in-sc-wpc-645-2022-order-2025-08-11#0038"
+   ],
+   "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0019",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "A14",
+   "set": "A",
+   "lang": "en",
+   "abstain": false,
+   "status": "omitted_stay_vacated",
+   "cited": [
+    "in-sc-wpc-645-2022-order-2025-08-11#0036",
+    "in-sc-wpc-645-2022-order-2025-08-11#0012",
+    "in-sc-wpc-645-2022-order-2025-08-11#0038",
+    "in-pib-2148433#0000"
+   ],
+   "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0012",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "A15",
+   "set": "A",
+   "lang": "en",
+   "abstain": false,
+   "status": "omitted_stay_vacated",
+   "cited": [
+    "in-sc-wpc-645-2022-order-2025-08-11#0036",
+    "in-sc-wpc-645-2022-order-2025-08-11#0012",
+    "in-sc-wpc-645-2022-order-2025-08-11#0038"
+   ],
+   "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0019",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "A16",
+   "set": "A",
+   "lang": "en",
+   "abstain": false,
+   "status": "omitted_stay_vacated",
+   "cited": [
+    "in-sc-wpc-645-2022-order-2025-08-11#0036",
+    "in-sc-wpc-645-2022-order-2025-08-11#0012",
+    "in-sc-wpc-645-2022-order-2025-08-11#0038",
+    "in-pib-2148433#0000"
+   ],
+   "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0012",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "L01",
+   "set": "L",
+   "lang": "en",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "in-ipindia-ayush-guidelines-2025#0003",
+    "in-bd-amendment-act-2023#0004",
+    "in-bd-amendment-act-2023#0003"
+   ],
+   "baseline_top": "in-ipindia-ayush-guidelines-2025#0003",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": true
+  },
+  {
+   "id": "L02",
+   "set": "L",
+   "lang": "en",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "in-bd-abs-regulations-2025#0007",
+    "in-bd-abs-regulations-2025#0013",
+    "in-bd-abs-regulations-2025#0040"
+   ],
+   "baseline_top": "in-bd-abs-regulations-2025#0007",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": true
+  },
+  {
+   "id": "L03",
+   "set": "L",
+   "lang": "en",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "in-fssai-ayurveda-aahara-regulations-2022#0007"
+   ],
+   "baseline_top": "in-fssai-ayurveda-aahara-regulations-2022#0007",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": true
+  },
+  {
+   "id": "L04",
+   "set": "L",
+   "lang": "en",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "in-csir-tkdl-about#0004",
+    "in-csir-tkdl-about#0003",
+    "in-csir-tkdl-about#0005"
+   ],
+   "baseline_top": "in-csir-tkdl-about#0004",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": true
+  },
+  {
+   "id": "L05",
+   "set": "L",
+   "lang": "en",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "in-dmr-act-1954#0001",
+    "in-dmr-act-1954#0000"
+   ],
+   "baseline_top": "in-dmr-act-1954#0001",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": true
+  },
+  {
+   "id": "L06",
+   "set": "L",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": "in-drugs-rules-1945-compiled-2022#0084",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": false,
+   "baseline_ok": false
+  },
+  {
+   "id": "L07",
+   "set": "L",
+   "lang": "en",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "eu-directive-2004-24-ec#0005",
+    "eu-directive-2004-24-ec#0010",
+    "eu-directive-2004-24-ec#0017"
+   ],
+   "baseline_top": "eu-directive-2004-24-ec#0005",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": true
+  },
+  {
+   "id": "L08",
+   "set": "L",
+   "lang": "en",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "us-fda-ayurvedic-heavy-metals-warning#0003",
+    "us-fda-import-alert-99-42#0000",
+    "us-fda-import-alert-66-41#0000"
+   ],
+   "baseline_top": "us-fda-ayurvedic-heavy-metals-warning#0003",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": true
+  },
+  {
+   "id": "L10",
+   "set": "L",
+   "lang": "en",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "wipo-gratk-treaty-page#0004",
+    "wipo-gratk-treaty-page#0005",
+    "wipo-gratk-treaty-page#0000"
+   ],
+   "baseline_top": "wipo-gratk-treaty-page#0004",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": true
+  },
+  {
+   "id": "B01",
+   "set": "B",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": "us-fda-ayurvedic-heavy-metals-warning#0000",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "B02",
+   "set": "B",
+   "lang": "en",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "eu-directive-2004-24-ec#0011",
+    "eu-directive-2004-24-ec#0005",
+    "eu-directive-2004-24-ec#0007"
+   ],
+   "baseline_top": "eu-directive-2004-24-ec#0011",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "B03",
+   "set": "B",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": "wipo-gratk-treaty-page#0004",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "B04",
+   "set": "B",
+   "lang": "en",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "us-fda-import-alert-66-41#0001",
+    "us-fda-ayurvedic-heavy-metals-warning#0000"
+   ],
+   "baseline_top": "us-fda-import-alert-66-41#0001",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "B05",
+   "set": "B",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": "eu-directive-2004-24-ec#0025",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "B06",
+   "set": "B",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "B07",
+   "set": "B",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": "us-fda-ayurvedic-heavy-metals-warning#0000",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "B08",
+   "set": "B",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": "eu-directive-2004-24-ec#0010",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "B09",
+   "set": "B",
+   "lang": "en",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "wipo-gratk-treaty-page#0004",
+    "wipo-gratk-treaty-page#0001",
+    "wipo-gratk-treaty-page#0000"
+   ],
+   "baseline_top": "wipo-gratk-treaty-page#0004",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "B10",
+   "set": "B",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "B11",
+   "set": "B",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": "eu-directive-2004-24-ec#0004",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "B12",
+   "set": "B",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": "wipo-gratk-treaty-page#0004",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "D01",
+   "set": "D",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": "in-patents-act-1970#0123",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "D02",
+   "set": "D",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": "in-drugs-rules-1945-compiled-2022#0055",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "D03",
+   "set": "D",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": "in-sansad-lsq-au1724#0000",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "D04",
+   "set": "D",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": "in-fssai-ayurveda-aahara-regulations-2022#0017",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "D05",
+   "set": "D",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": "in-drugs-cosmetics-act-1940#0003",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "D06",
+   "set": "D",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0035",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "D07",
+   "set": "D",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "D08",
+   "set": "D",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": "in-sc-wpc-645-2022-order-2025-08-11#0019",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "D09",
+   "set": "D",
+   "lang": "en",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": "in-bd-abs-regulations-2025#0004",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "L09",
+   "set": "L",
+   "lang": "en",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "us-fda-ayurvedic-heavy-metals-warning#0003",
+    "us-fda-ayurvedic-heavy-metals-warning#0002",
+    "us-fda-ayurvedic-heavy-metals-warning#0000"
+   ],
+   "baseline_top": "us-fda-ayurvedic-heavy-metals-warning#0003",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": true
+  },
+  {
+   "id": "L11",
+   "set": "L",
+   "lang": "en",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "in-fssai-ayurveda-aahara-order-2025-07-25#0001",
+    "in-fssai-ayurveda-aahara-regulations-2022#0019",
+    "in-fssai-ayurveda-aahara-order-2025-07-25#0002"
+   ],
+   "baseline_top": "in-fssai-ayurveda-aahara-order-2025-07-25#0001",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": true
+  },
+  {
+   "id": "L12",
+   "set": "L",
+   "lang": "en",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "wipo-gratk-status-2026-07-08#0000"
+   ],
+   "baseline_top": "wipo-gratk-treaty-page#0004",
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": true
+  }
+ ]
+}

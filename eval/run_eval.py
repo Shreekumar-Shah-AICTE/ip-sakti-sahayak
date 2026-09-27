@@ -78,7 +78,7 @@ def run_set(path: Path) -> dict:
         code = normalize_jurisdiction(q["jurisdiction"])
         cited = [x.chunk_id for x in a.quotes]
         row = {
-            "id": q["id"], "set": q["set"], "abstain": a.abstain,
+            "id": q["id"], "set": q["set"], "lang": q.get("lang", "en"), "abstain": a.abstain,
             "status": a.status and a.status["status"], "cited": cited,
             "baseline_top": base[0]["chunk_id"] if base else None,
             "quotes_exact": all(_norm(x.text) in _norm(chunks[x.chunk_id]["text"])
@@ -114,6 +114,11 @@ def run_set(path: Path) -> dict:
         "abstention_accuracy": frac(by["D"]),
         "false_abstentions_on_answerable": sum(r["abstain"] for r in by["A"] + by["L"]),
         "jurisdiction_leakage": sum(r["leak"] for r in rows),
+        # Per-language LAR (multilingual set): the Glossary's effect must be visible per language.
+        "library_answer_rate_by_lang": {
+            lg: frac([r for r in by["L"] if r["lang"] == lg])
+            for lg in sorted({r["lang"] for r in by["L"]})
+        } if len({r["lang"] for r in rows}) > 1 else None,
         "latency_ms_p50": round(statistics.median(lat), 2) if lat else None,
         "latency_ms_p95": round(lat[int(0.95 * (len(lat) - 1))], 2) if lat else None,
     }

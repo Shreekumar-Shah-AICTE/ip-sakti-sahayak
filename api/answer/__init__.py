@@ -12,6 +12,7 @@ import re
 from dataclasses import asdict, dataclass, field
 
 from api import ledger
+from api.i18n import translate
 from api.retriever import Index, default_index, normalize_jurisdiction, tokenize
 
 # Share of query terms a chunk must contain. Measured, not guessed (run 04 sweep on
@@ -49,6 +50,8 @@ class Answer:
     quotes: list[Quote] = field(default_factory=list)
     disclaimer: str = DISCLAIMER
     retrieval: str = "bm25"  # "bm25" (keyless core) | "hybrid" (BM25 + dense, RRF)
+    # The Glossary (hi/gu -> en): {lang, english, unknown}; None for English questions.
+    translation: dict | None = None
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -92,8 +95,14 @@ def answer(
     day = dt.date.fromisoformat(as_of) if isinstance(as_of, str) else (as_of or dt.date.today())
     code = normalize_jurisdiction(jurisdiction)
     idx = index or default_index()
-    terms = list(dict.fromkeys(tokenize(question)))
+    tr = translate(question)
+    # hi/gu: coverage and best_span run on the glossary terms (unknown words kept, so they
+    # still count against coverage); dense retrieval sees the original + the translation.
+    terms = tr.terms if tr else list(dict.fromkeys(tokenize(question)))
+    query = f"{question} {tr.english}" if tr else question
     out = Answer(terms, code, day.isoformat(), idx.corpus_version, abstain=True)
+    if tr:
+        out.translation = {"lang": tr.lang, "english": tr.english, "unknown": tr.unknown}
 
     entry = _find_instrument(question)
     superseded: set[str] = set()
@@ -128,7 +137,7 @@ def answer(
             return out  # never answer a status question the ledger cannot date
 
     out.retrieval = idx.mode
-    hits = [h for h in idx.retrieve(question, code, day, k=k) if _passes(h)]
+    hits = [h for h in idx.retrieve(query, code, day, k=k, terms=terms) if _passes(h)]
     seen = {q.chunk_id for q in out.quotes}
     for h in hits:
         c = h.chunk

@@ -1,0 +1,435 @@
+{
+ "set": "multilingual",
+ "corpus_version": "sha256:404c93ebd4a290c96c6b67f9d4063afe1a2ecb48a56953124ed0bb4a8d4b3288",
+ "commit": "f9f5ac9",
+ "date": "2026-09-27",
+ "machine": "Linux x86_64 py3.13.14",
+ "mode": "keyless",
+ "retrieval": "hybrid",
+ "dense": "ready",
+ "metrics": {
+  "n": 26,
+  "temporal_accuracy": null,
+  "temporal_accuracy_baseline": null,
+  "library_answer_rate": 0.8571,
+  "library_answer_rate_baseline": 0.0,
+  "citation_exactness": 1.0,
+  "abstention_accuracy": 1.0,
+  "false_abstentions_on_answerable": 0,
+  "jurisdiction_leakage": 0,
+  "library_answer_rate_by_lang": {
+   "gu": 0.8333,
+   "hi": 0.875
+  },
+  "latency_ms_p50": 18.4,
+  "latency_ms_p95": 22.9
+ },
+ "failures": [
+  {
+   "id": "HL05",
+   "set": "L",
+   "lang": "hi",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "in-drugs-rules-1945-compiled-2022#0084"
+   ],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": false,
+   "baseline_ok": false
+  },
+  {
+   "id": "GL05",
+   "set": "L",
+   "lang": "gu",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "in-drugs-rules-1945-compiled-2022#0084",
+    "in-drugs-rules-1945-compiled-2022#0036"
+   ],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": false,
+   "baseline_ok": false
+  }
+ ],
+ "rows": [
+  {
+   "id": "HL01",
+   "set": "L",
+   "lang": "hi",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "in-bd-amendment-act-2023#0004",
+    "in-ipindia-ayush-guidelines-2025#0003",
+    "in-bd-abs-regulations-2025#0044"
+   ],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "HL02",
+   "set": "L",
+   "lang": "hi",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "in-bd-abs-regulations-2025#0040",
+    "in-bd-abs-regulations-2025#0008",
+    "in-bd-abs-regulations-2025#0007"
+   ],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "HL03",
+   "set": "L",
+   "lang": "hi",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "in-csir-tkdl-about#0004",
+    "in-csir-tkdl-about#0005"
+   ],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "HL04",
+   "set": "L",
+   "lang": "hi",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "in-dmr-act-1954#0001",
+    "in-dmr-act-1954#0000"
+   ],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "HL05",
+   "set": "L",
+   "lang": "hi",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "in-drugs-rules-1945-compiled-2022#0084"
+   ],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": false,
+   "baseline_ok": false
+  },
+  {
+   "id": "HL06",
+   "set": "L",
+   "lang": "hi",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "in-fssai-ayurveda-aahara-regulations-2022#0007"
+   ],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "HL07",
+   "set": "L",
+   "lang": "hi",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "us-fda-ayurvedic-heavy-metals-warning#0000",
+    "us-fda-ayurvedic-heavy-metals-warning#0003",
+    "us-fda-ayurvedic-heavy-metals-warning#0001"
+   ],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "HL08",
+   "set": "L",
+   "lang": "hi",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "eu-directive-2004-24-ec#0010",
+    "eu-directive-2004-24-ec#0017",
+    "eu-directive-2004-24-ec#0005"
+   ],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "GL01",
+   "set": "L",
+   "lang": "gu",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "in-bd-amendment-act-2023#0004",
+    "in-ipindia-ayush-guidelines-2025#0003",
+    "in-bd-abs-regulations-2025#0044"
+   ],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "GL02",
+   "set": "L",
+   "lang": "gu",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "in-bd-abs-regulations-2025#0040",
+    "in-bd-abs-regulations-2025#0008",
+    "in-bd-abs-regulations-2025#0007"
+   ],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "GL03",
+   "set": "L",
+   "lang": "gu",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "in-csir-tkdl-about#0004",
+    "in-csir-tkdl-about#0005"
+   ],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "GL04",
+   "set": "L",
+   "lang": "gu",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "in-dmr-act-1954#0001",
+    "in-dmr-act-1954#0000"
+   ],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "GL05",
+   "set": "L",
+   "lang": "gu",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "in-drugs-rules-1945-compiled-2022#0084",
+    "in-drugs-rules-1945-compiled-2022#0036"
+   ],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": false,
+   "baseline_ok": false
+  },
+  {
+   "id": "GL06",
+   "set": "L",
+   "lang": "gu",
+   "abstain": false,
+   "status": null,
+   "cited": [
+    "us-fda-ayurvedic-heavy-metals-warning#0003",
+    "us-fda-ayurvedic-heavy-metals-warning#0000",
+    "us-fda-ayurvedic-heavy-metals-warning#0001"
+   ],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true,
+   "baseline_ok": false
+  },
+  {
+   "id": "HD01",
+   "set": "D",
+   "lang": "hi",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "HD02",
+   "set": "D",
+   "lang": "hi",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "HD03",
+   "set": "D",
+   "lang": "hi",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "HD04",
+   "set": "D",
+   "lang": "hi",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "HD05",
+   "set": "D",
+   "lang": "hi",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "HD06",
+   "set": "D",
+   "lang": "hi",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "HD07",
+   "set": "D",
+   "lang": "hi",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "GD01",
+   "set": "D",
+   "lang": "gu",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "GD02",
+   "set": "D",
+   "lang": "gu",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "GD03",
+   "set": "D",
+   "lang": "gu",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "GD04",
+   "set": "D",
+   "lang": "gu",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  },
+  {
+   "id": "GD05",
+   "set": "D",
+   "lang": "gu",
+   "abstain": true,
+   "status": null,
+   "cited": [],
+   "baseline_top": null,
+   "quotes_exact": true,
+   "leak": 0,
+   "ok": true
+  }
+ ]
+}

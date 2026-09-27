@@ -131,9 +131,13 @@ class Index:
         got = sum(1 for t in terms if tf.get(t) or any(tf.get(x) for x in TERM_MAP.get(t, ())))
         return got / len(terms) if terms else 0.0
 
-    def search(self, query: str, jurisdiction: str, as_of: dt.date, k: int = 5) -> list[Hit]:
-        """BM25 only (the keyless path, and what the vanilla baseline mirrors)."""
-        terms = list(dict.fromkeys(tokenize(query)))
+    def search(self, query: str, jurisdiction: str, as_of: dt.date, k: int = 5,
+               terms: list[str] | None = None) -> list[Hit]:
+        """BM25 only (the keyless path, and what the vanilla baseline mirrors).
+
+        `terms` overrides tokenisation of `query` (The Glossary passes translated hi/gu terms).
+        """
+        terms = terms if terms is not None else list(dict.fromkeys(tokenize(query)))
         if not terms:
             return []
         ids = self.allowed(jurisdiction, as_of)  # filter BEFORE rank
@@ -151,7 +155,8 @@ class Index:
     def mode(self) -> str:
         return "hybrid" if self._dense is not None and self._dense.ready else "bm25"
 
-    def retrieve(self, query: str, jurisdiction: str, as_of: dt.date, k: int = 5) -> list[Hit]:
+    def retrieve(self, query: str, jurisdiction: str, as_of: dt.date, k: int = 5,
+                 terms: list[str] | None = None) -> list[Hit]:
         """Hybrid BM25 + dense fused by RRF when the dense index is ready, else BM25.
 
         Both rankers see the same filtered id set, so fusion cannot reintroduce a chunk the
@@ -159,9 +164,9 @@ class Index:
         The Answer Contract can gate on evidence rather than on an opaque fused score.
         """
         if self.mode != "hybrid":
-            return self.search(query, jurisdiction, as_of, k)
+            return self.search(query, jurisdiction, as_of, k, terms)
         ids = self.allowed(jurisdiction, as_of)  # filter BEFORE rank
-        terms = list(dict.fromkeys(tokenize(query)))
+        terms = terms if terms is not None else list(dict.fromkeys(tokenize(query)))
         lexical = self._bm25(expand(terms), ids, terms) if terms else []
         dense = self._dense.rank(query, ids)
         fused: dict[int, float] = {}
